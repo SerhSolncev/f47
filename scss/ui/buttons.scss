@@ -76,6 +76,10 @@
 		&:active {
 			background-color: var(--color-dark);
 		}
+
+		&:focus-visible {
+			outline-color: var(--color-white);
+		}
 	}
 
 	&--dark-bg-sec {
@@ -90,6 +94,10 @@
 		&:active {
 			color: var(--color-white);
 			background-color: var(--color-dark);
+		}
+
+		&:focus-visible {
+			outline-color: var(--color-white);
 		}
 	}
 }

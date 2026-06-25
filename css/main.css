@@ -535,6 +535,9 @@ html.lenis, html.lenis body {
 .btn--dark-bg:active {
   background-color: var(--color-dark);
 }
+.btn--dark-bg:focus-visible {
+  outline-color: var(--color-white);
+}
 .btn--dark-bg-sec {
   color: var(--color-white);
   background-color: var(--color-dark);
@@ -546,6 +549,9 @@ html.lenis, html.lenis body {
 .btn--dark-bg-sec:active {
   color: var(--color-white);
   background-color: var(--color-dark);
+}
+.btn--dark-bg-sec:focus-visible {
+  outline-color: var(--color-white);
 }
 
 .icon-btn {

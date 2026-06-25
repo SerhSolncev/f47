@@ -66,6 +66,24 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	}, { passive: true });
 
 	// dropdown
+
+	function trapFocus(block) {
+		const focusable = block.querySelectorAll(
+			'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+		);
+		if (focusable.length) focusable[0].focus();
+	}
+
+	function lockFocus(block) {
+		block.querySelectorAll(
+			'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
+		).forEach(el => el.setAttribute('tabindex', '-1'));
+	}
+
+	function unlockFocus(block) {
+		block.querySelectorAll('[tabindex="-1"]')
+		.forEach(el => el.removeAttribute('tabindex'));
+	}
 	function toggleHeader(block) {
 		if (!header) return;
 		if (block && block.hasAttribute('data-hide-header')) {
@@ -103,6 +121,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				if (searchInput) {
 					block.addEventListener('transitionend', () => searchInput.focus(), { once: true });
 				}
+				unlockFocus(block);
+				block.addEventListener('transitionend', () => trapFocus(block), { once: true });
+			} else {
+				lockFocus(block);
 			}
 
 			if (block.hasAttribute('data-block-scroll')) {
@@ -149,9 +171,15 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				if (el.hasAttribute('aria-expanded')) {
 					el.setAttribute('aria-expanded', 'false');
 				}
+				// блокируем фокус в закрытых блоках
+				if (el.classList.contains('js-toggle-block')) {
+					lockFocus(el);
+				}
 			}
 		});
 	}
+
+	document.querySelectorAll('.js-toggle-block:not(.show)').forEach(lockFocus);
 
 	// міні валідація
 
