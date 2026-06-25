@@ -3,8 +3,13 @@
 
 .hero-block {
 
+	&__top {
+		margin: get-rem(139) 0 0;
+	}
+
 	.title--type-1 {
 		max-width: get-rem(1080);
 		margin: 0 auto;
+
 	}
 }
