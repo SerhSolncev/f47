@@ -1,0 +1,21 @@
+<!-- header lang-->
+{% include 'blocks/lang-block.html' %}
+<!-- header theme-mode-->
+
+{% from 'mixins.html' import events_home %}
+
+{% for card in homePage.homeEvents %}
+	<div class="swiper-slide">
+		{{ events_home(card.title1, card.img1, card.title2, card.img2) }}
+	</div>
+{% endfor %}
+
+{% for i in range(0, 10) %}
+<div>Элемент {{ i }}</div>
+{% endfor %}
+
+
+<picture class="hero-block__img">
+	<source media="(min-width:560px)" srcset="" data-srcset="images/pics/hero.jpg" class="lazy">
+	<img src="images/empty.gif" data-src="images/pics/hero-mob.jpg" alt="" width="1440" height="690" class="lazy">
+</picture>

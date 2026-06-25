@@ -1,0 +1,19 @@
+{% macro categories_card(title, sub, img) %}
+	<a href="#!" class="categories-card">
+		<div class="categories-card__left">
+			<div class="categories-card__title">{{ title }}</div>
+			<div class="categories-card__sub">{{ sub }}</div>
+		</div>
+		<picture class="categories-card__img">
+			<img src="images/empty.gif" data-src="{{ img }}" alt="" width="120" height="120" class="lazy">
+		</picture>
+	</a>
+{% endmacro %}
+
+{% macro header() %}
+	<!-- header start-->
+	<header class="header js-header"></header>
+
+	<!-- mobile-menu -->
+	<div class="mobile-menu js-toggle-block" data-id="menu" data-block-scroll></div>
+{% endmacro %}

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>F47</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<style>
+    .preview-block {
+        width: 100%;
+        max-width: 1000px;
+        margin: 80px auto;
+
+    }
+
+    .preview-block__title {
+        font-size: 56px;
+        text-align: center;
+        margin: 0 0 30px;
+        color: var(--color-dark);
+    }
+
+    .preview-block__title span {
+        color: var(--color-blue);
+        text-transform: uppercase;
+    }
+
+    .preview-block__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 16px;
+    }
+
+    @media(max-width: 1200px) {
+        .preview-block__list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media(max-width: 768px) {
+        .preview-block__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .preview-block__title {
+	        font-size: 44px;
+        }
+    }
+
+    .preview-block a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        line-height: 1.25;
+        width: 100%;
+        border: 1px solid var(--color-dark);
+        color: var(--color-dark);
+        text-align: center;
+        font-weight: 300;
+        transition: background-color 0.15s ease;
+    }
+
+    .preview-block a:hover {
+        background-color: var(--color-dark);
+        color: #ffffff;
+    }
+</style>
+<body>
+<!-- mixins list -->
+
+<!-- mixins list -->
+
+
+	<!-- header start-->
+	<header class="header js-header"></header>
+
+	<!-- mobile-menu -->
+	<div class="mobile-menu js-toggle-block" data-id="menu" data-block-scroll></div>
+
+<main>
+    <div class="section section--default">
+        <div class="container">
+	        <div class="preview-block">
+		        <div class="preview-block__title">
+			        <span>F47</span> FRONTEND
+		        </div>
+		        <div class="preview-block__list">
+			        <a href="/home.html">
+				        Home
+			        </a>
+		        </div>
+	        </div>
+        </div>
+    </div>
+</main>
+<script src="js/modules/lozad.min.js"></script>
+<script src="js/main.js"></script>
+<!-- статичний попап корзини -->
+<div id="basket" class="modal micromodal-slide" aria-hidden="true">
+	<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+		<div class="popup-block popup-block--type-1 modal__container" role="dialog" aria-modal="true" aria-labelledby="basket-title">
+			<button class="close-btn" data-micromodal-close>
+				<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+					<path d="M0.345974 1.08371C0.155024 0.884225 0.155024 0.560802 0.345974 0.361321C0.536924 0.16184 0.846515 0.16184 1.03746 0.361321L23.0538 23.3612C23.2447 23.5607 23.2447 23.8842 23.0538 24.0836C22.8628 24.2831 22.5532 24.2831 22.3623 24.0836L0.345974 1.08371Z"/>
+					<path d="M2.02078 24.0838C1.82983 24.2833 1.52024 24.2833 1.32929 24.0838C1.13834 23.8843 1.13834 23.5609 1.32929 23.3614L23.3456 0.361464C23.5365 0.161982 23.8461 0.161982 24.0371 0.361464C24.228 0.560945 24.228 0.884368 24.0371 1.08385L2.02078 24.0838Z"/>
+				</svg>
+			</button>
+			<div class="cart-block"></div>
+		</div>
+	</div>
+</div>
+<div class="footer">
+
+</div>
+
+</body>
+</html>

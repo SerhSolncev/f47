@@ -1,0 +1,25 @@
+@use 'sass:meta';
+@use 'sass:math';
+
+//@function get-rem($px) {
+//  @return math.div($px, 16) + rem;
+//}
+
+@function get-rem($px, $base-font-size: 16) {
+	@return math.div($px, $base-font-size) * 1rem;
+}
+
+@function calcsum($x, $y) {
+	@return ($x + $y) + px;
+}
+
+@function strip-unit($number) {
+	@if meta.type-of($number) == 'number' and not math.is-unitless($number) {
+		@return math.div($number, ($number * 0 + 1));
+	}
+	@return $number;
+}
+
+@function get-vw($px-vw, $base-vw: 1920px) {
+	@return #{math.div(strip-unit($px-vw) * 100, strip-unit($base-vw))}vw;
+}

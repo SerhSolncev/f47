@@ -1,0 +1,142 @@
+@import "../abstracts/functions";
+@import "../abstracts/vars";
+
+.link {
+	display: flex;
+	align-items: center;
+	transition: 0.15s ease-in-in;
+	transition-property: color;
+
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: get-rem(24);
+	}
+
+	&:has(.label) {
+		gap: get-rem(12);
+	}
+
+	&[type="button"] {
+		text-align: left;
+	}
+
+	&--smaller {
+		font: 400 #{get-rem(12)}/1 $mainFont;
+	}
+
+	&--small {
+		font: 400 #{get-rem(13)}/1 $mainFont;
+	}
+
+	&--mini {
+		font: 400 #{get-rem(14)}/1.25 $mainFont;
+		gap: get-rem(15);
+	}
+
+	&--middle {
+		font: 400 #{get-rem(15)}/1.25 $mainFont;
+	}
+
+	&--default {
+		font: 400 #{get-rem(16)}/1.25 $mainFont;
+	}
+
+	&--big {
+		font: 400 #{get-rem(20)}/1 $mainFont;
+	}
+
+	&--icon {
+		gap: get-rem(8);
+
+		svg {
+			max-width: get-rem(24);
+			width: auto;
+			height: auto;
+		}
+
+		span {
+			margin: get-rem(-1) 0 0;
+		}
+	}
+
+
+	&--white {
+		color: var(--color-white);
+
+		.desktop-device &[href]:hover, &[type="button"]:hover {
+			color: var(--color-green-main);
+		}
+	}
+
+	&--white-sec {
+		color: var(--color-white);
+
+		.desktop-device &[href]:hover, .desktop-device &[type="button"]:hover {
+			color: var(--color-yellow-main);
+		}
+	}
+
+	&--dark {
+		color: var(--color-dark-main);
+
+		.desktop-device &[href]:hover, .desktop-device &[type="button"]:hover {
+			color: var(--color-green-main);
+		}
+
+	}
+
+	&--green {
+		color: var(--color-green-main);
+
+		.desktop-device &[href]:hover, .desktop-device &[type="button"]:hover {
+			color: var(--color-yellow-main);
+		}
+	}
+
+	&--gray {
+		color: var(--color-gray);
+
+		.desktop-device &[href]:hover, .desktop-device &[type="button"]:hover {
+			color: var(--color-green-main);
+		}
+	}
+
+	&--bold {
+		font-weight: 500;
+	}
+
+	&--tu {
+		text-decoration: underline;
+
+		.desktop-device & {
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+.soc-link {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: get-rem(20);
+	height: get-rem(20);
+
+	svg {
+		width: 100%;
+		height: 100%;
+	}
+
+	&--dark {
+
+
+		.desktop-device & {
+			&:hover {
+
+			}
+		}
+	}
+}

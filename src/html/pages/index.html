@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>F47</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- main -->
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<style>
+    .preview-block {
+        width: 100%;
+        max-width: 1000px;
+        margin: 80px auto;
+
+    }
+
+    .preview-block__title {
+        font-size: 56px;
+        text-align: center;
+        margin: 0 0 30px;
+        color: var(--color-dark);
+    }
+
+    .preview-block__title span {
+        color: var(--color-blue);
+        text-transform: uppercase;
+    }
+
+    .preview-block__list {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-gap: 16px;
+    }
+
+    @media(max-width: 1200px) {
+        .preview-block__list {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media(max-width: 768px) {
+        .preview-block__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .preview-block__title {
+	        font-size: 44px;
+        }
+    }
+
+    .preview-block a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 50px;
+        line-height: 1.25;
+        width: 100%;
+        border: 1px solid var(--color-dark);
+        color: var(--color-dark);
+        text-align: center;
+        font-weight: 300;
+        transition: background-color 0.15s ease;
+    }
+
+    .preview-block a:hover {
+        background-color: var(--color-dark);
+        color: #ffffff;
+    }
+</style>
+<body>
+<!-- mixins list -->
+{% from 'mixins.html' import header %}
+<!-- mixins list -->
+
+{{ header() }}
+<main>
+    <div class="section section--default">
+        <div class="container">
+	        <div class="preview-block">
+		        <div class="preview-block__title">
+			        <span>F47</span> FRONTEND
+		        </div>
+		        <div class="preview-block__list">
+			        <a href="/home.html">
+				        Home
+			        </a>
+		        </div>
+	        </div>
+        </div>
+    </div>
+</main>
+<script src="js/modules/lozad.min.js"></script>
+<script src="js/main.js"></script>
+{% include 'layout/footer.html' %}
+</body>
+</html>
