@@ -1,2 +1,16 @@
 @import "../abstracts/functions";
 @import "../abstracts/vars";
+
+.logo {
+	display: block;
+	width: 100%;
+
+	&--header {
+		max-width: get-rem(90);
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
