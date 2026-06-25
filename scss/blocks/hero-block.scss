@@ -1,0 +1,10 @@
+@import "../abstracts/functions";
+@import "../abstracts/vars";
+
+.hero-block {
+
+	.title--type-1 {
+		max-width: get-rem(1080);
+		margin: 0 auto;
+	}
+}

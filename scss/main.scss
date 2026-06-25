@@ -8,6 +8,7 @@
 @import "ui/links";
 @import "ui/title";
 @import "blocks/modal";
+@import "blocks/hero-block";
 
 .container {
 	width: 100%;
@@ -18,6 +19,14 @@
 
 .lt-14 {
 	letter-spacing: -0.014em;
+}
+
+.color-dark {
+	color: var(--oolor-dark);
+}
+
+.text-center {
+	text-align: center;
 }
 
 .text-bold {

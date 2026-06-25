@@ -5,156 +5,24 @@
 	position: relative;
 	transition: color 0.15s ease;
 
-	&--big {
-		font: 300 #{get-rem(30)}/1.1 $mainFont;
+	&--type-1 {
+		font: 400 #{get-rem(30)}/1.1 $mainFont;
 
-		@media(min-width: 768px) {
-			font-size: get-rem(33);
-		}
-
-		@media(min-width: 1280px) {
-		    font-size: get-rem(40);
-		}
-	}
-
-	&--big-sec {
-		font: 300 #{get-rem(23)}/1.1 $mainFont;
-
-		@media(min-width: 430px) {
-			font: 300 #{get-rem(30)}/1.1 $mainFont;
-		}
-
-		@media(min-width: 768px) {
-			font-size: get-rem(33);
-		}
-
-		@media(min-width: 1280px) {
+		@media(min-width: 480px) {
 			font-size: get-rem(40);
 		}
-	}
-
-	&--mini {
-		font: 500 #{get-rem(12)}/1.25 $mainFont;
-	}
-
-	&--def {
-		font: 500 #{get-rem(16)}/1.20 $mainFont;
-
-		@media(min-width: 640px) {
-		    font-size: get-rem(18);
-		}
-	}
-
-	&--def-always {
-		font: 500 #{get-rem(18)}/1.20 $mainFont;
-	}
-
-	&--type-2 {
-		font: 500 #{get-rem(18)}/1.20 $mainFont;
-
-		@media(min-width: 1280px) {
-			font-size: get-rem(22);
-		}
-	}
-
-	&--type-3 {
-		font: 500 #{get-rem(25)}/1.20 $mainFont;
-
-		@media(min-width: 1280px) {
-			font-size: get-rem(28);
-		}
-	}
-
-	&--type-4 {
-		font: 500 #{get-rem(18)}/1.20 $mainFont;
-
-		@media(min-width: 1280px) {
-			font-size: get-rem(20);
-		}
-	}
-
-	&--type-5 {
-		font: 500 #{get-rem(16)}/1.20 $mainFont;
-	}
-
-	&--type-6 {
-		font: 500 #{get-rem(18)}/1.20 $mainFont;
 
 		@media(min-width: 768px) {
-			font-size: get-rem(21);
+			font-size: get-rem(60);
 		}
 
 		@media(min-width: 1280px) {
-			font-size: get-rem(24);
-		}
-	}
-
-	&--type-7 {
-		font: 500 #{get-rem(16)}/1.20 $mainFont;
-
-		@media(min-width: 768px) {
-			font-size: get-rem(22);
+		    font-size: get-rem(80);
 		}
 
-		@media(min-width: 1280px) {
-			font-size: get-rem(27);
+		img {
+			display: inline;
 		}
-	}
-
-	&--type-8 {
-		font: 500 #{get-rem(23)}/1.20 $mainFont;
-
-		@media(min-width: 768px) {
-			font-size: get-rem(26);
-		}
-
-		@media(min-width: 1280px) {
-			font-size: get-rem(30);
-		}
-	}
-
-	&--type-9 {
-		font: 500 #{get-rem(20)}/1.20 $mainFont;
-
-		@media(min-width: 768px) {
-			font-size: get-rem(21);
-		}
-
-		@media(min-width: 1280px) {
-			font-size: get-rem(24);
-		}
-	}
-
-	&--line {
-		display: flex;
-		align-items: center;
-		gap: get-rem(8);
-		position: relative;
-		padding: 0 0 get-rem(14);
-
-		&::after {
-			content: '';
-			display: block;
-			position: absolute;
-			bottom: 0;
-			left: 0;
-			z-index: 1;
-			width: get-rem(80);
-			height: get-rem(2);
-			background-color: #bce3c9;
-		}
-	}
-
-	&--ttu {
-		text-transform: uppercase;
-	}
-
-	&--light-sec {
-		font-weight: 400;
-	}
-
-	&--medium {
-		font-weight: 500;
 	}
 
 }
