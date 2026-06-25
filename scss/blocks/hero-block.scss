@@ -5,6 +5,17 @@
 
 	&__top {
 		margin: clamp(#{get-rem(40)}, #{get-vw(139)}, #{get-rem(139)}) 0;
+
+		.title--type-1 {
+			max-width: get-rem(1080);
+			margin: 0 auto clamp(#{get-rem(20)}, #{get-vw(53)}, #{get-rem(53)});
+
+		}
+
+		.simple-text {
+			max-width: get-rem(595);
+			margin: 0 auto;
+		}
 	}
 
 	&__boards {
@@ -15,16 +26,5 @@
 		.form-board {
 			max-width: get-rem(500);
 		}
-	}
-
-	.title--type-1 {
-		max-width: get-rem(1080);
-		margin: 0 auto clamp(#{get-rem(20)}, #{get-vw(53)}, #{get-rem(53)});
-
-	}
-
-	.simple-text {
-		max-width: get-rem(595);
-		margin: 0 auto;
 	}
 }

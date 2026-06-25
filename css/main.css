@@ -10,6 +10,7 @@
   --color-gray: rgba(37, 36, 50, 0.7);
   --color-gray-sec: #d4d4d4;
   --color-gray-th: rgba(37, 36, 50, 0.5);
+  --color-gray-four: rgba(37, 36, 50, 0.8);
   --header-h: 0px;
 }
 
@@ -508,11 +509,20 @@ textarea:-webkit-autofill {
   background-color: var(--color-dark);
 }
 .btn--dark-bg:hover {
-  border-color: var(--color-black);
-  background-color: var(--color-bg);
-  color: var(--color-black);
+  background-color: var(--color-blue);
 }
 .btn--dark-bg:active {
+  background-color: var(--color-dark);
+}
+.btn--dark-bg-sec {
+  color: var(--color-white);
+  background-color: var(--color-dark);
+}
+.btn--dark-bg-sec:hover {
+  background-color: rgba(255, 255, 255, 0.4);
+  color: var(--color-dark);
+}
+.btn--dark-bg-sec:active {
   color: var(--color-white);
   background-color: var(--color-dark);
 }
@@ -544,8 +554,11 @@ textarea:-webkit-autofill {
   color: var(--color-dark);
 }
 .icon-btn--type-1:hover {
-  background-color: var(--color-dark);
+  background-color: var(--color-blue);
   color: var(--color-white);
+}
+.icon-btn--type-1:hover path {
+  fill: var(--color-white);
 }
 .icon-btn--type-1:active {
   background-color: var(--color-light);
@@ -630,6 +643,9 @@ textarea:-webkit-autofill {
   .simple-text--type-2 {
     font-size: 1.125rem;
   }
+}
+.simple-text--type-3 {
+  font: 500 0.75rem/1.3 "Manrope", Verdana, Arial, sans-serif;
 }
 .simple-text a {
   font: inherit;
@@ -1137,6 +1153,19 @@ textarea:-webkit-autofill {
           flex-direction: column;
   gap: 0.5625rem;
 }
+.form-board__fields > .simple-text--type-3 {
+  max-width: 14.0625rem;
+  margin: 0.1875rem 0 0;
+}
+.form-board__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin: 1.9375rem 0 0;
+}
 .form-board--orange-gradient {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ff7856), to(#ffe7b3));
   background-image: linear-gradient(to bottom, #ff7856, #ffe7b3);
@@ -1471,6 +1500,14 @@ textarea:-webkit-autofill {
 .hero-block__top {
   margin: clamp(2.5rem, 7.2395833333vw, 8.6875rem) 0;
 }
+.hero-block__top .title--type-1 {
+  max-width: 67.5rem;
+  margin: 0 auto clamp(1.25rem, 2.7604166667vw, 3.3125rem);
+}
+.hero-block__top .simple-text {
+  max-width: 37.1875rem;
+  margin: 0 auto;
+}
 .hero-block__boards {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1482,14 +1519,6 @@ textarea:-webkit-autofill {
 }
 .hero-block__boards .form-board {
   max-width: 31.25rem;
-}
-.hero-block .title--type-1 {
-  max-width: 67.5rem;
-  margin: 0 auto clamp(1.25rem, 2.7604166667vw, 3.3125rem);
-}
-.hero-block .simple-text {
-  max-width: 37.1875rem;
-  margin: 0 auto;
 }
 
 .container {
@@ -1512,7 +1541,7 @@ textarea:-webkit-autofill {
 }
 
 .color-gray {
-  color: rgba(37, 36, 50, 0.8);
+  color: var(--color-gray-four);
 }
 
 .text-center {

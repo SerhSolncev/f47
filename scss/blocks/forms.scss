@@ -18,6 +18,17 @@
 		display: flex;
 		flex-direction: column;
 		gap: get-rem(9);
+
+		> .simple-text--type-3 {
+			max-width: get-rem(225);
+			margin: get-rem(3) 0 0;
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: flex-end;
+		margin: get-rem(31) 0 0;
 	}
 
 	&--orange-gradient {
