@@ -201,6 +201,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				}
 			}
 
+			// проверка email
+			if (valid && input.type === 'email' && input.value.trim().length > 0) {
+				valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+			}
+
+			// проверка url
+			if (valid && input.type === 'url' && input.value.trim().length > 0) {
+				try {
+					new URL(input.value.trim());
+				} catch {
+					valid = false;
+				}
+			}
+
 			// сверка с паролем-оригиналом
 			if (valid && input.hasAttribute('data-password-confirm')) {
 				const targetId = input.getAttribute('data-password-confirm');
@@ -220,7 +234,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			return valid;
 		}
 
-		const fields = form.querySelectorAll('[required], .js-input-mask, [data-password-confirm]');
+		const fields = form.querySelectorAll('[required], .js-input-mask, [data-password-confirm], [type="email"], [type="url"]');
 
 		fields.forEach(function (input) {
 			input.addEventListener('blur', function () {

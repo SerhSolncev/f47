@@ -11,6 +11,13 @@
 		display: flex;
 		flex-direction: column;
 		gap: get-rem(13);
+		margin: 0 0 get-rem(31);
+	}
+
+	&__fields {
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(9);
 	}
 
 	&--orange-gradient {
@@ -25,10 +32,6 @@
 	display: flex;
 	flex-direction: column;
 	gap: get-rem(6);
-
-	@media(min-width: 768px) {
-		gap: get-rem(10);
-	}
 
 	//&__label {
 	//	position: absolute;
@@ -48,20 +51,40 @@
 	//	}
 	//}
 
-	&__checks {
-		display: flex;
-		align-items: center;
-		gap: get-rem(23);
+	&__field {
+		position: relative;
+
+		&:has(.input-item__icon) {
+			.input-item__input {
+				padding-left: get-rem(42);
+			}
+		}
+	}
+
+	&__icon {
+		display: block;
+		position: absolute;
+		top: 50%;
+		left: get-rem(15);
+		z-index: 1;
+		transform: translateY(-50%);
+		width: get-rem(20);
+		height: get-rem(20);
+
+		svg {
+			width: 100%;
+			height: 100%;
+		}
 	}
 
 	&__input {
 		width: 100%;
-		height: get-rem(50);
-		border: 1px solid var(--color-gray-sec);
-		font: 300 #{get-rem(16)}/1 $mainFont;
-		color: var(--color-dark-main);
-		padding: 0 get-rem(8) 0 get-rem(16);
-		border-radius: get-rem(8);
+		height: get-rem(44);
+		border: 1px solid transparent;
+		font: 400 #{get-rem(16)}/1 $mainFont;
+		color: var(--color-dark);
+		padding: 0 get-rem(8) 0 get-rem(14);
+		border-radius: get-rem(100);
 		transition: border-color 0.2s linear;
 		-webkit-appearance: none;
 		appearance: none;
@@ -72,12 +95,12 @@
 
 		&::placeholder {
 			font: inherit;
-			color: var(--color-gray-sec);
+			color: var(--color-gray-th);
 			transition: opacity 0.2s linear;
 		}
 
 		&:hover {
-			border-color: var(--color-dark-main);
+			border-color: var(--color-gray-sec);
 		}
 
 		&:focus {
@@ -87,11 +110,15 @@
 		}
 
 		.with-value & {
-			border-color: var(--color-dark-main);
+			border-color: var(--color-gray-sec);
 		}
 
 		&::-webkit-calendar-picker-indicator {
 			transform: translateY(-1px);
+		}
+
+		&--light {
+			background-color: rgba(#fff, 0.4);
 		}
 
 		//&::-webkit-datetime-edit {
