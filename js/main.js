@@ -36,8 +36,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		subtree: true
 	});
 
-	// dropdown
+	// header
 	const header = document.querySelector('.js-header');
+	if (!header) return;
+
+	const setHeaderHeight = () => {
+		document.documentElement.style.setProperty('--header-h', `${header.offsetHeight}px`);
+	};
+
+	setHeaderHeight();
+	new ResizeObserver(setHeaderHeight).observe(header);
+
+	window.addEventListener('scroll', () => {
+		header.classList.toggle('onscroll', window.scrollY > header.offsetHeight);
+	}, { passive: true });
+
+	// dropdown
 	function toggleHeader(block) {
 		if (!header) return;
 		if (block && block.hasAttribute('data-hide-header')) {

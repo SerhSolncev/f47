@@ -16,9 +16,13 @@
 	padding: 0 get-rem(16);
 }
 
+.lt-14 {
+	letter-spacing: -0.014em;
+}
+
 .text-bold {
 	font-family: $mainFontBold;
-	font-weight: bold;
+	font-weight: 600;
 }
 
 .text-bolder {

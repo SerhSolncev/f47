@@ -1,9 +1,94 @@
 @import "../abstracts/functions";
 @import "../abstracts/vars";
 
+.header {
+	width: 100%;
+	padding: clamp(#{get-rem(12)}, 3vw, #{get-rem(24)}) 0;
+	position: fixed;
+	top: 0;
+	left: 0;
+	z-index: 24;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: get-rem(1);
+		background-color: var(--color-dark);
+		opacity: 0;
+		transition: opacity 0.15s ease-in;
+	}
+
+	&__body {
+		display: grid;
+		grid-template-columns: auto 1fr auto;
+		gap: get-rem(10);
+		align-items: center;
+
+		@media(min-width: 992px) {
+			display: flex;
+			padding: 0 get-rem(11);
+			gap: 0;
+		}
+	}
+
+	.soc-list {
+		margin: 0 get-rem(12) 0 0;
+	}
+
+	@media(min-width: 992px) {
+		.icon-btn--burger {
+			display: none;
+		}
+	}
+
+	@media(max-width: 991px) {
+		.soc-list {
+			display: none;
+		}
+	}
+
+	&.onscroll {
+
+		&::after {
+			opacity: 1;
+		}
+	}
+}
+
+.main-menu {
+	margin: 0 get-rem(32) 0 0;
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: get-rem(25);
+	}
+
+	@media(max-width: 991px) {
+		display: none;
+	}
+}
+
+.soc-list {
+	display: flex;
+	align-items: center;
+	gap: get-rem(12);
+}
+
+
 .logo {
 	display: block;
 	width: 100%;
+	margin: 0 auto;
+
+	@media(min-width: 992px) {
+		margin: 0 auto 0 0;
+	}
 
 	&--header {
 		max-width: get-rem(90);

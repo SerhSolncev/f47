@@ -8,6 +8,9 @@
 	--color-dark: #252432;
 	--color-bg: #f5f5f0;
 	--color-blue: #6d94c5;
+	--color-light: #ebeae1;
+	--color-gray: rgba(37, 36, 50, 0.7);
+	--header-h: 0px;
 }
 
 html {
@@ -67,7 +70,7 @@ main {
 	display: block;
 	flex-grow: 1;
 	width: 100%;
-	padding-top: get-rem(84);
+	padding-top: var(--header-h);
 }
 
 h1 {
