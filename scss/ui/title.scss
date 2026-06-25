@@ -46,7 +46,11 @@
 	}
 
 	&--type-2 {
-		font: 400 #{get-rem(16)}/1.4 $mainFont;
+		font: 400 #{get-rem(14)}/1.4 $mainFont;
+
+		@media(min-width: 992px) {
+			font-size: get-rem(16);
+		}
 
 		@media(min-width: 1200px) {
 			font-size: get-rem(18);

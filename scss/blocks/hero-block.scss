@@ -22,11 +22,38 @@
 		display: flex;
 		align-items: flex-start;
 		justify-content: center;
-		gap: get-rem(32);
+		flex-wrap: wrap;
+		gap: get-rem(20);
 		margin: get-rem(-9) 0 0;
 
+		@media(min-width: 992px) {
+			gap: get-rem(32);
+		}
+
 		.form-board {
-			max-width: get-rem(500);
+			width: 100%;
+
+			@media(min-width: 768px) {
+				max-width: get-rem(500);
+				width: calc(50% - #{get-rem(20)});
+			}
+
+			@media(min-width: 992px) {
+				width: calc(50% - #{get-rem(20)});
+			}
+
+
+			@media(max-width: 767px) {
+				&:first-child {
+					position: relative;
+					z-index: 2;
+				}
+
+				&:nth-child(2) {
+					position: sticky;
+					bottom: 0;
+				}
+			}
 		}
 	}
 }

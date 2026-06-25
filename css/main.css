@@ -372,9 +372,13 @@ html.lenis, html.lenis body {
   width: 100%;
   height: 0.0625rem;
   background-color: var(--color-dark);
-  opacity: 0;
   -webkit-transition: opacity 0.15s ease-in;
   transition: opacity 0.15s ease-in;
+}
+@media (min-width: 992px) {
+  .header::after {
+    opacity: 0;
+  }
 }
 .header__body {
   display: grid;
@@ -406,8 +410,10 @@ html.lenis, html.lenis body {
     display: none;
   }
 }
-.header.onscroll::after {
-  opacity: 1;
+@media (min-width: 992px) {
+  .header.onscroll::after {
+    opacity: 1;
+  }
 }
 
 .main-menu {
@@ -664,7 +670,12 @@ html.lenis, html.lenis body {
   }
 }
 .simple-text--type-2 {
-  font: 400 1rem/1.4 "Manrope", Verdana, Arial, sans-serif;
+  font: 400 0.875rem/1.4 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 992px) {
+  .simple-text--type-2 {
+    font-size: 1rem;
+  }
 }
 @media (min-width: 1200px) {
   .simple-text--type-2 {
@@ -1156,8 +1167,18 @@ html.lenis, html.lenis body {
 
 .form-board {
   width: 100%;
-  padding: 2.875rem 3rem 3rem;
+  padding: 1.25rem;
   border-radius: 2rem;
+}
+@media (min-width: 768px) {
+  .form-board {
+    padding: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .form-board {
+    padding: 2.875rem 3rem 3rem;
+  }
 }
 .form-board__top {
   display: -webkit-box;
@@ -1168,7 +1189,12 @@ html.lenis, html.lenis body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.8125rem;
-  margin: 0 0 1.9375rem;
+  margin: 0 0 1.25rem;
+}
+@media (min-width: 992px) {
+  .form-board__top {
+    margin: 0 0 1.9375rem;
+  }
 }
 .form-board__fields {
   display: -webkit-box;
@@ -1179,6 +1205,7 @@ html.lenis, html.lenis body {
       -ms-flex-direction: column;
           flex-direction: column;
   gap: 0.625rem;
+  position: relative;
 }
 .form-board__fields > .simple-text--type-3 {
   max-width: 14.0625rem;
@@ -1198,6 +1225,45 @@ html.lenis, html.lenis body {
 }
 .form-board--sea-gradient {
   background-image: linear-gradient(215deg, #1ef4b4, #c4b4fd);
+}
+.form-board:has(.form-success.show) .form-board__fields > .simple-text {
+  opacity: 0;
+}
+.form-board:has(.form-success.show) .js-send-form {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.form-success {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-bg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  font: 500 1rem/1 "Manrope", Verdana, Arial, sans-serif;
+  border-radius: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: opacity 0.15s ease-in, visibility 0.15s ease-in;
+  transition: opacity 0.15s ease-in, visibility 0.15s ease-in;
+}
+.form-success.show {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
 }
 
 .input-item {
@@ -1237,7 +1303,7 @@ html.lenis, html.lenis body {
   width: 100%;
   height: 2.75rem;
   border: 1px solid transparent;
-  font: 400 1rem/1 "Manrope", Verdana, Arial, sans-serif;
+  font: 400 0.9375rem/1 "Manrope", Verdana, Arial, sans-serif;
   color: var(--color-dark);
   padding: 0 0.5rem 0 0.875rem;
   border-radius: 6.25rem;
@@ -1246,6 +1312,11 @@ html.lenis, html.lenis body {
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
+}
+@media (min-width: 768px) {
+  .input-item__input {
+    font-size: 1rem;
+  }
 }
 .input-item__input.field-error {
   border-color: var(--color-red) !important;
@@ -1547,11 +1618,39 @@ html.lenis, html.lenis body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  gap: 2rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 1.25rem;
   margin: -0.5625rem 0 0;
 }
+@media (min-width: 992px) {
+  .hero-block__boards {
+    gap: 2rem;
+  }
+}
 .hero-block__boards .form-board {
-  max-width: 31.25rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .hero-block__boards .form-board {
+    max-width: 31.25rem;
+    width: calc(50% - 1.25rem);
+  }
+}
+@media (min-width: 992px) {
+  .hero-block__boards .form-board {
+    width: calc(50% - 1.25rem);
+  }
+}
+@media (max-width: 767px) {
+  .hero-block__boards .form-board:first-child {
+    position: relative;
+    z-index: 2;
+  }
+  .hero-block__boards .form-board:nth-child(2) {
+    position: sticky;
+    bottom: 0;
+  }
 }
 
 .container {

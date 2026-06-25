@@ -309,35 +309,41 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 				if (!isValid) return;
 
-				const url = form.dataset.url;
-				const formData = new FormData(form);
+				// // --- PROD ---
+				// const url = form.dataset.url;
+				// const formData = new FormData(form);
+				// try {
+				//     sendBtn.disabled = true;
+				//     const response = await fetch(url, {
+				//         method: 'POST',
+				//         body: formData
+				//     });
+				//     if (response.ok) {
+				//         onSuccess();
+				//     } else {
+				//         console.error('Помилка сервера:', response.status);
+				//     }
+				// } catch (err) {
+				//     console.error('Помилка відправки:', err);
+				// } finally {
+				//     sendBtn.disabled = false;
+				// }
 
-				try {
-					sendBtn.disabled = true;
-
-					const response = await fetch(url, {
-						method: 'POST',
-						body: formData
-					});
-
-					if (response.ok) {
-						form.reset();
-						form.querySelectorAll('.field-error').forEach(function (el) {
-							el.classList.remove('field-error');
-						});
-						form.querySelectorAll('.error-field-text').forEach(function (el) {
-							el.remove();
-						});
-						console.log('Форму відправлено');
-					} else {
-						console.error('Помилка сервера:', response.status);
-					}
-				} catch (err) {
-					console.error('Помилка відправки:', err);
-				} finally {
-					sendBtn.disabled = false;
-				}
+				// --- ЗАГЛУШКА ---
+				onSuccess();
 			});
+		}
+
+		function onSuccess() {
+			form.reset();
+			form.querySelectorAll('.field-error').forEach(el => el.classList.remove('field-error'));
+			form.querySelectorAll('.error-field-text').forEach(el => el.remove());
+
+			const successBlock = form.querySelector('.js-form-success');
+			if (successBlock) {
+				successBlock.classList.add('show');
+				setTimeout(() => successBlock.classList.remove('show'), 3000);
+			}
 		}
 	});
 })

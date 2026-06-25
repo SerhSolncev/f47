@@ -20,8 +20,11 @@
 		width: 100%;
 		height: get-rem(1);
 		background-color: var(--color-dark);
-		opacity: 0;
 		transition: opacity 0.15s ease-in;
+
+		@media(min-width: 992px) {
+			opacity: 0;
+		}
 	}
 
 	&__body {
@@ -55,8 +58,10 @@
 
 	&.onscroll {
 
-		&::after {
-			opacity: 1;
+		@media(min-width: 992px) {
+			&::after {
+				opacity: 1;
+			}
 		}
 	}
 }
