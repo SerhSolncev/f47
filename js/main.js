@@ -162,8 +162,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			return checkerWrap || input;
 		}
 
-		// блок, куда вставляем текст ошибки — именно input-item/default-select,
-		// независимо от того, что getErrorTarget может вернуть чекер-обёртку
+
 		function getErrorTextWrapper(input) {
 			return input.closest('.input-item, .default-select');
 		}
@@ -190,8 +189,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			let valid = true;
 
 			if (input.classList.contains('js-input-mask')) {
-				// требуется vanilla-версия Inputmask (robinherbots/Inputmask):
-				// Inputmask(...).mask(input) сам навешивает input.inputmask с методом isComplete()
 				valid = input.inputmask ? input.inputmask.isComplete() : true;
 			} else if (input.hasAttribute('required')) {
 				if (input.type === 'checkbox') {
@@ -201,12 +198,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				}
 			}
 
-			// проверка email
 			if (valid && input.type === 'email' && input.value.trim().length > 0) {
 				valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
 			}
 
-			// проверка url
 			if (valid && input.type === 'url' && input.value.trim().length > 0) {
 				try {
 					new URL(input.value.trim());
@@ -215,7 +210,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				}
 			}
 
-			// сверка с паролем-оригиналом
 			if (valid && input.hasAttribute('data-password-confirm')) {
 				const targetId = input.getAttribute('data-password-confirm');
 				const targetField = form.querySelector('#' + targetId);
@@ -250,8 +244,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 					runValidation(input);
 				}
 
-				// если меняем основной пароль — пере-проверяем поле подтверждения,
-				// если оно уже было "потрогано" и помечено ошибкой
 				const dependentConfirms = form.querySelectorAll('[data-password-confirm="' + this.id + '"]');
 				dependentConfirms.forEach(function (confirmInput) {
 					if (getErrorTarget(confirmInput).classList.contains('field-error')) {
