@@ -77,6 +77,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			toggleBtn.classList.toggle('show', !isOpen);
 			block.classList.toggle('show', !isOpen);
 
+			// aria-expanded
+			if (toggleBtn.hasAttribute('aria-expanded')) {
+				toggleBtn.setAttribute('aria-expanded', !isOpen);
+			}
+
 			toggleHeader(!isOpen ? block : null);
 
 			if (!isOpen) {
@@ -125,7 +130,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 	function closeAllDropdowns(excludeBtn = null, excludeBlock = null) {
 		document.querySelectorAll('.js-toggle-btn.show, .js-toggle-block.show').forEach(el => {
-			if (el !== excludeBtn && el !== excludeBlock) el.classList.remove('show');
+			if (el !== excludeBtn && el !== excludeBlock) {
+				el.classList.remove('show');
+				if (el.hasAttribute('aria-expanded')) {
+					el.setAttribute('aria-expanded', 'false');
+				}
+			}
 		});
 	}
 })
