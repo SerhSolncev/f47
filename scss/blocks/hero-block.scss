@@ -20,8 +20,10 @@
 
 	&__boards {
 		display: flex;
+		align-items: flex-start;
 		justify-content: center;
 		gap: get-rem(32);
+		margin: get-rem(-9) 0 0;
 
 		.form-board {
 			max-width: get-rem(500);

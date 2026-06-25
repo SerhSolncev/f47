@@ -1129,7 +1129,7 @@ textarea:-webkit-autofill {
 
 .form-board {
   width: 100%;
-  padding: 2.875rem 3rem;
+  padding: 2.875rem 3rem 3rem;
   border-radius: 2rem;
 }
 .form-board__top {
@@ -1151,11 +1151,10 @@ textarea:-webkit-autofill {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 0.5625rem;
+  gap: 0.625rem;
 }
 .form-board__fields > .simple-text--type-3 {
   max-width: 14.0625rem;
-  margin: 0.1875rem 0 0;
 }
 .form-board__bottom {
   display: -webkit-box;
@@ -1169,6 +1168,9 @@ textarea:-webkit-autofill {
 .form-board--orange-gradient {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ff7856), to(#ffe7b3));
   background-image: linear-gradient(to bottom, #ff7856, #ffe7b3);
+}
+.form-board--sea-gradient {
+  background-image: linear-gradient(215deg, #1ef4b4, #c4b4fd);
 }
 
 .input-item {
@@ -1512,10 +1514,14 @@ textarea:-webkit-autofill {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   gap: 2rem;
+  margin: -0.5625rem 0 0;
 }
 .hero-block__boards .form-board {
   max-width: 31.25rem;
