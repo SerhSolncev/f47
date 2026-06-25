@@ -34,48 +34,12 @@
 .simple-text {
 	transition: color 0.15s ease-in;
 
-	&--def {
-		font: 400 #{get-rem(14)}/1.25 $mainFont;
+	&--type-1 {
+		font: 400 #{get-rem(14)}/1.5 $mainFont;
 
 		@media(min-width: 1200px) {
 		    font-size: get-rem(16);
 		}
-	}
-
-	&--mini {
-		font: 400 #{get-rem(14)}/1.25 $mainFont;
-	}
-
-	&--mini-sec {
-		font: 400 #{get-rem(16)}/1.25 $mainFont;
-
-		@media(min-width: 992px) {
-			font-size: get-rem(14);
-		}
-	}
-
-	&--small {
-		font: 400 #{get-rem(13)}/1.25 $mainFont;
-	}
-
-	&--smaller {
-		font: 400 #{get-rem(12)}/1.25 $mainFont;
-	}
-
-	&--light {
-		font-weight: 200;
-	}
-
-	&--medium {
-		font-weight: 500;
-	}
-
-	&--ttu {
-		text-transform: uppercase;
-	}
-
-	strong {
-		font-weight: 500;
 	}
 
 	a {

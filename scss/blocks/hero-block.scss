@@ -9,7 +9,11 @@
 
 	.title--type-1 {
 		max-width: get-rem(1080);
-		margin: 0 auto;
+		margin: 0 auto get-rem(53);
+	}
 
+	.simple-text {
+		max-width: get-rem(595);
+		margin: 0 auto;
 	}
 }

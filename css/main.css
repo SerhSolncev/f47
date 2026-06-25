@@ -601,42 +601,13 @@ textarea:-webkit-autofill {
   -webkit-transition: color 0.15s ease-in;
   transition: color 0.15s ease-in;
 }
-.simple-text--def {
-  font: 400 0.875rem/1.25 "Manrope", Verdana, Arial, sans-serif;
+.simple-text--type-1 {
+  font: 400 0.875rem/1.5 "Manrope", Verdana, Arial, sans-serif;
 }
 @media (min-width: 1200px) {
-  .simple-text--def {
+  .simple-text--type-1 {
     font-size: 1rem;
   }
-}
-.simple-text--mini {
-  font: 400 0.875rem/1.25 "Manrope", Verdana, Arial, sans-serif;
-}
-.simple-text--mini-sec {
-  font: 400 1rem/1.25 "Manrope", Verdana, Arial, sans-serif;
-}
-@media (min-width: 992px) {
-  .simple-text--mini-sec {
-    font-size: 0.875rem;
-  }
-}
-.simple-text--small {
-  font: 400 0.8125rem/1.25 "Manrope", Verdana, Arial, sans-serif;
-}
-.simple-text--smaller {
-  font: 400 0.75rem/1.25 "Manrope", Verdana, Arial, sans-serif;
-}
-.simple-text--light {
-  font-weight: 200;
-}
-.simple-text--medium {
-  font-weight: 500;
-}
-.simple-text--ttu {
-  text-transform: uppercase;
-}
-.simple-text strong {
-  font-weight: 500;
 }
 .simple-text a {
   font: inherit;
@@ -1123,6 +1094,10 @@ textarea:-webkit-autofill {
 }
 .hero-block .title--type-1 {
   max-width: 67.5rem;
+  margin: 0 auto 3.3125rem;
+}
+.hero-block .simple-text {
+  max-width: 37.1875rem;
   margin: 0 auto;
 }
 
