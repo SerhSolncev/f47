@@ -6,6 +6,10 @@
 	&__top {
 		margin: clamp(#{get-rem(40)}, #{get-vw(139)}, #{get-rem(139)}) 0;
 
+		span {
+			display: block;
+		}
+
 		.title--type-1 {
 			max-width: get-rem(1080);
 			margin: 0 auto clamp(#{get-rem(20)}, #{get-vw(53)}, #{get-rem(53)});
@@ -42,16 +46,20 @@
 				width: calc(50% - #{get-rem(20)});
 			}
 
-
 			@media(max-width: 767px) {
 				&:first-child {
 					position: relative;
 					z-index: 2;
 				}
+			}
 
-				&:nth-child(2) {
+			&:nth-child(2) {
+				margin: get-rem(36) 0 0;
+
+				@media(max-width: 767px) {
 					position: sticky;
 					bottom: 0;
+					margin: 0;
 				}
 			}
 		}

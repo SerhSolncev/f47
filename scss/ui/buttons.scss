@@ -10,7 +10,7 @@
 	border: get-rem(1) solid transparent;
 	gap: get-rem(12);
 	transition: 0.2s linear;
-	transition-property: background-color, color, border-color;
+	transition-property: background-color, color, border-color, transform;
 
 	&.disabled {
 		opacity: 0.5;
@@ -75,6 +75,7 @@
 
 		&:active {
 			background-color: var(--color-dark);
+			transform: scale(0.95);
 		}
 
 		&:focus-visible {
@@ -94,6 +95,7 @@
 		&:active {
 			color: var(--color-white);
 			background-color: var(--color-dark);
+			transform: scale(0.95);
 		}
 
 		&:focus-visible {
@@ -106,6 +108,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	position: relative;
 	width: get-rem(36);
 	height: get-rem(36);
 	border: get-rem(1) solid transparent;
@@ -122,18 +125,48 @@
 		background-color: var(--color-light);
 		color: var(--color-dark);
 
-		&:hover {
-			background-color: var(--color-blue);
-			color: var(--color-white);
+		@media (hover: hover) {
+			&:hover {
+				background-color: var(--color-blue);
+				color: var(--color-white);
 
-			path {
-				fill: var(--color-white);
+				path {
+					fill: var(--color-white);
+				}
 			}
 		}
 
 		&:active {
 			background-color: var(--color-light);
 			color: var(--color-dark);
+			transform: scale(0.95);
+		}
+	}
+
+	&--burger {
+
+		svg {
+			transition: opacity 0.15s ease-in, transform 0.15s ease-in;
+
+			&:nth-child(2) {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				z-index: 1;
+				transform: translate(-50%, -50%) scale(0);
+			}
+		}
+
+		&.show {
+
+			svg:nth-child(1) {
+				opacity: 0;
+			}
+
+			svg:nth-child(2) {
+				opacity: 1;
+				transform: translate(-50%, -50%) scale(0.8);
+			}
 		}
 	}
 }
