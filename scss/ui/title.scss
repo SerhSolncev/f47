@@ -20,17 +20,9 @@
 			margin: 0 -0.075em -0.0375em -0.0875em;
 		}
 	}
-	word-spacing: 0.2em;
-
-	img {
-		display: inline;
-		max-width: 0.7em;
-		height: auto;
-		margin: 0 -0.075em -0.0375em -0.0875em;
-	}
 
 	&--type-3 {
-		font: 400 #{get-rem(24)}/1.1 $mainFont;
+		font: 400 #{get-rem(24)}/1.2 $mainFont;
 
 		@media(min-width: 768px) {
 			font-size: get-rem(28);
@@ -54,7 +46,7 @@
 	}
 
 	&--type-2 {
-		font: 400 #{get-rem(16)}/1.5 $mainFont;
+		font: 400 #{get-rem(16)}/1.4 $mainFont;
 
 		@media(min-width: 1200px) {
 			font-size: get-rem(18);

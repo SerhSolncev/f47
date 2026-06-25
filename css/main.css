@@ -579,7 +579,6 @@ textarea:-webkit-autofill {
   position: relative;
   -webkit-transition: color 0.15s ease;
   transition: color 0.15s ease;
-  word-spacing: 0.2em;
 }
 .title--type-1 {
   font: 400 clamp(1.875rem, 0.770625rem + 5.21vw, 5rem)/1.1 "Manrope", Verdana, Arial, sans-serif;
@@ -596,14 +595,8 @@ textarea:-webkit-autofill {
   height: auto;
   margin: 0 -0.075em -0.0375em -0.0875em;
 }
-.title img {
-  display: inline;
-  max-width: 0.7em;
-  height: auto;
-  margin: 0 -0.075em -0.0375em -0.0875em;
-}
 .title--type-3 {
-  font: 400 1.5rem/1.1 "Manrope", Verdana, Arial, sans-serif;
+  font: 400 1.5rem/1.2 "Manrope", Verdana, Arial, sans-serif;
 }
 @media (min-width: 768px) {
   .title--type-3 {
@@ -629,7 +622,7 @@ textarea:-webkit-autofill {
   }
 }
 .simple-text--type-2 {
-  font: 400 1rem/1.5 "Manrope", Verdana, Arial, sans-serif;
+  font: 400 1rem/1.4 "Manrope", Verdana, Arial, sans-serif;
 }
 @media (min-width: 1200px) {
   .simple-text--type-2 {
@@ -1118,6 +1111,22 @@ textarea:-webkit-autofill {
 
 .form-board {
   width: 100%;
+  padding: 2.875rem 3rem;
+  border-radius: 2rem;
+}
+.form-board__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.8125rem;
+}
+.form-board--orange-gradient {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#ff7856), to(#ffe7b3));
+  background-image: linear-gradient(to bottom, #ff7856, #ffe7b3);
 }
 
 .input-item {
@@ -1471,8 +1480,16 @@ textarea:-webkit-autofill {
   letter-spacing: -0.014em;
 }
 
+.lt-2 {
+  letter-spacing: -0.02em;
+}
+
 .color-dark {
   color: var(--oolor-dark);
+}
+
+.color-gray {
+  color: rgba(37, 36, 50, 0.8);
 }
 
 .text-center {

@@ -22,8 +22,16 @@
 	letter-spacing: -0.014em;
 }
 
+.lt-2 {
+	letter-spacing: -0.02em;
+}
+
 .color-dark {
 	color: var(--oolor-dark);
+}
+
+.color-gray {
+	color: 	rgba(37, 36, 50, 0.8);
 }
 
 .text-center {
