@@ -69,12 +69,15 @@
 		color: var(--color-white);
 		background-color: var(--color-dark);
 
-		.desktop-device & {
-		    &:hover {
-			    border-color: var(--color-black);
-			    background-color: var(--color-bg);
-			    color: var(--color-black);
-		    }
+		&:hover {
+			border-color: var(--color-black);
+			background-color: var(--color-bg);
+			color: var(--color-black);
+		}
+
+		&:active {
+			color: var(--color-white);
+			background-color: var(--color-dark);
 		}
 	}
 }
@@ -99,11 +102,14 @@
 		background-color: var(--color-light);
 		color: var(--color-dark);
 
-		.desktop-device & {
-			&:hover {
-				background-color: var(--color-dark);
-				color: var(--color-white);
-			}
+		&:hover {
+			background-color: var(--color-dark);
+			color: var(--color-white);
+		}
+
+		&:active {
+			background-color: var(--color-light);
+			color: var(--color-dark);
 		}
 	}
 }

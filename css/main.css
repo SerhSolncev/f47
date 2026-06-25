@@ -332,6 +332,7 @@ textarea:-webkit-autofill {
 .header {
   width: 100%;
   padding: clamp(0.75rem, 3vw, 1.5rem) 0;
+  background-color: rgba(245, 245, 240, 0.99);
   position: fixed;
   top: 0;
   left: 0;
@@ -504,10 +505,14 @@ textarea:-webkit-autofill {
   color: var(--color-white);
   background-color: var(--color-dark);
 }
-.desktop-device .btn--dark-bg:hover {
+.btn--dark-bg:hover {
   border-color: var(--color-black);
   background-color: var(--color-bg);
   color: var(--color-black);
+}
+.btn--dark-bg:active {
+  color: var(--color-white);
+  background-color: var(--color-dark);
 }
 
 .icon-btn {
@@ -536,9 +541,13 @@ textarea:-webkit-autofill {
   background-color: var(--color-light);
   color: var(--color-dark);
 }
-.desktop-device .icon-btn--type-1:hover {
+.icon-btn--type-1:hover {
   background-color: var(--color-dark);
   color: var(--color-white);
+}
+.icon-btn--type-1:active {
+  background-color: var(--color-light);
+  color: var(--color-dark);
 }
 
 .link {
