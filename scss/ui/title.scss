@@ -6,29 +6,40 @@
 	transition: color 0.15s ease;
 
 	&--type-1 {
-		font: 400 #{get-rem(30)}/1.1 $mainFont;
+		font: 400 clamp(#{get-rem(30)}, calc(#{get-rem(12.33)} + 5.21vw), #{get-rem(80)})/1.1 $mainFont;
 		word-spacing: 0.2em;
 
-		@media(min-width: 480px) {
-			font-size: get-rem(40);
-		}
-
-		@media(min-width: 768px) {
-			font-size: get-rem(60);
-		}
-
-		@media(min-width: 1280px) {
-		    font-size: get-rem(80);
+		@media(max-width: 575px) {
+			font-size: 9vw;
 		}
 
 		img {
 			display: inline;
-			max-width: get-rem(56);
+			max-width: 0.7em;
 			height: auto;
-			margin: 0 get-rem(-6) get-rem(-3) get-rem(-7);
+			margin: 0 -0.075em -0.0375em -0.0875em;
 		}
 	}
+	word-spacing: 0.2em;
 
+	img {
+		display: inline;
+		max-width: 0.7em;
+		height: auto;
+		margin: 0 -0.075em -0.0375em -0.0875em;
+	}
+
+	&--type-3 {
+		font: 400 #{get-rem(24)}/1.1 $mainFont;
+
+		@media(min-width: 768px) {
+			font-size: get-rem(28);
+		}
+
+		@media(min-width: 1280px) {
+			font-size: get-rem(32);
+		}
+	}
 }
 
 .simple-text {
@@ -39,6 +50,14 @@
 
 		@media(min-width: 1200px) {
 		    font-size: get-rem(16);
+		}
+	}
+
+	&--type-2 {
+		font: 400 #{get-rem(16)}/1.5 $mainFont;
+
+		@media(min-width: 1200px) {
+			font-size: get-rem(18);
 		}
 	}
 

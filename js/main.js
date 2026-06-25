@@ -138,4 +138,158 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			}
 		});
 	}
+
+	// міні валідація
+
+	document.querySelectorAll('.js-validate-form').forEach(function (form) {
+		const phoneInput = form.querySelector('[type="tel"]');
+		const nameInput = form.querySelector('[data-no-numbers]');
+
+		if (phoneInput) {
+			phoneInput.addEventListener('input', function () {
+				this.value = this.value.replace(/[^\d+\s()\-]/g, '');
+			});
+		}
+
+		if (nameInput) {
+			nameInput.addEventListener('input', function () {
+				this.value = this.value.replace(/[0-9]/g, '');
+			});
+		}
+
+		function getErrorTarget(input) {
+			const checkerWrap = input.closest('.simple-checker, .smile-checker');
+			return checkerWrap || input;
+		}
+
+		// блок, куда вставляем текст ошибки — именно input-item/default-select,
+		// независимо от того, что getErrorTarget может вернуть чекер-обёртку
+		function getErrorTextWrapper(input) {
+			return input.closest('.input-item, .default-select');
+		}
+
+		function showFieldErrorText(input, isValid) {
+			const wrapper = getErrorTextWrapper(input);
+			if (!wrapper) return;
+
+			let errorText = wrapper.querySelector('.error-field-text');
+
+			if (!isValid && input.hasAttribute('data-validte-text')) {
+				if (!errorText) {
+					errorText = document.createElement('div');
+					errorText.className = 'error-field-text';
+					wrapper.appendChild(errorText);
+				}
+				errorText.textContent = input.getAttribute('data-validte-text');
+			} else if (errorText) {
+				errorText.remove();
+			}
+		}
+
+		function validateField(input) {
+			let valid = true;
+
+			if (input.classList.contains('js-input-mask')) {
+				// требуется vanilla-версия Inputmask (robinherbots/Inputmask):
+				// Inputmask(...).mask(input) сам навешивает input.inputmask с методом isComplete()
+				valid = input.inputmask ? input.inputmask.isComplete() : true;
+			} else if (input.hasAttribute('required')) {
+				if (input.type === 'checkbox') {
+					valid = input.checked;
+				} else {
+					valid = input.value.trim().length > 0;
+				}
+			}
+
+			// сверка с паролем-оригиналом
+			if (valid && input.hasAttribute('data-password-confirm')) {
+				const targetId = input.getAttribute('data-password-confirm');
+				const targetField = form.querySelector('#' + targetId);
+				const targetVal = targetField ? targetField.value : '';
+				valid = input.value === targetVal && input.value.length > 0;
+			}
+
+			input.classList.toggle('field-error', !valid);
+			return valid;
+		}
+
+		function runValidation(input) {
+			const valid = validateField(input);
+			getErrorTarget(input).classList.toggle('field-error', !valid);
+			showFieldErrorText(input, valid);
+			return valid;
+		}
+
+		const fields = form.querySelectorAll('[required], .js-input-mask, [data-password-confirm]');
+
+		fields.forEach(function (input) {
+			input.addEventListener('blur', function () {
+				runValidation(input);
+			});
+
+			input.addEventListener('change', function () {
+				runValidation(input);
+			});
+
+			input.addEventListener('input', function () {
+				if (getErrorTarget(input).classList.contains('field-error')) {
+					runValidation(input);
+				}
+
+				// если меняем основной пароль — пере-проверяем поле подтверждения,
+				// если оно уже было "потрогано" и помечено ошибкой
+				const dependentConfirms = form.querySelectorAll('[data-password-confirm="' + this.id + '"]');
+				dependentConfirms.forEach(function (confirmInput) {
+					if (getErrorTarget(confirmInput).classList.contains('field-error')) {
+						runValidation(confirmInput);
+					}
+				});
+			});
+		});
+
+		const sendBtn = form.querySelector('.js-send-form');
+
+		if (sendBtn) {
+			sendBtn.addEventListener('click', async function (e) {
+				e.preventDefault();
+
+				let isValid = true;
+
+				fields.forEach(function (input) {
+					if (!runValidation(input)) isValid = false;
+				});
+
+				if (!isValid) return;
+
+				const url = form.dataset.url;
+				const formData = new FormData(form);
+
+				try {
+					sendBtn.disabled = true;
+
+					const response = await fetch(url, {
+						method: 'POST',
+						body: formData
+					});
+
+					if (response.ok) {
+						form.reset();
+						form.querySelectorAll('.field-error').forEach(function (el) {
+							el.classList.remove('field-error');
+						});
+						form.querySelectorAll('.error-field-text').forEach(function (el) {
+							el.remove();
+						});
+						console.log('Форму відправлено');
+					} else {
+						console.error('Помилка сервера:', response.status);
+					}
+				} catch (err) {
+					console.error('Помилка відправки:', err);
+				} finally {
+					sendBtn.disabled = false;
+				}
+			});
+		}
+	});
 })

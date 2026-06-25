@@ -4,12 +4,23 @@
 .hero-block {
 
 	&__top {
-		margin: get-rem(139) 0 0;
+		margin: clamp(#{get-rem(40)}, #{get-vw(139)}, #{get-rem(139)}) 0;
+	}
+
+	&__boards {
+		display: flex;
+		justify-content: center;
+		gap: get-rem(32);
+
+		.form-board {
+			max-width: get-rem(500);
+		}
 	}
 
 	.title--type-1 {
 		max-width: get-rem(1080);
-		margin: 0 auto get-rem(53);
+		margin: 0 auto clamp(#{get-rem(20)}, #{get-vw(53)}, #{get-rem(53)});
+
 	}
 
 	.simple-text {
