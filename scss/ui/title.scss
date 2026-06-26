@@ -34,11 +34,7 @@
 	}
 
 	&--type-4 {
-		font: 400 #{get-rem(24)}/1 $mainFont;
-
-		@media(min-width: 768px) {
-			font-size: get-rem(38);
-		}
+		font: 400 #{get-rem(42)}/1 $mainFont;
 
 		@media(min-width: 1280px) {
 			font-size: get-rem(48);
@@ -74,17 +70,9 @@
 	}
 
 	&--type-4 {
-		font: 400 #{get-rem(14)}/1.4 $mainFont;
-
-		@media(min-width: 992px) {
-			font-size: get-rem(16);
-		}
+		font: 400 #{get-rem(18)}/1.4 $mainFont;
 
 		@media(min-width: 1200px) {
-			font-size: get-rem(18);
-		}
-
-		@media(min-width: 1366px) {
 			font-size: get-rem(20);
 		}
 	}

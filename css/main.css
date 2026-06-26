@@ -746,12 +746,7 @@ html.lenis, html.lenis body {
   }
 }
 .title--type-4 {
-  font: 400 1.5rem/1 "Manrope", Verdana, Arial, sans-serif;
-}
-@media (min-width: 768px) {
-  .title--type-4 {
-    font-size: 2.375rem;
-  }
+  font: 400 2.625rem/1 "Manrope", Verdana, Arial, sans-serif;
 }
 @media (min-width: 1280px) {
   .title--type-4 {
@@ -788,19 +783,9 @@ html.lenis, html.lenis body {
   font: 500 0.75rem/1.3 "Manrope", Verdana, Arial, sans-serif;
 }
 .simple-text--type-4 {
-  font: 400 0.875rem/1.4 "Manrope", Verdana, Arial, sans-serif;
-}
-@media (min-width: 992px) {
-  .simple-text--type-4 {
-    font-size: 1rem;
-  }
+  font: 400 1.125rem/1.4 "Manrope", Verdana, Arial, sans-serif;
 }
 @media (min-width: 1200px) {
-  .simple-text--type-4 {
-    font-size: 1.125rem;
-  }
-}
-@media (min-width: 1366px) {
   .simple-text--type-4 {
     font-size: 1.25rem;
   }
@@ -1789,9 +1774,15 @@ html.lenis, html.lenis body {
 }
 .four-cards__list {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 6.5625rem 2rem;
-  margin: 0 0 8.3125rem;
+  grid-template-columns: 1fr;
+  gap: 3.75rem 2rem;
+  margin: 0 0 clamp(2.5rem, 6.9270833333vw, 8.3125rem);
+}
+@media (min-width: 768px) {
+  .four-cards__list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 6.5625rem 2rem;
+  }
 }
 .four-cards__item {
   display: -webkit-box;
@@ -1800,40 +1791,50 @@ html.lenis, html.lenis body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-}
-.four-cards__item .stat-card {
-  width: 100%;
-}
-.four-cards__item:nth-child(1) .stat-card {
-  max-width: 18.125rem;
-  margin: 0 1.6875rem 0 auto;
-  -webkit-transform: rotate(-2deg);
-          transform: rotate(-2deg);
-}
-.four-cards__item:nth-child(2) {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-}
-.four-cards__item:nth-child(2) .stat-card {
-  max-width: 17.5rem;
-  -webkit-transform: rotate(3deg);
-          transform: rotate(3deg);
-  margin: 4.625rem 2.75rem 0 0;
-}
-.four-cards__item:nth-child(3) {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
-.four-cards__item:nth-child(3) .stat-card {
-  max-width: 17.8125rem;
+.four-cards__item .stat-card {
+  width: 100%;
 }
-.four-cards__item:nth-child(4) .stat-card {
-  max-width: 15.375rem;
-  -webkit-transform: rotate(4deg);
-          transform: rotate(4deg);
-  margin: 0.6875rem 0 0 2.25rem;
+@media (max-width: 767px) {
+  .four-cards__item .stat-card {
+    max-width: 18.125rem;
+  }
+}
+@media (min-width: 768px) {
+  .four-cards__item:nth-child(1) .stat-card {
+    max-width: 18.125rem;
+    margin: 0 1.6875rem 0 auto;
+    -webkit-transform: rotate(-2deg);
+            transform: rotate(-2deg);
+  }
+  .four-cards__item:nth-child(2) {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+  .four-cards__item:nth-child(2) .stat-card {
+    max-width: 17.5rem;
+    -webkit-transform: rotate(3deg);
+            transform: rotate(3deg);
+    margin: 4.625rem 2.75rem 0 0;
+  }
+  .four-cards__item:nth-child(3) {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .four-cards__item:nth-child(3) .stat-card {
+    max-width: 17.8125rem;
+  }
+  .four-cards__item:nth-child(4) .stat-card {
+    max-width: 15.375rem;
+    -webkit-transform: rotate(4deg);
+            transform: rotate(4deg);
+    margin: 0.6875rem 0 0 2.25rem;
+  }
 }
 .four-cards__bottom {
   display: -webkit-box;
@@ -1842,6 +1843,12 @@ html.lenis, html.lenis body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+@media (max-width: 480px) {
+  .four-cards__bottom .btn {
+    width: 100%;
+    max-width: 18.125rem;
+  }
 }
 
 .stat-card {
@@ -1854,8 +1861,13 @@ html.lenis, html.lenis body {
           flex-direction: column;
   gap: 0.8125rem;
   border-radius: 1rem;
-  padding: 2.5rem;
+  padding: 2rem 1.375rem;
   background-color: var(--color-light);
+}
+@media (min-width: 768px) {
+  .stat-card {
+    padding: 2.5rem;
+  }
 }
 
 .container {

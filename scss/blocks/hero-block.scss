@@ -73,47 +73,60 @@
 
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(2, 1fr);
-		gap: get-rem(105) get-rem(32);
-		margin: 0 0 get-rem(133);
+		grid-template-columns: 1fr;
+		gap: get-rem(60) get-rem(32);
+		margin: 0 0 clamp(#{get-rem(40)}, #{get-vw(133)}, #{get-rem(133)});
+
+		@media(min-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+			gap: get-rem(105) get-rem(32);
+		}
 	}
 
 	&__item {
 		display: flex;
 		align-items: flex-start;
+		justify-content: center;
 
 		.stat-card {
 			width: 100%;
-		}
 
-		&:nth-child(1) .stat-card {
-			max-width: get-rem(290);
-			margin: 0 get-rem(27) 0 auto;
-			transform: rotate(-2deg);
-		}
-
-		&:nth-child(2) {
-			justify-content: flex-end;
-
-			.stat-card {
-				max-width: get-rem(280);
-				transform: rotate(3deg);
-				margin: get-rem(74) get-rem(44) 0 0;
+			@media(max-width: 767px) {
+			    max-width: get-rem(290);
 			}
 		}
 
-		&:nth-child(3) {
-			justify-content: center;
 
-			.stat-card {
-				max-width: get-rem(285);
+		@media(min-width: 768px) {
+			&:nth-child(1) .stat-card {
+				max-width: get-rem(290);
+				margin: 0 get-rem(27) 0 auto;
+				transform: rotate(-2deg);
 			}
-		}
 
-		&:nth-child(4) .stat-card {
-			max-width: get-rem(246);
-			transform: rotate(4deg);
-			margin: get-rem(11) 0 0 get-rem(36);
+			&:nth-child(2) {
+				justify-content: flex-end;
+
+				.stat-card {
+					max-width: get-rem(280);
+					transform: rotate(3deg);
+					margin: get-rem(74) get-rem(44) 0 0;
+				}
+			}
+
+			&:nth-child(3) {
+				justify-content: center;
+
+				.stat-card {
+					max-width: get-rem(285);
+				}
+			}
+
+			&:nth-child(4) .stat-card {
+				max-width: get-rem(246);
+				transform: rotate(4deg);
+				margin: get-rem(11) 0 0 get-rem(36);
+			}
 		}
 
 	}
@@ -121,6 +134,13 @@
 	&__bottom {
 		display: flex;
 		justify-content: center;
+
+		.btn {
+			@media(max-width: 480px) {
+				width: 100%;
+				max-width: get-rem(290);
+			}
+		}
 	}
 }
 
@@ -129,6 +149,10 @@
 	flex-direction: column;
 	gap: get-rem(13);
 	border-radius: get-rem(16);
-	padding: get-rem(40);
+	padding: get-rem(32) get-rem(22);
 	background-color: var(--color-light);
+
+	@media(min-width: 768px) {
+		padding: get-rem(40);
+	}
 }
