@@ -32,31 +32,37 @@
 	}
 }
 
-
 .running-string {
 	overflow: hidden;
 	transform: rotate(-1deg);
-	padding: get-rem(15) 0;
-
-	@media(min-width: 768px) {
-		padding: get-rem(30) 0;
-	}
 
 	&__list {
 		display: flex;
-		gap: get-rem(50);
 		width: max-content;
 		will-change: transform;
+	}
 
-		@media(min-width: 1200px) {
+	&__group {
+		display: flex;
+		flex-shrink: 0;
+		gap: get-rem(50);
+
+		@media(min-width: 1200px){
 			gap: get-rem(100);
+		}
+
+		+ .running-string__group {
+			margin-left: get-rem(50);
+
+			@media(min-width: 1200px){
+				margin-left: get-rem(100);
+			}
 		}
 	}
 
 	&__item {
 		flex: 0 0 auto;
 	}
-
 }
 
 .logo-pic {

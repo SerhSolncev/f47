@@ -1938,26 +1938,35 @@ html.lenis, html.lenis body {
   overflow: hidden;
   -webkit-transform: rotate(-1deg);
           transform: rotate(-1deg);
-  padding: 0.9375rem 0;
-}
-@media (min-width: 768px) {
-  .running-string {
-    padding: 1.875rem 0;
-  }
 }
 .running-string__list {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 3.125rem;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
   will-change: transform;
 }
+.running-string__group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  gap: 3.125rem;
+}
 @media (min-width: 1200px) {
-  .running-string__list {
+  .running-string__group {
     gap: 6.25rem;
+  }
+}
+.running-string__group + .running-string__group {
+  margin-left: 3.125rem;
+}
+@media (min-width: 1200px) {
+  .running-string__group + .running-string__group {
+    margin-left: 6.25rem;
   }
 }
 .running-string__item {

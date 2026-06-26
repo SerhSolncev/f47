@@ -67,46 +67,55 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 	// running string
+	document.querySelectorAll(".js-running-string").forEach(initRunningString);
 
-	const boxes = document.querySelector(".js-running-string");
+	function initRunningString(runningString) {
 
-	const originalHTML = boxes.innerHTML;
+		const group = runningString.querySelector(".running-string__group");
 
-	const containerWidth = boxes.parentElement.offsetWidth;
+		const containerWidth = runningString.parentElement.clientWidth;
 
-	while (boxes.scrollWidth < containerWidth * 2) {
-		boxes.innerHTML += originalHTML;
-	}
-
-	const groupWidth = boxes.scrollWidth / 2;
-
-	function getSpeed() {
-		const desktopSpeed = parseFloat(boxes.dataset.speed) || 1;
-		const mobileSpeed = parseFloat(boxes.dataset.speedMobile) || desktopSpeed;
-
-		return window.innerWidth < 768 ? mobileSpeed : desktopSpeed;
-	}
-
-	let x = 0;
-	let speed = getSpeed();
-
-	function animate() {
-		x -= speed;
-
-		if (Math.abs(x) >= groupWidth) {
-			x += groupWidth;
+		// клонируем группы пока не заполним ширину
+		while (runningString.scrollWidth < containerWidth * 2) {
+			runningString.appendChild(group.cloneNode(true));
 		}
 
-		boxes.style.transform = `translate3d(${x}px,0,0)`;
+		const groups = runningString.querySelectorAll(".running-string__group");
 
-		requestAnimationFrame(animate);
+		const groupWidth =
+			groups[1].getBoundingClientRect().left -
+			groups[0].getBoundingClientRect().left;
+
+		function getSpeed() {
+			const desktop = parseFloat(runningString.dataset.speed) || 1;
+			const mobile = parseFloat(runningString.dataset.speedMobile) || desktop;
+
+			return window.innerWidth < 768 ? mobile : desktop;
+		}
+
+		let x = 0;
+		let speed = getSpeed();
+
+		function animate() {
+
+			x -= speed;
+
+			while (x <= -groupWidth) {
+				x += groupWidth;
+			}
+
+			runningString.style.transform = `translate3d(${x}px,0,0)`;
+
+			requestAnimationFrame(animate);
+		}
+
+		animate();
+
+		window.addEventListener("resize", () => {
+			speed = getSpeed();
+		});
 	}
 
-	animate();
-
-	window.addEventListener("resize", () => {
-		speed = getSpeed();
-	});
 	// dropdown
 
 	function trapFocus(block) {
