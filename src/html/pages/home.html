@@ -28,31 +28,61 @@
 	<script type="application/ld+json">
 		{
 			"@context": "https://schema.org",
-			"@type": "MarketingAgency",
-			"name": "F47",
-			"description": "Перше моно агентство з AI-видимості в Україні. GEO просування брендів у відповідях ChatGPT, Perplexity, Gemini та інших AI-платформах.",
-			"url": "https://f47.agency",
-			"logo": {
-				"@type": "ImageObject",
-				"url": "https://f47.agency/images/icons/logo.svg"
-			},
-			"areaServed": {
-				"@type": "Country",
-				"name": "Ukraine"
-			},
-			"serviceType": [
-				"GEO просування",
-				"AI-видимість",
-				"SEO аудит",
-				"Контент-маркетинг"
-			],
-			"contactPoint": {
-				"@type": "ContactPoint",
-				"contactType": "customer service",
-				"availableLanguage": ["Ukrainian", "Russian"]
-			},
-			"sameAs": [
-				"https://t.me/f47agency"
+			"@graph": [
+				{
+					"@type": "MarketingAgency",
+					"name": "F47",
+					"description": "Перше моно агентство з AI-видимості в Україні. GEO просування брендів у відповідях ChatGPT, Perplexity, Gemini та інших AI-платформах.",
+					"url": "https://f47.agency",
+					"logo": {
+						"@type": "ImageObject",
+						"url": "https://f47.agency/images/icons/logo.svg"
+					},
+					"areaServed": {
+						"@type": "Country",
+						"name": "Ukraine"
+					},
+					"serviceType": [
+						"GEO просування",
+						"AI-видимість",
+						"SEO аудит",
+						"Контент-маркетинг"
+					],
+					"contactPoint": {
+						"@type": "ContactPoint",
+						"contactType": "customer service",
+						"availableLanguage": ["Ukrainian", "Russian"]
+					},
+					"sameAs": [
+						"https://t.me/f47agency"
+					]
+				},
+				{
+					"@type": "ItemList",
+					"name": "Статистика GEO просування",
+					"itemListElement": [
+						{
+							"@type": "ListItem",
+							"position": 1,
+							"name": "Конверсія AI-трафіку вища в 4–9 разів"
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"name": "+200% зростання переходів із ChatGPT за рік"
+						},
+						{
+							"@type": "ListItem",
+							"position": 3,
+							"name": "-40% середній обвал органіки Google за рік"
+						},
+						{
+							"@type": "ListItem",
+							"position": 4,
+							"name": "Перші отримають перевагу на 6–12 місяців"
+						}
+					]
+				}
 			]
 		}
 	</script>

@@ -75,6 +75,7 @@
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
 		gap: get-rem(105) get-rem(32);
+		margin: 0 0 get-rem(133);
 	}
 
 	&__item {
@@ -115,6 +116,11 @@
 			margin: get-rem(11) 0 0 get-rem(36);
 		}
 
+	}
+
+	&__bottom {
+		display: flex;
+		justify-content: center;
 	}
 }
 
