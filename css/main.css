@@ -1903,11 +1903,58 @@ html.lenis, html.lenis body {
   }
 }
 
+.running-string {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  background-color: var(--color-main-blue);
+  height: 2.4375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+@media (min-width: 768px) {
+  .running-string {
+    height: 3.0625rem;
+  }
+}
+@media (min-width: 1200px) {
+  .running-string {
+    height: 4.5625rem;
+  }
+}
+.running-string__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.25rem;
+  white-space: nowrap;
+}
+.running-string__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.25rem;
+}
+
 .container {
   width: 100%;
   max-width: 93.375rem;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.oh {
+  overflow: hidden;
 }
 
 .lt-14 {

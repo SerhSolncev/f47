@@ -13,3 +13,35 @@
 		}
 	}
 }
+
+.running-string {
+	overflow: hidden;
+	width: 100%;
+	position: relative;
+	background-color: var(--color-main-blue);
+	height: get-rem(39);
+	display: flex;
+	align-items: center;
+
+	@media(min-width: 768px) {
+		height: get-rem(49);
+	}
+
+	@media(min-width: 1200px) {
+		height: get-rem(73);
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		gap: get-rem(20);
+		white-space: nowrap;
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: get-rem(20);
+	}
+
+}

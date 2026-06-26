@@ -65,6 +65,115 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		header.classList.toggle('onscroll', window.scrollY > header.offsetHeight);
 	}, { passive: true });
 
+
+	// running string
+
+	function initRunningString(container) {
+		if (container.offsetParent === null) return;
+
+		const body = container.querySelector('.js-running-string-body');
+		const originalHTML = body.innerHTML;
+
+		let baseSpeed = parseFloat(container.dataset.speed) || 0.6;
+		let mobSpeed = parseFloat(container.dataset.mobSpeed) || baseSpeed;
+		let speed = window.innerWidth < 768 ? mobSpeed : baseSpeed;
+		let direction = container.dataset.direction === 'rtl' ? 1 : -1;
+
+		let x = 0;
+		let running = false;
+		let rafId = null;
+		let cachedWidths = [];
+
+		function fillWidth() {
+			body.innerHTML = originalHTML;
+			const items = Array.from(body.children);
+			let totalW = body.scrollWidth;
+			const screenW = window.innerWidth;
+
+			let i = 0;
+			let safety = 0;
+
+			while (totalW < screenW * 3) {
+				const clone = items[i % items.length].cloneNode(true);
+				body.appendChild(clone);
+				totalW = body.scrollWidth;
+				i++;
+				safety++;
+				if (safety > 20) break;
+			}
+
+			const gap = parseFloat(window.getComputedStyle(body).columnGap) || 0;
+			cachedWidths = Array.from(body.children).map(el => el.offsetWidth + gap);
+		}
+
+		function tick() {
+			if (!running) return;
+
+			x += speed * direction;
+			body.style.transform = `translateX(${x}px)`;
+
+			if (direction === -1) {
+				if (x <= -cachedWidths[0]) {
+					x += cachedWidths[0];
+					body.appendChild(body.children[0]);
+					cachedWidths.push(cachedWidths.shift());
+				}
+			} else {
+				const lastIdx = cachedWidths.length - 1;
+				if (x >= 0) {
+					x -= cachedWidths[lastIdx];
+					body.insertBefore(body.children[body.children.length - 1], body.children[0]);
+					cachedWidths.unshift(cachedWidths.pop());
+				}
+			}
+
+			rafId = requestAnimationFrame(tick);
+		}
+
+		function centerContainer() {
+			if (!container.hasAttribute('data-center')) return;
+
+			container.style.left = '';
+			container.style.width = '';
+			container.style.position = '';
+
+			const rect = container.getBoundingClientRect();
+			const scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+			const viewportWidth = window.innerWidth - scrollbarWidth;
+			const offsetFromCenter = rect.left - (viewportWidth - rect.width) / 2;
+
+			container.style.position = 'relative';
+			container.style.left = `-${offsetFromCenter}px`;
+			container.style.width = `${viewportWidth}px`;
+		}
+
+		function start() {
+			running = true;
+			x = 0;
+			speed = window.innerWidth < 768 ? mobSpeed : baseSpeed;
+			direction = container.dataset.direction === 'rtl' ? 1 : -1;
+			body.style.transform = 'translateX(0px)';
+			centerContainer();
+			fillWidth();
+			if (rafId) cancelAnimationFrame(rafId);
+			rafId = requestAnimationFrame(tick);
+		}
+
+		function stop() {
+			running = false;
+			if (rafId) cancelAnimationFrame(rafId);
+		}
+
+		start();
+
+		window.addEventListener('resize', () => {
+			stop();
+			start();
+		});
+	}
+
+	document.querySelectorAll('.js-running-string').forEach(initRunningString);
+
 	// dropdown
 
 	function trapFocus(block) {
