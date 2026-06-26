@@ -55,6 +55,18 @@
 			margin: 0 0.014em -0.086em 0.043em;
 		}
 	}
+
+	&--type-6 {
+		font: 400 #{get-rem(20)}/1.2 $mainFont;
+
+		@media(min-width: 768px) {
+			font-size: get-rem(24);
+		}
+
+		@media(min-width: 1280px) {
+			font-size: get-rem(28);
+		}
+	}
 }
 
 .simple-text {

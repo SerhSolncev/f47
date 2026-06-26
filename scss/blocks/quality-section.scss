@@ -26,6 +26,10 @@
 			margin: 0 0 80px;
 		}
 	}
+
+	.cards-block {
+		margin: 0 0 80px;
+	}
 }
 
 
@@ -55,8 +59,28 @@
 
 }
 
-
 .logo-pic {
 	width: auto;
 	height: auto;
+}
+
+
+.cards-block {
+	transform: rotate(-2deg);
+	display: flex;
+}
+
+.card-item {
+	width: get-rem(408);
+	padding: get-rem(7);
+	border-radius: get-rem(24);
+
+	&__body {
+		border-radius: get-rem(24);
+		padding: get-rem(24);
+	}
+
+	&--blue {
+		background-color: #05a5ff;
+	}
 }

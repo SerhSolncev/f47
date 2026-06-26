@@ -706,6 +706,9 @@ html.lenis, html.lenis body {
 .link--type-1 {
   font: 600 0.875rem/1 "Manrope Semi", Verdana, Arial, sans-serif;
 }
+.link--type-2 {
+  font: 600 0.75rem/1 "Ubuntu Sans Mono Semi", Verdana, Arial, sans-serif;
+}
 .link--gray {
   color: var(--color-gray);
 }
@@ -714,6 +717,12 @@ html.lenis, html.lenis body {
 }
 .desktop-device .link--gray:hover {
   color: var(--color-dark);
+}
+.link--gray-2 {
+  color: rgba(255, 255, 255, 0.7);
+}
+.desktop-device .link--gray-2:hover {
+  color: var(--color-white);
 }
 
 .title {
@@ -770,6 +779,19 @@ html.lenis, html.lenis body {
   max-width: 0.8em;
   height: auto;
   margin: 0 0.014em -0.086em 0.043em;
+}
+.title--type-6 {
+  font: 400 1.25rem/1.2 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  .title--type-6 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .title--type-6 {
+    font-size: 1.75rem;
+  }
 }
 
 .simple-text {
@@ -1341,10 +1363,12 @@ html.lenis, html.lenis body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  margin: 1.9375rem 0 0;
+}
+.form-board__bottom--end {
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
-  margin: 1.9375rem 0 0;
 }
 .form-board--orange-gradient {
   background-image: -webkit-gradient(linear, left bottom, left top, from(#ffd783), color-stop(50%, rgba(255, 231, 179, 0)));
@@ -1761,11 +1785,6 @@ html.lenis, html.lenis body {
   gap: 1.25rem;
   margin: -0.5625rem 0 clamp(3.75rem, 11.09375vw, 13.3125rem);
 }
-@media (min-width: 992px) {
-  .hero-block__boards {
-    gap: 2rem;
-  }
-}
 .hero-block__boards .form-board {
   width: 100%;
 }
@@ -1922,6 +1941,9 @@ html.lenis, html.lenis body {
 .quality-block .running-string--partners {
   margin: 0 0 80px;
 }
+.quality-block .cards-block {
+  margin: 0 0 80px;
+}
 
 .running-string {
   overflow: hidden;
@@ -1960,6 +1982,27 @@ html.lenis, html.lenis body {
   height: auto;
 }
 
+.cards-block {
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.card-item {
+  width: 25.5rem;
+  padding: 0.4375rem;
+  border-radius: 1.5rem;
+}
+.card-item__body {
+  border-radius: 1.5rem;
+  padding: 1.5rem;
+}
+.card-item--blue {
+  background-color: #05a5ff;
+}
+
 .container {
   width: 100%;
   max-width: 93.375rem;
@@ -1985,6 +2028,10 @@ html.lenis, html.lenis body {
 
 .color-gray {
   color: var(--color-gray-four);
+}
+
+.color-white {
+  color: var(--color-white);
 }
 
 .text-center {
@@ -2020,6 +2067,13 @@ html.lenis, html.lenis body {
   font-style: italic;
 }
 
+@font-face {
+  font-family: "Ubuntu Sans Mono Semi";
+  src: url("../fonts/UbuntuSansMono-SemiBold.woff2") format("woff2"), url("../fonts/UbuntuSansMono-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: "Manrope";
   src: url("../fonts/Manrope-Bold.woff2") format("woff2"), url("../fonts/Manrope-Bold.woff") format("woff");

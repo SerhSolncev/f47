@@ -40,6 +40,10 @@
 	color: var(--color-gray-four);
 }
 
+.color-white {
+	color: var(--color-white);
+}
+
 .text-center {
 	text-align: center;
 }
@@ -71,6 +75,15 @@
 
 .text-italic {
 	font-style: italic;
+}
+
+@font-face {
+	font-family: 'Ubuntu Sans Mono Semi';
+	src: url('../fonts/UbuntuSansMono-SemiBold.woff2') format('woff2'),
+	url('../fonts/UbuntuSansMono-SemiBold.woff') format('woff');
+	font-weight: 600;
+	font-style: normal;
+	font-display: swap;
 }
 
 

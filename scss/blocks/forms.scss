@@ -44,8 +44,11 @@
 
 	&__bottom {
 		display: flex;
-		justify-content: flex-end;
 		margin: get-rem(31) 0 0;
+
+		&--end {
+			justify-content: flex-end;
+		}
 	}
 
 	&--orange-gradient {

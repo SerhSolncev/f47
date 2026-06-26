@@ -31,10 +31,6 @@
 		gap: get-rem(20);
 		margin: get-rem(-9) 0 clamp(#{get-rem(60)}, #{get-vw(213)}, #{get-rem(213)});
 
-		@media(min-width: 992px) {
-			gap: get-rem(32);
-		}
-
 		.form-board {
 			width: 100%;
 

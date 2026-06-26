@@ -11,6 +11,10 @@
 		font: 600 #{get-rem(14)}/1 $mainFontBold;
 	}
 
+	&--type-2 {
+		font: 600 #{get-rem(12)}/1 $mainFontUbuntuSemi;
+	}
+
 	&--gray {
 		color: var(--color-gray);
 
@@ -22,6 +26,16 @@
 		    &:hover {
 			    color: var(--color-dark);
 		    }
+		}
+	}
+
+	&--gray-2 {
+		color: rgba(#fff, 0.7);
+
+		.desktop-device & {
+			&:hover {
+				color: var(--color-white);
+			}
 		}
 	}
 }
