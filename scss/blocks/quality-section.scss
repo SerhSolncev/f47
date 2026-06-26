@@ -2,10 +2,14 @@
 @import "../abstracts/vars";
 
 .quality-top {
-	max-width: get-rem(1300);
+	max-width: get-rem(1332);
+	padding: 0 get-rem(16);
 	margin: 0 auto;
 
 	span {
-		display: block;
+
+		@media(min-width: 768px) {
+			display: block;
+		}
 	}
 }

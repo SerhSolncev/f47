@@ -42,7 +42,7 @@
 	}
 
 	&--type-5 {
-		font: 400 clamp(#{get-rem(30)}, calc(#{get-rem(12.33)} + 5.21vw), #{get-rem(70)})/1.1 $mainFont;
+		font: 400 clamp(#{get-rem(30)}, calc(#{get-rem(12.33)} + 3.8vw), #{get-rem(70)})/1.1 $mainFont;
 
 		@media(max-width: 575px) {
 			font-size: 9vw;

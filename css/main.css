@@ -758,7 +758,7 @@ html.lenis, html.lenis body {
   }
 }
 .title--type-5 {
-  font: 400 clamp(1.875rem, 0.770625rem + 5.21vw, 4.375rem)/1.1 "Manrope", Verdana, Arial, sans-serif;
+  font: 400 clamp(1.875rem, 0.770625rem + 3.8vw, 4.375rem)/1.1 "Manrope", Verdana, Arial, sans-serif;
 }
 @media (max-width: 575px) {
   .title--type-5 {
@@ -1893,11 +1893,14 @@ html.lenis, html.lenis body {
 }
 
 .quality-top {
-  max-width: 81.25rem;
+  max-width: 83.25rem;
+  padding: 0 1rem;
   margin: 0 auto;
 }
-.quality-top span {
-  display: block;
+@media (min-width: 768px) {
+  .quality-top span {
+    display: block;
+  }
 }
 
 .container {
