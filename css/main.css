@@ -1799,20 +1799,9 @@ html.lenis, html.lenis body {
     width: calc(50% - 1.25rem);
   }
 }
-@media (max-width: 767px) {
-  .hero-block__boards .form-board:first-child {
-    position: relative;
-    z-index: 2;
-  }
-}
-.hero-block__boards .form-board:nth-child(2) {
-  margin: 2.25rem 0 0;
-}
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .hero-block__boards .form-board:nth-child(2) {
-    position: sticky;
-    bottom: 0;
-    margin: 0;
+    margin: 2.25rem 0 0;
   }
 }
 
