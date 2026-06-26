@@ -1,47 +1,58 @@
 @import "../abstracts/functions";
 @import "../abstracts/vars";
 
-.quality-top {
-	max-width: get-rem(1332);
-	padding: 0 get-rem(16);
-	margin: 0 auto;
+.quality-block {
 
-	span {
+	&__top {
+		max-width: get-rem(1332);
+		padding: 0 get-rem(16);
+		margin: 0 auto get-rem(47);
 
-		@media(min-width: 768px) {
-			display: block;
+		@media(min-width: 992px) {
+			margin: 0 auto get-rem(67);
+		}
+
+		span {
+
+			@media(min-width: 768px) {
+				display: block;
+			}
+		}
+	}
+
+	.running-string {
+
+		&--partners {
+			margin: 0 0 80px;
 		}
 	}
 }
 
+
 .running-string {
 	overflow: hidden;
-	width: 100%;
-	position: relative;
-	background-color: var(--color-main-blue);
-	height: get-rem(39);
-	display: flex;
-	align-items: center;
+	transform: rotate(-1deg);
+	padding: get-rem(15) 0;
 
 	@media(min-width: 768px) {
-		height: get-rem(49);
-	}
-
-	@media(min-width: 1200px) {
-		height: get-rem(73);
-	}
-
-	&__body {
-		display: flex;
-		align-items: center;
-		gap: get-rem(20);
-		white-space: nowrap;
+		padding: get-rem(30) 0;
 	}
 
 	&__list {
 		display: flex;
-		align-items: center;
-		gap: get-rem(20);
+		width: max-content;
+		will-change: transform;
 	}
 
+	&__item {
+		flex: 0 0 auto;
+		margin-right: 50px;
+	}
+
+}
+
+
+.logo-pic {
+	width: auto;
+	height: auto;
 }
