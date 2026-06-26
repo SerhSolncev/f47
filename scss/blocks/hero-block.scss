@@ -28,7 +28,7 @@
 		justify-content: center;
 		flex-wrap: wrap;
 		gap: get-rem(20);
-		margin: get-rem(-9) 0 0;
+		margin: get-rem(-9) 0 clamp(#{get-rem(60)}, #{get-vw(213)}, #{get-rem(213)});
 
 		@media(min-width: 992px) {
 			gap: get-rem(32);
@@ -64,4 +64,47 @@
 			}
 		}
 	}
+}
+
+.four-cards {
+	width: 100%;
+	max-width: get-rem(1032);
+	margin: 0 auto;
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		gap: get-rem(32);
+	}
+
+	&__item {
+
+		&:nth-child(1) .stat-card {
+			max-width: get-rem(290);
+			margin: 0 get-rem(27) 0 auto;
+			transform: rotate(-2deg);
+		}
+
+		&:nth-child(2) .stat-card {
+			max-width: get-rem(280);
+		}
+
+		&:nth-child(3) .stat-card {
+			max-width: get-rem(285);
+		}
+
+		&:nth-child(4) .stat-card {
+			max-width: get-rem(246);
+		}
+
+	}
+}
+
+.stat-card {
+	display: flex;
+	flex-direction: column;
+	gap: get-rem(13);
+	border-radius: get-rem(16);
+	padding: get-rem(40);
+	background-color: var(--color-light);
 }

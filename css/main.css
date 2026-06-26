@@ -745,6 +745,19 @@ html.lenis, html.lenis body {
     font-size: 2rem;
   }
 }
+.title--type-4 {
+  font: 400 1.5rem/1 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  .title--type-4 {
+    font-size: 2.375rem;
+  }
+}
+@media (min-width: 1280px) {
+  .title--type-4 {
+    font-size: 3rem;
+  }
+}
 
 .simple-text {
   -webkit-transition: color 0.15s ease-in;
@@ -773,6 +786,24 @@ html.lenis, html.lenis body {
 }
 .simple-text--type-3 {
   font: 500 0.75rem/1.3 "Manrope", Verdana, Arial, sans-serif;
+}
+.simple-text--type-4 {
+  font: 400 0.875rem/1.4 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 992px) {
+  .simple-text--type-4 {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .simple-text--type-4 {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 1366px) {
+  .simple-text--type-4 {
+    font-size: 1.25rem;
+  }
 }
 .simple-text a {
   font: inherit;
@@ -1713,7 +1744,7 @@ html.lenis, html.lenis body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 1.25rem;
-  margin: -0.5625rem 0 0;
+  margin: -0.5625rem 0 clamp(3.75rem, 11.09375vw, 13.3125rem);
 }
 @media (min-width: 992px) {
   .hero-block__boards {
@@ -1751,6 +1782,46 @@ html.lenis, html.lenis body {
   }
 }
 
+.four-cards {
+  width: 100%;
+  max-width: 64.5rem;
+  margin: 0 auto;
+}
+.four-cards__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+.four-cards__item:nth-child(1) .stat-card {
+  max-width: 18.125rem;
+  margin: 0 1.6875rem 0 auto;
+  -webkit-transform: rotate(-2deg);
+          transform: rotate(-2deg);
+}
+.four-cards__item:nth-child(2) .stat-card {
+  max-width: 17.5rem;
+}
+.four-cards__item:nth-child(3) .stat-card {
+  max-width: 17.8125rem;
+}
+.four-cards__item:nth-child(4) .stat-card {
+  max-width: 15.375rem;
+}
+
+.stat-card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.8125rem;
+  border-radius: 1rem;
+  padding: 2.5rem;
+  background-color: var(--color-light);
+}
+
 .container {
   width: 100%;
   max-width: 93.375rem;
@@ -1767,7 +1838,7 @@ html.lenis, html.lenis body {
 }
 
 .color-dark {
-  color: var(--oolor-dark);
+  color: var(--color-dark);
 }
 
 .color-gray {
