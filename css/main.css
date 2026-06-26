@@ -1990,14 +1990,28 @@ html.lenis, html.lenis body {
 
 .card-item {
   width: 26.375rem;
-  background-color: #ccc;
+  background-color: var(--color-white);
   padding: 0.4375rem;
+  border-radius: 1.5rem;
+  position: relative;
+}
+.card-item::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(100% - 1.75rem);
+  height: calc(100% - 0.875rem);
+  bottom: 0.3125rem;
+  left: 50%;
+  z-index: -1;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
   border-radius: 1.5rem;
 }
 .card-item__body {
   width: 100%;
   border-radius: 1.5rem;
-  padding: 1.5rem;
+  padding: 2.1875rem 1.9375rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -2014,10 +2028,64 @@ html.lenis, html.lenis body {
   z-index: 1;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+  pointer-events: none;
+}
+.card-item__body .link {
+  margin: 0 0 0.375rem;
+}
+.card-item__body .title {
+  margin: 0 0 1.375rem;
+}
+.card-item__body > .simple-text span {
+  position: relative;
+  color: #05a1f9;
+  margin: 0 0.3125rem;
+}
+.card-item__body > .simple-text span::after {
+  content: "";
+  width: calc(100% + 0.625rem);
+  height: calc(100% - 0.1875rem);
+  position: absolute;
+  top: calc(50% + 1px);
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: -1;
+  background-color: var(--color-white);
+  border-radius: 0.25rem;
+}
+.card-item__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+}
+.card-item__bottom--type-1 {
+  margin: 0.125rem 0 -0.6875rem;
+}
+.card-item__bottom--type-1 .logo-pic {
+  margin: 2.9375rem 0 0;
+}
+.card-item__pic img {
+  max-width: 50%;
+  width: auto;
+  height: auto;
 }
 .card-item--blue .card-item__body {
   background-color: #05a5ff;
+}
+.card-item--blue .card-item__body::after {
+  background-image: linear-gradient(135deg, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.3));
+}
+.card-item--blue::after {
+  -webkit-box-shadow: 0 0.75rem 2rem -0.25rem rgba(5, 165, 255, 0.3);
+          box-shadow: 0 0.75rem 2rem -0.25rem rgba(5, 165, 255, 0.3);
 }
 
 .container {
