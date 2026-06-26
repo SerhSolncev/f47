@@ -77,16 +77,40 @@
 }
 
 .card-item {
-	width: get-rem(408);
+	width: get-rem(422);
+	background-color: #ccc;
 	padding: get-rem(7);
 	border-radius: get-rem(24);
 
 	&__body {
+		width: 100%;
 		border-radius: get-rem(24);
 		padding: get-rem(24);
+		position: relative;
+		overflow: hidden;
+
+		> * {
+			position: relative;
+			z-index: 2;
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			width: 100%;
+			height: 100%;
+			background-image: linear-gradient(135deg, rgba(#000, 0), rgba(#000, 0.3));
+		}
 	}
 
 	&--blue {
-		background-color: #05a5ff;
+
+		.card-item__body {
+			background-color: #05a5ff;
+		}
 	}
 }
