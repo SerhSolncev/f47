@@ -40,13 +40,17 @@
 
 	&__list {
 		display: flex;
+		gap: get-rem(50);
 		width: max-content;
 		will-change: transform;
+
+		@media(min-width: 1200px) {
+			gap: get-rem(100);
+		}
 	}
 
 	&__item {
 		flex: 0 0 auto;
-		margin-right: 50px;
 	}
 
 }
