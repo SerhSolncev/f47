@@ -1,0 +1,9 @@
+@import "../abstracts/functions";
+@import "../abstracts/vars";
+
+.section {
+
+	&--hero {
+		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(253)}, #{get-rem(253)});
+	}
+}

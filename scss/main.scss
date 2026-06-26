@@ -4,12 +4,14 @@
 @import "base/global";
 @import "layout/header";
 @import "layout/footer";
+@import "ui/section";
 @import "ui/buttons";
 @import "ui/links";
 @import "ui/title";
 @import "blocks/modal";
 @import "blocks/forms";
 @import "blocks/hero-block";
+@import "blocks/quality-section";
 
 .container {
 	width: 100%;

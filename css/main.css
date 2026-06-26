@@ -518,6 +518,10 @@ html.lenis, html.lenis body {
   height: auto;
 }
 
+.section--hero {
+  margin: 0 0 clamp(5rem, 13.1770833333vw, 15.8125rem);
+}
+
 .btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -752,6 +756,20 @@ html.lenis, html.lenis body {
   .title--type-4 {
     font-size: 3rem;
   }
+}
+.title--type-5 {
+  font: 400 clamp(1.875rem, 0.770625rem + 5.21vw, 4.375rem)/1.1 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (max-width: 575px) {
+  .title--type-5 {
+    font-size: 9vw;
+  }
+}
+.title--type-5 img {
+  display: inline;
+  max-width: 0.8em;
+  height: auto;
+  margin: 0 0.014em -0.086em 0.043em;
 }
 
 .simple-text {
@@ -1705,12 +1723,12 @@ html.lenis, html.lenis body {
 .hero-block__top {
   margin: clamp(2.5rem, 7.2395833333vw, 8.6875rem) 0;
 }
-.hero-block__top span {
-  display: block;
-}
 .hero-block__top .title--type-1 {
   max-width: 67.5rem;
   margin: 0 auto clamp(1.25rem, 2.7604166667vw, 3.3125rem);
+}
+.hero-block__top .title--type-1 span {
+  display: block;
 }
 .hero-block__top .simple-text {
   max-width: 37.1875rem;
@@ -1791,9 +1809,13 @@ html.lenis, html.lenis body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+}
+@media (max-width: 767px) {
+  .four-cards__item {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
 }
 .four-cards__item .stat-card {
   width: 100%;
@@ -1868,6 +1890,14 @@ html.lenis, html.lenis body {
   .stat-card {
     padding: 2.5rem;
   }
+}
+
+.quality-top {
+  max-width: 81.25rem;
+  margin: 0 auto;
+}
+.quality-top span {
+  display: block;
 }
 
 .container {

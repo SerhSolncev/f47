@@ -6,13 +6,14 @@
 	&__top {
 		margin: clamp(#{get-rem(40)}, #{get-vw(139)}, #{get-rem(139)}) 0;
 
-		span {
-			display: block;
-		}
 
 		.title--type-1 {
 			max-width: get-rem(1080);
 			margin: 0 auto clamp(#{get-rem(20)}, #{get-vw(53)}, #{get-rem(53)});
+
+			span {
+				display: block;
+			}
 
 		}
 
@@ -86,7 +87,10 @@
 	&__item {
 		display: flex;
 		align-items: flex-start;
-		justify-content: center;
+
+		@media(max-width: 767px) {
+			justify-content: center;
+		}
 
 		.stat-card {
 			width: 100%;

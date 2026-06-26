@@ -40,6 +40,21 @@
 			font-size: get-rem(48);
 		}
 	}
+
+	&--type-5 {
+		font: 400 clamp(#{get-rem(30)}, calc(#{get-rem(12.33)} + 5.21vw), #{get-rem(70)})/1.1 $mainFont;
+
+		@media(max-width: 575px) {
+			font-size: 9vw;
+		}
+
+		img {
+			display: inline;
+			max-width: 0.8em;
+			height: auto;
+			margin: 0 0.014em -0.086em 0.043em;
+		}
+	}
 }
 
 .simple-text {

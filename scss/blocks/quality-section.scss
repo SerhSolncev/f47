@@ -1,0 +1,11 @@
+@import "../abstracts/functions";
+@import "../abstracts/vars";
+
+.quality-top {
+	max-width: get-rem(1300);
+	margin: 0 auto;
+
+	span {
+		display: block;
+	}
+}
