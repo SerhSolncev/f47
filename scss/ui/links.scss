@@ -7,12 +7,36 @@
 	transition: color 0.15s ease-in;
 	transition-property: color;
 
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: get-rem(20);
+		height: get-rem(20);
+
+		svg {
+			width: auto;
+			height: auto;
+			max-width: 100%;
+		}
+	}
+
 	&--type-1 {
 		font: 600 #{get-rem(14)}/1 $mainFontBold;
 	}
 
 	&--type-2 {
 		font: 600 #{get-rem(12)}/1 $mainFontUbuntuSemi;
+	}
+
+	&--type-3 {
+		font: 600 #{get-rem(16)}/1 $mainFontBold;
+		gap: get-rem(14);
+
+		@media(min-width: 1200px) {
+		    font-size: get-rem(18);
+		}
+
 	}
 
 	&--gray {
@@ -36,6 +60,16 @@
 			&:hover {
 				color: var(--color-white);
 			}
+		}
+	}
+
+	&--dark {
+		color: var(--color-dark);
+
+		.desktop-device & {
+		    &:hover {
+			    color: var(--color-blue);
+		    }
 		}
 	}
 }

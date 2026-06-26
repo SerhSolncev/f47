@@ -703,11 +703,38 @@ html.lenis, html.lenis body {
   -webkit-transition-property: color;
   transition-property: color;
 }
+.link__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.link__icon svg {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+}
 .link--type-1 {
   font: 600 0.875rem/1 "Manrope Semi", Verdana, Arial, sans-serif;
 }
 .link--type-2 {
   font: 600 0.75rem/1 "Ubuntu Sans Mono Semi", Verdana, Arial, sans-serif;
+}
+.link--type-3 {
+  font: 600 1rem/1 "Manrope Semi", Verdana, Arial, sans-serif;
+  gap: 0.875rem;
+}
+@media (min-width: 1200px) {
+  .link--type-3 {
+    font-size: 1.125rem;
+  }
 }
 .link--gray {
   color: var(--color-gray);
@@ -723,6 +750,12 @@ html.lenis, html.lenis body {
 }
 .desktop-device .link--gray-2:hover {
   color: var(--color-white);
+}
+.link--dark {
+  color: var(--color-dark);
+}
+.desktop-device .link--dark:hover {
+  color: var(--color-blue);
 }
 
 .title {
@@ -1990,12 +2023,26 @@ html.lenis, html.lenis body {
 
 .card-item {
   width: 26.375rem;
+  cursor: default;
+}
+.card-item > .link {
+  margin: 1.0625rem 0 0 1.8125rem;
+  -webkit-transform: translateX(-0.625rem);
+          transform: translateX(-0.625rem);
+  z-index: 2;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  -webkit-transition: all 0.15s ease-in;
+  transition: all 0.15s ease-in;
+}
+.card-item__wrap {
   background-color: var(--color-white);
   padding: 0.4375rem;
   border-radius: 1.5rem;
   position: relative;
 }
-.card-item::after {
+.card-item__wrap::after {
   content: "";
   display: block;
   position: absolute;
@@ -2086,6 +2133,13 @@ html.lenis, html.lenis body {
 .card-item--blue::after {
   -webkit-box-shadow: 0 0.75rem 2rem -0.25rem rgba(5, 165, 255, 0.3);
           box-shadow: 0 0.75rem 2rem -0.25rem rgba(5, 165, 255, 0.3);
+}
+.card-item:hover > .link {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: all;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 .container {

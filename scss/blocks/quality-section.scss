@@ -78,22 +78,36 @@
 
 .card-item {
 	width: get-rem(422);
-	background-color: var(--color-white);
-	padding: get-rem(7);
-	border-radius: get-rem(24);
-	position: relative;
+	cursor: default;
 
-	&::after {
-		content: '';
-		display: block;
-		position: absolute;
-		width: calc(100% - #{get-rem(28)});
-		height: calc(100% - #{get-rem(14)});
-		bottom: get-rem(5);
-		left: 50%;
-		z-index: -1;
-		transform: translateX(-50%);
+	> .link {
+		margin: get-rem(17) 0 0 get-rem(29);
+		transform: translateX(#{get-rem(-10)});
+		z-index: 2;
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		transition: all 0.15s ease-in;
+	}
+
+	&__wrap {
+		background-color: var(--color-white);
+		padding: get-rem(7);
 		border-radius: get-rem(24);
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: calc(100% - #{get-rem(28)});
+			height: calc(100% - #{get-rem(14)});
+			bottom: get-rem(5);
+			left: 50%;
+			z-index: -1;
+			transform: translateX(-50%);
+			border-radius: get-rem(24);
+		}
 	}
 
 	&__body {
@@ -194,6 +208,15 @@
 
 		&::after {
 			box-shadow: 0 get-rem(12) get-rem(32) get-rem(-4) rgba(5, 165, 255, 0.3);
+		}
+	}
+
+	&:hover {
+		> .link {
+			opacity: 1;
+			visibility: visible;
+			pointer-events: all;
+			transform: translateX(0);
 		}
 	}
 }
