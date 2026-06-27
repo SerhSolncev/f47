@@ -72,7 +72,7 @@
 
 	&--cards {
 		transform: rotate(-2deg);
-		padding: get-rem(40) 0 get-rem(60);
+		padding: get-rem(40) 0 get-rem(80);
 		cursor: grab;
 
 		.card-item {
@@ -105,7 +105,7 @@
 
 .card-item {
 	width: 100%;
-	max-width: get-rem(330);
+	max-width: get-rem(300);
 	cursor: default;
 
 	@media(min-width: 768px) {
@@ -296,6 +296,10 @@
 			    max-width: get-rem(130);
 				right: get-rem(-10);
 			}
+
+			@media(max-width: 430px) {
+				max-width: get-rem(110);
+			}
 		}
 
 		&--type-2 {
@@ -306,6 +310,11 @@
 		&--type-3 {
 			bottom: get-rem(-47);
 			right: get-rem(-22);
+
+			@media(max-width: 430px) {
+			    max-width: 50%;
+				bottom: get-rem(-17);
+			}
 		}
 
 		&--type-4 {
