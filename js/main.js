@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		}
 
 		const groups = runningString.querySelectorAll(".running-string__group");
-		const groupWidth =
+		let groupWidth =
 			groups[1].getBoundingClientRect().left -
 			groups[0].getBoundingClientRect().left;
 
@@ -242,6 +242,18 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 		window.addEventListener("resize", () => {
 			speed = getSpeed();
+
+			// Пересчитываем groupWidth при изменении размера окна
+			const updatedGroups = runningString.querySelectorAll(".running-string__group");
+			if (updatedGroups.length >= 2) {
+				const newGroupWidth =
+					updatedGroups[1].getBoundingClientRect().left -
+					updatedGroups[0].getBoundingClientRect().left;
+
+				if (newGroupWidth > 0) {
+					groupWidth = newGroupWidth;
+				}
+			}
 		});
 	}
 
