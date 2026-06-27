@@ -4,10 +4,12 @@
 .about-section {
 	display: flex;
 	align-items: flex-start;
+	justify-content: space-between;
+	padding: 0 0 0 get-rem(10);
 
 	&__left {
 		width: get-rem(592);
-		margin: 0 0 0 get-rem(10);
+		flex-shrink: 0;
 	}
 
 	&__top {
@@ -15,6 +17,15 @@
 		flex-direction: column;
 		gap: get-rem(8);
 		margin: 0 0 get-rem(49);
+	}
+
+	&__pic {
+		width: 100%;
+
+		img {
+			width: 100%;
+			height: auto;
+		}
 	}
 
 	.check-list {
@@ -54,6 +65,10 @@
 				background-color: var(--color-dark);
 				border-radius: get-rem(4);
 			}
+		}
+
+		&:has(span) {
+			margin: get-rem(3) 0 0;
 		}
 
 		&::after {

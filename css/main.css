@@ -2358,10 +2358,15 @@ html.lenis, html.lenis body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 0 0 0 0.625rem;
 }
 .about-section__left {
   width: 37rem;
-  margin: 0 0 0 0.625rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
 }
 .about-section__top {
   display: -webkit-box;
@@ -2373,6 +2378,13 @@ html.lenis, html.lenis body {
           flex-direction: column;
   gap: 0.5rem;
   margin: 0 0 3.0625rem;
+}
+.about-section__pic {
+  width: 100%;
+}
+.about-section__pic img {
+  width: 100%;
+  height: auto;
 }
 .about-section .check-list {
   max-width: 33.75rem;
@@ -2414,6 +2426,9 @@ html.lenis, html.lenis body {
   z-index: -1;
   background-color: var(--color-dark);
   border-radius: 0.25rem;
+}
+.check-list__item:has(span) {
+  margin: 0.1875rem 0 0;
 }
 .check-list__item::after {
   content: "";
