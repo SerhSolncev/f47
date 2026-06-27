@@ -533,6 +533,9 @@ html.lenis, html.lenis body {
 .section--hero {
   margin: 0 0 clamp(5rem, 9.6875vw, 11.625rem);
 }
+.section--quality {
+  margin: 0 0 clamp(5rem, 9.6875vw, 11.625rem);
+}
 
 .btn {
   display: -webkit-box;
@@ -2046,7 +2049,7 @@ html.lenis, html.lenis body {
 .running-string--cards {
   -webkit-transform: rotate(-2deg);
           transform: rotate(-2deg);
-  padding: 2.5rem 0;
+  padding: 2.5rem 0 3.75rem;
   cursor: -webkit-grab;
   cursor: grab;
 }
@@ -2142,7 +2145,7 @@ html.lenis, html.lenis body {
   position: absolute;
   width: calc(100% - 4rem);
   height: 50%;
-  bottom: -0.3125rem;
+  bottom: 0;
   left: 50%;
   z-index: -1;
   -webkit-transform: translateX(-50%);

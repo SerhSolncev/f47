@@ -72,7 +72,7 @@
 
 	&--cards {
 		transform: rotate(-2deg);
-		padding: get-rem(40) 0;
+		padding: get-rem(40) 0 get-rem(60);
 		cursor: grab;
 
 		.card-item {
@@ -163,7 +163,7 @@
 			position: absolute;
 			width: calc(100% - #{get-rem(64)});
 			height: 50%;
-			bottom: get-rem(-5);
+			bottom: 0;
 			left: 50%;
 			z-index: -1;
 			transform: translateX(-50%);

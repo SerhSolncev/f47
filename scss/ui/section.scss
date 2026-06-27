@@ -6,4 +6,8 @@
 	&--hero {
 		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(186)}, #{get-rem(186)});
 	}
+
+	&--quality {
+		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(186)}, #{get-rem(186)});
+	}
 }
