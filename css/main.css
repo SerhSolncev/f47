@@ -2013,6 +2013,12 @@ html.lenis, html.lenis body {
   -webkit-transform: rotate(-2deg);
           transform: rotate(-2deg);
   padding: 2.5rem 0;
+  cursor: -webkit-grab;
+  cursor: grab;
+}
+.running-string--cards .card-item {
+  cursor: -webkit-grab;
+  cursor: grab;
 }
 .running-string--cards .running-string__group {
   gap: 2.125rem;
@@ -2040,6 +2046,19 @@ html.lenis, html.lenis body {
   pointer-events: none;
   -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
+  position: relative;
+}
+.card-item > .link::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  width: 120%;
+  height: 120%;
 }
 .card-item__wrap {
   background-color: var(--color-white);

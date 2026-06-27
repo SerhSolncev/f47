@@ -72,16 +72,13 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	function initRunningString(runningString) {
 
 		const group = runningString.querySelector(".running-string__group");
-
 		const containerWidth = runningString.parentElement.clientWidth;
 
-		// клонируем группы пока не заполним ширину
 		while (runningString.scrollWidth < containerWidth * 2) {
 			runningString.appendChild(group.cloneNode(true));
 		}
 
 		const groups = runningString.querySelectorAll(".running-string__group");
-
 		const groupWidth =
 			groups[1].getBoundingClientRect().left -
 			groups[0].getBoundingClientRect().left;
@@ -89,23 +86,26 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		function getSpeed() {
 			const desktop = parseFloat(runningString.dataset.speed) || 1;
 			const mobile = parseFloat(runningString.dataset.speedMobile) || desktop;
-
 			return window.innerWidth < 768 ? mobile : desktop;
 		}
 
 		let x = 0;
 		let speed = getSpeed();
+		let paused = false;
+
+		if ("pauseOnHover" in runningString.dataset) {
+			runningString.addEventListener("mouseenter", () => paused = true);
+			runningString.addEventListener("mouseleave", () => paused = false);
+		}
 
 		function animate() {
-
-			x -= speed;
-
-			while (x <= -groupWidth) {
-				x += groupWidth;
+			if (!paused) {
+				x -= speed;
+				while (x <= -groupWidth) {
+					x += groupWidth;
+				}
+				runningString.style.transform = `translate3d(${x}px,0,0)`;
 			}
-
-			runningString.style.transform = `translate3d(${x}px,0,0)`;
-
 			requestAnimationFrame(animate);
 		}
 

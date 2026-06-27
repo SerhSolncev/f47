@@ -70,6 +70,11 @@
 	&--cards {
 		transform: rotate(-2deg);
 		padding: get-rem(40) 0;
+		cursor: grab;
+
+		.card-item {
+			cursor: grab;
+		}
 
 		.running-string__group {
 			gap: get-rem(34);
@@ -99,6 +104,19 @@
 		visibility: hidden;
 		pointer-events: none;
 		transition: all 0.15s ease-in;
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 1;
+			transform: translate(-50%, -50%);
+			width: 120%;
+			height: 120%;
+		}
 	}
 
 	&__wrap {
