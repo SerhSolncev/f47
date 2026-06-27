@@ -8,7 +8,7 @@
 	}
 
 	&--quality {
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(180)}, #{get-rem(180)});
+		margin: 0 0 clamp(#{get-rem(0)}, #{get-vw(180)}, #{get-rem(180)});
 	}
 
 	&--about {
