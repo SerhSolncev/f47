@@ -1886,22 +1886,22 @@ html.lenis, html.lenis body {
   gap: 1.09375rem;
   margin: -1.125rem 0 clamp(3.75rem, 9.8958333333vw, 11.875rem);
 }
-.hero-block__boards .form-board {
+.hero-block__boards > * {
   width: 100%;
 }
 @media (min-width: 768px) {
-  .hero-block__boards .form-board {
+  .hero-block__boards > * {
     max-width: 32.125rem;
     width: calc(50% - 1.25rem);
   }
 }
 @media (min-width: 992px) {
-  .hero-block__boards .form-board {
+  .hero-block__boards > * {
     width: calc(50% - 1.25rem);
   }
 }
 @media (min-width: 768px) {
-  .hero-block__boards .form-board:nth-child(2) {
+  .hero-block__boards > *:nth-child(2) {
     margin: 2.25rem 0 0;
   }
 }
