@@ -1,3 +1,72 @@
 @import "../abstracts/functions";
 @import "../abstracts/vars";
 
+.about-section {
+	display: flex;
+	align-items: flex-start;
+
+	&__left {
+		width: get-rem(592);
+		margin: 0 0 0 get-rem(10);
+	}
+
+	&__top {
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(8);
+		margin: 0 0 get-rem(49);
+	}
+
+	.check-list {
+		max-width: get-rem(540);
+
+		&__item span:last-child {
+			display: inline-block;
+		}
+	}
+}
+
+.check-list {
+	display: flex;
+	flex-direction: column;
+	gap: get-rem(22);
+
+	&__item {
+		position: relative;
+		font: 600 #{get-rem(16)}/1.5 $mainFont;
+		letter-spacing: -0.02em;
+		padding: 0 0 0 get-rem(39);
+
+		span {
+			color: var(--color-white);
+			padding: 0 get-rem(5);
+			position: relative;
+
+			&::after {
+				content: '';
+				width: 100%;
+				height: calc(100% - #{get-rem(3)});
+				position: absolute;
+				top: calc(50% + 1px);
+				left: 50%;
+				transform: translate(-50%, -50%);
+				z-index: -1;
+				background-color: var(--color-dark);
+				border-radius: get-rem(4);
+			}
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: 1;
+			width: get-rem(24);
+			height: get-rem(24);
+			background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIj4KICA8cmVjdCB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHJ4PSIxMiIgZmlsbD0iIzI0MkIzQSI+PC9yZWN0PgogIDxwYXRoIGQ9Ik02LjUgMTNMMTAgMTYuNUwxOCA4LjUiIHN0cm9rZT0id2hpdGUiIHN0cm9rZS13aWR0aD0iMS44NzUiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCI+PC9wYXRoPgo8L3N2Zz4K);
+			background-size: 100% 100%;
+		}
+	}
+}

@@ -67,6 +67,14 @@
 			font-size: get-rem(28);
 		}
 	}
+
+	&--type-7 {
+		font: 400 #{get-rem(42)}/1.3 $mainFont;
+
+		@media(min-width: 1280px) {
+			font-size: get-rem(50);
+		}
+	}
 }
 
 .simple-text {
