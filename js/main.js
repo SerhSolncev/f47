@@ -74,7 +74,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		const group = runningString.querySelector(".running-string__group");
 		const containerWidth = runningString.parentElement.clientWidth;
 
-		while (runningString.scrollWidth < containerWidth * 2) {
+		while (
+			runningString.scrollWidth < containerWidth * 2 ||
+			runningString.querySelectorAll(".running-string__group").length < 2
+			) {
 			runningString.appendChild(group.cloneNode(true));
 		}
 
@@ -89,23 +92,145 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			return window.innerWidth < 768 ? mobile : desktop;
 		}
 
-		let x = 0;
 		let speed = getSpeed();
 		let paused = false;
+		let isDragging = false;
 
-		if ("pauseOnHover" in runningString.dataset) {
-			runningString.addEventListener("mouseenter", () => paused = true);
-			runningString.addEventListener("mouseleave", () => paused = false);
+		let x = 0;
+		let targetX = 0;
+
+		function normalize(val) {
+			val = val % groupWidth;
+			if (val > 0) val -= groupWidth;
+			return val;
 		}
 
-		function animate() {
-			if (!paused) {
-				x -= speed;
-				while (x <= -groupWidth) {
-					x += groupWidth;
+		// hover
+
+		if ("pauseOnHover" in runningString.dataset) {
+			runningString.addEventListener("mouseenter", () => {
+				if (!isDragging) paused = true;
+			});
+			runningString.addEventListener("mouseleave", () => {
+				if (!isDragging) paused = false;
+			});
+		}
+
+		// drag
+
+		let dragStartX = 0;
+		let dragStartOffset = 0;
+		let pointerX = 0;
+		let velocity = 0;
+		let lastPointerX = 0;
+		let lastTime = 0;
+		let inertiaRaf = null;
+
+		if ("moveOn" in runningString.dataset) {
+
+			runningString.style.cursor = "grab";
+
+			function onDragStart(clientX) {
+				isDragging = true;
+				paused = true;
+
+				if (inertiaRaf) {
+					cancelAnimationFrame(inertiaRaf);
+					inertiaRaf = null;
 				}
-				runningString.style.transform = `translate3d(${x}px,0,0)`;
+
+				dragStartX = clientX;
+				dragStartOffset = targetX;
+
+				pointerX = clientX;
+				lastPointerX = clientX;
+				lastTime = performance.now();
+				velocity = 0;
+
+				runningString.style.cursor = "grabbing";
+				document.body.style.userSelect = "none";
 			}
+
+			function onDragMove(clientX) {
+				if (!isDragging) return;
+
+				pointerX = clientX;
+
+				const now = performance.now();
+				const dt = now - lastTime;
+				if (dt > 0) {
+					velocity = (clientX - lastPointerX) / dt;
+				}
+				lastPointerX = clientX;
+				lastTime = now;
+			}
+
+			function onDragEnd() {
+				if (!isDragging) return;
+				isDragging = false;
+				runningString.style.cursor = "grab";
+				document.body.style.userSelect = "";
+
+				const startX = targetX;
+				const distance = velocity * 250;
+				const duration = 700;
+				const startTime = performance.now();
+
+				function inertia(now) {
+					const t = Math.min((now - startTime) / duration, 1);
+					const ease = 1 - Math.pow(1 - t, 3);
+					targetX = normalize(startX + distance * ease);
+
+					if (t < 1) {
+						inertiaRaf = requestAnimationFrame(inertia);
+					} else {
+						inertiaRaf = null;
+						paused = false;
+					}
+				}
+
+				inertiaRaf = requestAnimationFrame(inertia);
+			}
+
+			// house
+			runningString.addEventListener("mousedown", e => onDragStart(e.clientX));
+			window.addEventListener("mousemove", e => onDragMove(e.clientX));
+			window.addEventListener("mouseup", onDragEnd);
+
+			// touch
+			runningString.addEventListener("touchstart", e => {
+				onDragStart(e.touches[0].clientX);
+			}, { passive: true });
+
+			runningString.addEventListener("touchmove", e => {
+				e.preventDefault();
+				onDragMove(e.touches[0].clientX);
+			}, { passive: false });
+
+			runningString.addEventListener("touchend", onDragEnd);
+		}
+
+		// animate
+
+		function animate() {
+			if (isDragging) {
+				targetX = dragStartOffset + (pointerX - dragStartX);
+			} else if (!paused && !inertiaRaf) {
+				targetX -= speed;
+			}
+
+			// Нормализуем только targetX
+			targetX = normalize(targetX);
+
+			let diff = targetX - x;
+
+			if (diff > groupWidth / 2) diff -= groupWidth;
+			if (diff < -groupWidth / 2) diff += groupWidth;
+
+			x += diff * 0.12;
+			x = normalize(x);
+
+			runningString.style.transform = `translate3d(${x}px,0,0)`;
 			requestAnimationFrame(animate);
 		}
 

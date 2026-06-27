@@ -35,6 +35,8 @@
 		display: flex;
 		width: max-content;
 		will-change: transform;
+		transform: translateZ(0);
+		backface-visibility: hidden;
 	}
 
 	&__group {
@@ -93,7 +95,8 @@
 
 
 .card-item {
-	width: get-rem(422);
+	width: 100%;
+	max-width: get-rem(422);
 	cursor: default;
 
 	> .link {
@@ -115,7 +118,7 @@
 			z-index: 1;
 			transform: translate(-50%, -50%);
 			width: 120%;
-			height: 120%;
+			height: 160%;
 		}
 	}
 
@@ -172,6 +175,19 @@
 
 		.link {
 			margin: 0 0 get-rem(6);
+			position: relative;
+
+			&::after {
+				content: '';
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				z-index: 1;
+				transform: translate(-50%, -50%);
+				width: 120%;
+				height: 160%;
+			}
 		}
 
 		.title {
