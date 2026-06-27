@@ -9,9 +9,26 @@
 
 	&--quality {
 		margin: 0 0 clamp(#{get-rem(0)}, #{get-vw(160)}, #{get-rem(160)});
+		position: relative;
+
+		.bg-pic {
+			width: 100%;
+			max-width: clamp(#{get-rem(310)}, #{get-vw(793)}, #{get-rem(793)});
+			position: absolute;
+			top: 74%;
+			right: 3.5%;
+			z-index: 1;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 
 	&--about {
+		position: relative;
+		z-index: 2;
 		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(186)}, #{get-rem(186)});
 
 		@media(max-width: 1199px) {

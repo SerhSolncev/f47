@@ -535,8 +535,23 @@ html.lenis, html.lenis body {
 }
 .section--quality {
   margin: 0 0 clamp(0rem, 8.3333333333vw, 10rem);
+  position: relative;
+}
+.section--quality .bg-pic {
+  width: 100%;
+  max-width: clamp(19.375rem, 41.3020833333vw, 49.5625rem);
+  position: absolute;
+  top: 74%;
+  right: 3.5%;
+  z-index: 1;
+}
+.section--quality .bg-pic img {
+  width: 100%;
+  height: auto;
 }
 .section--about {
+  position: relative;
+  z-index: 2;
   margin: 0 0 clamp(5rem, 9.6875vw, 11.625rem);
 }
 @media (max-width: 1199px) {
@@ -1999,6 +2014,10 @@ html.lenis, html.lenis body {
   }
 }
 
+.quality-block {
+  position: relative;
+  z-index: 2;
+}
 .quality-block__top {
   display: -webkit-box;
   display: -ms-flexbox;

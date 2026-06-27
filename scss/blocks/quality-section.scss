@@ -2,6 +2,8 @@
 @import "../abstracts/vars";
 
 .quality-block {
+	position: relative;
+	z-index: 2;
 
 	&__top {
 		display: flex;
