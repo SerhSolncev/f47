@@ -172,8 +172,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				document.body.style.userSelect = "";
 
 				const startX = targetX;
-				const distance = velocity * 250;
-				const duration = 700;
+				const isMobile = window.innerWidth < 768;
+				const multiplier = isMobile ? 100 : 250;
+				const maxDistance = isMobile ? groupWidth * 0.5 : groupWidth; // не дальше половины группы на мобилке
+				const rawDistance = velocity * multiplier;
+				const distance = Math.max(-maxDistance, Math.min(maxDistance, rawDistance));
+				const duration = isMobile ? 500 : 700;
 				const startTime = performance.now();
 
 				function inertia(now) {
