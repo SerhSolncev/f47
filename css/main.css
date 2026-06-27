@@ -440,17 +440,29 @@ html.lenis, html.lenis body {
     pointer-events: all;
   }
   .header__mid .soc-list {
-    width: calc(100% + 2rem);
-    margin: 0 0 0 -1rem;
+    width: 100%;
+    margin: 0;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    border-top: 0.0625rem solid var(--color-blue);
     padding: 1.25rem 1rem;
     background-color: var(--color-bg);
     position: sticky;
     bottom: 0;
     z-index: 2;
+  }
+  .header__mid .soc-list::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+    z-index: 1;
+    width: calc(100% + 2rem);
+    height: 0.0625rem;
+    background-color: var(--color-blue);
   }
 }
 @media (min-width: 992px) {
@@ -519,7 +531,7 @@ html.lenis, html.lenis body {
 }
 
 .section--hero {
-  margin: 0 0 clamp(5rem, 13.1770833333vw, 15.8125rem);
+  margin: 0 0 clamp(5rem, 9.6875vw, 11.625rem);
 }
 
 .btn {
@@ -1367,7 +1379,7 @@ html.lenis, html.lenis body {
 }
 @media (min-width: 992px) {
   .form-board__body {
-    padding: 2.875rem 3rem 3rem;
+    padding: 2.875rem 2.8125rem 3rem;
   }
 }
 .form-board__top {
@@ -1384,6 +1396,7 @@ html.lenis, html.lenis body {
 @media (min-width: 992px) {
   .form-board__top {
     margin: 0 0 1.9375rem;
+    padding-left: 0.125rem;
   }
 }
 .form-board__fields {
@@ -1823,8 +1836,8 @@ html.lenis, html.lenis body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  gap: 1.25rem;
-  margin: -0.5625rem 0 clamp(3.75rem, 11.09375vw, 13.3125rem);
+  gap: 1.09375rem;
+  margin: -1.125rem 0 clamp(3.75rem, 9.8958333333vw, 11.875rem);
 }
 .hero-block__boards .form-board {
   width: 100%;
@@ -1855,7 +1868,7 @@ html.lenis, html.lenis body {
   display: grid;
   grid-template-columns: 1fr;
   gap: 3.75rem 2rem;
-  margin: 0 0 clamp(2.5rem, 6.9270833333vw, 8.3125rem);
+  margin: 0 0 clamp(2.5rem, 5.2604166667vw, 6.3125rem);
 }
 @media (min-width: 768px) {
   .four-cards__list {
@@ -1889,7 +1902,7 @@ html.lenis, html.lenis body {
 @media (min-width: 768px) {
   .four-cards__item:nth-child(1) .stat-card {
     max-width: 18.125rem;
-    margin: 0 1.6875rem 0 auto;
+    margin: 0 4.5rem 0 auto;
     -webkit-transform: rotate(-2deg);
             transform: rotate(-2deg);
   }
@@ -1902,7 +1915,7 @@ html.lenis, html.lenis body {
     max-width: 17.5rem;
     -webkit-transform: rotate(3deg);
             transform: rotate(3deg);
-    margin: 4.625rem 2.75rem 0 0;
+    margin: 4.625rem 5.5rem 0 0;
   }
   .four-cards__item:nth-child(3) {
     -webkit-box-pack: center;
@@ -1911,12 +1924,13 @@ html.lenis, html.lenis body {
   }
   .four-cards__item:nth-child(3) .stat-card {
     max-width: 17.8125rem;
+    margin: 0 5.5rem 0 0;
   }
   .four-cards__item:nth-child(4) .stat-card {
     max-width: 15.375rem;
     -webkit-transform: rotate(4deg);
             transform: rotate(4deg);
-    margin: 0.6875rem 0 0 2.25rem;
+    margin: 0.6875rem 0 0 -0.5rem;
   }
 }
 .four-cards__bottom {

@@ -28,8 +28,8 @@
 		align-items: flex-start;
 		justify-content: center;
 		flex-wrap: wrap;
-		gap: get-rem(20);
-		margin: get-rem(-9) 0 clamp(#{get-rem(60)}, #{get-vw(213)}, #{get-rem(213)});
+		gap: get-rem(17.5);
+		margin: get-rem(-18) 0 clamp(#{get-rem(60)}, #{get-vw(190)}, #{get-rem(190)});
 
 		.form-board {
 			width: 100%;
@@ -63,7 +63,7 @@
 		display: grid;
 		grid-template-columns: 1fr;
 		gap: get-rem(60) get-rem(32);
-		margin: 0 0 clamp(#{get-rem(40)}, #{get-vw(133)}, #{get-rem(133)});
+		margin: 0 0 clamp(#{get-rem(40)}, #{get-vw(101)}, #{get-rem(101)});
 
 		@media(min-width: 768px) {
 			grid-template-columns: repeat(2, 1fr);
@@ -91,7 +91,7 @@
 		@media(min-width: 768px) {
 			&:nth-child(1) .stat-card {
 				max-width: get-rem(290);
-				margin: 0 get-rem(27) 0 auto;
+				margin: 0 get-rem(72) 0 auto;
 				transform: rotate(-2deg);
 			}
 
@@ -101,7 +101,7 @@
 				.stat-card {
 					max-width: get-rem(280);
 					transform: rotate(3deg);
-					margin: get-rem(74) get-rem(44) 0 0;
+					margin: get-rem(74) get-rem(88) 0 0;
 				}
 			}
 
@@ -110,13 +110,14 @@
 
 				.stat-card {
 					max-width: get-rem(285);
+					margin: 0 get-rem(88) 0 0;
 				}
 			}
 
 			&:nth-child(4) .stat-card {
 				max-width: get-rem(246);
 				transform: rotate(4deg);
-				margin: get-rem(11) 0 0 get-rem(36);
+				margin: get-rem(11) 0 0 get-rem(-8);
 			}
 		}
 

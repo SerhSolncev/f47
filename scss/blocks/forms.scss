@@ -16,7 +16,7 @@
 		}
 
 		@media(min-width: 992px) {
-			padding: get-rem(46) get-rem(48) get-rem(48);
+			padding: get-rem(46) get-rem(45) get-rem(48);
 		}
 	}
 
@@ -28,6 +28,7 @@
 
 		@media(min-width: 992px) {
 			margin: 0 0 get-rem(31);
+			padding-left: get-rem(2);
 		}
 	}
 
