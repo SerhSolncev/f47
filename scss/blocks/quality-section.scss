@@ -29,7 +29,6 @@
 }
 
 .running-string {
-	overflow: hidden;
 
 	&__list {
 		display: flex;
@@ -79,10 +78,18 @@
 		}
 
 		.running-string__group {
-			gap: get-rem(34);
+			gap: get-rem(16);
+
+			@media(min-width: 1280px) {
+				gap: get-rem(34);
+			}
 
 			+ .running-string__group {
-				margin-left: get-rem(17);
+				margin-left: get-rem(8);
+
+				@media(min-width: 1280px) {
+					margin-left: get-rem(17);
+				}
 			}
 		}
 	}
@@ -96,18 +103,34 @@
 
 .card-item {
 	width: 100%;
-	max-width: get-rem(422);
+	max-width: get-rem(330);
 	cursor: default;
+
+	@media(min-width: 768px) {
+		max-width: get-rem(360);
+	}
+
+	@media(min-width: 1280px) {
+		max-width: get-rem(422);
+	}
 
 	> .link {
 		margin: get-rem(17) 0 0 get-rem(29);
 		transform: translateX(#{get-rem(-10)});
 		z-index: 2;
-		opacity: 0;
-		visibility: hidden;
-		pointer-events: none;
 		transition: all 0.15s ease-in;
 		position: relative;
+
+		@media(min-width: 1025px) {
+			opacity: 0;
+			visibility: hidden;
+			pointer-events: none;
+		}
+
+		@media(max-width: 767px) {
+			margin: get-rem(10) 0 0 get-rem(29);
+			font-size: get-rem(14);
+		}
 
 		&::after {
 			content: '';
@@ -124,9 +147,13 @@
 
 	&__wrap {
 		background-color: var(--color-white);
-		padding: get-rem(7);
+		padding: get-rem(4);
 		border-radius: get-rem(24);
 		position: relative;
+
+		@media(min-width: 992px) {
+			padding: get-rem(7);
+		}
 
 		&::after {
 			content: '';
@@ -147,9 +174,13 @@
 	&__body {
 		width: 100%;
 		border-radius: get-rem(24);
-		padding: get-rem(35) get-rem(31) 0;
+		padding: get-rem(24) get-rem(18) 0;
 		position: relative;
 		overflow: hidden;
+
+		@media(min-width: 992px) {
+			padding: get-rem(35) get-rem(31) 0;
+		}
 
 		> * {
 			position: relative;

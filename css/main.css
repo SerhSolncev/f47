@@ -863,6 +863,14 @@ html.lenis, html.lenis body {
     font-size: 1.25rem;
   }
 }
+.simple-text--type-5 {
+  font: 400 0.875rem/1.5 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 1280px) {
+  .simple-text--type-5 {
+    font-size: 1rem;
+  }
+}
 .simple-text a {
   font: inherit;
   font-family: "Manrope Semi", Verdana, Arial, sans-serif;
@@ -1964,9 +1972,6 @@ html.lenis, html.lenis body {
   margin: 0;
 }
 
-.running-string {
-  overflow: hidden;
-}
 .running-string__list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2025,10 +2030,20 @@ html.lenis, html.lenis body {
   cursor: grab;
 }
 .running-string--cards .running-string__group {
-  gap: 2.125rem;
+  gap: 1rem;
+}
+@media (min-width: 1280px) {
+  .running-string--cards .running-string__group {
+    gap: 2.125rem;
+  }
 }
 .running-string--cards .running-string__group + .running-string__group {
-  margin-left: 1.0625rem;
+  margin-left: 0.5rem;
+}
+@media (min-width: 1280px) {
+  .running-string--cards .running-string__group + .running-string__group {
+    margin-left: 1.0625rem;
+  }
 }
 
 .logo-pic {
@@ -2038,20 +2053,40 @@ html.lenis, html.lenis body {
 
 .card-item {
   width: 100%;
-  max-width: 26.375rem;
+  max-width: 20.625rem;
   cursor: default;
+}
+@media (min-width: 768px) {
+  .card-item {
+    max-width: 22.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .card-item {
+    max-width: 26.375rem;
+  }
 }
 .card-item > .link {
   margin: 1.0625rem 0 0 1.8125rem;
   -webkit-transform: translateX(-0.625rem);
           transform: translateX(-0.625rem);
   z-index: 2;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
   -webkit-transition: all 0.15s ease-in;
   transition: all 0.15s ease-in;
   position: relative;
+}
+@media (min-width: 1025px) {
+  .card-item > .link {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+@media (max-width: 767px) {
+  .card-item > .link {
+    margin: 0.625rem 0 0 1.8125rem;
+    font-size: 0.875rem;
+  }
 }
 .card-item > .link::after {
   content: "";
@@ -2067,9 +2102,14 @@ html.lenis, html.lenis body {
 }
 .card-item__wrap {
   background-color: var(--color-white);
-  padding: 0.4375rem;
+  padding: 0.25rem;
   border-radius: 1.5rem;
   position: relative;
+}
+@media (min-width: 992px) {
+  .card-item__wrap {
+    padding: 0.4375rem;
+  }
 }
 .card-item__wrap::after {
   content: "";
@@ -2090,9 +2130,14 @@ html.lenis, html.lenis body {
 .card-item__body {
   width: 100%;
   border-radius: 1.5rem;
-  padding: 2.1875rem 1.9375rem 0;
+  padding: 1.5rem 1.125rem 0;
   position: relative;
   overflow: hidden;
+}
+@media (min-width: 992px) {
+  .card-item__body {
+    padding: 2.1875rem 1.9375rem 0;
+  }
 }
 .card-item__body > * {
   position: relative;

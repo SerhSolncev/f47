@@ -104,6 +104,14 @@
 		}
 	}
 
+	&--type-5 {
+		font: 400 #{get-rem(14)}/1.5 $mainFont;
+
+		@media(min-width: 1280px) {
+			font-size: get-rem(16);
+		}
+	}
+
 	a {
 		font: inherit;
 		font-family: $mainFontBold;
