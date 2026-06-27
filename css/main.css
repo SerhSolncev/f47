@@ -2265,6 +2265,12 @@ html.lenis, html.lenis body {
 .card-item__pic--type-1 {
   bottom: -0.75rem;
 }
+@media (max-width: 1279px) {
+  .card-item__pic--type-1 {
+    max-width: 8.125rem;
+    right: -0.625rem;
+  }
+}
 .card-item__pic--type-2 {
   bottom: -0.75rem;
   right: -2.125rem;

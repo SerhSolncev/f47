@@ -296,6 +296,11 @@
 
 		&--type-1 {
 			bottom: get-rem(-12);
+
+			@media(max-width: 1279px) {
+			    max-width: get-rem(130);
+				right: get-rem(-10);
+			}
 		}
 
 		&--type-2 {
