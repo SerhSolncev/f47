@@ -4,16 +4,14 @@
 .quality-block {
 
 	&__top {
+		display: flex;
+		flex-direction: column;
+		gap: clamp(#{get-rem(16)}, #{get-vw(33)}, #{get-rem(33)});
 		max-width: get-rem(1332);
 		padding: 0 get-rem(16);
-		margin: 0 auto get-rem(47);
-
-		@media(min-width: 992px) {
-			margin: 0 auto get-rem(67);
-		}
+		margin: 0 auto clamp(#{get-rem(30)}, #{get-vw(100)}, #{get-rem(100)});
 
 		span {
-
 			@media(min-width: 768px) {
 				display: block;
 			}
@@ -23,7 +21,11 @@
 	.running-string {
 
 		&--partners {
-			margin: 0;
+			margin: 0 0 get-rem(-20);
+
+			@media(min-width: 992px) {
+				margin: 0 0 get-rem(21);
+			}
 		}
 	}
 }
