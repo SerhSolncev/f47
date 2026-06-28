@@ -39,6 +39,16 @@
 
 	}
 
+	&--type-4 {
+		font: 600 #{get-rem(16)}/1.4 $mainFontBold;
+		gap: get-rem(14);
+
+		@media(min-width: 1200px) {
+			font-size: get-rem(19);
+		}
+
+	}
+
 	&--gray {
 		color: var(--color-gray);
 
