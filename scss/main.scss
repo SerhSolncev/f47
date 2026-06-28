@@ -93,6 +93,15 @@
 }
 
 @font-face {
+	font-family: 'Gilroy';
+	src: url('../fonts/Gilroy-Medium.woff2') format('woff2'),
+	url('../fonts/Gilroy-Medium.woff') format('woff');
+	font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
 	font-family: 'Ubuntu Sans Mono Semi';
 	src: url('../fonts/UbuntuSansMono-SemiBold.woff2') format('woff2'),
 	url('../fonts/UbuntuSansMono-SemiBold.woff') format('woff');

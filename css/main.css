@@ -2748,12 +2748,50 @@ html.lenis, html.lenis body {
 }
 
 .blockquote-block {
-  padding: 60px;
+  position: relative;
+  padding: 49px 60px 76px 52px;
   border-radius: 4rem;
-  background-image: linear-gradient(30deg, #1ef4b4, #c4b4fd);
+  min-height: 23.875rem;
+  background-image: linear-gradient(225deg, #1ef4b4, #c4b4fd);
+}
+.blockquote-block__left {
+  width: calc(100% - 24.0625rem);
+  position: relative;
+  padding: 1.9375rem 0 0 2.6875rem;
+}
+.blockquote-block__left::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 5.375rem;
+  height: 4.75rem;
+  background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NiIgaGVpZ2h0PSI3NyIgdmlld0JveD0iMCAwIDg2IDc3IiBmaWxsPSJub25lIj4KICA8cGF0aCBvcGFjaXR5PSIwLjA1IiBkPSJNODYgMC43MzIxOTFMODMuNzgzNSAxNi4wOTk5Qzc5LjI1MiAxNS43MDU4IDc1LjY1NjQgMTYuNDkzOSA3Mi45OTY2IDE4LjQ2NDJDNzAuMzM2OCAyMC4zMzU5IDY4LjUxNDMgMjMuMDQ0OSA2Ny41MjkyIDI2LjU5MTNDNjYuNjQyNiAzMC4wMzkyIDY2LjQ5NDkgMzMuOTc5NiA2Ny4wODU5IDM4LjQxMjZIODZWNzYuMzg4NUg0OS41MDE3VjM2LjkzNDlDNDkuNTAxNyAyNC4wMyA1Mi41NTU2IDE0LjI3NzQgNTguNjYzMiA3LjY3NzIyQzY0Ljc3MDkgMC45Nzg0NjkgNzMuODgzMiAtMS4zMzY1NCA4NiAwLjczMjE5MVpNMzYuNDk4MyAwLjczMjE5MUwzNC4yODE4IDE2LjA5OTlDMjkuNzUwMyAxNS43MDU4IDI2LjE1NDYgMTYuNDkzOSAyMy40OTQ4IDE4LjQ2NDJDMjAuODM1MSAyMC4zMzU5IDE5LjAxMjYgMjMuMDQ0OSAxOC4wMjc1IDI2LjU5MTNDMTcuMTQwOSAzMC4wMzkyIDE2Ljk5MzEgMzMuOTc5NiAxNy41ODQyIDM4LjQxMjZIMzYuNDk4M1Y3Ni4zODg1SDBWMzYuOTM0OUMwIDI0LjAzIDMuMDUzODQgMTQuMjc3NCA5LjE2MTUxIDcuNjc3MjJDMTUuMjY5MiAwLjk3ODQ2OSAyNC4zODE0IC0xLjMzNjU0IDM2LjQ5ODMgMC43MzIxOTFaIiBmaWxsPSJibGFjayI+PC9wYXRoPgo8L3N2Zz4K);
+  background-size: 100% 100%;
+}
+.blockquote-block__left blockquote {
+  font: 400 1.8125rem/1.4 "Gilroy", Verdana, Arial, sans-serif;
+  font-style: italic;
+  letter-spacing: -0.02em;
+  padding: 0;
+  margin: 0;
+}
+.blockquote-block__left .name-block {
+  text-align: right;
+  margin: 1rem 0 0;
 }
 .blockquote-block__pic {
-  display: none;
+  position: absolute;
+  bottom: 0;
+  right: 3.4375rem;
+  z-index: 1;
+  max-width: 20.1875rem;
+}
+.blockquote-block__pic img {
+  width: 100%;
+  height: auto;
 }
 
 .container {
@@ -2832,6 +2870,13 @@ html.lenis, html.lenis body {
   font-style: italic;
 }
 
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
 @font-face {
   font-family: "Ubuntu Sans Mono Semi";
   src: url("../fonts/UbuntuSansMono-SemiBold.woff2") format("woff2"), url("../fonts/UbuntuSansMono-SemiBold.woff") format("woff");
