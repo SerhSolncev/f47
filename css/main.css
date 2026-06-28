@@ -2620,10 +2620,18 @@ html.lenis, html.lenis body {
 }
 
 .how-work {
-  padding: 60px 40px;
+  padding: 4.625rem 3.9375rem;
   background-color: #242b3a;
   border-radius: 4rem;
 }
+.how-work__top {
+  margin: 0 0 40px;
+}
+.how-work__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
 .container {
   width: 100%;
   max-width: 92rem;

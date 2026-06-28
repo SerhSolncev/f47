@@ -2,11 +2,16 @@
 @import "../abstracts/vars";
 
 .how-work {
-	padding: 60px 40px;
+	padding: get-rem(74) get-rem(63);
 	background-color: #242b3a;
 	border-radius: get-rem(64);
 
 	&__top {
+		margin: 0 0 40px;
+	}
 
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
