@@ -7,11 +7,50 @@
 	border-radius: get-rem(64);
 
 	&__top {
-		margin: 0 0 40px;
+		margin: 0 0 get-rem(63);
 	}
 
 	&__list {
 		display: grid;
 		grid-template-columns: repeat(2, 1fr);
+		position: relative;
+	}
+}
+
+.adv-item {
+	padding: get-rem(25) get-rem(81) get-rem(34);
+
+	&__top {
+		display: grid;
+		grid-template-columns: auto 1fr;
+		align-items: flex-start;
+		gap: get-rem(22);
+		margin: 0 0 get-rem(16);
+
+		.title {
+			grid-row: 2;
+			grid-column: 2;
+			margin: get-rem(-54) 0 0;
+		}
+	}
+
+	&__number {
+		font: 600 #{get-rem(100)}/1 $mainFont;
+		color: rgba(#fff, 0.1);
+		flex-shrink: 0;
+		//transform: translateY(#{get-rem(-46)});
+	}
+
+	&:nth-child(1) {
+		border-right: get-rem(1) solid rgba(#fff, 0.1);
+		border-bottom: get-rem(1) solid rgba(#fff, 0.1);
+	}
+
+	&:nth-child(2) {
+		border-bottom: get-rem(1) solid rgba(#fff, 0.1);
+	}
+
+	&:nth-child(3) {
+		border-right: get-rem(1) solid rgba(#fff, 0.1);
 	}
 }
