@@ -560,6 +560,11 @@ html.lenis, html.lenis body {
     margin-top: -2.5rem;
   }
 }
+.section--how-work {
+  position: relative;
+  z-index: 2;
+  margin: 0 0 clamp(5rem, 9.6875vw, 11.625rem);
+}
 
 .btn {
   display: -webkit-box;
@@ -971,6 +976,14 @@ html.lenis, html.lenis body {
 }
 .simple-text--type-6 {
   font: 400 0.875rem/1.5 "Manrope", Verdana, Arial, sans-serif;
+}
+.simple-text--type-7 {
+  font: 400 1rem/1.5 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 1200px) {
+  .simple-text--type-7 {
+    font-size: 1.125rem;
+  }
 }
 .simple-text a {
   font: inherit;
@@ -2601,6 +2614,12 @@ html.lenis, html.lenis body {
     width: 1.5rem;
     height: 1.5rem;
   }
+}
+
+.how-work {
+  padding: 60px 40px;
+  background-color: #242b3a;
+  border-radius: 4rem;
 }
 
 .container {

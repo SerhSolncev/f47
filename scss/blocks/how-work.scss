@@ -1,2 +1,8 @@
 @import "../abstracts/functions";
 @import "../abstracts/vars";
+
+.how-work {
+	padding: 60px 40px;
+	background-color: #242b3a;
+	border-radius: get-rem(64);
+}
