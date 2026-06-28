@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', (event) => {
+	history.scrollRestoration = 'manual';
 	document.body.classList.add('loading');
 
 	setTimeout(() => {
@@ -42,9 +43,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		smoothWheel: true
 	});
 
-	lenis.on('scroll', ({ scroll }) => {
-		ScrollTrigger.update(scroll);
-	});
+	lenis.on('scroll', ScrollTrigger.update);
 
 	gsap.ticker.add((time) => {
 		lenis.raf(time * 1000);
@@ -531,84 +530,101 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 
 	// анімація
-	history.scrollRestoration = 'manual';
 
-	window.addEventListener('load', () => {
-		window.scrollTo(0, 0);
+	document.querySelectorAll('.js-show-on-scroll').forEach(el => {
+		if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
 
-		document.querySelectorAll('.js-show-on-load').forEach(el => {
-			if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
+		const direction = el.dataset.direction || 'bottom';
+		const dy = parseFloat(el.dataset.y) || 50;
+		const start = el.dataset.start || 'top 85%';
+		const isOnLoad = el.hasAttribute('data-on-load');
 
-			const direction = el.dataset.direction || 'bottom';
-			const dy = parseFloat(el.dataset.y) || 50;
+		const from = {
+			opacity: 0,
+			duration: 1,
+			ease: 'power3.out',
+		};
 
-			const from = {
-				opacity: 0,
-				duration: 1,
-				ease: 'power3.out',
-				delay: 0.3
-			};
+		if (direction === 'bottom') {
+			from.y = dy;
+			from.duration = 0.9;
+		} else if (direction === 'top') {
+			from.y = -dy;
+			from.duration = 0.9;
+		} else {
+			from.x = direction === 'left' ? -150 : 150;
+			from.y = -100;
+			from.rotation = direction === 'left' ? -15 : 15;
+		}
 
-			if (direction === 'bottom') {
-				from.y = dy;
-				from.duration = 0.9;
-			} else {
-				from.x = direction === 'left' ? -150 : 150;
-				from.y = -100;
-				from.rotation = direction === 'left' ? -15 : 15;
-			}
-
+		if (isOnLoad) {
+			from.delay = 0.3;
 			gsap.from(el, from);
-		});
-
-		document.querySelectorAll('.js-go-away-on-scroll').forEach(el => {
-			const direction = el.dataset.direction || 'left';
-			const position  = parseFloat(el.dataset.position) || 0;
-			const x         = parseFloat(el.dataset.x) || 200;
-
-			if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
-
-			let xTo = 0, yTo = 0;
-			if (direction === 'left')   xTo = -x;
-			if (direction === 'right')  xTo =  x;
-			if (direction === 'bottom') yTo =  position;
-			if (direction === 'top')    yTo = -position;
-
-			gsap.to(el, {
-				x: xTo,
-				y: yTo,
-				ease: 'none',
+		} else {
+			gsap.from(el, {
+				...from,
 				scrollTrigger: {
-					trigger: document.body,
-					start: 'top top',
-					end: '+=800',
-					scrub: true,
+					trigger: el,
+					start,
+					toggleActions: 'play none none reverse',
 				}
 			});
+		}
+	});
+
+	document.querySelectorAll('.js-go-away-on-scroll').forEach(el => {
+		const direction= el.dataset.direction || 'left';
+		const position= parseFloat(el.dataset.position) || 0;
+		const x = parseFloat(el.dataset.x) || 200;
+		const start = el.dataset.start || 'top top';
+		const end = el.dataset.end   || '+=800';
+
+		if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
+
+		let xTo = 0, yTo = 0;
+		if (direction === 'left') xTo = -x;
+		if (direction === 'right') xTo =  x;
+		if (direction === 'bottom') yTo =  position;
+		if (direction === 'top') yTo = -position;
+
+		const trigger = el.dataset.trigger === 'topBody'
+			? document.body
+			: el.closest('.js-go-away-trigger') || el.parentElement;
+
+		gsap.to(el, {
+			x: xTo,
+			y: yTo,
+			ease: 'none',
+			scrollTrigger: {
+				trigger,
+				start,
+				end,
+				scrub: 0.5,
+			}
 		});
+	});
 
-		document.querySelectorAll('.js-scroll-rotate').forEach(el => {
-			const degree  = parseFloat(el.dataset.degre) || 30;
-			const isRight = el.hasAttribute('data-rotate-right');
+	document.querySelectorAll('.js-scroll-rotate').forEach(el => {
+		const degree  = parseFloat(el.dataset.degre) || 30;
+		const isRight = el.hasAttribute('data-rotate-right');
 
-			if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
+		if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
 
-			const from = isRight ? degree : -degree;
-			const to   = isRight ? -degree : degree;
+		const from = isRight ? degree : -degree;
+		const to   = isRight ? -degree : degree;
 
-			gsap.fromTo(el,
-				{ rotation: from },
-				{
-					rotation: to,
-					ease: 'none',
-					scrollTrigger: {
-						trigger: el,
-						start: 'top bottom',
-						end: 'bottom top',
-						scrub: true,
-					}
+		gsap.fromTo(el,
+			{ rotation: from },
+			{
+				rotation: to,
+				ease: 'none',
+				scrollTrigger: {
+					trigger: el,
+					start: 'top bottom',
+					end: 'bottom top',
+					scrub: true,
 				}
-			);
-		});
+			}
+		);
 	});
 })

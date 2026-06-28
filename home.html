@@ -217,6 +217,7 @@
 			]
 		}
 	</script>
+
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -304,26 +305,53 @@
 	<section class="section section--hero oh" aria-labelledby="hero-title">
 	<div class="container">
 		<div class="hero-block">
-			<div class="hero-block__top js-show-on-load" data-direction="bottom" data-y="50" data-off-animate="991">
+			<div class="hero-block__top js-show-on-scroll" data-direction="bottom" data-y="50" data-off-animate="991">
 				<h1 id="hero-title" class="title title--type-1 color-dark text-center">
-					<span class="js-go-away-on-scroll" data-off-animate="991" data-direction="left" data-x="800">
+					<span class="js-go-away-on-scroll"
+						data-off-animate="991"
+						data-direction="left"
+						data-x="800"
+						data-start="top top"
+						data-end="+=600"
+						data-trigger="topBody"
+					>
 						Виводимо
 						<img src="images/icons/text-pic1.svg" alt="" aria-hidden="true" width="56" height="56">
 						бренди
 					</span>
-					<span class="js-go-away-on-scroll" data-off-animate="991" data-direction="right" data-x="800">
+					<span class="js-go-away-on-scroll"
+						data-off-animate="991"
+						data-direction="right"
+						data-x="500"
+						data-start="top top"
+						data-end="+=600"
+						data-trigger="topBody"
+					>
 						у відповіді AI‑платформ
 						<img src="images/icons/text-pic2.svg" alt="" aria-hidden="true" width="56" height="56">
 					</span>
 				</h1>
-				<p class="simple-text simple-text--type-1 color-dark text-center js-go-away-on-scroll" data-direction="bottom" data-position="170" data-off-animate="991">
+				<p class="simple-text simple-text--type-1 color-dark text-center js-go-away-on-scroll"
+					data-direction="bottom"
+					data-position="120"
+					data-off-animate="991"
+					data-start="top top+=100"
+					data-end="+=300"
+				>
 					Допомагаємо брендам отримувати цільовий трафік і кваліфіковані звернення з відповідей нейромереж <strong>через системну GEO/AEO-оптимізацію</strong>
 				</p>
 			</div>
 			<div class="hero-block__boards">
 				<!-- TODO в js по классу js-validate-form є скріпт який форму відправляє, якщо треба буде -->
-				<div class="js-show-on-load" data-direction="left" data-off-animate="991">
-					<form class="form-board form-board--orange-gradient js-validate-form js-go-away-on-scroll" data-direction="bottom"  data-position="100" data-off-animate="991" data-url>
+				<div class="js-show-on-scroll"  data-direction="left" data-off-animate="991">
+					<form class="form-board form-board--orange-gradient js-validate-form js-go-away-on-scroll"
+						data-direction="bottom"
+						data-position="150"
+						data-off-animate="991"
+						data-start="bottom bottom 40%"
+						data-end="center top+=100"
+						data-url
+					>
 						<div class="form-board__body">
 							<div class="form-board__top">
 								<h3 class="title title--type-3 color-dark text-bolder lt-2">Безкоштовний гайд <br> з просування у AI</h3>
@@ -362,7 +390,7 @@
 						</div>
 					</form>
 				</div>
-				<div class="js-show-on-load" data-direction="right" data-off-animate="991">
+				<div class="js-show-on-scroll"  data-direction="right" data-off-animate="991">
 					<form class="form-board form-board--sea-gradient js-validate-form">
 						<div class="form-board__body">
 							<div class="form-board__top">
@@ -453,7 +481,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="four-cards__bottom">
+				<div class="four-cards__bottom js-show-on-scroll" data-direction="bottom" data-y="30" data-off-animate="991">
 					<button type="button" class="btn btn--type-1 btn--dark-bg">
 						<span class="btn__text">Зв'яжіться з нами</span>
 					</button>
@@ -472,17 +500,34 @@
 	<div class="quality-block">
 		<div class="quality-block__top">
 			<h2 id="quality-title" class="title title--type-5 color-dark text-center">
-				<span class="js-go-away-on-scroll" data-off-animate="575" data-direction="left">
+				<span class="js-go-away-on-scroll"
+					data-off-animate="991"
+					data-direction="left"
+					data-x="800"
+					data-start="top top+=300"
+					data-end="bottom top-=200"
+				>
 					Якість контенту,
 					<img src="images/icons/text-pic3.svg" alt="" aria-hidden="true" width="56" height="56">
 					оптимізований сайт
 				</span>
-				<span class="js-go-away-on-scroll" data-off-animate="575" data-direction="right">
+				<span class="js-go-away-on-scroll"
+					data-off-animate="991"
+					data-direction="right"
+					data-x="600"
+					data-start="top top+=300"
+					data-end="bottom top-=200"
+				>
 					та ефективний зовнішній PR
 					<img src="images/icons/text-pic4.svg" alt="" aria-hidden="true" width="56" height="56">
 				</span>
 			</h2>
-			<p class="simple-text simple-text--type-6 color-dark-sec text-center text-bold">Наше портфоліо</p>
+			<p class="simple-text simple-text--type-6 color-dark-sec text-center text-bold js-show-on-scroll"
+				data-direction="bottom"
+				data-y="30"
+				data-off-animate="991"
+			>
+				Наше портфоліо</p>
 		</div>
 
 		<div class="oh">

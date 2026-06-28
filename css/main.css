@@ -531,7 +531,8 @@ html.lenis, html.lenis body {
 }
 
 .section--hero {
-  margin: 0 0 clamp(5rem, 9.6875vw, 11.625rem);
+  margin: 0 0 clamp(5rem, 4.84375vw, 5.8125rem);
+  padding: 0 0 clamp(5rem, 4.84375vw, 5.8125rem);
 }
 .section--quality {
   margin: 0 0 clamp(0rem, 8.3333333333vw, 10rem);
