@@ -256,6 +256,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	}
 
 	function lockFocus(block) {
+		if (block.hasAttribute('data-no-lock-focus')) return;
 		block.querySelectorAll(
 			'a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])'
 		).forEach(el => el.setAttribute('tabindex', '-1'));
@@ -528,8 +529,45 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		}
 	});
 
+	// tabs
+	class Tabs {
+		constructor(container) {
+			this.container = container;
+			this.init();
+		}
 
-	// анімація
+		init() {
+			this.container.querySelectorAll("[data-tab]").forEach((tab) => {
+				tab.addEventListener("click", (e) => this.activateTab(e.target));
+			});
+		}
+
+		activateTab(tab) {
+			const tabGroup = tab.closest("[data-tabs]");
+			const contentGroup = tabGroup.querySelector("[data-contents]");
+			const tabName = tab.dataset.tab;
+
+			tabGroup.querySelectorAll("[data-tab]").forEach((t) => {
+				if (t.closest("[data-tabs]") === tabGroup) {
+					t.classList.remove("is-active");
+				}
+			});
+
+			contentGroup.querySelectorAll("[data-content]").forEach((c) => {
+				if (c.closest("[data-contents]") === contentGroup) {
+					c.classList.remove("is-active");
+				}
+			});
+
+			tab.classList.add("is-active");
+			const activeContents = contentGroup.querySelectorAll(`[data-content="${tabName}"]`);
+			activeContents.forEach((el) => el.classList.add("is-active"));
+		}
+	}
+
+	document.querySelectorAll("[data-tabs]").forEach((tabsContainer) => new Tabs(tabsContainer));
+
+	// анімація при скролі і лоаду сторінки
 
 	document.querySelectorAll('.js-show-on-scroll').forEach(el => {
 		if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
