@@ -51,16 +51,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 	gsap.ticker.lagSmoothing(0);
 
-	window.addEventListener('load', () => {
-		window.scrollTo(0, 0);
-		ScrollTrigger.refresh();
-	});
-
-	window.addEventListener('load', () => {
-		window.scrollTo(0, 0);
-		ScrollTrigger.refresh();
-	});
-
 	// header
 	const header = document.querySelector('.js-header');
 	if (!header) return;

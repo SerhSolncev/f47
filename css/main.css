@@ -586,6 +586,55 @@ html.lenis, html.lenis body {
   opacity: 0.5;
   pointer-events: none;
 }
+.btn__text {
+  -webkit-transition: opacity 0.15s ease-in;
+  transition: opacity 0.15s ease-in;
+}
+.btn__icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 1.25rem;
+  height: 1.25rem;
+}
+.btn__icon svg {
+  width: 100%;
+  height: 100%;
+}
+.btn__hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(255, 255, 255, 0.1);
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease-in, padding 0.2s ease-in;
+  transition: opacity 0.2s ease-in, padding 0.2s ease-in;
+}
+.btn__hover .btn__icon {
+  -webkit-transform: translateY(1px);
+          transform: translateY(1px);
+}
+.btn__hover span {
+  padding: 0 0 0.125rem;
+}
 .btn--type-1 {
   font: 400 0.875rem/1 "Manrope", Verdana, Arial, sans-serif;
   border-radius: 2.5rem;
@@ -618,7 +667,7 @@ html.lenis, html.lenis body {
     -webkit-transition: background-color 0.15s ease-in;
     transition: background-color 0.15s ease-in;
   }
-  .btn--type-2 svg, .btn--type-2 img {
+  .btn--type-2 > svg, .btn--type-2 > img {
     max-width: 64%;
     width: auto;
     height: auto;
@@ -628,24 +677,21 @@ html.lenis, html.lenis body {
   }
 }
 @media (min-width: 992px) {
-  .btn--type-2 svg, .btn--type-2 img {
+  .btn--type-2 > svg, .btn--type-2 > img {
     display: none;
   }
 }
 .btn--dark-bg {
   color: var(--color-white);
   background-color: var(--color-dark);
+  overflow: hidden;
 }
-.btn--dark-bg:hover {
-  background-color: var(--color-blue);
+.btn--dark-bg:hover .btn__hover {
+  opacity: 1;
+  padding: 0 0.375rem 0 1.3125rem;
 }
-.btn--dark-bg:active {
-  background-color: var(--color-dark);
-  -webkit-transform: scale(0.95);
-          transform: scale(0.95);
-}
-.btn--dark-bg:focus-visible {
-  outline-color: var(--color-white);
+.btn--dark-bg:hover .btn__text {
+  opacity: 0;
 }
 .btn--dark-bg-sec {
   color: var(--color-white);
