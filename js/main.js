@@ -538,29 +538,36 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		const dy = parseFloat(el.dataset.y) || 50;
 		const start = el.dataset.start || 'top 85%';
 		const delay = parseFloat(el.dataset.delay) || 0;
-		const duration = parseFloat(el.dataset.duration) || null;
+		const duration = parseFloat(el.dataset.duration) || 1;
 
 		const from = {
 			opacity: 0,
-			duration: duration || 1,
+			duration,
 			ease: 'power3.out',
 			delay,
 		};
 
 		if (direction === 'bottom') {
 			from.y = dy;
-			from.duration = 0.9;
 		} else if (direction === 'top') {
 			from.y = -dy;
-			from.duration = 0.9;
-		} else if (direction === 'fade') {
-
-		} else {
-			from.x = direction === 'left' ? -150 : 150;
+		} else if (direction === 'left') {
+			from.x = -150;
 			from.y = -100;
-			from.rotation = direction === 'left' ? -15 : 15;
+			from.rotation = -15;
+		} else if (direction === 'right') {
+			from.x = 150;
+			from.y = -100;
+			from.rotation = 15;
 		}
 
+		// Анимация сразу после загрузки
+		if (el.hasAttribute('data-on-load')) {
+			gsap.from(el, from);
+			return;
+		}
+
+		// Анимация по скроллу
 		gsap.from(el, {
 			...from,
 			scrollTrigger: {

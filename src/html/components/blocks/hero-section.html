@@ -1,15 +1,15 @@
 <section class="section section--hero oh" aria-labelledby="hero-title">
 	<div class="container">
 		<div class="hero-block">
-			<div class="hero-block__top js-show-on-scroll"
-				data-on-load
-				data-direction="bottom"
-				data-y="50"
-				data-off-animate="991"
-				data-delay="0.3"
-				data-duration="1.4"
-			>
-				<h1 id="hero-title" class="title title--type-1 color-dark text-center">
+			<div class="hero-block__top">
+				<h1 id="hero-title" class="title title--type-1 color-dark text-center js-show-on-scroll"
+					data-on-load
+					data-direction="bottom"
+					data-y="50"
+					data-off-animate="991"
+					data-delay="0.3"
+					data-duration="1.4"
+				>
 					<span class="js-go-away-on-scroll"
 						data-off-animate="991"
 						data-direction="left"
@@ -34,15 +34,25 @@
 						<img src="images/icons/text-pic2.svg" alt="" aria-hidden="true" width="56" height="56">
 					</span>
 				</h1>
-				<p class="simple-text simple-text--type-1 color-dark text-center js-go-away-on-scroll"
+				<div class="js-show-on-scroll"
+					data-on-load
 					data-direction="bottom"
-					data-position="120"
+					data-y="50"
 					data-off-animate="991"
-					data-start="top top+=100"
-					data-end="+=300"
-				>
-					Допомагаємо брендам отримувати цільовий трафік і кваліфіковані звернення з відповідей нейромереж <strong>через системну GEO/AEO-оптимізацію</strong>
-				</p>
+					data-delay="0.3"
+					data-duration="1.4">
+
+					<p class="simple-text simple-text--type-1 color-dark text-center js-go-away-on-scroll"
+						data-direction="bottom"
+						data-position="120"
+						data-off-animate="991"
+						data-start="top top+=350"
+						data-end="+=200"
+					>
+						Допомагаємо брендам отримувати цільовий трафік і кваліфіковані звернення з відповідей нейромереж <strong>через системну GEO/AEO-оптимізацію</strong>
+					</p>
+
+				</div>
 			</div>
 			<div class="hero-block__boards">
 				<!-- TODO в js по классу js-validate-form є скріпт який форму відправляє, якщо треба буде -->
