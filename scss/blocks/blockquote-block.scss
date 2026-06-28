@@ -67,6 +67,7 @@
 
 			@media(min-width: 768px) {
 				text-align: left;
+				font-size: get-rem(24);
 			}
 
 			@media(min-width: 992px) {
@@ -74,7 +75,7 @@
 			}
 
 			@media(min-width: 1366px) {
-			    font-style: get-rem(29);
+			    font-size: get-rem(29);
 			}
 		}
 
@@ -86,7 +87,7 @@
 
 	&__pic {
 		max-width: get-rem(275);
-		margin: get-rem(40) auto 0;
+		margin: get-rem(20) auto 0;
 
 		@media(min-width: 768px) {
 			position: absolute;

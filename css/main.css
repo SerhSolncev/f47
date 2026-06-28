@@ -2825,6 +2825,7 @@ html.lenis, html.lenis body {
 @media (min-width: 768px) {
   .blockquote-block__left blockquote {
     text-align: left;
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 992px) {
@@ -2834,7 +2835,7 @@ html.lenis, html.lenis body {
 }
 @media (min-width: 1366px) {
   .blockquote-block__left blockquote {
-    font-style: 1.8125rem;
+    font-size: 1.8125rem;
   }
 }
 .blockquote-block__left .name-block {
@@ -2843,7 +2844,7 @@ html.lenis, html.lenis body {
 }
 .blockquote-block__pic {
   max-width: 17.1875rem;
-  margin: 2.5rem auto 0;
+  margin: 1.25rem auto 0;
 }
 @media (min-width: 768px) {
   .blockquote-block__pic {
