@@ -61,7 +61,7 @@
 	&--type-1 {
 		font: 400 #{get-rem(14)}/1 $mainFont;
 		border-radius: get-rem(40);
-		padding: 0 get-rem(20) get-rem(2);
+		padding: 0 get-rem(40) get-rem(2);
 		height: get-rem(36);
 
 		@media(min-width: 1280px) {
@@ -74,10 +74,6 @@
 		border-radius: get-rem(40);
 		padding: 0 get-rem(40) get-rem(2);
 		height: get-rem(36);
-
-		@media(max-width: 1279px) {
-			padding: 0 get-rem(20) get-rem(2);
-		}
 
 		@media(max-width: 991px) {
 			padding: 0;

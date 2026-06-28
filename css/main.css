@@ -638,7 +638,7 @@ html.lenis, html.lenis body {
 .btn--type-1 {
   font: 400 0.875rem/1 "Manrope", Verdana, Arial, sans-serif;
   border-radius: 2.5rem;
-  padding: 0 1.25rem 0.125rem;
+  padding: 0 2.5rem 0.125rem;
   height: 2.25rem;
 }
 @media (min-width: 1280px) {
@@ -651,11 +651,6 @@ html.lenis, html.lenis body {
   border-radius: 2.5rem;
   padding: 0 2.5rem 0.125rem;
   height: 2.25rem;
-}
-@media (max-width: 1279px) {
-  .btn--type-2 {
-    padding: 0 1.25rem 0.125rem;
-  }
 }
 @media (max-width: 991px) {
   .btn--type-2 {
