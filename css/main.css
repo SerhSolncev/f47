@@ -560,9 +560,15 @@ html.lenis, html.lenis body {
   }
 }
 .section--how-work {
-  position: relative;
-  z-index: 2;
-  margin: 0 0 clamp(5rem, 6.6666666667vw, 8rem);
+  margin: 0 0 clamp(8.75rem, 6.6666666667vw, 8rem);
+}
+@media (max-width: 767px) {
+  .section--how-work {
+    margin: 0 0 5rem;
+  }
+}
+.section--blockquote {
+  margin: 0 0 clamp(8.75rem, 6.6666666667vw, 8rem);
 }
 
 .btn {
@@ -2749,15 +2755,46 @@ html.lenis, html.lenis body {
 
 .blockquote-block {
   position: relative;
-  padding: 49px 60px 76px 52px;
-  border-radius: 4rem;
-  min-height: 23.875rem;
+  padding: 2.4375rem 1rem 0 1rem;
+  border-radius: 1.5rem;
+  min-height: 19.375rem;
   background-image: linear-gradient(225deg, #1ef4b4, #c4b4fd);
 }
+@media (min-width: 768px) {
+  .blockquote-block {
+    border-radius: 3rem;
+    padding: 2.4375rem 3.125rem 3.5rem 2rem;
+  }
+}
+@media (min-width: 1200px) {
+  .blockquote-block {
+    border-radius: 4rem;
+    padding: 3.0625rem 3.75rem 4.75rem 3.25rem;
+    min-height: 23.875rem;
+  }
+}
 .blockquote-block__left {
-  width: calc(100% - 24.0625rem);
+  width: 100%;
   position: relative;
-  padding: 1.9375rem 0 0 2.6875rem;
+  padding: 1.75rem 0 0 0;
+}
+@media (min-width: 768px) {
+  .blockquote-block__left {
+    width: calc(100% - 18.125rem);
+    padding: 1.3125rem 0 0 1.625rem;
+  }
+}
+@media (min-width: 992px) {
+  .blockquote-block__left {
+    padding: 1.3125rem 0 0 2.0625rem;
+    width: calc(100% - 20rem);
+  }
+}
+@media (min-width: 1200px) {
+  .blockquote-block__left {
+    width: calc(100% - 24.0625rem);
+    padding: 1.9375rem 0 0 2.6875rem;
+  }
 }
 .blockquote-block__left::after {
   content: "";
@@ -2766,28 +2803,63 @@ html.lenis, html.lenis body {
   top: 0;
   left: 0;
   z-index: 1;
-  width: 5.375rem;
-  height: 4.75rem;
+  width: 4.125rem;
+  height: 3.5rem;
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NiIgaGVpZ2h0PSI3NyIgdmlld0JveD0iMCAwIDg2IDc3IiBmaWxsPSJub25lIj4KICA8cGF0aCBvcGFjaXR5PSIwLjA1IiBkPSJNODYgMC43MzIxOTFMODMuNzgzNSAxNi4wOTk5Qzc5LjI1MiAxNS43MDU4IDc1LjY1NjQgMTYuNDkzOSA3Mi45OTY2IDE4LjQ2NDJDNzAuMzM2OCAyMC4zMzU5IDY4LjUxNDMgMjMuMDQ0OSA2Ny41MjkyIDI2LjU5MTNDNjYuNjQyNiAzMC4wMzkyIDY2LjQ5NDkgMzMuOTc5NiA2Ny4wODU5IDM4LjQxMjZIODZWNzYuMzg4NUg0OS41MDE3VjM2LjkzNDlDNDkuNTAxNyAyNC4wMyA1Mi41NTU2IDE0LjI3NzQgNTguNjYzMiA3LjY3NzIyQzY0Ljc3MDkgMC45Nzg0NjkgNzMuODgzMiAtMS4zMzY1NCA4NiAwLjczMjE5MVpNMzYuNDk4MyAwLjczMjE5MUwzNC4yODE4IDE2LjA5OTlDMjkuNzUwMyAxNS43MDU4IDI2LjE1NDYgMTYuNDkzOSAyMy40OTQ4IDE4LjQ2NDJDMjAuODM1MSAyMC4zMzU5IDE5LjAxMjYgMjMuMDQ0OSAxOC4wMjc1IDI2LjU5MTNDMTcuMTQwOSAzMC4wMzkyIDE2Ljk5MzEgMzMuOTc5NiAxNy41ODQyIDM4LjQxMjZIMzYuNDk4M1Y3Ni4zODg1SDBWMzYuOTM0OUMwIDI0LjAzIDMuMDUzODQgMTQuMjc3NCA5LjE2MTUxIDcuNjc3MjJDMTUuMjY5MiAwLjk3ODQ2OSAyNC4zODE0IC0xLjMzNjU0IDM2LjQ5ODMgMC43MzIxOTFaIiBmaWxsPSJibGFjayI+PC9wYXRoPgo8L3N2Zz4K);
   background-size: 100% 100%;
 }
+@media (min-width: 1200px) {
+  .blockquote-block__left::after {
+    width: 5.375rem;
+    height: 4.75rem;
+  }
+}
 .blockquote-block__left blockquote {
-  font: 400 1.8125rem/1.4 "Gilroy", Verdana, Arial, sans-serif;
+  font: 400 1.25rem/1.4 "Gilroy", Verdana, Arial, sans-serif;
   font-style: italic;
   letter-spacing: -0.02em;
   padding: 0;
   margin: 0;
+  text-align: center;
+}
+@media (min-width: 768px) {
+  .blockquote-block__left blockquote {
+    text-align: left;
+  }
+}
+@media (min-width: 992px) {
+  .blockquote-block__left blockquote {
+    right: 3.4375rem;
+  }
+}
+@media (min-width: 1366px) {
+  .blockquote-block__left blockquote {
+    font-style: 1.8125rem;
+  }
 }
 .blockquote-block__left .name-block {
   text-align: right;
   margin: 1rem 0 0;
 }
 .blockquote-block__pic {
-  position: absolute;
-  bottom: 0;
-  right: 3.4375rem;
-  z-index: 1;
-  max-width: 20.1875rem;
+  max-width: 17.1875rem;
+  margin: 2.5rem auto 0;
+}
+@media (min-width: 768px) {
+  .blockquote-block__pic {
+    position: absolute;
+    bottom: 0;
+    right: 1rem;
+    z-index: 1;
+    max-width: 17.1875rem;
+    margin: 0;
+  }
+}
+@media (min-width: 1200px) {
+  .blockquote-block__pic {
+    max-width: 20.1875rem;
+    right: 3.4375rem;
+  }
 }
 .blockquote-block__pic img {
   width: 100%;

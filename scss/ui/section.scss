@@ -38,8 +38,14 @@
 	}
 
 	&--how-work {
-		position: relative;
-		z-index: 2;
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(128)}, #{get-rem(128)});
+		margin: 0 0 clamp(#{get-rem(140)}, #{get-vw(128)}, #{get-rem(128)});
+
+		@media(max-width: 767px) {
+			margin: 0 0 get-rem(80);
+		}
+	}
+
+	&--blockquote {
+		margin: 0 0 clamp(#{get-rem(140)}, #{get-vw(128)}, #{get-rem(128)});
 	}
 }
