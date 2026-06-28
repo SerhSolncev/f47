@@ -30,7 +30,7 @@
 	&--about {
 		position: relative;
 		z-index: 2;
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(384)}, #{get-rem(384)});
+		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(186)}, #{get-rem(186)});
 
 		@media(max-width: 1199px) {
 			margin-top: get-rem(-40);

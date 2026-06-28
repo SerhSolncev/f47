@@ -24,21 +24,26 @@
 		display: grid;
 		grid-template-columns: auto 1fr;
 		align-items: flex-start;
-		gap: get-rem(22);
+		gap: get-rem(22) get-rem(14);
 		margin: 0 0 get-rem(16);
 
 		.title {
 			grid-row: 2;
 			grid-column: 2;
-			margin: get-rem(-54) 0 0;
+			transform: translateY(#{get-rem(-54)});
 		}
 	}
 
 	&__number {
 		font: 600 #{get-rem(100)}/1 $mainFont;
+		min-width: get-rem(60);
 		color: rgba(#fff, 0.1);
 		flex-shrink: 0;
 		//transform: translateY(#{get-rem(-46)});
+	}
+
+	.simple-text {
+		margin: get-rem(-54) 0 0;
 	}
 
 	&:nth-child(1) {
