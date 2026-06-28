@@ -562,7 +562,7 @@ html.lenis, html.lenis body {
 .section--how-work {
   position: relative;
   z-index: 2;
-  margin: 0 0 clamp(5rem, 9.6875vw, 11.625rem);
+  margin: 0 0 clamp(5rem, 6.6666666667vw, 8rem);
 }
 
 .btn {
@@ -975,6 +975,9 @@ html.lenis, html.lenis body {
 }
 .simple-text--type-6 {
   font: 400 0.875rem/1.5 "Manrope", Verdana, Arial, sans-serif;
+}
+.simple-text--type-6 {
+  font: 400 1rem/1.5 "Manrope", Verdana, Arial, sans-serif;
 }
 .simple-text a {
   font: inherit;
@@ -2629,7 +2632,7 @@ html.lenis, html.lenis body {
 }
 @media (min-width: 1280px) {
   .how-work {
-    padding: 4.625rem 3.9375rem;
+    padding: 4.625rem 3.9375rem 4.625rem;
   }
 }
 .how-work__top {
@@ -2742,6 +2745,15 @@ html.lenis, html.lenis body {
   .adv-item:last-child {
     padding-bottom: 0;
   }
+}
+
+.blockquote-block {
+  padding: 60px;
+  border-radius: 4rem;
+  background-image: linear-gradient(30deg, #1ef4b4, #c4b4fd);
+}
+.blockquote-block__pic {
+  display: none;
 }
 
 .container {

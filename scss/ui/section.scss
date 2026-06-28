@@ -40,6 +40,6 @@
 	&--how-work {
 		position: relative;
 		z-index: 2;
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(186)}, #{get-rem(186)});
+		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(128)}, #{get-rem(128)});
 	}
 }
