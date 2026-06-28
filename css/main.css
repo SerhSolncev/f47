@@ -393,7 +393,6 @@ html.lenis, html.lenis body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 0 0.6875rem;
     gap: 0;
   }
 }
@@ -553,7 +552,7 @@ html.lenis, html.lenis body {
 .section--about {
   position: relative;
   z-index: 2;
-  margin: 0 0 clamp(5rem, 9.6875vw, 11.625rem);
+  margin: 0 0 clamp(5rem, 20vw, 24rem);
 }
 @media (max-width: 1199px) {
   .section--about {
@@ -2476,11 +2475,6 @@ html.lenis, html.lenis body {
             flex-direction: row;
   }
 }
-@media (min-width: 1200px) {
-  .about-section {
-    padding: 0 0 0 0.625rem;
-  }
-}
 .about-section__left {
   -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -2536,6 +2530,11 @@ html.lenis, html.lenis body {
     display: block;
   }
 }
+@media (min-width: 1560px) {
+  .about-section__pic {
+    margin: 0 -0.6875rem 0 -0.1875rem;
+  }
+}
 @media (min-width: 992px) {
   .about-section .check-list {
     max-width: 30rem;
@@ -2546,6 +2545,10 @@ html.lenis, html.lenis body {
     max-width: 33.75rem;
   }
 }
+.about-section .check-list__item:nth-child(1), .about-section .check-list__item:nth-child(2) {
+  max-width: 31.875rem;
+}
+
 .check-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2621,10 +2624,9 @@ html.lenis, html.lenis body {
   background-color: #242b3a;
   border-radius: 4rem;
 }
-
 .container {
   width: 100%;
-  max-width: 93.375rem;
+  max-width: 92rem;
   margin: 0 auto;
   padding: 0 1rem;
 }
