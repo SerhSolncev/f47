@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-	history.scrollRestoration = 'manual';
 	document.body.classList.add('loading');
 
 	setTimeout(() => {
@@ -40,7 +39,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	gsap.registerPlugin(ScrollTrigger);
 
 	const lenis = new Lenis({
-		smoothWheel: true
+		smoothWheel: true,
+		duration: window.innerWidth <= 768 ? 0.6 : 1.2,
 	});
 
 	lenis.on('scroll', ScrollTrigger.update);
@@ -50,6 +50,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	});
 
 	gsap.ticker.lagSmoothing(0);
+
+	window.addEventListener('load', () => {
+		window.scrollTo(0, 0);
+		ScrollTrigger.refresh();
+	});
+
+	window.addEventListener('load', () => {
+		window.scrollTo(0, 0);
+		ScrollTrigger.refresh();
+	});
 
 	// header
 	const header = document.querySelector('.js-header');
@@ -537,12 +547,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		const direction = el.dataset.direction || 'bottom';
 		const dy = parseFloat(el.dataset.y) || 50;
 		const start = el.dataset.start || 'top 85%';
-		const isOnLoad = el.hasAttribute('data-on-load');
+		const delay = parseFloat(el.dataset.delay) || 0;
+		const duration = parseFloat(el.dataset.duration) || null;
 
 		const from = {
 			opacity: 0,
-			duration: 1,
+			duration: duration || 1,
 			ease: 'power3.out',
+			delay,
 		};
 
 		if (direction === 'bottom') {
@@ -551,25 +563,22 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		} else if (direction === 'top') {
 			from.y = -dy;
 			from.duration = 0.9;
+		} else if (direction === 'fade') {
+
 		} else {
 			from.x = direction === 'left' ? -150 : 150;
 			from.y = -100;
 			from.rotation = direction === 'left' ? -15 : 15;
 		}
 
-		if (isOnLoad) {
-			from.delay = 0.3;
-			gsap.from(el, from);
-		} else {
-			gsap.from(el, {
-				...from,
-				scrollTrigger: {
-					trigger: el,
-					start,
-					toggleActions: 'play none none reverse',
-				}
-			});
-		}
+		gsap.from(el, {
+			...from,
+			scrollTrigger: {
+				trigger: el,
+				start,
+				toggleActions: 'play none none reverse',
+			}
+		});
 	});
 
 	document.querySelectorAll('.js-go-away-on-scroll').forEach(el => {

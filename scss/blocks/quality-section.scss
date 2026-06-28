@@ -6,6 +6,7 @@
 	z-index: 2;
 
 	&__top {
+		width: 100%;
 		display: flex;
 		flex-direction: column;
 		gap: clamp(#{get-rem(16)}, #{get-vw(33)}, #{get-rem(33)});

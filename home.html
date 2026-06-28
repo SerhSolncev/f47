@@ -217,7 +217,7 @@
 			]
 		}
 	</script>
-
+<!--	<script>history.scrollRestoration = 'manual';</script>-->
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -305,7 +305,13 @@
 	<section class="section section--hero oh" aria-labelledby="hero-title">
 	<div class="container">
 		<div class="hero-block">
-			<div class="hero-block__top js-show-on-scroll" data-direction="bottom" data-y="50" data-off-animate="991">
+			<div class="hero-block__top js-show-on-scroll"
+				data-direction="bottom"
+				data-y="50"
+				data-off-animate="991"
+				data-delay="0.3"
+				data-duration="1.4"
+			>
 				<h1 id="hero-title" class="title title--type-1 color-dark text-center">
 					<span class="js-go-away-on-scroll"
 						data-off-animate="991"
@@ -343,7 +349,7 @@
 			</div>
 			<div class="hero-block__boards">
 				<!-- TODO в js по классу js-validate-form є скріпт який форму відправляє, якщо треба буде -->
-				<div class="js-show-on-scroll"  data-direction="left" data-off-animate="991">
+				<div class="js-show-on-scroll" data-delay="0.3" data-direction="left" data-off-animate="991" data-duration="1.4">
 					<form class="form-board form-board--orange-gradient js-validate-form js-go-away-on-scroll"
 						data-direction="bottom"
 						data-position="150"
@@ -390,7 +396,7 @@
 						</div>
 					</form>
 				</div>
-				<div class="js-show-on-scroll"  data-direction="right" data-off-animate="991">
+				<div class="js-show-on-scroll" data-delay="0.3" data-direction="right" data-off-animate="991" data-duration="1.4">
 					<form class="form-board form-board--sea-gradient js-validate-form">
 						<div class="form-board__body">
 							<div class="form-board__top">
@@ -494,12 +500,19 @@
 
 	<!-- quality content -->
 	<section class="section section--quality" aria-labelledby="quality-title">
-	<div class="bg-pic">
+	<div class="bg-pic js-go-away-on-scroll"
+		data-direction="top"
+		data-position="150"
+		data-off-animate="991"
+		data-start="bottom bottom 40%"
+		data-end="bottom top+=100"
+	>
 		<img src="images/empty.gif" data-src="images/pics/bg1.webp" alt="" width="793" height="843" class="lazy">
 	</div>
 	<div class="quality-block">
-		<div class="quality-block__top">
-			<h2 id="quality-title" class="title title--type-5 color-dark text-center">
+		<div class="oh">
+			<div class="quality-block__top">
+				<h2 id="quality-title" class="title title--type-5 color-dark text-center">
 				<span class="js-go-away-on-scroll"
 					data-off-animate="991"
 					data-direction="left"
@@ -511,25 +524,25 @@
 					<img src="images/icons/text-pic3.svg" alt="" aria-hidden="true" width="56" height="56">
 					оптимізований сайт
 				</span>
-				<span class="js-go-away-on-scroll"
-					data-off-animate="991"
-					data-direction="right"
-					data-x="600"
-					data-start="top top+=300"
-					data-end="bottom top-=200"
-				>
+					<span class="js-go-away-on-scroll"
+						data-off-animate="991"
+						data-direction="right"
+						data-x="600"
+						data-start="top top+=300"
+						data-end="bottom top-=200"
+					>
 					та ефективний зовнішній PR
 					<img src="images/icons/text-pic4.svg" alt="" aria-hidden="true" width="56" height="56">
 				</span>
-			</h2>
-			<p class="simple-text simple-text--type-6 color-dark-sec text-center text-bold js-show-on-scroll"
-				data-direction="bottom"
-				data-y="30"
-				data-off-animate="991"
-			>
-				Наше портфоліо</p>
+				</h2>
+				<p class="simple-text simple-text--type-6 color-dark-sec text-center text-bold js-show-on-scroll"
+					data-direction="bottom"
+					data-y="30"
+					data-off-animate="991"
+				>
+					Наше портфоліо</p>
+			</div>
 		</div>
-
 		<div class="oh">
 			<!-- біжуща строка логотипів -->
 			<div class="running-string running-string--partners">
@@ -671,23 +684,23 @@
 	<div class="container">
 		<div class="about-section">
 			<div class="about-section__left">
-				<div class="about-section__top">
+				<div class="about-section__top js-show-on-scroll" data-direction="bottom" data-y="30" data-off-animate="991">
 					<h3 id="about-title" class="title title--type-7 color-dark">Перше моно агентство з AI-видимості в Україні</h3>
 					<p class="simple-text simple-text--type-1 color-dark lh-15">GEO-агентство з чіткою спеціалізацією на AI-маркетингу </p>
 				</div>
 				<ul class="check-list">
-					<li class="check-list__item">
+					<li class="check-list__item js-show-on-scroll" data-direction="bottom" data-y="30" data-off-animate="991" data-delay="0.15">
 						F-47 допомагає брендам ставати видимими, зрозумілими та рекомендованими у відповідях ChatGPT, Perplexity, Gemini, Claude та Google AI
 					</li>
-					<li class="check-list__item">
+					<li class="check-list__item js-show-on-scroll" data-direction="bottom" data-y="30" data-off-animate="991" data-delay="0.3">
 						Ми працюємо з B2B-компаніями, SaaS- і IT-продуктами, eCommerce-проєктами, експертними сервісами та стартапами, для яких важливо бути помітними в момент, коли клієнт шукає рішення в AI
 					</li>
-					<li class="check-list__item">
+					<li class="check-list__item js-show-on-scroll" data-direction="bottom" data-y="30" data-off-animate="991" data-delay="0.45">
 						Для стартапів ми також розробляємо <span>GTM-стратегії,</span> <span>вебсайти</span> та автоматизуємо бізнес-процеси за допомогою <span>автономних AI-агентів</span>
 					</li>
 				</ul>
 			</div>
-			<div class="about-section__pic">
+			<div class="about-section__pic js-show-on-scroll" data-direction="top" data-y="30" data-off-animate="991" data-delay="0.25">
 				<img src="images/empty.gif" data-src="images/pics/after-before.webp" alt="" width="863" height="810" class="lazy">
 			</div>
 		</div>

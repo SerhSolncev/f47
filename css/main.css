@@ -531,8 +531,8 @@ html.lenis, html.lenis body {
 }
 
 .section--hero {
-  margin: 0 0 clamp(5rem, 4.84375vw, 5.8125rem);
-  padding: 0 0 clamp(5rem, 4.84375vw, 5.8125rem);
+  margin: 0 0 clamp(2.5rem, 4.84375vw, 5.8125rem);
+  padding: 0 0 clamp(2.5rem, 4.84375vw, 5.8125rem);
 }
 .section--quality {
   margin: 0 0 clamp(0rem, 8.3333333333vw, 10rem);
@@ -2020,6 +2020,7 @@ html.lenis, html.lenis body {
   z-index: 2;
 }
 .quality-block__top {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
