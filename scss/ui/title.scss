@@ -132,14 +132,6 @@
 		font: 400 #{get-rem(14)}/1.5 $mainFont;
 	}
 
-	&--type-7 {
-		font: 400 #{get-rem(16)}/1.5 $mainFont;
-
-
-		@media(min-width: 1200px) {
-			font-size: get-rem(18);
-		}
-	}
 
 	a {
 		font: inherit;

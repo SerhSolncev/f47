@@ -587,27 +587,33 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 		if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
 
+		let xFrom = 0, yFrom = 0;
 		let xTo = 0, yTo = 0;
-		if (direction === 'left') xTo = -x;
-		if (direction === 'right') xTo =  x;
-		if (direction === 'bottom') yTo =  position;
-		if (direction === 'top') yTo = -position;
+		if (direction === 'left')   { xFrom = -x; }
+		if (direction === 'right')  { xFrom = x; }
+		if (direction === 'bottom') { yFrom = position; }
+		if (direction === 'top')    { yFrom = -position; }
 
 		const trigger = el.dataset.trigger === 'topBody'
 			? document.body
 			: el.closest('.js-go-away-trigger') || el.parentElement;
 
-		gsap.to(el, {
-			x: xTo,
-			y: yTo,
-			ease: 'none',
-			scrollTrigger: {
-				trigger,
-				start,
-				end,
-				scrub: 0.5,
+		const hasReverse = el.hasAttribute('data-reverse');
+
+		gsap.fromTo(el,
+			{ x: hasReverse ? xFrom : 0, y: hasReverse ? yFrom : 0 },
+			{
+				x: hasReverse ? 0 : xFrom,
+				y: hasReverse ? 0 : yFrom,
+				ease: 'none',
+				scrollTrigger: {
+					trigger,
+					start,
+					end,
+					scrub: 0.5,
+				}
 			}
-		});
+		);
 	});
 
 	document.querySelectorAll('.js-scroll-rotate').forEach(el => {

@@ -213,6 +213,38 @@
 							}
 						}
 					]
+				},
+				{
+					"@type": "HowTo",
+					"name": "Як працює GEO просування від F47",
+					"description": "Процес оптимізації AI-видимості бренду у відповідях ChatGPT, Perplexity, Gemini та Google AI",
+					"provider": { "@type": "MarketingAgency", "name": "F47", "url": "https://f47.agency" },
+					"step": [
+						{
+							"@type": "HowToStep",
+							"position": 1,
+							"name": "Оптимізація структури та контенту",
+							"text": "Перебудовуємо сторінки за принципом «відповідь спочатку»: додаємо чіткі формулювання, FAQ, порівняння, таблиці, визначення та блоки довіри."
+						},
+						{
+							"@type": "HowToStep",
+							"position": 2,
+							"name": "Структуровані дані та entity-оптимізація",
+							"text": "Налаштовуємо schema markup і допомагаємо AI правильно зрозуміти, хто ви, що пропонуєте, для кого працюєте і чим відрізняєтесь від конкурентів."
+						},
+						{
+							"@type": "HowToStep",
+							"position": 3,
+							"name": "Зовнішній авторитет і PR",
+							"text": "Працюємо зі згадками бренду в медіа, каталогах, рейтингах, партнерських матеріалах, профільних платформах і джерелах, яким AI може довіряти."
+						},
+						{
+							"@type": "HowToStep",
+							"position": 4,
+							"name": "Моніторинг AI-видимості та звітність",
+							"text": "Регулярно відстежуємо, як бренд з'являється у відповідях ChatGPT, Perplexity, Gemini, які джерела цитують нейромережі, кого вони рекомендують замість вас і як змінюється позиція бренду після оптимізації."
+						}
+					]
 				}
 			]
 		}
@@ -758,7 +790,13 @@
 	<!-- how work -->
 	<section class="section section--how-work" aria-labelledby="work-title">
 	<div class="container">
-		<div class="how-work">
+		<div class="how-work js-go-away-on-scroll"
+			data-direction="bottom"
+			data-position="-250"
+			data-reverse
+			data-start="top bottom"
+			data-end="top 10%"
+		>
 			<div class="how-work__top text-center js-show-on-scroll"
 				data-direction="bottom"
 				data-y="50"
@@ -778,9 +816,9 @@
 					>
 						<div class="adv-item__top">
 							<div class="adv-item__number">1</div>
-							<h3 class="title title--type-3 color-white text-bold lt-2">Оптимізація структури <br> та контенту</h3>
+							<h4 class="title title--type-3 color-white text-bold lt-2">Оптимізація структури <br> та контенту</h4>
 						</div>
-						<p class="simple-text simple-text--type-7 color-gray-sec lt-2">Перебудовуємо сторінки за принципом “відповідь спочатку”: додаємо чіткі формулювання, FAQ, порівняння, таблиці, визначення та блоки довіри.</p>
+						<p class="simple-text simple-text--type-2 color-gray-sec lt-2 lh-15">Перебудовуємо сторінки за принципом “відповідь спочатку”: додаємо чіткі формулювання, FAQ, порівняння, таблиці, визначення та блоки довіри.</p>
 					</div>
 				</div>
 				<div class="adv-item">
@@ -793,9 +831,9 @@
 					>
 						<div class="adv-item__top">
 							<div class="adv-item__number">2</div>
-							<h3 class="title title--type-3 color-white text-bold lt-2">Структуровані дані <br> та entity-оптимізація</h3>
+							<h4 class="title title--type-3 color-white text-bold lt-2">Структуровані дані <br> та entity-оптимізація</h4>
 						</div>
-						<p class="simple-text simple-text--type-7 color-gray-sec lt-2">Налаштовуємо schema markup і допомагаємо AI правильно зрозуміти, хто ви, що пропонуєте, для кого працюєте і чим відрізняєтесь від конкурентів.</p>
+						<p class="simple-text simple-text--type-2 color-gray-sec lt-2 lh-15">Налаштовуємо schema markup і допомагаємо AI правильно зрозуміти, хто ви, що пропонуєте, для кого працюєте і чим відрізняєтесь від конкурентів.</p>
 					</div>
 				</div>
 				<div class="adv-item">
@@ -807,9 +845,9 @@
 					>
 						<div class="adv-item__top">
 							<div class="adv-item__number">3</div>
-							<h3 class="title title--type-3 color-white text-bold lt-2">Зовнішній авторитет і PR</h3>
+							<h4 class="title title--type-3 color-white text-bold lt-2">Зовнішній авторитет і PR</h4>
 						</div>
-						<p class="simple-text simple-text--type-7 color-gray-sec lt-2">Працюємо зі згадками бренду в медіа, каталогах, рейтингах, партнерських матеріалах, профільних платформах і джерелах, яким AI може довіряти.</p>
+						<p class="simple-text simple-text--type-2 color-gray-sec lt-2 lh-15">Працюємо зі згадками бренду в медіа, каталогах, рейтингах, партнерських матеріалах, профільних платформах і джерелах, яким AI може довіряти.</p>
 					</div>
 				</div>
 				<div class="adv-item">
@@ -821,15 +859,25 @@
 					>
 						<div class="adv-item__top">
 							<div class="adv-item__number">4</div>
-							<h3 class="title title--type-3 color-white text-bold lt-2">Моніторинг AI-видимості та звітність</h3>
+							<h4 class="title title--type-3 color-white text-bold lt-2">Моніторинг AI-видимості та звітність</h4>
 						</div>
-						<p class="simple-text simple-text--type-7 color-gray-sec lt-2">Регулярно відстежуємо, як бренд з’являється у відповідях ChatGPT, Perplexity, Gemini, які джерела цитують нейромережі, кого вони рекомендують замість вас і як змінюється позиція бренду після оптимізації.</p>
+						<p class="simple-text simple-text--type-2 color-gray-sec lt-2 lh-15">Регулярно відстежуємо, як бренд з’являється у відповідях ChatGPT, Perplexity, Gemini, які джерела цитують нейромережі, кого вони рекомендують замість вас і як змінюється позиція бренду після оптимізації.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
 </section>
+
+
+	<!-- blockquote-section -->
+	<div class="section section--about">
+	<div class="container">
+		<div class="blockquote-block">
+
+		</div>
+	</div>
+</div>
 
 </main>
 <script src="js/modules/lozad.min.js"></script>
