@@ -50,7 +50,7 @@
 	}
 
 	&--media-center {
-		margin: 0 0 clamp(#{get-rem(140)}, #{get-vw(128)}, #{get-rem(128)});
+		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(128)}, #{get-rem(128)});
 	}
 
 	&--price-section {

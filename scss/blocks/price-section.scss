@@ -4,18 +4,40 @@
 .price-section {
 
 	&__top {
-		margin: 0 0 get-rem(71);
+		margin: 0 0 clamp(get-rem(1), #{get-vw(71)}, #{get-rem(71)});
 	}
 
 	&__list {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		padding: 0 get-rem(71);
+		grid-template-columns: 1fr;
+
+		@media(min-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media(min-width: 1200px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media(min-width: 1440px) {
+			padding: 0 get-rem(71);
+		}
+
+		@media(min-width: 768px) and (max-width: 1199px) {
+		    .price-card:nth-child(3) {
+			    grid-column: 1/3;
+
+			    .price-card__body {
+				    max-width: get-rem(437);
+				    margin: 0 auto;
+			    }
+		    }
+		}
 	}
 
 	&__bottom {
 		max-width: get-rem(480);
-		margin: get-rem(58) auto 0;
+		margin: clamp(#{get-rem(1)}, #{get-vw(58)}, #{get-rem(58)}) auto 0;
 	}
 }
 
@@ -23,9 +45,14 @@
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
-	padding: get-rem(25) 0;
+	gap: get-rem(4);
+	padding: get-rem(16) 0;
 	position: relative;
 	width: 100%;
+
+	@media(min-width: 992px) {
+		padding: get-rem(25) 0;
+	}
 
 	&::after {
 		content: '';
@@ -54,7 +81,11 @@
 
 	display: flex;
 	flex-direction: column;
-	gap: get-rem(10.8);
+	gap: get-rem(8);
+
+	@media(min-width: 768px) {
+		gap: get-rem(10.8);
+	}
 
 	li {
 		position: relative;
@@ -84,10 +115,21 @@
 }
 
 .price-card {
-	max-width: get-rem(437);
+
+	@media(min-width: 1440px) {
+		max-width: get-rem(437);
+	}
 
 	&__body {
-		padding: get-rem(54) get-rem(20);
+		padding: get-rem(36) get-rem(14);
+
+		@media(min-width: 1200px) {
+			padding: get-rem(54) get-rem(16);
+		}
+
+		@media(min-width: 992px) {
+			padding: get-rem(54) get-rem(20);
+		}
 	}
 
 	&__top {
@@ -95,7 +137,11 @@
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
-		margin: 0 0 40px;
+		margin: 0 0 get-rem(20);
+
+		@media(min-width: 992px) {
+			margin: 0 0 get-rem(40);
+		}
 
 		> .title {
 			margin: 0 0 get-rem(11);
@@ -103,22 +149,33 @@
 
 		> .simple-text {
 			max-width: get-rem(277);
-			margin: 0 auto get-rem(28);
+			margin: 0 auto get-rem(20);
+
+			@media(min-width: 1200px) {
+				margin: 0 auto get-rem(28);
+			}
 		}
 	}
 
 	.simple-ul {
-		padding: 0 get-rem(14) 0 get-rem(22);
+
+		@media(min-width: 1200px) {
+			padding: 0 get-rem(14) 0 get-rem(22);
+		}
 	}
 
 	&__bottom {
 		width: 100%;
 		max-width: get-rem(293);
-		margin: get-rem(40) auto 0;
+		margin: get-rem(24) auto 0;
 		display: flex;
 		flex-direction: column;
 		text-align: center;
 		gap: get-rem(12);
+
+		@media(min-width: 992px) {
+			margin: get-rem(40) auto 0;
+		}
 	}
 
 	&__list {
@@ -132,12 +189,19 @@
 		padding: get-rem(7);
 		background-color: var(--color-light);
 		border-radius: get-rem(30);
-		min-width: get-rem(451);
+
+		@media(min-width: 1280px) {
+			min-width: get-rem(451);
+		}
 
 		.price-card {
 
 			&__body {
-				padding: get-rem(42) get-rem(20);
+				padding: get-rem(24) get-rem(14);
+
+				@media(min-width: 768px) {
+					padding: get-rem(42) get-rem(20);
+				}
 			}
 		}
 	}
