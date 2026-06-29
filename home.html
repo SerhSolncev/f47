@@ -901,8 +901,7 @@
 	<section class="section section--media-center" aria-labelledby="media-title">
 	<div class="container">
 		<div class="media-center" data-tabs>
-			<!-- js-show-on-scroll -->
-			<div class="media-center__top text-center"
+			<div class="media-center__top text-center js-show-on-scroll"
 				data-direction="bottom"
 				data-y="50"
 				data-off-animate="1280"
@@ -915,7 +914,13 @@
 					<button class="link link--type-1 link--gray lt-14" role="tab" aria-selected="false" data-tab="tab3">Новини</button>
 				</div>
 			</div>
-			<div class="media-center__body" role="tabpanel" data-contents>
+			<div class="media-center__body js-show-on-scroll" role="tabpanel"
+				data-contents
+				data-direction="bottom"
+				data-y="50"
+				data-off-animate="1280"
+				data-duration="0.5"
+			>
 				<!-- tab1 -->
 				<div class="media-center__item is-active is-visible" data-content="tab1">
 					<div class="media-center__list">
@@ -1165,6 +1170,24 @@
 						</article>
 					</div>
 				</div>
+			</div>
+			<div class="flex-center js-show-on-scroll"
+				data-start="top bottom"
+				data-direction="bottom"
+				data-y="50"
+				data-off-animate="1280"
+				data-duration="0.5"
+			>
+				<a href="#!" class="link link--type-3 link--dark lt-14">
+					<span>Читати більше корисних матеріалів</span>
+					<span class="link__icon">
+						<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+							<path d="M16.3447 2.59467C16.6376 2.30178 17.1123 2.30178 17.4052 2.59467C17.6981 2.88756 17.6981 3.36232 17.4052 3.65522L11.1552 9.90522C10.8623 10.1981 10.3876 10.1981 10.0947 9.90522C9.80178 9.61232 9.80178 9.13756 10.0947 8.84467L16.3447 2.59467Z"></path>
+							<path d="M16.125 8.125L16.124 3.875H11.875C11.4608 3.87494 11.125 3.53916 11.125 3.125C11.1251 2.71083 11.4608 2.375 11.875 2.375L16.874 2.37598C17.2881 2.37604 17.624 2.71185 17.624 3.12598L17.625 8.125C17.625 8.53916 17.2892 8.87494 16.875 8.875C16.4608 8.875 16.1251 8.53917 16.125 8.125Z"></path>
+							<path d="M15.125 16.25C15.125 16.6147 14.9805 16.9648 14.7227 17.2227C14.4648 17.4805 14.1147 17.625 13.75 17.625H3.75C3.38533 17.625 3.03521 17.4805 2.77734 17.2227C2.51948 16.9648 2.375 16.6147 2.375 16.25V6.25C2.375 5.88533 2.51948 5.53521 2.77734 5.27734L2.87891 5.18652C3.12356 4.98611 3.43097 4.875 3.75 4.875H9.375C9.78921 4.875 10.125 5.21079 10.125 5.625C10.125 6.03921 9.78921 6.375 9.375 6.375H3.875V16.125H13.625V10.625C13.625 10.2108 13.9608 9.875 14.375 9.875C14.7892 9.875 15.125 10.2108 15.125 10.625V16.25Z"></path>
+						</svg>
+					</span>
+				</a>
 			</div>
 		</div>
 	</div>

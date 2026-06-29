@@ -30,8 +30,12 @@
 	}
 
 	&--type-3 {
-		font: 600 #{get-rem(16)}/1 $mainFontBold;
+		font: 600 #{get-rem(14)}/1 $mainFontBold;
 		gap: get-rem(14);
+
+		@media(min-width: 360px) {
+		    font-size: get-rem(16);
+		}
 
 		@media(min-width: 1200px) {
 		    font-size: get-rem(18);

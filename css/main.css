@@ -821,8 +821,13 @@ html.lenis, html.lenis body {
   font: 600 0.75rem/1 "Ubuntu Sans Mono Semi", Verdana, Arial, sans-serif;
 }
 .link--type-3 {
-  font: 600 1rem/1 "Manrope Semi", Verdana, Arial, sans-serif;
+  font: 600 0.875rem/1 "Manrope Semi", Verdana, Arial, sans-serif;
   gap: 0.875rem;
+}
+@media (min-width: 360px) {
+  .link--type-3 {
+    font-size: 1rem;
+  }
 }
 @media (min-width: 1200px) {
   .link--type-3 {
@@ -2879,6 +2884,9 @@ html.lenis, html.lenis body {
   height: auto;
 }
 
+.media-center__body {
+  margin: 0 0 clamp(1.5rem, 2.6041666667vw, 3.125rem);
+}
 .media-center__top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2887,8 +2895,8 @@ html.lenis, html.lenis body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2.0625rem;
-  margin: 0 0 4.25rem;
+  gap: clamp(1.375rem, 1.71875vw, 2.0625rem);
+  margin: 0 0 clamp(2rem, 3.5416666667vw, 4.25rem);
 }
 .media-center__nav {
   display: -webkit-box;
@@ -2900,9 +2908,24 @@ html.lenis, html.lenis body {
   gap: 0.75rem;
 }
 .media-center__list {
+  width: calc(100% + 2rem);
+  margin: 0 0 0 -1rem;
+  padding: 0 1rem 0.5rem 1rem;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 1.5625rem;
+  gap: 1rem;
+  overflow: auto;
+}
+@media (min-width: 992px) {
+  .media-center__list {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    gap: 1.5625rem;
+  }
+}
+.media-center__list .blog-item {
+  min-width: 18.25rem;
 }
 .media-center__item {
   display: none;
@@ -2936,10 +2959,15 @@ html.lenis, html.lenis body {
       flex-shrink: 0;
 }
 .tag--gray {
-  font: 600 0.875rem/1 "Manrope Semi", Verdana, Arial, sans-serif;
+  font: 600 0.75rem/1 "Manrope Semi", Verdana, Arial, sans-serif;
   letter-spacing: -0.014em;
   color: var(--color-white);
   background-color: rgba(36, 43, 58, 0.8);
+}
+@media (min-width: 1200px) {
+  .tag--gray {
+    font-size: 0.875rem;
+  }
 }
 
 .blog-item {
@@ -2950,14 +2978,14 @@ html.lenis, html.lenis body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2rem;
-  padding: 0 0 2rem;
+  gap: clamp(1rem, 1.6666666667vw, 2rem);
+  padding: 0 0 clamp(1.375rem, 1.6666666667vw, 2rem);
   background-color: var(--color-light);
   border-radius: 1.25rem;
   overflow: hidden;
 }
 .blog-item > *:not(.blog-item__pic) {
-  padding: 0 1.875rem;
+  padding: 0 clamp(0.875rem, 1.5625vw, 1.875rem);
 }
 .blog-item .link {
   padding-right: 1.5rem;
@@ -2994,8 +3022,16 @@ html.lenis, html.lenis body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 0.5rem;
-  margin: 0 0 -0.75rem;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 0.375rem;
+  margin: 0 0 -0.375rem;
+}
+@media (min-width: 992px) {
+  .blog-item__tags {
+    gap: 0.5rem;
+    margin: 0 0 -0.75rem;
+  }
 }
 .blog-item .name-block {
   margin: auto 0 0;
@@ -3097,6 +3133,18 @@ html.lenis, html.lenis body {
 
 .text-italic {
   font-style: italic;
+}
+
+.flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 @font-face {

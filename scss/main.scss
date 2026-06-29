@@ -93,6 +93,12 @@
 	font-style: italic;
 }
 
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 @font-face {
 	font-family: 'Gilroy';
 	src: url('../fonts/Gilroy-Medium.woff2') format('woff2'),
