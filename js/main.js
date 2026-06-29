@@ -541,7 +541,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				tab.addEventListener("click", (e) => this.activateTab(e.target));
 			});
 		}
-
 		activateTab(tab) {
 			const tabGroup = tab.closest("[data-tabs]");
 			const contentGroup = tabGroup.querySelector("[data-contents]");
@@ -550,18 +549,29 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			tabGroup.querySelectorAll("[data-tab]").forEach((t) => {
 				if (t.closest("[data-tabs]") === tabGroup) {
 					t.classList.remove("is-active");
+					if (t.hasAttribute("aria-selected")) {
+						t.setAttribute("aria-selected", "false");
+					}
 				}
 			});
 
 			contentGroup.querySelectorAll("[data-content]").forEach((c) => {
 				if (c.closest("[data-contents]") === contentGroup) {
 					c.classList.remove("is-active");
+					c.classList.remove("is-visible");
 				}
 			});
 
 			tab.classList.add("is-active");
+			if (tab.hasAttribute("aria-selected")) {
+				tab.setAttribute("aria-selected", "true");
+			}
+
 			const activeContents = contentGroup.querySelectorAll(`[data-content="${tabName}"]`);
-			activeContents.forEach((el) => el.classList.add("is-active"));
+			activeContents.forEach((el) => {
+				el.classList.add("is-active");
+				setTimeout(() => el.classList.add("is-visible"), 30);
+			});
 		}
 	}
 

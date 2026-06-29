@@ -9,18 +9,19 @@
 				data-duration="0.5"
 			>
 				<h3 id="media-title" class="title title--type-5 color-dark">Медіа-центр</h3>
-				<div class="media-center__nav">
-					<button class="link link--type-1 link--gray lt-14 is-active" data-tab="tab1">Статті</button>
-					<button class="link link--type-1 link--gray lt-14" data-tab="tab2">Кейси</button>
-					<button class="link link--type-1 link--gray lt-14" data-tab="tab3">Новини</button>
+				<div class="media-center__nav" role="tablist">
+					<button class="link link--type-1 link--gray lt-14 is-active" role="tab" aria-selected="true" data-tab="tab1">Статті</button>
+					<button class="link link--type-1 link--gray lt-14" role="tab" aria-selected="false" data-tab="tab2">Кейси</button>
+					<button class="link link--type-1 link--gray lt-14" role="tab" aria-selected="false" data-tab="tab3">Новини</button>
 				</div>
 			</div>
-			<div class="media-center__body" data-contents>
-				<div class="media-center__item is-active" data-content="tab1">
+			<div class="media-center__body" role="tabpanel" data-contents>
+				<!-- tab1 -->
+				<div class="media-center__item is-active is-visible" data-content="tab1">
 					<div class="media-center__list">
 						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
 							<a href="#!" class="blog-item__pic" itemprop="url">
-								<img src="images/empty.gif" data-src="images/pics/blog-pic.webp" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini" width="464" height="335" class="lazy">
+								<img src="images/empty.gif" data-src="images/pics/blog-pic.webp" itemprop="image" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini" width="464" height="335" class="lazy">
 							</a>
 							<div class="blog-item__tags">
 								<span class="tag tag--gray" itemprop="keywords">GEO</span>
@@ -28,21 +29,239 @@
 								<span class="tag tag--gray" itemprop="keywords">Google AI</span>
 								<span class="tag tag--gray" itemprop="keywords">Тренди 2026</span>
 							</div>
-							<h3 itemprop="headline">
-								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 color-dark">
+							<h4 class="blog-item__title" itemprop="headline">
+								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 link--dark lt-2">
 									Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini
 								</a>
-							</h3>
+							</h4>
 							<div class="name-block" itemprop="author" itemscope itemtype="https://schema.org/Person">
 								<div class="name-block__pic">
 									<img src="images/empty.gif" data-src="images/pics/man-mini.webp" alt="Микита Мороз" width="40" height="40" class="lazy">
 								</div>
-								<div class="name-block__body simple-text simple-text--type-7 color-dark lh-15 lt-2">
-									<div class="text-bolder" itemprop="name">Микита Мороз</div>
-									<div itemprop="jobTitle">CEO F-47</div>
+								<div class="name-block__body">
+									<div class="simple-text simple-text--type-6 color-dark lh-15 lt-14 text-bolder" itemprop="name">Микита Мороз</div>
+									<div class="simple-text simple-text--type-3 color-dark lh-15 lt-14" itemprop="jobTitle">CEO F-47</div>
 								</div>
-								<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
 							</div>
+							<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
+						</article>
+						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
+							<a href="#!" class="blog-item__pic" itemprop="url">
+								<img src="images/empty.gif" data-src="images/pics/blog-pic.webp" itemprop="image" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді" width="464" height="335" class="lazy">
+							</a>
+							<div class="blog-item__tags">
+								<span class="tag tag--gray" itemprop="keywords">GEO</span>
+								<span class="tag tag--gray" itemprop="keywords">SEO</span>
+								<span class="tag tag--gray" itemprop="keywords">Google AI</span>
+								<span class="tag tag--gray" itemprop="keywords">Тренди 2026</span>
+							</div>
+							<h4 class="blog-item__title" itemprop="headline">
+								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 link--dark lt-2">
+									Замовити GEO/AEO-просування: як бренд потрапляє у відповіді
+								</a>
+							</h4>
+							<div class="name-block" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<div class="name-block__pic">
+									<img src="images/empty.gif" data-src="images/pics/man-mini.webp" alt="Микита Мороз" width="40" height="40" class="lazy">
+								</div>
+								<div class="name-block__body">
+									<div class="simple-text simple-text--type-6 color-dark lh-15 lt-14 text-bolder" itemprop="name">Микита Мороз</div>
+									<div class="simple-text simple-text--type-3 color-dark lh-15 lt-14" itemprop="jobTitle">CEO F-47</div>
+								</div>
+							</div>
+							<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
+						</article>
+						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
+							<a href="#!" class="blog-item__pic" itemprop="url">
+								<img src="images/empty.gif" data-src="images/pics/blog-pic.webp" itemprop="image" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini у відповіді ChatGPT, Perplexity та Gemini" width="464" height="335" class="lazy">
+							</a>
+							<div class="blog-item__tags">
+								<span class="tag tag--gray" itemprop="keywords">GEO</span>
+								<span class="tag tag--gray" itemprop="keywords">SEO</span>
+								<span class="tag tag--gray" itemprop="keywords">Google AI</span>
+								<span class="tag tag--gray" itemprop="keywords">Тренди 2026</span>
+							</div>
+							<h4 class="blog-item__title" itemprop="headline">
+								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 link--dark lt-2">
+									Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini у відповіді ChatGPT, Perplexity та Gemini
+								</a>
+							</h4>
+							<div class="name-block" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<div class="name-block__pic">
+									<img src="images/empty.gif" data-src="images/pics/man-mini.webp" alt="Микита Мороз" width="40" height="40" class="lazy">
+								</div>
+								<div class="name-block__body">
+									<div class="simple-text simple-text--type-6 color-dark lh-15 lt-14 text-bolder" itemprop="name">Микита Мороз</div>
+									<div class="simple-text simple-text--type-3 color-dark lh-15 lt-14" itemprop="jobTitle">CEO F-47</div>
+								</div>
+							</div>
+							<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
+						</article>
+					</div>
+				</div>
+				<!-- tab2 -->
+				<div class="media-center__item" data-content="tab2">
+					<div class="media-center__list">
+						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
+							<a href="#!" class="blog-item__pic" itemprop="url">
+								<img src="images/empty.gif" data-src="images/pics/blog-pic2.webp" itemprop="image" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini" width="464" height="335" class="lazy">
+							</a>
+							<div class="blog-item__tags">
+								<span class="tag tag--gray" itemprop="keywords">GEO</span>
+								<span class="tag tag--gray" itemprop="keywords">SEO</span>
+								<span class="tag tag--gray" itemprop="keywords">Google AI</span>
+								<span class="tag tag--gray" itemprop="keywords">Тренди 2026</span>
+							</div>
+							<h4 class="blog-item__title" itemprop="headline">
+								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 link--dark lt-2">
+									Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini
+								</a>
+							</h4>
+							<div class="name-block" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<div class="name-block__pic">
+									<img src="images/empty.gif" data-src="images/pics/man-mini.webp" alt="Микита Мороз" width="40" height="40" class="lazy">
+								</div>
+								<div class="name-block__body">
+									<div class="simple-text simple-text--type-6 color-dark lh-15 lt-14 text-bolder" itemprop="name">Микита Мороз</div>
+									<div class="simple-text simple-text--type-3 color-dark lh-15 lt-14" itemprop="jobTitle">CEO F-47</div>
+								</div>
+							</div>
+							<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
+						</article>
+						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
+							<a href="#!" class="blog-item__pic" itemprop="url">
+								<img src="images/empty.gif" data-src="images/pics/blog-pic2.webp" itemprop="image" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді" width="464" height="335" class="lazy">
+							</a>
+							<div class="blog-item__tags">
+								<span class="tag tag--gray" itemprop="keywords">GEO</span>
+								<span class="tag tag--gray" itemprop="keywords">SEO</span>
+								<span class="tag tag--gray" itemprop="keywords">Google AI</span>
+								<span class="tag tag--gray" itemprop="keywords">Тренди 2026</span>
+							</div>
+							<h4 class="blog-item__title" itemprop="headline">
+								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 link--dark lt-2">
+									Замовити GEO/AEO-просування: як бренд потрапляє у відповіді
+								</a>
+							</h4>
+							<div class="name-block" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<div class="name-block__pic">
+									<img src="images/empty.gif" data-src="images/pics/man-mini.webp" alt="Микита Мороз" width="40" height="40" class="lazy">
+								</div>
+								<div class="name-block__body">
+									<div class="simple-text simple-text--type-6 color-dark lh-15 lt-14 text-bolder" itemprop="name">Микита Мороз</div>
+									<div class="simple-text simple-text--type-3 color-dark lh-15 lt-14" itemprop="jobTitle">CEO F-47</div>
+								</div>
+							</div>
+							<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
+						</article>
+						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
+							<a href="#!" class="blog-item__pic" itemprop="url">
+								<img src="images/empty.gif" data-src="images/pics/blog-pic2.webp" itemprop="image" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini у відповіді ChatGPT, Perplexity та Gemini" width="464" height="335" class="lazy">
+							</a>
+							<div class="blog-item__tags">
+								<span class="tag tag--gray" itemprop="keywords">GEO</span>
+								<span class="tag tag--gray" itemprop="keywords">SEO</span>
+								<span class="tag tag--gray" itemprop="keywords">Google AI</span>
+								<span class="tag tag--gray" itemprop="keywords">Тренди 2026</span>
+							</div>
+							<h4 class="blog-item__title" itemprop="headline">
+								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 link--dark lt-2">
+									Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini у відповіді ChatGPT, Perplexity та Gemini
+								</a>
+							</h4>
+							<div class="name-block" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<div class="name-block__pic">
+									<img src="images/empty.gif" data-src="images/pics/man-mini.webp" alt="Микита Мороз" width="40" height="40" class="lazy">
+								</div>
+								<div class="name-block__body">
+									<div class="simple-text simple-text--type-6 color-dark lh-15 lt-14 text-bolder" itemprop="name">Микита Мороз</div>
+									<div class="simple-text simple-text--type-3 color-dark lh-15 lt-14" itemprop="jobTitle">CEO F-47</div>
+								</div>
+							</div>
+							<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
+						</article>
+					</div>
+				</div>
+				<!-- tab3 -->
+				<div class="media-center__item" data-content="tab3">
+					<div class="media-center__list">
+						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
+							<a href="#!" class="blog-item__pic" itemprop="url">
+								<img src="images/empty.gif" data-src="images/pics/blog-pic3.webp" itemprop="image" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini" width="464" height="335" class="lazy">
+							</a>
+							<div class="blog-item__tags">
+								<span class="tag tag--gray" itemprop="keywords">GEO</span>
+								<span class="tag tag--gray" itemprop="keywords">SEO</span>
+								<span class="tag tag--gray" itemprop="keywords">Google AI</span>
+								<span class="tag tag--gray" itemprop="keywords">Тренди 2026</span>
+							</div>
+							<h4 class="blog-item__title" itemprop="headline">
+								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 link--dark lt-2">
+									Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini
+								</a>
+							</h4>
+							<div class="name-block" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<div class="name-block__pic">
+									<img src="images/empty.gif" data-src="images/pics/man-mini.webp" alt="Микита Мороз" width="40" height="40" class="lazy">
+								</div>
+								<div class="name-block__body">
+									<div class="simple-text simple-text--type-6 color-dark lh-15 lt-14 text-bolder" itemprop="name">Микита Мороз</div>
+									<div class="simple-text simple-text--type-3 color-dark lh-15 lt-14" itemprop="jobTitle">CEO F-47</div>
+								</div>
+							</div>
+							<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
+						</article>
+						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
+							<a href="#!" class="blog-item__pic" itemprop="url">
+								<img src="images/empty.gif" data-src="images/pics/blog-pic3.webp" itemprop="image" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді" width="464" height="335" class="lazy">
+							</a>
+							<div class="blog-item__tags">
+								<span class="tag tag--gray" itemprop="keywords">GEO</span>
+								<span class="tag tag--gray" itemprop="keywords">SEO</span>
+								<span class="tag tag--gray" itemprop="keywords">Google AI</span>
+								<span class="tag tag--gray" itemprop="keywords">Тренди 2026</span>
+							</div>
+							<h4 class="blog-item__title" itemprop="headline">
+								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 link--dark lt-2">
+									Замовити GEO/AEO-просування: як бренд потрапляє у відповіді
+								</a>
+							</h4>
+							<div class="name-block" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<div class="name-block__pic">
+									<img src="images/empty.gif" data-src="images/pics/man-mini.webp" alt="Микита Мороз" width="40" height="40" class="lazy">
+								</div>
+								<div class="name-block__body">
+									<div class="simple-text simple-text--type-6 color-dark lh-15 lt-14 text-bolder" itemprop="name">Микита Мороз</div>
+									<div class="simple-text simple-text--type-3 color-dark lh-15 lt-14" itemprop="jobTitle">CEO F-47</div>
+								</div>
+							</div>
+							<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
+						</article>
+						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
+							<a href="#!" class="blog-item__pic" itemprop="url">
+								<img src="images/empty.gif" data-src="images/pics/blog-pic3.webp" itemprop="image" alt="Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini у відповіді ChatGPT, Perplexity та Gemini" width="464" height="335" class="lazy">
+							</a>
+							<div class="blog-item__tags">
+								<span class="tag tag--gray" itemprop="keywords">GEO</span>
+								<span class="tag tag--gray" itemprop="keywords">SEO</span>
+								<span class="tag tag--gray" itemprop="keywords">Google AI</span>
+								<span class="tag tag--gray" itemprop="keywords">Тренди 2026</span>
+							</div>
+							<h4 class="blog-item__title" itemprop="headline">
+								<a href="https://f47.agency/blog/geo-aeo-prosування" class="link link--type-4 link--dark lt-2">
+									Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini у відповіді ChatGPT, Perplexity та Gemini
+								</a>
+							</h4>
+							<div class="name-block" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<div class="name-block__pic">
+									<img src="images/empty.gif" data-src="images/pics/man-mini.webp" alt="Микита Мороз" width="40" height="40" class="lazy">
+								</div>
+								<div class="name-block__body">
+									<div class="simple-text simple-text--type-6 color-dark lh-15 lt-14 text-bolder" itemprop="name">Микита Мороз</div>
+									<div class="simple-text simple-text--type-3 color-dark lh-15 lt-14" itemprop="jobTitle">CEO F-47</div>
+								</div>
+							</div>
+							<time class="simple-text simple-text--type-3 color-dark-sec" itemprop="datePublished" datetime="2026-05-12">12.05.2026</time>
 						</article>
 					</div>
 				</div>
