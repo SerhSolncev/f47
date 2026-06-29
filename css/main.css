@@ -587,7 +587,7 @@ html.lenis, html.lenis body {
   margin: 0 0 clamp(5rem, 10vw, 12rem);
 }
 .section--step-form {
-  margin: 0 0 clamp(5rem, 10vw, 12rem);
+  margin: 0 0 clamp(5rem, 9.4791666667vw, 11.375rem);
 }
 .section--reviews-section {
   margin: 0 0 clamp(5rem, 10vw, 12rem);
@@ -3764,7 +3764,6 @@ html.lenis, html.lenis body {
           flex-direction: column;
   gap: 1.5rem;
   padding: 0 0 0.5rem;
-  overflow: auto;
 }
 .reviews-section__row--3 {
   display: -webkit-box;
