@@ -4,6 +4,8 @@
   --color-black: #000;
   --color-red: #ea580c;
   --color-dark: #252432;
+  --color-dark-sec: rgba(19, 19, 19, 0.7);
+  --color-dark-th: #131313;
   --color-bg: #f5f5f0;
   --color-blue: #6d94c5;
   --color-light: #ebeae1;
@@ -725,6 +727,7 @@ html.lenis, html.lenis body {
   background-color: rgba(36, 43, 58, 0.05);
   border-color: rgba(36, 43, 58, 0.4);
   font-family: "Manrope Semi", Verdana, Arial, sans-serif;
+  letter-spacing: -0.014em;
 }
 .btn--light-bg:hover .btn__hover {
   opacity: 1;
@@ -3087,7 +3090,7 @@ html.lenis, html.lenis body {
 }
 .price-section__list {
   display: grid;
-  grid-template-columns: 0.95fr 1fr 0.95fr;
+  grid-template-columns: 1fr 1fr 1fr;
   padding: 0 4.4375rem;
 }
 
@@ -3101,7 +3104,7 @@ html.lenis, html.lenis body {
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
-  padding: 20px 0;
+  padding: 1.5625rem 0;
   position: relative;
   width: 100%;
 }
@@ -3128,11 +3131,46 @@ html.lenis, html.lenis body {
   background-image: linear-gradient(to right, rgba(19, 19, 19, 0), rgba(19, 19, 19, 0.1), rgba(19, 19, 19, 0));
 }
 
+.simple-ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.675rem;
+}
+.simple-ul li {
+  position: relative;
+  font: 400 0.875rem/1.35 "Manrope", Verdana, Arial, sans-serif;
+  letter-spacing: -0.014em;
+  padding: 0 0 0 0.9375rem;
+  word-break: break-word;
+}
+@media (min-width: 1200px) {
+  .simple-ul li {
+    font-size: 1rem;
+  }
+}
+.simple-ul li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.625rem;
+  left: 0;
+  z-index: 1;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: var(--color-dark-th);
+  border-radius: 100%;
+}
+
 .price-card {
   max-width: 27.3125rem;
 }
 .price-card__body {
-  padding: 54px 60px;
+  padding: 3.375rem 1.25rem;
 }
 .price-card__top {
   display: -webkit-box;
@@ -3146,25 +3184,44 @@ html.lenis, html.lenis body {
       -ms-flex-align: center;
           align-items: center;
   text-align: center;
+  margin: 0 0 40px;
 }
 .price-card__top > .title {
   margin: 0 0 0.6875rem;
 }
 .price-card__top > .simple-text {
   max-width: 17.3125rem;
-  margin: 0 auto 36px;
+  margin: 0 auto 1.5625rem;
 }
-.price-card .price-row {
-  margin: 0 0 40px;
+.price-card .simple-ul {
+  padding: 0 0.875rem 0 1.375rem;
+}
+.price-card__bottom {
+  width: 100%;
+  max-width: 18.3125rem;
+  margin: 2.5rem auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  text-align: center;
+  gap: 0.75rem;
+}
+.price-card__list > .simple-text {
+  margin: -0.125rem 0 1.4375rem 0.875rem;
 }
 .price-card--type-2 {
   border: 0.4375rem solid var(--color-white);
   padding: 0.4375rem;
   background-color: var(--color-light);
   border-radius: 1.875rem;
+  min-width: 28.1875rem;
 }
 .price-card--type-2 .price-card__body {
-  padding: 2.5rem 60px;
+  padding: 2.625rem 1.25rem;
 }
 
 .container {
@@ -3199,7 +3256,11 @@ html.lenis, html.lenis body {
 }
 
 .color-dark-sec {
-  color: rgba(19, 19, 19, 0.7);
+  color: var(--color-dark-sec);
+}
+
+.color-dark-th {
+  color: var(--color-dark-th);
 }
 
 .color-gray {

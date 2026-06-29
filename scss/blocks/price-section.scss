@@ -9,7 +9,7 @@
 
 	&__list {
 		display: grid;
-		grid-template-columns: 0.95fr 1fr 0.95fr;
+		grid-template-columns: 1fr 1fr 1fr;
 		padding: 0 get-rem(71);
 	}
 }
@@ -18,7 +18,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
-	padding: 20px 0;
+	padding: get-rem(25) 0;
 	position: relative;
 	width: 100%;
 
@@ -45,11 +45,44 @@
 	}
 }
 
+.simple-ul {
+
+	display: flex;
+	flex-direction: column;
+	gap: get-rem(10.8);
+
+	li {
+		position: relative;
+		font: 400 #{get-rem(14)}/1.35 $mainFont;
+		letter-spacing: -0.014em;
+		padding: 0 0 0 get-rem(15);
+		word-break: break-word;
+
+
+		@media(min-width: 1200px) {
+			font-size: get-rem(16);
+		}
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			top: get-rem(10);
+			left: 0;
+			z-index: 1;
+			width: get-rem(4);
+			height: get-rem(4);
+			background-color: var(--color-dark-th);
+			border-radius: 100%;
+		}
+	}
+}
+
 .price-card {
 	max-width: get-rem(437);
 
 	&__body {
-		padding: 54px 60px;
+		padding: get-rem(54) get-rem(20);
 	}
 
 	&__top {
@@ -57,6 +90,7 @@
 		flex-direction: column;
 		align-items: center;
 		text-align: center;
+		margin: 0 0 40px;
 
 		> .title {
 			margin: 0 0 get-rem(11);
@@ -64,12 +98,28 @@
 
 		> .simple-text {
 			max-width: get-rem(277);
-			margin: 0 auto 36px;
+			margin: 0 auto get-rem(25);
 		}
 	}
 
-	.price-row {
-		margin: 0 0 40px;
+	.simple-ul {
+		padding: 0 get-rem(14) 0 get-rem(22);
+	}
+
+	&__bottom {
+		width: 100%;
+		max-width: get-rem(293);
+		margin: get-rem(40) auto 0;
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		gap: get-rem(12);
+	}
+
+	&__list {
+		> .simple-text {
+			margin: get-rem(-2) 0 get-rem(23) get-rem(14);
+		}
 	}
 
 	&--type-2 {
@@ -77,11 +127,12 @@
 		padding: get-rem(7);
 		background-color: var(--color-light);
 		border-radius: get-rem(30);
+		min-width: get-rem(451);
 
 		.price-card {
 
 			&__body {
-				padding: get-rem(40) 60px;
+				padding: get-rem(42) get-rem(20);
 			}
 		}
 	}
