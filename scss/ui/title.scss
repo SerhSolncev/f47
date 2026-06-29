@@ -83,6 +83,14 @@
 			font-size: get-rem(50);
 		}
 	}
+
+	&--type-8 {
+		font: 400 #{get-rem(22)}/1.2 $mainFont;
+
+		@media(min-width: 1280px) {
+			font-size: get-rem(24);
+		}
+	}
 }
 
 .simple-text {

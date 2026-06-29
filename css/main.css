@@ -954,6 +954,14 @@ html.lenis, html.lenis body {
     font-size: 3.125rem;
   }
 }
+.title--type-8 {
+  font: 400 1.375rem/1.2 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 1280px) {
+  .title--type-8 {
+    font-size: 1.5rem;
+  }
+}
 
 .simple-text {
   -webkit-transition: color 0.15s ease-in;
