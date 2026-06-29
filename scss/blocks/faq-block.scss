@@ -141,19 +141,16 @@
 	}
 
 	.desktop-device & {
+		&:hover {
+			background-color: #242b3a;
 
-	   .desktop-device & {
-	       &:hover {
-		       background-color: #242b3a;
+			.simple-text {
+				color: var(--color-white);
+			}
 
-		       .simple-text {
-			       color: var(--color-white);
-		       }
-
-		       .faq-item__icon {
-			       color: var(--color-white);
-		       }
-	       }
-	   }
+			.faq-item__icon {
+				color: var(--color-white);
+			}
+		}
 	}
 }

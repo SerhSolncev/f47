@@ -2,6 +2,13 @@
 @import "../abstracts/vars";
 
 .step-form {
+	width: 100%;
+	max-width: get-rem(1308);
+	margin: 0 auto;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: get-rem(40);
 
 	&__left {
 		width: 100%;
@@ -11,5 +18,63 @@
 		.title span {
 			display: block;
 		}
+	}
+
+	&__title {
+		margin: 0 0 get-rem(51);
+	}
+
+	&__right {
+		width: 100%;
+		max-width: get-rem(526);
+	}
+
+	.step-list {
+		max-width: get-rem(580);
+	}
+}
+
+.step-list {
+	display: flex;
+	flex-direction: column;
+	gap: get-rem(33);
+	position: relative;
+
+	&::after {
+		content: '';
+		position: absolute;
+		top: get-rem(4);
+		left: get-rem(22);
+		z-index: 1;
+		width: get-rem(2);
+		height: calc(100% - #{get-rem(60)});
+		background-color: #c3c2b9;
+	}
+}
+
+.step-item {
+	display: flex;
+	align-items: flex-start;
+	gap: get-rem(24);
+	position: relative;
+	z-index: 2;
+
+	&__number {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: get-rem(48);
+		height: get-rem(48);
+		border-radius: 100%;
+		background-color: var(--color-light);
+		font: 400 #{get-rem(22)}/1.4 $mainFont;
+		flex-shrink: 0;
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		padding: get-rem(8) 0 0;
+		gap: get-rem(8);
 	}
 }
