@@ -1725,6 +1725,11 @@ html.lenis, html.lenis body {
   width: 100%;
   height: 100%;
 }
+.input-item:has(.input-item__textarea) .input-item__icon {
+  top: 0.5625rem;
+  -webkit-transform: none;
+          transform: none;
+}
 .input-item__input {
   width: 100%;
   height: 2.75rem;
@@ -1749,31 +1754,31 @@ html.lenis, html.lenis body {
 }
 .input-item__input::-webkit-input-placeholder {
   font: inherit;
-  color: var(--color-gray-th);
+  color: rgba(19, 19, 19, 0.5);
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 .input-item__input::-moz-placeholder {
   font: inherit;
-  color: var(--color-gray-th);
+  color: rgba(19, 19, 19, 0.5);
   -moz-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 .input-item__input:-ms-input-placeholder {
   font: inherit;
-  color: var(--color-gray-th);
+  color: rgba(19, 19, 19, 0.5);
   -ms-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 .input-item__input::-ms-input-placeholder {
   font: inherit;
-  color: var(--color-gray-th);
+  color: rgba(19, 19, 19, 0.5);
   -ms-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 .input-item__input::placeholder {
   font: inherit;
-  color: var(--color-gray-th);
+  color: rgba(19, 19, 19, 0.5);
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
@@ -1807,54 +1812,59 @@ html.lenis, html.lenis body {
 }
 .input-item__textarea {
   width: 100%;
-  height: 12.3125rem;
-  border: 1px solid var(--color-gray-sec);
-  font: 300 1rem/1 "Manrope", Verdana, Arial, sans-serif;
+  height: 10.25rem;
+  font: 400 0.9375rem/1 "Manrope", Verdana, Arial, sans-serif;
+  border-color: transparent;
   color: var(--color-dark-main);
-  padding: 0.625rem 1rem 0;
+  padding: 0.6875rem 0.8125rem 0.8125rem 2.5625rem;
   -webkit-transition: border-color 0.2s linear;
   transition: border-color 0.2s linear;
-  border-radius: 0.5rem;
+  border-radius: 1.375rem;
   -webkit-appearance: none;
   -moz-appearance: none;
        appearance: none;
   resize: vertical;
+}
+@media (min-width: 768px) {
+  .input-item__textarea {
+    font-size: 1rem;
+  }
 }
 .input-item__textarea.field-error {
   border-color: var(--color-red);
 }
 .input-item__textarea::-webkit-input-placeholder {
   font: inherit;
-  color: var(--color-gray-sec);
+  color: rgba(19, 19, 19, 0.5);
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 .input-item__textarea::-moz-placeholder {
   font: inherit;
-  color: var(--color-gray-sec);
+  color: rgba(19, 19, 19, 0.5);
   -moz-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 .input-item__textarea:-ms-input-placeholder {
   font: inherit;
-  color: var(--color-gray-sec);
+  color: rgba(19, 19, 19, 0.5);
   -ms-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 .input-item__textarea::-ms-input-placeholder {
   font: inherit;
-  color: var(--color-gray-sec);
+  color: rgba(19, 19, 19, 0.5);
   -ms-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 .input-item__textarea::placeholder {
   font: inherit;
-  color: var(--color-gray-sec);
+  color: rgba(19, 19, 19, 0.5);
   -webkit-transition: opacity 0.2s linear;
   transition: opacity 0.2s linear;
 }
 .input-item__textarea:hover {
-  border-color: var(--color-dark-main);
+  border-color: var(--color-gray-sec);
 }
 .input-item__textarea:focus {
   outline: none;
@@ -1880,6 +1890,9 @@ html.lenis, html.lenis body {
 .input-item__textarea::-webkit-calendar-picker-indicator {
   -webkit-transform: translateY(-1px);
           transform: translateY(-1px);
+}
+.input-item__textarea--light {
+  background-color: rgba(255, 255, 255, 0.4);
 }
 .input-item--center .input-item__textarea {
   text-align: center;
@@ -3577,9 +3590,16 @@ html.lenis, html.lenis body {
 .step-form__right {
   width: 100%;
   max-width: 32.875rem;
+  margin: 4.3125rem 1.875rem 0 0;
 }
 .step-form .step-list {
   max-width: 36.25rem;
+}
+.step-form .form-board__bottom .btn {
+  width: 100%;
+  max-width: 11.625rem;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
 }
 
 .step-list {

@@ -27,10 +27,21 @@
 	&__right {
 		width: 100%;
 		max-width: get-rem(526);
+		margin: get-rem(69) get-rem(30) 0 0
 	}
 
 	.step-list {
 		max-width: get-rem(580);
+	}
+
+	.form-board__bottom {
+
+		.btn {
+			width: 100%;
+			max-width: get-rem(186);
+			padding-left: get-rem(10);
+			padding-right: get-rem(10);
+		}
 	}
 }
 

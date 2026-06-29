@@ -192,6 +192,11 @@
 		}
 	}
 
+	&:has(.input-item__textarea) .input-item__icon {
+		top: get-rem(9);
+		transform: none;
+	}
+
 	&__input {
 		width: 100%;
 		height: get-rem(44);
@@ -214,7 +219,7 @@
 
 		&::placeholder {
 			font: inherit;
-			color: var(--color-gray-th);
+			color: rgba(#131313, 0.5);
 			transition: opacity 0.2s linear;
 		}
 
@@ -254,16 +259,20 @@
 
 	&__textarea {
 		width: 100%;
-		height: get-rem(197);
-		border: 1px solid var(--color-gray-sec);
-		font: 300 #{get-rem(16)}/1 $mainFont;
+		height: get-rem(164);
+		font: 400 #{get-rem(15)}/1 $mainFont;
+		border-color: transparent;
 		color: var(--color-dark-main);
-		padding: get-rem(10) get-rem(16) 0;
+		padding: get-rem(11) get-rem(13) get-rem(13) get-rem(41);
 		transition: border-color 0.2s linear;
-		border-radius: get-rem(8);
+		border-radius: get-rem(22);
 		-webkit-appearance: none;
 		appearance: none;
 		resize: vertical;
+
+		@media(min-width: 768px) {
+			font-size: get-rem(16);
+		}
 
 		&.field-error {
 			border-color: var(--color-red);
@@ -271,12 +280,12 @@
 
 		&::placeholder {
 			font: inherit;
-			color: var(--color-gray-sec);
+			color: rgba(#131313, 0.5);
 			transition: opacity 0.2s linear;
 		}
 
 		&:hover {
-			border-color: var(--color-dark-main);
+			border-color: var(--color-gray-sec);
 		}
 
 		&:focus {
@@ -293,6 +302,10 @@
 
 		&::-webkit-calendar-picker-indicator {
 			transform: translateY(-1px);
+		}
+
+		&--light {
+			background-color: rgba(#fff, 0.4);
 		}
 
 		//&::-webkit-datetime-edit {
