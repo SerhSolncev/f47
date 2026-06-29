@@ -697,6 +697,126 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		subtree: true,
 	});
 
+	// скрипт которйы обрезает текст
+
+	const seoBlocks = document.querySelectorAll(".js-seo-block");
+
+	seoBlocks.forEach((block) => {
+		const seoContent = block.querySelector("[data-text-block]");
+		const toggleButton = block.querySelector("[data-toggle-text]");
+
+		const hasHeightAttr = seoContent.hasAttribute("data-height-show");
+		const desktopCollapsedValue = hasHeightAttr
+			? parseInt(seoContent.getAttribute("data-height-show"), 10)
+			: parseInt(seoContent.getAttribute("data-symbols-show"), 10);
+
+		const mobileOnlyBreakpoint = seoContent.hasAttribute("data-mobile-only")
+			? parseInt(seoContent.getAttribute("data-mobile-only"), 10)
+			: null;
+
+		const changeCountBreakpoint = seoContent.hasAttribute("data-change-count-breakpoint")
+			? parseInt(seoContent.getAttribute("data-change-count-breakpoint"), 10)
+			: null;
+
+		const mobileCollapsedValue = hasHeightAttr
+			? (seoContent.hasAttribute("data-height-show-mob")
+				? parseInt(seoContent.getAttribute("data-height-show-mob"), 10)
+				: null)
+			: (seoContent.hasAttribute("data-symbols-show-mob")
+				? parseInt(seoContent.getAttribute("data-symbols-show-mob"), 10)
+				: null);
+
+		function isMobileOnlyActive() {
+			if (mobileOnlyBreakpoint === null) return true;
+			return window.innerWidth <= mobileOnlyBreakpoint;
+		}
+
+		function getCollapsedHeight() {
+			if (
+				changeCountBreakpoint !== null &&
+				mobileCollapsedValue !== null &&
+				window.innerWidth <= changeCountBreakpoint
+			) {
+				return mobileCollapsedValue;
+			}
+			return desktopCollapsedValue;
+		}
+
+		let fullHeight = seoContent.scrollHeight;
+		let isFullTextShown = false;
+		let isBound = false;
+
+		function showFullText() {
+			seoContent.style.height = fullHeight + "px";
+			isFullTextShown = true;
+			toggleButton.querySelector(".link__text").textContent = toggleButton.getAttribute("data-opened-text");
+		}
+
+		function hideFullText() {
+			seoContent.style.height = getCollapsedHeight() + "px";
+			isFullTextShown = false;
+			toggleButton.querySelector(".link__text").textContent = toggleButton.getAttribute("data-closed-text");
+		}
+
+		function resetToAuto() {
+			seoContent.style.height = "auto";
+			isFullTextShown = false;
+			toggleButton.classList.remove('opened');
+			block.classList.remove('opened');
+		}
+
+		function onToggleClick() {
+			if (isFullTextShown) {
+				toggleButton.classList.remove('opened');
+				block.classList.remove('opened');
+				hideFullText();
+			} else {
+				toggleButton.classList.add('opened');
+				block.classList.add('opened');
+				showFullText();
+			}
+		}
+
+		function bindToggle() {
+			if (isBound) return;
+			toggleButton.addEventListener("click", onToggleClick);
+			isBound = true;
+		}
+
+		function unbindToggle() {
+			if (!isBound) return;
+			toggleButton.removeEventListener("click", onToggleClick);
+			isBound = false;
+		}
+
+		function update() {
+			if (isMobileOnlyActive()) {
+				seoContent.style.height = "auto";
+				fullHeight = seoContent.scrollHeight;
+
+				const collapsedHeight = getCollapsedHeight();
+
+				if (fullHeight > collapsedHeight) {
+					block.classList.remove('no-cut');
+					hideFullText();
+					toggleButton.style.display = "";
+					bindToggle();
+				} else {
+					block.classList.add('no-cut');
+					toggleButton.style.display = "none";
+					unbindToggle();
+				}
+			} else {
+				resetToAuto();
+				toggleButton.style.display = "none";
+				unbindToggle();
+			}
+		}
+
+		update();
+		window.addEventListener("resize", update);
+	});
+
 	// анімація при скролі і лоаду сторінки
 
 	document.querySelectorAll('.js-show-on-scroll').forEach(el => {

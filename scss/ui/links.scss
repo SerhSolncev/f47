@@ -53,6 +53,16 @@
 
 	}
 
+	&--type-5 {
+		font: 600 #{get-rem(14)}/1 $mainFontBold;
+		gap: get-rem(14);
+
+		@media(min-width: 768px) {
+			font-size: get-rem(16);
+		}
+
+	}
+
 	&--gray {
 		color: var(--color-gray);
 

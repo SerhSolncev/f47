@@ -9,12 +9,12 @@
 			>
 				<h3 id="media-title" class="title title--type-5 color-dark">Медіа-центр</h3>
 				<div class="media-center__nav" role="tablist">
-					<button class="link link--type-1 link--gray lt-14 is-active" role="tab" aria-selected="true" data-tab="tab1">Статті</button>
-					<button class="link link--type-1 link--gray lt-14" role="tab" aria-selected="false" data-tab="tab2">Кейси</button>
-					<button class="link link--type-1 link--gray lt-14" role="tab" aria-selected="false" data-tab="tab3">Новини</button>
+					<button class="link link--type-1 link--gray lt-14 is-active" role="tab" aria-controls="tab1-panel" id="tab-btn-l" aria-selected="true" data-tab="tab1">Статті</button>
+					<button class="link link--type-1 link--gray lt-14" role="tab" aria-controls="tab1-pane2" id="tab-btn-2" aria-selected="false" data-tab="tab2">Кейси</button>
+					<button class="link link--type-1 link--gray lt-14" role="tab" aria-controls="tab1-pane3" id="tab-btn-3" aria-selected="false" data-tab="tab3">Новини</button>
 				</div>
 			</div>
-			<div class="media-center__body js-show-on-scroll" role="tabpanel"
+			<div class="media-center__body js-show-on-scroll"
 				data-contents
 				data-direction="bottom"
 				data-y="50"
@@ -22,7 +22,7 @@
 				data-duration="0.5"
 			>
 				<!-- tab1 -->
-				<div class="media-center__item is-active is-visible" data-content="tab1">
+				<div class="media-center__item is-active is-visible" id="tab1-panel" role="tabpanel" data-content="tab1">
 					<div class="media-center__list">
 						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
 							<a href="#!" class="blog-item__pic" itemprop="url">
@@ -105,7 +105,7 @@
 					</div>
 				</div>
 				<!-- tab2 -->
-				<div class="media-center__item" data-content="tab2">
+				<div class="media-center__item" id="tab1-pane2" role="tabpanel" data-content="tab2">
 					<div class="media-center__list">
 						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
 							<a href="#!" class="blog-item__pic" itemprop="url">
@@ -188,7 +188,7 @@
 					</div>
 				</div>
 				<!-- tab3 -->
-				<div class="media-center__item" data-content="tab3">
+				<div class="media-center__item" id="tab1-pane3" role="tabpanel" data-content="tab3">
 					<div class="media-center__list">
 						<article class="blog-item" itemscope itemtype="https://schema.org/Article">
 							<a href="#!" class="blog-item__pic" itemprop="url">
