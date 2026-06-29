@@ -584,13 +584,20 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		const buttons = parent.querySelectorAll('.js-open-acc');
 		const parentItems = parent.querySelectorAll('.js-acc');
 
-
 		parentItems.forEach((parentItem) => {
 			const accBlock = parentItem.querySelector('.js-acc-block');
+			const btn = parentItem.querySelector('.js-open-acc');
+
 			accBlock.style.transition = 'none';
 			if (parentItem.classList.contains('active')) {
 				accBlock.style.maxHeight = accBlock.scrollHeight + "px";
+				if (btn) btn.setAttribute('aria-expanded', 'true');
+				accBlock.setAttribute('aria-hidden', 'false');
+			} else {
+				if (btn) btn.setAttribute('aria-expanded', 'false');
+				accBlock.setAttribute('aria-hidden', 'true');
 			}
+
 			setTimeout(() => {
 				accBlock.style.transition = 'max-height 0.2s linear, margin 0.2s linear';
 			}, 10);
@@ -609,9 +616,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 		buttons.forEach((button) => {
 			button.addEventListener('click', (event) => {
-				if (event.target.closest('.js-tooltip')) {
-					return;
-				}
+				if (event.target.closest('.js-tooltip')) return;
 
 				const contents = button.closest('.js-acc-wrap').querySelectorAll('.js-acc-block');
 				const contentsItem = button.closest('.js-acc').querySelector('.js-acc-block');
@@ -621,32 +626,38 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				if (button.closest('.js-acc').classList.contains('active')) {
 					contentsItem.style.maxHeight = '0';
 					button.closest('.js-acc').classList.remove('active');
+					button.setAttribute('aria-expanded', 'false');
+					contentsItem.setAttribute('aria-hidden', 'true');
 
-					if(button.closest('.js-state-inputs')) {
+					if (button.closest('.js-state-inputs')) {
 						contentsItem.querySelectorAll('.input-item__input').forEach((input) => {
 							input.disabled = true;
-						})
+						});
 					}
-				}
-				else {
+				} else {
 					if (!isMultiple) {
 						contents.forEach((block) => {
 							block.style.maxHeight = '0';
+							block.setAttribute('aria-hidden', 'true');
 						});
 
 						button.closest('.js-acc-wrap').querySelectorAll('.js-acc').forEach((parentItem) => {
 							parentItem.classList.remove('active');
+							const btn = parentItem.querySelector('.js-open-acc');
+							if (btn) btn.setAttribute('aria-expanded', 'false');
 						});
 					}
 
-					if(button.closest('.js-state-inputs')) {
+					if (button.closest('.js-state-inputs')) {
 						contentsItem.querySelectorAll('.input-item__input').forEach((input) => {
 							input.disabled = false;
-						})
+						});
 					}
 
 					contentsItem.style.maxHeight = contentsItem.scrollHeight + "px";
 					button.closest('.js-acc').classList.add('active');
+					button.setAttribute('aria-expanded', 'true');
+					contentsItem.setAttribute('aria-hidden', 'false');
 				}
 
 				parentWrap.style.maxHeight = 'initial';

@@ -2,13 +2,26 @@
 @import "../abstracts/vars";
 
 .faq-block {
+	display: flex;
+	align-items: flex-start;
+	gap: clamp(#{get-rem(24)}, #{get-vw(58)}, #{get-rem(58)});
+
+	&__left {
+		width: get-rem(400);
+		flex-shrink: 0;
+	}
+
+	.faq-list {
+		padding: clamp(#{get-rem(32)}, #{get-vw(66)}, #{get-rem(66)}) 0 0;
+	}
 
 }
 
 .faq-list {
 	display: flex;
 	flex-direction: column;
-	gap: 16px;
+	gap: get-rem(24);
+	width: 100%;
 }
 
 .faq-item {
@@ -25,10 +38,12 @@
 		text-align: left;
 		gap: get-rem(10);
 		padding: get-rem(18) get-rem(16);
-		min-height: get-rem(84);
+		min-height: get-rem(68);
+		transition: margin 0.15s ease-in;
 
 		@media(min-width: 767px) {
-			padding: get-rem(18) get-rem(37) get-rem(18) get-rem(23);
+			min-height: get-rem(84);
+			padding: get-rem(18) get-rem(35) get-rem(18) get-rem(24);
 		}
 
 		.simple-text {
@@ -42,8 +57,8 @@
 		overflow: hidden;
 
 		.simple-text {
-			line-height: 1.7;
-			padding: get-rem(3) get-rem(23) get-rem(30);
+			padding: 0 get-rem(24) get-rem(24) get-rem(24);
+			max-width: get-rem(900);
 		}
 	}
 
@@ -67,6 +82,10 @@
 
 		.simple-text {
 			color: var(--color-white);
+		}
+
+		.faq-item__btn {
+			margin: 0 0 get-rem(-11);
 		}
 
 		.faq-item__icon {

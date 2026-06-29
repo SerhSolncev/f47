@@ -93,7 +93,10 @@ hr {
 	height: 0; /* 1 */
 	overflow: visible; /* 2 */
 }
-
+dd,dl,dt {
+	margin: 0;
+	padding: 0;
+}
 ::-webkit-file-upload-button { cursor:pointer; }
 
 pre {
