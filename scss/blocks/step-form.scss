@@ -8,33 +8,61 @@
 	display: flex;
 	align-items: flex-start;
 	justify-content: space-between;
+	flex-direction: column;
 	gap: get-rem(40);
+
+	@media(min-width: 1024px) {
+	    flex-direction: row;
+	}
 
 	&__left {
 		width: 100%;
-		max-width: get-rem(660);
-		flex-shrink: 0;
 
-		.title span {
-			display: block;
+		@media(min-width: 1024px) {
+			max-width: get-rem(660);
 		}
 	}
 
 	&__title {
-		margin: 0 0 get-rem(51);
+		margin: 0 0 clamp(get-rem(24), #{get-vw(51)}, #{get-rem(51)});
+
+		@media(max-width: 1032px) {
+			text-align: center;
+		}
+
+		.title {
+
+			span {
+
+				@media(min-width: 1200px) {
+					display: block;
+				}
+			}
+		}
 	}
 
 	&__right {
 		width: 100%;
-		max-width: get-rem(526);
-		margin: get-rem(69) get-rem(30) 0 0;
 		display: flex;
 		flex-direction: column;
 		gap: get-rem(13);
+
+		@media(min-width: 1024px) {
+			max-width: get-rem(480);
+			margin: get-rem(29) 0 0 0;
+		}
+
+		@media(min-width: 1280px) {
+			max-width: get-rem(526);
+			margin: get-rem(69) get-rem(30) 0 0;
+		}
 	}
 
 	.step-list {
-		max-width: get-rem(580);
+
+		@media(min-width: 1024px) {
+			max-width: get-rem(580);
+		}
 	}
 
 	.form-board__bottom {
@@ -51,38 +79,56 @@
 .step-list {
 	display: flex;
 	flex-direction: column;
-	gap: get-rem(33);
+	gap: get-rem(16);
 	position: relative;
+
+	@media(min-width: 768px) {
+		gap: get-rem(33);
+	}
 
 	&::after {
 		content: '';
 		position: absolute;
 		top: get-rem(4);
-		left: get-rem(22);
+		left: get-rem(20);
 		z-index: 1;
 		width: get-rem(2);
 		height: calc(100% - #{get-rem(60)});
 		background-color: #c3c2b9;
+
+		@media(min-width: 1280px) {
+			left: get-rem(22);
+		}
 	}
 }
 
 .step-item {
 	display: flex;
 	align-items: flex-start;
-	gap: get-rem(24);
+	gap: get-rem(16);
 	position: relative;
 	z-index: 2;
+
+	@media(min-width: 768px) {
+		gap: get-rem(24);
+	}
 
 	&__number {
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		width: get-rem(48);
-		height: get-rem(48);
+		width: get-rem(42);
+		height: get-rem(42);
 		border-radius: 100%;
 		background-color: var(--color-light);
-		font: 400 #{get-rem(22)}/1.4 $mainFont;
+		font: 400 #{get-rem(20)}/1.4 $mainFont;
 		flex-shrink: 0;
+
+		@media(min-width: 1280px) {
+			width: get-rem(48);
+			height: get-rem(48);
+			font-size: get-rem(22);
+		}
 	}
 
 	&__body {

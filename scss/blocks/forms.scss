@@ -31,7 +31,11 @@
 
 	&__bottom {
 		display: flex;
-		margin: get-rem(31) 0 0;
+		margin: get-rem(20) 0 0;
+
+		@media(min-width: 1024px) {
+			margin: get-rem(31) 0 0;
+		}
 
 		&--end {
 			justify-content: flex-end;
@@ -70,7 +74,11 @@
 		}
 
 		.form-board__fields {
-			gap: get-rem(24);
+			gap: get-rem(16);
+
+			@media(min-width: 768px) {
+				gap: get-rem(24);
+			}
 		}
 	}
 
@@ -193,7 +201,7 @@
 	}
 
 	&:has(.input-item__textarea) .input-item__icon {
-		top: get-rem(9);
+		top: get-rem(10);
 		transform: none;
 	}
 

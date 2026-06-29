@@ -1761,7 +1761,7 @@
 	<div class="container">
 		<div class="step-form">
 			<div class="step-form__left">
-				<div class="step-form__title"
+				<div class="step-form__title js-show-on-scroll"
 					data-direction="bottom"
 					data-y="50"
 					data-off-animate="1280"
@@ -1773,28 +1773,48 @@
 					</h3>
 				</div>
 				<ol class="step-list">
-					<li class="step-item">
+					<li class="step-item js-show-on-scroll"
+						data-direction="bottom"
+						data-y="50"
+						data-off-animate="1280"
+						data-duration="0.5"
+					>
 						<div class="step-item__number">1</div>
 						<div class="step-item__body">
 							<span class="simple-text simple-text--type-8 color-dark-th text-bolder lt-2">Забронюйте дзвінок або залиште заявку</span>
 							<span class="simple-text simple-text--type-1 color-dark-th lt-14 lh-135">Розкажіть коротко про ваш бізнес, нішу та цілі — ми подивимось, як F-47 може допомогти з просуванням у AI-платформах</span>
 						</div>
 					</li>
-					<li class="step-item">
+					<li class="step-item js-show-on-scroll"
+						data-direction="bottom"
+						data-y="50"
+						data-off-animate="1280"
+						data-duration="0.5"
+					>
 						<div class="step-item__number">2</div>
 						<div class="step-item__body">
 							<span class="simple-text simple-text--type-8 color-dark-th text-bolder lt-2">Отримайте безкоштовний мініаудит</span>
 							<span class="simple-text simple-text--type-1 color-dark-th lt-14 lh-135">Ми перевіримо, як ваш бренд зараз виглядає в ChatGPT, Perplexity, Gemini, Claude та Google AI, і покажемо перші точки росту.</span>
 						</div>
 					</li>
-					<li class="step-item">
+					<li class="step-item js-show-on-scroll"
+						data-direction="bottom"
+						data-y="50"
+						data-off-animate="1280"
+						data-duration="0.5"
+					>
 						<div class="step-item__number">3</div>
 						<div class="step-item__body">
 							<span class="simple-text simple-text--type-8 color-dark-th text-bolder lt-2">Обговоріть персональну GEO/AEO-стратегію</span>
 							<span class="simple-text simple-text--type-1 color-dark-th lt-14 lh-135">Підготуємо попередній план дій: які сторінки, запити, джерела та зовнішні сигнали потрібно посилити в першу чергу.</span>
 						</div>
 					</li>
-					<li class="step-item">
+					<li class="step-item js-show-on-scroll"
+						data-direction="bottom"
+						data-y="50"
+						data-off-animate="1280"
+						data-duration="0.5"
+					>
 						<div class="step-item__number">4</div>
 						<div class="step-item__body">
 							<span class="simple-text simple-text--type-8 color-dark-th text-bolder lt-2">Запустіть програму просування</span>
@@ -1804,8 +1824,15 @@
 				</ol>
 			</div>
 
-			<div class="step-form__right" data-delay="0.3" data-direction="right" data-off-animate="1280" data-duration="1.4">
-				<form class="form-board form-board--type-2 form-board--gray js-validate-form">
+			<div class="step-form__right js-show-on-scroll" data-delay="0.3" data-direction="top" data-off-animate="1280" data-duration="1.4">
+				<form class="form-board form-board--type-2 form-board--gray js-validate-form js-go-away-on-scroll"
+					data-direction="top"
+					data-position="150"
+					data-off-animate="1280"
+					data-start="bottom bottom 40%"
+					data-end="center top+=100"
+					data-url
+				>
 					<div class="form-board__body">
 						<fieldset class="form-board__fields" aria-label="Дані для технічного аудиту">
 							<div class="form-success js-form-success">Форма відправлена</div>
@@ -1879,7 +1906,15 @@
 						</div>
 					</div>
 				</form>
-				<div class="simple-text simple-text--type-3 color-dark-th lh-15 lt-2 text-center text-medium">Ми переглядаємо заявки регулярно та відповімо найближчим часом</div>
+				<div class="simple-text simple-text--type-3 color-dark-th lh-15 lt-2 text-center text-medium js-go-away-on-scroll"
+					data-direction="top"
+					data-position="150"
+					data-off-animate="1280"
+					data-start="bottom bottom 40%"
+					data-end="center top+=100"
+				>
+					Ми переглядаємо заявки регулярно та відповімо найближчим часом
+				</div>
 			</div>
 		</div>
 	</div>

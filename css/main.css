@@ -989,7 +989,12 @@ html.lenis, html.lenis body {
   }
 }
 .title--type-9 {
-  font: 400 2rem/1.3 "Manrope", Verdana, Arial, sans-serif;
+  font: 400 9vw/1.3 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 430px) {
+  .title--type-9 {
+    font-size: 2.25rem;
+  }
 }
 @media (min-width: 992px) {
   .title--type-9 {
@@ -1590,7 +1595,12 @@ html.lenis, html.lenis body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 1.9375rem 0 0;
+  margin: 1.25rem 0 0;
+}
+@media (min-width: 1024px) {
+  .form-board__bottom {
+    margin: 1.9375rem 0 0;
+  }
 }
 .form-board__bottom--end {
   -webkit-box-pack: end;
@@ -1626,7 +1636,12 @@ html.lenis, html.lenis body {
   }
 }
 .form-board--type-2 .form-board__fields {
-  gap: 1.5rem;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .form-board--type-2 .form-board__fields {
+    gap: 1.5rem;
+  }
 }
 .form-board--orange-gradient {
   background-image: -webkit-gradient(linear, left bottom, left top, from(#ffd783), color-stop(50%, rgba(255, 231, 179, 0)));
@@ -1726,7 +1741,7 @@ html.lenis, html.lenis body {
   height: 100%;
 }
 .input-item:has(.input-item__textarea) .input-item__icon {
-  top: 0.5625rem;
+  top: 0.625rem;
   -webkit-transform: none;
           transform: none;
 }
@@ -3573,24 +3588,43 @@ html.lenis, html.lenis body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 2.5rem;
+}
+@media (min-width: 1024px) {
+  .step-form {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 .step-form__left {
   width: 100%;
-  max-width: 41.25rem;
-  -ms-flex-negative: 0;
-      flex-shrink: 0;
 }
-.step-form__left .title span {
-  display: block;
+@media (min-width: 1024px) {
+  .step-form__left {
+    max-width: 41.25rem;
+  }
 }
 .step-form__title {
-  margin: 0 0 3.1875rem;
+  margin: 0 0 clamp(1.5rem, 2.65625vw, 3.1875rem);
+}
+@media (max-width: 1032px) {
+  .step-form__title {
+    text-align: center;
+  }
+}
+@media (min-width: 1200px) {
+  .step-form__title .title span {
+    display: block;
+  }
 }
 .step-form__right {
   width: 100%;
-  max-width: 32.875rem;
-  margin: 4.3125rem 1.875rem 0 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -3600,8 +3634,22 @@ html.lenis, html.lenis body {
           flex-direction: column;
   gap: 0.8125rem;
 }
-.step-form .step-list {
-  max-width: 36.25rem;
+@media (min-width: 1024px) {
+  .step-form__right {
+    max-width: 30rem;
+    margin: 1.8125rem 0 0 0;
+  }
+}
+@media (min-width: 1280px) {
+  .step-form__right {
+    max-width: 32.875rem;
+    margin: 4.3125rem 1.875rem 0 0;
+  }
+}
+@media (min-width: 1024px) {
+  .step-form .step-list {
+    max-width: 36.25rem;
+  }
 }
 .step-form .form-board__bottom .btn {
   width: 100%;
@@ -3618,18 +3666,28 @@ html.lenis, html.lenis body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 2.0625rem;
+  gap: 1rem;
   position: relative;
+}
+@media (min-width: 768px) {
+  .step-list {
+    gap: 2.0625rem;
+  }
 }
 .step-list::after {
   content: "";
   position: absolute;
   top: 0.25rem;
-  left: 1.375rem;
+  left: 1.25rem;
   z-index: 1;
   width: 0.125rem;
   height: calc(100% - 3.75rem);
   background-color: #c3c2b9;
+}
+@media (min-width: 1280px) {
+  .step-list::after {
+    left: 1.375rem;
+  }
 }
 
 .step-item {
@@ -3639,9 +3697,14 @@ html.lenis, html.lenis body {
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
-  gap: 1.5rem;
+  gap: 1rem;
   position: relative;
   z-index: 2;
+}
+@media (min-width: 768px) {
+  .step-item {
+    gap: 1.5rem;
+  }
 }
 .step-item__number {
   display: -webkit-box;
@@ -3653,13 +3716,20 @@ html.lenis, html.lenis body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 3rem;
-  height: 3rem;
+  width: 2.625rem;
+  height: 2.625rem;
   border-radius: 100%;
   background-color: var(--color-light);
-  font: 400 1.375rem/1.4 "Manrope", Verdana, Arial, sans-serif;
+  font: 400 1.25rem/1.4 "Manrope", Verdana, Arial, sans-serif;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+}
+@media (min-width: 1280px) {
+  .step-item__number {
+    width: 3rem;
+    height: 3rem;
+    font-size: 1.375rem;
+  }
 }
 .step-item__body {
   display: -webkit-box;
