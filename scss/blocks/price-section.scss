@@ -3,4 +3,12 @@
 
 .price-section {
 
+	&__top {
+		margin: 0 0 60px;
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+	}
 }
