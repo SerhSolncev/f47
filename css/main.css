@@ -573,6 +573,9 @@ html.lenis, html.lenis body {
 .section--media-center {
   margin: 0 0 clamp(8.75rem, 6.6666666667vw, 8rem);
 }
+.section--price-section {
+  margin: 0 0 clamp(8.75rem, 6.6666666667vw, 8rem);
+}
 
 .btn {
   display: -webkit-box;
