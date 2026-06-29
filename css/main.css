@@ -583,6 +583,9 @@ html.lenis, html.lenis body {
 .section--price-section {
   margin: 0 0 clamp(5rem, 10vw, 12rem);
 }
+.section--step-form {
+  margin: 0 0 clamp(5rem, 10vw, 12rem);
+}
 .section--faq {
   margin: 0 0 clamp(8.75rem, 6.6666666667vw, 8rem);
 }

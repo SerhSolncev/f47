@@ -57,6 +57,10 @@
 		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(192)}, #{get-rem(192)});
 	}
 
+	&--step-form {
+		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(192)}, #{get-rem(192)});
+	}
+
 	&--faq {
 		margin: 0 0 clamp(#{get-rem(140)}, #{get-vw(128)}, #{get-rem(128)});
 	}
