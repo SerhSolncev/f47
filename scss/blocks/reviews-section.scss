@@ -2,5 +2,145 @@
 @import "../abstracts/vars";
 
 .reviews-section {
+	max-width: get-rem(1780);
+	padding: 0 get-rem(16);
+	margin: 0 auto;
 
+	&__top {
+		margin: 0 0 clamp(#{get-rem(24)}, #{get-vw(80)}, #{get-rem(80)});
+	}
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(24);
+		padding: 0 0 get-rem(8);
+		overflow: auto;
+	}
+
+	&__row {
+
+
+		&--3 {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: get-rem(24);
+		}
+
+		&--4 {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+		}
+	}
+}
+
+.review-item {
+	background: #ffffff;
+	border-radius: get-rem(12);
+	padding: get-rem(20);
+	width: 100%;
+	max-width: get-rem(422);
+	min-height: get-rem(180);
+	display: flex;
+	flex-direction: column;
+	gap: get-rem(12);
+	box-shadow: 0 get-rem(2) get-rem(8) rgba(0, 0, 0, 0.07);
+	position: relative;
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: get-rem(10);
+	}
+
+	&__avatar {
+		width: get-rem(40);
+		height: get-rem(40);
+		border-radius: 50%;
+		flex-shrink: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		font-size: get-rem(16);
+		font-weight: 700;
+		color: #ffffff;
+		background: #4285f4;
+		overflow: hidden;
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			border-radius: 50%;
+		}
+	}
+
+	&__meta {
+		flex: 1;
+		min-width: 0;
+	}
+
+	&__name {
+		font-size: get-rem(14);
+		font-weight: 600;
+		color: #1a1a1a;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	&__date {
+		font-size: get-rem(12);
+		color: #9e9e9e;
+		margin-top: get-rem(2);
+	}
+
+	&__google-icon {
+		flex-shrink: 0;
+		width: get-rem(18);
+		height: get-rem(18);
+		align-self: flex-start;
+	}
+
+	&__stars {
+		display: flex;
+		align-items: center;
+		gap: get-rem(4);
+
+		svg {
+			width: get-rem(16);
+			height: get-rem(16);
+			fill: #fbbc04;
+		}
+	}
+
+	&__verified {
+		width: get-rem(16);
+		height: get-rem(16);
+		fill: #4285f4;
+	}
+
+	&__text {
+		font-size: get-rem(13);
+		line-height: 1.55;
+		color: #444444;
+		flex: 1;
+		display: -webkit-box;
+		-webkit-line-clamp: 5;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+	}
+
+	&__more {
+		font-size: get-rem(12);
+		color: #4285f4;
+		font-weight: 500;
+		text-decoration: none;
+		align-self: flex-start;
+
+		&:hover {
+			text-decoration: underline;
+		}
+	}
 }

@@ -65,4 +65,7 @@
 		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(192)}, #{get-rem(192)});
 	}
 
+	&--reviews-section {
+		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(192)}, #{get-rem(192)});
+	}
 }
