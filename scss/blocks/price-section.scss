@@ -15,7 +15,7 @@
 
 	&__bottom {
 		max-width: get-rem(480);
-		margin: get-rem(52) auto 0;
+		margin: get-rem(58) auto 0;
 	}
 }
 
@@ -103,7 +103,7 @@
 
 		> .simple-text {
 			max-width: get-rem(277);
-			margin: 0 auto get-rem(25);
+			margin: 0 auto get-rem(28);
 		}
 	}
 
@@ -123,7 +123,7 @@
 
 	&__list {
 		> .simple-text {
-			margin: get-rem(-2) 0 get-rem(23) get-rem(14);
+			margin: get-rem(-9) 0 get-rem(23) get-rem(14);
 		}
 	}
 
