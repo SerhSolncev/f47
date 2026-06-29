@@ -590,7 +590,21 @@ html.lenis, html.lenis body {
   margin: 0 0 clamp(5rem, 9.4791666667vw, 11.375rem);
 }
 .section--reviews-section {
-  margin: 0 0 clamp(5rem, 10vw, 12rem);
+  position: relative;
+  padding: 0.5625rem 0 0;
+  margin: -0.5625rem 0 clamp(5rem, 10vw, 12rem);
+}
+.section--reviews-section .bg-pic {
+  width: 100%;
+  max-width: clamp(19.375rem, 36.4583333333vw, 43.75rem);
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1;
+}
+.section--reviews-section .bg-pic img {
+  width: 100%;
+  height: auto;
 }
 
 .btn {
@@ -3750,6 +3764,8 @@ html.lenis, html.lenis body {
   max-width: 111.25rem;
   padding: 0 1rem;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 .reviews-section__top {
   margin: 0 0 clamp(1.5rem, 4.1666666667vw, 5rem);
@@ -3832,7 +3848,7 @@ html.lenis, html.lenis body {
 }
 
 .review-item {
-  background: #ffffff;
+  background: var(--color-light);
   border-radius: 0.75rem;
   padding: 1.25rem;
   width: 100%;

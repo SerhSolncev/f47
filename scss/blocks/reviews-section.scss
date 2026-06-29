@@ -5,6 +5,8 @@
 	max-width: get-rem(1780);
 	padding: 0 get-rem(16);
 	margin: 0 auto;
+	position: relative;
+	z-index: 2;
 
 	&__top {
 		margin: 0 0 clamp(#{get-rem(24)}, #{get-vw(80)}, #{get-rem(80)});
@@ -70,7 +72,7 @@
 }
 
 .review-item {
-	background: #ffffff;
+	background: var(--color-light);
 	border-radius: get-rem(12);
 	padding: get-rem(20);
 	width: 100%;

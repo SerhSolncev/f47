@@ -66,6 +66,22 @@
 	}
 
 	&--reviews-section {
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(192)}, #{get-rem(192)});
+		position: relative;
+		padding: get-rem(9) 0 0;
+		margin: get-rem(-9) 0 clamp(#{get-rem(80)}, #{get-vw(192)}, #{get-rem(192)});
+
+		.bg-pic {
+			width: 100%;
+			max-width: clamp(#{get-rem(310)}, #{get-vw(700)}, #{get-rem(700)});
+			position: absolute;
+			top: 0;
+			right: 0;
+			z-index: 1;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
 	}
 }
