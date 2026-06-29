@@ -139,6 +139,24 @@
 			outline-color: var(--color-white);
 		}
 	}
+
+	&--light-bg {
+		background-color: rgba(#242B3A, 0.05);
+		border-color: rgba(#242B3A, 0.4);
+		font-family: $mainFontBold;
+
+		&:hover {
+
+			.btn__hover {
+				opacity: 1;
+				padding: 0 get-rem(6) 0 get-rem(21);
+			}
+
+			.btn__text {
+				opacity: 0;
+			}
+		}
+	}
 }
 
 .icon-btn {
