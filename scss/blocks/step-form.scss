@@ -27,7 +27,10 @@
 	&__right {
 		width: 100%;
 		max-width: get-rem(526);
-		margin: get-rem(69) get-rem(30) 0 0
+		margin: get-rem(69) get-rem(30) 0 0;
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(13);
 	}
 
 	.step-list {
