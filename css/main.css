@@ -3521,6 +3521,16 @@ html.lenis, html.lenis body {
   color: var(--color-white);
 }
 
+.step-form__left {
+  width: 100%;
+  max-width: 41.25rem;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.step-form__left .title span {
+  display: block;
+}
+
 .container {
   width: 100%;
   max-width: 92rem;

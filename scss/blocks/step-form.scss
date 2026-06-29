@@ -3,4 +3,13 @@
 
 .step-form {
 
+	&__left {
+		width: 100%;
+		max-width: get-rem(660);
+		flex-shrink: 0;
+
+		.title span {
+			display: block;
+		}
+	}
 }
