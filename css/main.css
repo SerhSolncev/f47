@@ -3095,9 +3095,37 @@ html.lenis, html.lenis body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-box-align: end;
       -ms-flex-align: end;
           align-items: flex-end;
+  padding: 20px 0;
+  position: relative;
+  width: 100%;
+}
+.price-row::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0.0625rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(19, 19, 19, 0)), color-stop(rgba(19, 19, 19, 0.1)), to(rgba(19, 19, 19, 0)));
+  background-image: linear-gradient(to right, rgba(19, 19, 19, 0), rgba(19, 19, 19, 0.1), rgba(19, 19, 19, 0));
+}
+.price-row::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0.0625rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(rgba(19, 19, 19, 0)), color-stop(rgba(19, 19, 19, 0.1)), to(rgba(19, 19, 19, 0)));
+  background-image: linear-gradient(to right, rgba(19, 19, 19, 0), rgba(19, 19, 19, 0.1), rgba(19, 19, 19, 0));
 }
 
 .price-card {
@@ -3119,9 +3147,15 @@ html.lenis, html.lenis body {
           align-items: center;
   text-align: center;
 }
-.price-card__top .simple-text {
+.price-card__top > .title {
+  margin: 0 0 0.6875rem;
+}
+.price-card__top > .simple-text {
   max-width: 17.3125rem;
-  margin: 0 auto;
+  margin: 0 auto 36px;
+}
+.price-card .price-row {
+  margin: 0 0 40px;
 }
 .price-card--type-2 {
   border: 0.4375rem solid var(--color-white);
@@ -3154,6 +3188,10 @@ html.lenis, html.lenis body {
 
 .lh-15 {
   line-height: 1.5;
+}
+
+.lh-13 {
+  line-height: 1.3;
 }
 
 .color-dark {

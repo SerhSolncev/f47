@@ -16,7 +16,33 @@
 
 .price-row {
 	display: flex;
+	justify-content: center;
 	align-items: flex-end;
+	padding: 20px 0;
+	position: relative;
+	width: 100%;
+
+	&::after {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: get-rem(1);
+		background-image: linear-gradient(to right, rgba(#131313, 0), rgba(#131313, 0.1), rgba(#131313, 0));
+	}
+
+	&::before {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: get-rem(1);
+		background-image: linear-gradient(to right, rgba(#131313, 0), rgba(#131313, 0.1), rgba(#131313, 0));
+	}
 }
 
 .price-card {
@@ -32,10 +58,18 @@
 		align-items: center;
 		text-align: center;
 
-		.simple-text {
-			max-width: get-rem(277);
-			margin: 0 auto;
+		> .title {
+			margin: 0 0 get-rem(11);
 		}
+
+		> .simple-text {
+			max-width: get-rem(277);
+			margin: 0 auto 36px;
+		}
+	}
+
+	.price-row {
+		margin: 0 0 40px;
 	}
 
 	&--type-2 {
