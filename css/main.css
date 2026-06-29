@@ -3083,11 +3083,54 @@ html.lenis, html.lenis body {
 }
 
 .price-section__top {
-  margin: 0 0 60px;
+  margin: 0 0 4.4375rem;
 }
 .price-section__list {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 0.95fr 1fr 0.95fr;
+  padding: 0 4.4375rem;
+}
+
+.price-row {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.price-card {
+  max-width: 27.3125rem;
+}
+.price-card__body {
+  padding: 54px 60px;
+}
+.price-card__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+}
+.price-card__top .simple-text {
+  max-width: 17.3125rem;
+  margin: 0 auto;
+}
+.price-card--type-2 {
+  border: 0.4375rem solid var(--color-white);
+  padding: 0.4375rem;
+  background-color: var(--color-light);
+  border-radius: 1.875rem;
+}
+.price-card--type-2 .price-card__body {
+  padding: 2.5rem 60px;
 }
 
 .container {

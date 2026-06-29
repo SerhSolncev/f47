@@ -4,11 +4,51 @@
 .price-section {
 
 	&__top {
-		margin: 0 0 60px;
+		margin: 0 0 get-rem(71);
 	}
 
 	&__list {
 		display: grid;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: 0.95fr 1fr 0.95fr;
+		padding: 0 get-rem(71);
+	}
+}
+
+.price-row {
+	display: flex;
+	align-items: flex-end;
+}
+
+.price-card {
+	max-width: get-rem(437);
+
+	&__body {
+		padding: 54px 60px;
+	}
+
+	&__top {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		.simple-text {
+			max-width: get-rem(277);
+			margin: 0 auto;
+		}
+	}
+
+	&--type-2 {
+		border: get-rem(7) solid var(--color-white);
+		padding: get-rem(7);
+		background-color: var(--color-light);
+		border-radius: get-rem(30);
+
+		.price-card {
+
+			&__body {
+				padding: get-rem(40) 60px;
+			}
+		}
 	}
 }
