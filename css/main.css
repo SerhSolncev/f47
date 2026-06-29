@@ -3093,6 +3093,10 @@ html.lenis, html.lenis body {
   grid-template-columns: 1fr 1fr 1fr;
   padding: 0 4.4375rem;
 }
+.price-section__bottom {
+  max-width: 30rem;
+  margin: 3.25rem auto 0;
+}
 
 .price-row {
   display: -webkit-box;
