@@ -3762,8 +3762,25 @@ html.lenis, html.lenis body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 1.5rem;
+  gap: 1rem;
   padding: 0 0 0.5rem;
+}
+@media (min-width: 1080px) {
+  .reviews-section__list {
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .reviews-section__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    overflow: auto;
+    width: calc(100% + 2rem);
+    margin: 0 0 0 -1rem;
+    padding: 0 1rem;
+  }
 }
 .reviews-section__row--3 {
   display: -webkit-box;
@@ -3775,11 +3792,43 @@ html.lenis, html.lenis body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1.5rem;
+  gap: 1rem;
+}
+@media (min-width: 1080px) {
+  .reviews-section__row--3 {
+    gap: 1.5rem;
+  }
 }
 .reviews-section__row--4 {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .reviews-section__row--4 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1080px) {
+  .reviews-section__row--4 {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+@media (max-width: 767px) {
+  .reviews-section__row .review-item {
+    width: 14.375rem;
+    -ms-flex-negative: 0;
+        flex-shrink: 0;
+  }
 }
 
 .review-item {
@@ -3787,7 +3836,6 @@ html.lenis, html.lenis body {
   border-radius: 0.75rem;
   padding: 1.25rem;
   width: 100%;
-  max-width: 26.375rem;
   min-height: 11.25rem;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3800,6 +3848,13 @@ html.lenis, html.lenis body {
   -webkit-box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.07);
           box-shadow: 0 0.125rem 0.5rem rgba(0, 0, 0, 0.07);
   position: relative;
+  -ms-flex-item-align: stretch;
+      align-self: stretch;
+}
+@media (min-width: 1080px) {
+  .review-item {
+    max-width: 26.375rem;
+  }
 }
 .review-item__header {
   display: -webkit-box;
