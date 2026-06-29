@@ -56,4 +56,8 @@
 	&--price-section {
 		margin: 0 0 clamp(#{get-rem(140)}, #{get-vw(128)}, #{get-rem(128)});
 	}
+
+	&--faq {
+		margin: 0 0 clamp(#{get-rem(140)}, #{get-vw(128)}, #{get-rem(128)});
+	}
 }

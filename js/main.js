@@ -577,6 +577,115 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 	document.querySelectorAll("[data-tabs]").forEach((tabsContainer) => new Tabs(tabsContainer));
 
+	// acc
+	const accs = document.querySelectorAll('.js-acc-wrap');
+
+	function handleAccordion(parent) {
+		const buttons = parent.querySelectorAll('.js-open-acc');
+		const parentItems = parent.querySelectorAll('.js-acc');
+
+
+		parentItems.forEach((parentItem) => {
+			const accBlock = parentItem.querySelector('.js-acc-block');
+			accBlock.style.transition = 'none';
+			if (parentItem.classList.contains('active')) {
+				accBlock.style.maxHeight = accBlock.scrollHeight + "px";
+			}
+			setTimeout(() => {
+				accBlock.style.transition = 'max-height 0.2s linear, margin 0.2s linear';
+			}, 10);
+
+			let previousHeight = accBlock.scrollHeight;
+			setInterval(() => {
+				if (parentItem.classList.contains('active')) {
+					const currentHeight = accBlock.scrollHeight;
+					if (currentHeight !== previousHeight) {
+						accBlock.style.maxHeight = currentHeight + "px";
+						previousHeight = currentHeight;
+					}
+				}
+			}, 100);
+		});
+
+		buttons.forEach((button) => {
+			button.addEventListener('click', (event) => {
+				if (event.target.closest('.js-tooltip')) {
+					return;
+				}
+
+				const contents = button.closest('.js-acc-wrap').querySelectorAll('.js-acc-block');
+				const contentsItem = button.closest('.js-acc').querySelector('.js-acc-block');
+				const parentWrap = button.closest('.js-acc-wrap');
+				const isMultiple = parentWrap.hasAttribute('data-multiple');
+
+				if (button.closest('.js-acc').classList.contains('active')) {
+					contentsItem.style.maxHeight = '0';
+					button.closest('.js-acc').classList.remove('active');
+
+					if(button.closest('.js-state-inputs')) {
+						contentsItem.querySelectorAll('.input-item__input').forEach((input) => {
+							input.disabled = true;
+						})
+					}
+				}
+				else {
+					if (!isMultiple) {
+						contents.forEach((block) => {
+							block.style.maxHeight = '0';
+						});
+
+						button.closest('.js-acc-wrap').querySelectorAll('.js-acc').forEach((parentItem) => {
+							parentItem.classList.remove('active');
+						});
+					}
+
+					if(button.closest('.js-state-inputs')) {
+						contentsItem.querySelectorAll('.input-item__input').forEach((input) => {
+							input.disabled = false;
+						})
+					}
+
+					contentsItem.style.maxHeight = contentsItem.scrollHeight + "px";
+					button.closest('.js-acc').classList.add('active');
+				}
+
+				parentWrap.style.maxHeight = 'initial';
+			});
+
+			const nestedAccordions = button.closest('.js-acc').querySelectorAll('.js-acc-wrap');
+			nestedAccordions.forEach((nestedAccordion) => {
+				handleAccordion(nestedAccordion);
+			});
+		});
+	}
+
+	if (accs.length > 0) {
+		accs.forEach((parent) => {
+			handleAccordion(parent);
+		});
+	}
+
+	const observerAcc = new MutationObserver((mutationsList) => {
+		mutationsList.forEach((mutation) => {
+			mutation.addedNodes.forEach((node) => {
+				if (!(node instanceof Element)) return;
+
+				if (node.classList.contains('js-acc-wrap')) {
+					handleAccordion(node);
+				}
+
+				node.querySelectorAll('.js-acc-wrap').forEach((nestedNode) => {
+					handleAccordion(nestedNode);
+				});
+			});
+		});
+	});
+
+	observerAcc.observe(document.body, {
+		childList: true,
+		subtree: true,
+	});
+
 	// анімація при скролі і лоаду сторінки
 
 	document.querySelectorAll('.js-show-on-scroll').forEach(el => {
