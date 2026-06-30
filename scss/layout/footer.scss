@@ -6,14 +6,20 @@
 	&__top {
 		display: flex;
 		align-items: flex-start;
+		flex-direction: column;
 		justify-content: space-between;
 		gap: get-rem(24);
-		padding: get-rem(57) get-rem(56);
+		padding: clamp(#{get-rem(20)}, #{get-vw(57)}, #{get-rem(57)}) clamp(#{get-rem(20)}, #{get-vw(56)}, #{get-rem(56)});
 		background-image: linear-gradient(225deg, #1ef4b4, #c4b4fd);
-		border-radius: get-rem(40);
+		border-radius: clamp(#{get-rem(20)}, #{get-vw(40)}, #{get-rem(40)});
+
+		@media(min-width: 768px) {
+		    flex-direction: row;
+		}
 	}
 
 	&__left {
+		flex-shrink: 0;
 
 		.logo {
 			margin: 0 0 get-rem(8);
@@ -28,10 +34,14 @@
 	&__col {
 		display: flex;
 		flex-direction: column;
-		gap: get-rem(20);
+		gap: get-rem(14);
+
+		@media(min-width: 1280px) {
+			gap: get-rem(20);
+		}
 
 		&--spacer {
-			padding: get-rem(32) 0 0;
+			padding: get-rem(34) 0 0;
 		}
 
 		> .simple-text {
@@ -58,8 +68,13 @@
 	&__right {
 		display: flex;
 		align-items: flex-start;
-		gap: get-rem(60);
+		gap: clamp(#{get-rem(24)}, #{get-vw(60)}, #{get-rem(60)});
 		margin: 0 get-rem(11) 0 0;
+
+		@media(max-width: 1279px) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	&__bottom {
@@ -68,6 +83,7 @@
 		justify-content: space-between;
 		gap: get-rem(16);
 		padding: get-rem(22) get-rem(80);
+		display: none;
 	}
 
 	&__links {
