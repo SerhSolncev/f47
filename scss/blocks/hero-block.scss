@@ -6,10 +6,17 @@
 	&__top {
 		margin: clamp(#{get-rem(60)}, #{get-vw(139)}, #{get-rem(139)}) 0;
 
+		@media(max-width: 575px) {
+			padding: get-rem(90) 0 29vh;
+		}
 
 		.title--type-1 {
 			max-width: get-rem(1080);
 			margin: 0 auto clamp(#{get-rem(32)}, #{get-vw(53)}, #{get-rem(53)});
+
+			@media(max-width: 575px) {
+				margin: 0 0 get-rem(70);
+			}
 
 			span {
 				display: block;
