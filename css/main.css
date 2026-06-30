@@ -2384,7 +2384,7 @@ html.lenis, html.lenis body {
 }
 @media (max-width: 575px) {
   .hero-block__top {
-    padding: 5.625rem 0 29vh;
+    padding: 5.625rem 0 24vh;
   }
 }
 .hero-block__top .title--type-1 {

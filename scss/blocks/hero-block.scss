@@ -7,7 +7,7 @@
 		margin: clamp(#{get-rem(60)}, #{get-vw(139)}, #{get-rem(139)}) 0;
 
 		@media(max-width: 575px) {
-			padding: get-rem(90) 0 29vh;
+			padding: get-rem(90) 0 24vh;
 		}
 
 		.title--type-1 {
