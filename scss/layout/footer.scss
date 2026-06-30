@@ -13,10 +13,6 @@
 		border-radius: get-rem(40);
 	}
 
-	&__bottom {
-		padding: 28px 0;
-	}
-
 	&__left {
 
 		.logo {
@@ -65,6 +61,32 @@
 		gap: get-rem(60);
 		margin: 0 get-rem(11) 0 0;
 	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: get-rem(16);
+		padding: get-rem(22) get-rem(80);
+	}
+
+	&__links {
+		display: flex;
+		align-items: center;
+		gap: clamp(#{get-rem(12)}, #{get-vw(29)}, #{get-rem(29)});
+	}
+
+	&__pics {
+		display: flex;
+		align-items: center;
+		gap: get-rem(14);
+
+		img {
+			width: auto;
+			height: auto;
+			max-width: get-rem(250);
+		}
+	}
 }
 
 .locale-block {
@@ -78,9 +100,10 @@
 .copy-footer {
 	display: flex;
 	align-items: center;
-	gap: 8px;
+	gap: get-rem(8);
 	font: 500 #{get-rem(12)}/1 $mainFont;
 	color: var(--color-dark);
+	letter-spacing: -0.014em;
 
 	&__dot {
 		opacity: 0.2;

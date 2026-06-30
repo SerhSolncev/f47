@@ -554,9 +554,6 @@ html.lenis, html.lenis body {
   background-image: linear-gradient(225deg, #1ef4b4, #c4b4fd);
   border-radius: 2.5rem;
 }
-.footer__bottom {
-  padding: 28px 0;
-}
 .footer__left .logo {
   margin: 0 0 0.5rem;
 }
@@ -602,6 +599,42 @@ html.lenis, html.lenis body {
   gap: 3.75rem;
   margin: 0 0.6875rem 0 0;
 }
+.footer__bottom {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
+  padding: 1.375rem 5rem;
+}
+.footer__links {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: clamp(0.75rem, 1.5104166667vw, 1.8125rem);
+}
+.footer__pics {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.875rem;
+}
+.footer__pics img {
+  width: auto;
+  height: auto;
+  max-width: 15.625rem;
+}
 
 .locale-block {
   display: -webkit-box;
@@ -622,9 +655,10 @@ html.lenis, html.lenis body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 8px;
+  gap: 0.5rem;
   font: 500 0.75rem/1 "Manrope", Verdana, Arial, sans-serif;
   color: var(--color-dark);
+  letter-spacing: -0.014em;
 }
 .copy-footer__dot {
   opacity: 0.2;
