@@ -6,6 +6,7 @@
 	&__top {
 		display: flex;
 		align-items: flex-start;
+		justify-content: space-between;
 		gap: get-rem(24);
 		padding: get-rem(57) get-rem(56);
 		background-image: linear-gradient(225deg, #1ef4b4, #c4b4fd);
@@ -25,10 +26,41 @@
 		}
 	}
 
+	&__col {
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(20);
+
+		&--spacer {
+			padding: get-rem(32) 0 0;
+		}
+
+		> .simple-text {
+			margin: 0 0 get-rem(-5);
+		}
+
+		&:has(.link__icon:not(.link__icon--small)) {
+			gap: get-rem(12);
+
+			> .simple-text {
+				margin: 0 0 ;
+			}
+		}
+
+		&:has(.link__icon--small) {
+			gap: get-rem(17);
+		}
+
+		&:nth-child(3) {
+			margin: 0 get-rem(10) 0 0;
+		}
+	}
+
 	&__right {
 		display: flex;
 		align-items: flex-start;
-		gap: 36px;
+		gap: get-rem(60);
+		margin: 0 get-rem(11) 0 0;
 	}
 }
 
