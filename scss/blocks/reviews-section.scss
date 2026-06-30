@@ -124,7 +124,7 @@
 	&__name {
 		font-size: get-rem(14);
 		font-weight: 600;
-		color: #1a1a1a;
+		color: var(--color-dark-th);
 		white-space: nowrap;
 		overflow: hidden;
 		text-overflow: ellipsis;

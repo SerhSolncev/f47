@@ -76,6 +76,10 @@
 		}
 	}
 
+	&--type-7 {
+		font: 500 #{get-rem(12)}/1 $mainFont;
+	}
+
 	&--gray {
 		color: var(--color-gray);
 

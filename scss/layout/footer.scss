@@ -11,7 +11,10 @@
 		padding: get-rem(57) get-rem(56);
 		background-image: linear-gradient(225deg, #1ef4b4, #c4b4fd);
 		border-radius: get-rem(40);
-		margin: 0 0 40px;
+	}
+
+	&__bottom {
+		padding: 28px 0;
 	}
 
 	&__left {
@@ -70,4 +73,16 @@
 	gap: get-rem(8.5);
 	font: 600 #{get-rem(14)}/1 $mainFontBold;
 	letter-spacing: -0.014em;
+}
+
+.copy-footer {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	font: 500 #{get-rem(12)}/1 $mainFont;
+	color: var(--color-dark);
+
+	&__dot {
+		opacity: 0.2;
+	}
 }
