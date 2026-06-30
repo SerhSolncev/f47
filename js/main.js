@@ -907,7 +907,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 		const trigger = el.dataset.trigger === 'topBody'
 			? document.body
-			: el.closest('.js-go-away-trigger') || el.parentElement;
+			: el.closest('.js-big-title-trigger') || el.parentElement;
 
 		const startTop = el.dataset.startTop || '50%';
 		const endTop = el.dataset.endTop || '100%';
