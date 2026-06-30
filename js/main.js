@@ -900,6 +900,55 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		window.addEventListener("resize", update);
 	});
 
+	// modals
+	if (typeof MicroModal !== 'undefined') {
+		MicroModal.init({
+			onShow: modal => console.info(`${modal.id} is shown`),
+			onClose: modal => console.info(`${modal.id} is hidden`),
+			openClass: 'is-open'
+		});
+	}
+
+	// simple popup якщо розиітка одразу на сторінці
+
+	document.addEventListener('click', async function (e) {
+		const button = e.target.closest('.js-call-popup-static');
+		if(button) {
+			const id = button.getAttribute('data-id')
+			let isAnyModalOpen = document.querySelector('.micromodal-slide.is-open');
+			if (isAnyModalOpen) {
+				MicroModal.close()
+			}
+
+			MicroModal.show(id, {
+				disableFocus: true,
+				awaitCloseAnimation: true,
+				disableScroll: true,
+				onShow: function (modal) {
+					let isAnyModalOpen = document.querySelector('.micromodal-slide.is-open');
+				},
+				onClose: function (modal) {
+					setTimeout(() => {
+						let isAnyModalOpen = document.querySelector('.micromodal-slide.is-open');
+						if (!isAnyModalOpen && document.body.style.overflow === 'hidden') {
+							document.body.style.overflow = '';
+						}
+					}, 300);
+					document.body.style.overflow = '';
+				}
+			});
+		}
+
+	});
+
+	// тільки ціфрі
+	document.addEventListener('input', function(event) {
+		if (event.target.classList.contains('js-input-number')) {
+			event.target.value = event.target.value.replace(/[^0-9/+]/g, '');
+		}
+	});
+
+
 	// анімація при скролі і лоаду сторінки
 
 	document.querySelectorAll('.js-big-title').forEach(el => {
