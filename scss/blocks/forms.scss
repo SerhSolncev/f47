@@ -108,7 +108,7 @@
 
 	&:has(.form-success.show) {
 
-		.form-board__fields > .simple-text {
+		.form-board__fields > *:not(.form-success) {
 			opacity: 0;
 		}
 
@@ -145,12 +145,98 @@
 	}
 }
 
+.btn-checkbox {
+	position: relative;
+	height: get-rem(36);
+
+	@media(min-width: 768px) {
+		height: get-rem(44);
+	}
+
+	input {
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: 1;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		cursor: pointer;
+
+		&:hover ~ .btn-checkbox__body {
+			border-color: #d4d4d4;
+		}
+
+		&:checked ~ .btn-checkbox__body {
+
+			.btn-checkbox__icon::after {
+				opacity: 1;
+				transform: translate(-50%, -50%) scale(1);
+			}
+		}
+	}
+
+	&__body {
+		display: flex;
+		align-items: center;
+		gap: get-rem(5);
+		height: 100%;
+		padding: 0 get-rem(13) 0 get-rem(15);
+		border-radius: get-rem(100);
+		background-color: rgba(#fff, 0.4);
+		border: get-rem(1) solid transparent;
+		transition: border-color 0.15s ease-in;
+
+		@media(min-width: 768px) {
+			gap: get-rem(9);
+		}
+	}
+
+	&__text {
+		font: 500 #{get-rem(13)}/1 $mainFont;
+		color: var(--color-dark-th);
+
+		@media(min-width: 768px) {
+		    font-size: get-rem(16);
+		}
+	}
+
+	&__icon {
+		width: get-rem(16);
+		height: get-rem(16);
+		border: get-rem(1) solid var(--color-dark-th);
+		border-radius: 100%;
+		position: relative;
+
+		&::after {
+			content: '';
+			display: block;
+			position: absolute;
+			width: get-rem(8);
+			height: get-rem(8);
+			top: 50%;
+			left: 50%;
+			z-index: 1;
+			background-color: var(--color-dark-th);
+			border-radius: 100%;
+			transform: translate(-50%, -50%) scale(0);
+			opacity: 0;
+			transition: transform 0.2s linear, opacity 0.2s linear;
+		}
+
+	}
+}
+
 .input-item {
 	position: relative;
 	width: 100%;
 	display: flex;
 	flex-direction: column;
 	gap: get-rem(6);
+
+	&.hide {
+		display: none;
+	}
 
 	//&__label {
 	//	position: absolute;
@@ -170,6 +256,13 @@
 	//	}
 	//}
 
+	&__checks {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: get-rem(5);
+	}
+
 	> .simple-text {
 		margin: 0 0 0 get-rem(2);
 	}
@@ -181,6 +274,10 @@
 			.input-item__input {
 				padding-left: get-rem(42);
 			}
+		}
+
+		&.hide {
+			display: none;
 		}
 	}
 

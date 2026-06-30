@@ -182,12 +182,12 @@
 <div id="callback" class="modal micromodal-slide" aria-hidden="true">
 	<div class="modal__overlay" tabindex="-1" data-micromodal-close>
 		<div class="popup-block popup-block--type-1 modal__container" role="dialog" aria-modal="true" aria-labelledby="basket-title">
-<!--			<button class="close-btn" data-micromodal-close>-->
-<!--				<svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">-->
-<!--					<path d="M0.345974 1.08371C0.155024 0.884225 0.155024 0.560802 0.345974 0.361321C0.536924 0.16184 0.846515 0.16184 1.03746 0.361321L23.0538 23.3612C23.2447 23.5607 23.2447 23.8842 23.0538 24.0836C22.8628 24.2831 22.5532 24.2831 22.3623 24.0836L0.345974 1.08371Z"/>-->
-<!--					<path d="M2.02078 24.0838C1.82983 24.2833 1.52024 24.2833 1.32929 24.0838C1.13834 23.8843 1.13834 23.5609 1.32929 23.3614L23.3456 0.361464C23.5365 0.161982 23.8461 0.161982 24.0371 0.361464C24.228 0.560945 24.228 0.884368 24.0371 1.08385L2.02078 24.0838Z"/>-->
-<!--				</svg>-->
-<!--			</button>-->
+			<button class="close-btn" data-micromodal-close>
+				<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15.0947 3.84467C15.3876 3.55178 15.8623 3.55178 16.1552 3.84467C16.4481 4.13756 16.4481 4.61232 16.1552 4.90522L4.90522 16.1552C4.61232 16.4481 4.13756 16.4481 3.84467 16.1552C3.55178 15.8623 3.55178 15.3876 3.84467 15.0947L15.0947 3.84467Z"/>
+					<path d="M3.84467 3.84467C4.13756 3.55178 4.61232 3.55178 4.90522 3.84467L16.1552 15.0947C16.4481 15.3876 16.4481 15.8623 16.1552 16.1552C15.8623 16.4481 15.3876 16.4481 15.0947 16.1552L3.84467 4.90522C3.55178 4.61232 3.55178 4.13756 3.84467 3.84467Z"/>
+				</svg>
+			</button>
 			<form class="form-board form-board--type-2 form-board--gray js-validate-form" data-url>
 				<div class="form-board__body">
 					<div class="form-board__top">
@@ -212,35 +212,35 @@
 							<div class="simple-text simple-text--type-6 color-dark-th" >Бажаний спосіб зв’язку*</div>
 							<div class="input-item__checks">
 								<div class="btn-checkbox">
+									<input type="radio" name="connect" value="phone" checked class="js-connect-radio">
 									<div class="btn-checkbox__body">
-										<input type="radio" name="connect" value="phone">
 										<div class="btn-checkbox__icon"></div>
 										<div class="btn-checkbox__text">Телефон</div>
 									</div>
 								</div>
 								<div class="btn-checkbox">
+									<input type="radio" name="connect" value="tg" class="js-connect-radio">
 									<div class="btn-checkbox__body">
-										<input type="radio" name="connect" value="tg" checked>
 										<div class="btn-checkbox__icon"></div>
 										<div class="btn-checkbox__text">Telegram</div>
 									</div>
 								</div>
 								<div class="btn-checkbox">
+									<input type="radio" name="connect" value="email" class="js-connect-radio">
 									<div class="btn-checkbox__body">
-										<input type="radio" name="connect" value="email">
 										<div class="btn-checkbox__icon"></div>
 										<div class="btn-checkbox__text">E-mail</div>
 									</div>
 								</div>
 								<div class="btn-checkbox">
+									<input type="radio" name="connect" value="whatsapp" class="js-connect-radio">
 									<div class="btn-checkbox__body">
-										<input type="radio" name="connect" value="whatsapp">
 										<div class="btn-checkbox__icon"></div>
 										<div class="btn-checkbox__text">WhatsApp</div>
 									</div>
 								</div>
 							</div>
-							<div class="input-item__field js-connect-type" data-type="tg">
+							<div class="input-item__field js-connect-type hide" data-type="tg">
 								<label class="input-item__icon" aria-hidden="true">
 									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M17.5619 1.76159C17.6732 1.78048 17.7793 1.82179 17.8734 1.88268L17.9633 1.94909L18.0424 2.02819C18.1168 2.11194 18.1738 2.21019 18.2094 2.31725C18.2566 2.45967 18.2646 2.61222 18.2318 2.75866L18.2309 2.76354L15.0551 16.5575C15.0018 16.7897 14.889 17.004 14.7279 17.1796C14.5669 17.355 14.3628 17.4855 14.1361 17.5585C13.9093 17.6314 13.6672 17.6442 13.434 17.5956C13.2007 17.5469 12.9838 17.4388 12.8051 17.2811V17.2801L5.90664 11.2333L1.49648 10.369L1.4916 10.368C1.22933 10.3149 0.990792 10.1773 0.812887 9.97741C0.635178 9.77756 0.526651 9.52516 0.504294 9.25866C0.482009 8.99218 0.546901 8.72551 0.688864 8.49889L0.745505 8.41588C0.883744 8.23056 1.07182 8.08711 1.28847 8.0028L17.1215 1.80651L17.2289 1.77331C17.3376 1.74701 17.4509 1.74277 17.5619 1.76159ZM2.67422 9.07018L6.39394 9.80065L6.48965 9.82604C6.58301 9.85756 6.66995 9.90714 6.74453 9.97253L13.6391 16.0174L16.4828 3.66686L2.67422 9.07018Z" fill="#131313"/>
@@ -248,9 +248,9 @@
 										<path d="M5.5 10.5371C5.5 10.1229 5.83579 9.78711 6.25 9.78711C6.66421 9.78711 7 10.1229 7 10.5371V15.3145L9.17676 13.0566C9.46421 12.7585 9.9391 12.7497 10.2373 13.0371C10.5352 13.3246 10.5441 13.7995 10.2568 14.0977L7.86523 16.5791C7.67515 16.7763 7.42995 16.9115 7.16211 16.9688C6.89428 17.026 6.61538 17.0027 6.36133 16.9004C6.10722 16.7981 5.88981 16.6214 5.73633 16.3945C5.58299 16.1678 5.50049 15.9007 5.5 15.627V10.5371Z" fill="#131313"/>
 									</svg>
 								</label>
-								<input type="url" name="tg-user-number" id="tg-user-number" placeholder="Ваш @telegram або телефон" required class="input-item__input input-item__input--light">
+								<input type="text" name="tg-user-number" id="tg-user-number" placeholder="Ваш @telegram або телефон" required class="input-item__input input-item__input--light">
 							</div>
-							<div class="input-item js-connect-type" data-type="email">
+							<div class="input-item js-connect-type hide" data-type="email">
 								<div class="input-item__field">
 									<span class="input-item__icon" aria-hidden="true">
 										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -273,7 +273,7 @@
 									<input type="tel" name="tel-user" id="tel-user" placeholder="Ваш телефон" required class="input-item__input input-item__input--light js-input-number">
 								</div>
 							</div>
-							<div class="input-item js-connect-type" data-type="whatsapp">
+							<div class="input-item js-connect-type hide" data-type="whatsapp">
 								<div class="input-item__field">
 									<span class="input-item__icon" aria-hidden="true">
 										<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

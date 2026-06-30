@@ -366,6 +366,25 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 	document.querySelectorAll('.js-toggle-block:not(.show)').forEach(lockFocus);
 
+	// попап вид звязку
+
+	document.addEventListener('change', function (e) {
+		if (!e.target.classList.contains('js-connect-radio')) return;
+
+		var value = e.target.value;
+
+		document.querySelectorAll('.js-connect-type').forEach(function (el) {
+			el.classList.toggle('hide', el.dataset.type !== value);
+		});
+	});
+
+	document.addEventListener('DOMContentLoaded', function () {
+		var checked = document.querySelector('.js-connect-radio:checked');
+		if (checked) {
+			checked.dispatchEvent(new Event('change'));
+		}
+	});
+
 	// міні валідація
 
 	document.querySelectorAll('.js-validate-form').forEach(function (form) {
@@ -389,6 +408,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			return checkerWrap || input;
 		}
 
+		function isFieldVisible(input) {
+			if (input.offsetParent === null) return false; // сам инпут скрыт (display:none у него или родителя)
+			const parent = input.parentElement;
+			if (parent && (parent.offsetParent === null)) return false; // прямой родитель скрыт
+			return true;
+		}
 
 		function getErrorTextWrapper(input) {
 			return input.closest('.input-item, .default-select');
@@ -413,6 +438,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		}
 
 		function validateField(input) {
+			if (!isFieldVisible(input)) {
+				input.classList.remove('field-error');
+				return true;
+			}
+
 			let valid = true;
 
 			if (input.classList.contains('js-input-mask')) {
