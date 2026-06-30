@@ -1403,7 +1403,7 @@ html.lenis, html.lenis body {
 .modal__container {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .modal__header {
@@ -1681,6 +1681,14 @@ html.lenis, html.lenis body {
 }
 .popup-block--type-2 {
   max-width: 31.25rem;
+}
+.popup-block--type-2 .close-btn {
+  position: absolute;
+  top: 2rem;
+  right: 0.625rem;
+  z-index: 1;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
 }
 .popup-block--type-2 .form-board--type-1 {
   padding: 0;
@@ -1980,6 +1988,12 @@ html.lenis, html.lenis body {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   gap: 0.3125rem;
+}
+@media (max-width: 575px) {
+  .input-item__checks {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 .input-item > .simple-text {
   margin: 0 0 0 0.125rem;

@@ -261,6 +261,11 @@
 		align-items: center;
 		flex-wrap: wrap;
 		gap: get-rem(5);
+
+		@media(max-width: 575px) {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	> .simple-text {

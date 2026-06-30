@@ -19,7 +19,7 @@
 	//max-height: 92vh;
 	//overflow-y: auto;
 	box-sizing: border-box;
-	margin: 0 auto;
+	margin: auto;
 }
 
 .modal__header {
@@ -237,6 +237,14 @@
 
 	&--type-2 {
 		max-width: get-rem(500);
+
+		.close-btn {
+			position: absolute;
+			top: get-rem(32);
+			right: get-rem(10);
+			z-index: 1;
+			transform: translate(-50%, -50%);
+		}
 
 		.form-board--type-1 {
 			padding: 0;
