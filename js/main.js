@@ -41,6 +41,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	const lenis = new Lenis({
 		smoothWheel: true,
 		duration: window.innerWidth <= 768 ? 0.6 : 1.2,
+		prevent: (node) =>
+			node.closest('.micromodal-slide') !== null ||
+			node.closest('.js-toggle-block') !== null
 	});
 
 	lenis.on('scroll', ScrollTrigger.update);
