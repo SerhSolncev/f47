@@ -4,7 +4,10 @@
 .footer {
 
 	&__top {
-		padding: get-rem(55) get-rem(54);
+		display: flex;
+		align-items: flex-start;
+		gap: get-rem(24);
+		padding: get-rem(57) get-rem(56);
 		background-image: linear-gradient(225deg, #1ef4b4, #c4b4fd);
 		border-radius: get-rem(40);
 		margin: 0 0 40px;
@@ -12,8 +15,27 @@
 
 	&__left {
 
+		.logo {
+			margin: 0 0 get-rem(8);
+		}
+
 		.simple-text {
 			max-width: get-rem(136);
+			margin: 0 0 get-rem(27);
 		}
 	}
+
+	&__right {
+		display: flex;
+		align-items: flex-start;
+		gap: 36px;
+	}
+}
+
+.locale-block {
+	display: flex;
+	align-items: center;
+	gap: get-rem(8.5);
+	font: 600 #{get-rem(14)}/1 $mainFontBold;
+	letter-spacing: -0.014em;
 }
