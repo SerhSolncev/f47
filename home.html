@@ -406,7 +406,7 @@
 				<div class="header__mid js-toggle-block" data-no-lock-focus data-id="mob-menu">
 					<nav class="main-menu" aria-label="Головне меню">
 						<div class="main-menu__list">
-							<button class="link link--type-1 link--gray lt-14 js-call-static-popup" data-id="audit">Аудит</button>
+							<button class="link link--type-1 link--gray lt-14 js-call-popup-static" data-id="audit">Аудит</button>
 							<button class="link link--type-1 link--gray lt-14 js-anchor-btn" data-id="portfolio-section">Портфоліо</button>
 							<button class="link link--type-1 link--gray lt-14 js-anchor-btn" data-id="price-section">Ціни</button>
 							<button class="link link--type-1 link--gray lt-14 js-anchor-btn" data-id="media-section">Медіа-центр</button>
@@ -2309,7 +2309,7 @@
 <script src="js/modules/gsap.min.js"></script>
 <script src="js/modules/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
-<!-- статичний попап корзини -->
+<!-- попап1 -->
 <div id="callback" class="modal micromodal-slide" aria-hidden="true">
 	<div class="modal__overlay" tabindex="-1" data-micromodal-close>
 		<div class="popup-block popup-block--type-1 modal__container" role="dialog" aria-modal="true" aria-labelledby="basket-title">
@@ -2446,6 +2446,66 @@
 										</span>
 									</span>
 							<span class="btn__text">Зв'яжіться з нами</span>
+						</button>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
+<!-- попап1 -->
+<div id="audit" class="modal micromodal-slide" aria-hidden="true">
+	<div class="modal__overlay" tabindex="-1" data-micromodal-close>
+		<div class="popup-block popup-block--type-2 modal__container" role="dialog" aria-modal="true" aria-labelledby="basket-title">
+			<button class="close-btn" data-micromodal-close>
+				<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<path d="M15.0947 3.84467C15.3876 3.55178 15.8623 3.55178 16.1552 3.84467C16.4481 4.13756 16.4481 4.61232 16.1552 4.90522L4.90522 16.1552C4.61232 16.4481 4.13756 16.4481 3.84467 16.1552C3.55178 15.8623 3.55178 15.3876 3.84467 15.0947L15.0947 3.84467Z"/>
+					<path d="M3.84467 3.84467C4.13756 3.55178 4.61232 3.55178 4.90522 3.84467L16.1552 15.0947C16.4481 15.3876 16.4481 15.8623 16.1552 16.1552C15.8623 16.4481 15.3876 16.4481 15.0947 16.1552L3.84467 4.90522C3.55178 4.61232 3.55178 4.13756 3.84467 3.84467Z"/>
+				</svg>
+			</button>
+			<form class="form-board form-board--type-1 form-board--orange-gradient js-validate-form" data-url>
+				<div class="form-board__body">
+					<div class="form-board__top">
+						<div class="title title--type-3 color-dark-th text-bolder lt-2">Безкоштовний аудит <br> видимості в AI</div>
+						<p class="simple-text simple-text--type-2 color-dark-th lt-14">Завантажте безкоштовний практичний гайд по AI-SEO та GEO для бізнесу</p>
+					</div>
+					<fieldset class="form-board__fields" aria-label="Дані для аудиту видимості">
+						<div class="form-success js-form-success">Форма відправлена</div>
+						<div class="input-item">
+							<div class="input-item__field">
+								<label class="input-item__icon" for="name">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M14.25 7.5C14.25 5.15279 12.3472 3.25 10 3.25C7.65279 3.25 5.75 5.15279 5.75 7.5C5.75 9.84721 7.65279 11.75 10 11.75C12.3472 11.75 14.25 9.84721 14.25 7.5ZM15.75 7.5C15.75 10.6756 13.1756 13.25 10 13.25C6.82436 13.25 4.25 10.6756 4.25 7.5C4.25 4.32436 6.82436 1.75 10 1.75C13.1756 1.75 15.75 4.32436 15.75 7.5Z" fill="#131313"/>
+										<path d="M10.0004 11.75C13.5249 11.75 16.512 13.6691 18.1498 16.499C18.3573 16.8575 18.2348 17.3169 17.8764 17.5244C17.5179 17.7319 17.0585 17.6094 16.851 17.251C15.4622 14.8513 12.9524 13.25 10.0004 13.25C7.04837 13.25 4.53859 14.8513 3.1498 17.251C2.94229 17.6094 2.48288 17.7319 2.12441 17.5244C1.76599 17.3169 1.64352 16.8575 1.85097 16.499C3.48876 13.6691 6.47588 11.75 10.0004 11.75Z" fill="#131313"/>
+									</svg>
+								</label>
+								<input type="text" name="name" id="name" placeholder="Ваше ім'я" aria-label="Ваше ім'я" required class="input-item__input input-item__input--light">
+							</div>
+						</div>
+						<div class="input-item">
+							<div class="input-item__field">
+								<label class="input-item__icon" for="email">
+									<svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M3.25 14.875H16.75V5.125H3.25V14.875ZM18.25 15C18.25 15.3647 18.1055 15.7148 17.8477 15.9727C17.5898 16.2305 17.2397 16.375 16.875 16.375H3.125C2.76033 16.375 2.41021 16.2305 2.15234 15.9727C1.89448 15.7148 1.75 15.3647 1.75 15V4.375C1.75 3.96079 2.08579 3.625 2.5 3.625H17.5C17.9142 3.625 18.25 3.96079 18.25 4.375V15Z" fill="#131313"/>
+										<path d="M16.9931 3.82218C17.2984 3.54231 17.7727 3.56282 18.0526 3.86808C18.3325 4.17339 18.312 4.64774 18.0067 4.92765L10.5067 11.8026C10.22 12.0655 9.77982 12.0655 9.49308 11.8026L1.99308 4.92765C1.68782 4.64774 1.66731 4.17339 1.94718 3.86808C2.22708 3.56282 2.70144 3.54231 3.00675 3.82218L9.99991 10.2323L16.9931 3.82218Z" fill="#131313"/>
+									</svg>
+								</label>
+								<input type="email" name="email" id="email" placeholder="Контактний e-mail" aria-label="Контактний e-mail" required class="input-item__input input-item__input--light">
+							</div>
+						</div>
+					</fieldset>
+					<div class="form-board__bottom">
+						<button type="button" class="btn btn--type-1 btn--dark-bg-th js-send-form">
+									<span class="btn__hover">
+										<span>Отримати гайд</span>
+										<span class="btn__icon">
+											<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+												<path d="M16.875 9.375C17.2202 9.375 17.5 9.65482 17.5 10C17.5 10.3452 17.2202 10.625 16.875 10.625H3.125C2.77982 10.625 2.5 10.3452 2.5 10C2.5 9.65482 2.77982 9.375 3.125 9.375H16.875Z" fill="white"/>
+												<path d="M10.8081 3.93306C11.0521 3.68898 11.4487 3.68898 11.6928 3.93306L17.3178 9.55806C17.5619 9.80214 17.5619 10.1987 17.3178 10.4428L11.6928 16.0678C11.4487 16.3119 11.0521 16.3119 10.8081 16.0678C10.564 15.8237 10.564 15.4271 10.8081 15.1831L15.9907 10.0004L10.8081 4.81782C10.564 4.57375 10.564 4.17714 10.8081 3.93306Z" fill="white"/>
+											</svg>
+										</span>
+									</span>
+							<span class="btn__text">Отримати гайд</span>
 						</button>
 					</div>
 				</div>

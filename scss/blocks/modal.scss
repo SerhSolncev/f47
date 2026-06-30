@@ -235,6 +235,14 @@
 		}
 	}
 
+	&--type-2 {
+		max-width: get-rem(500);
+
+		.form-board--type-1 {
+			padding: 0;
+		}
+	}
+
 }
 
 
