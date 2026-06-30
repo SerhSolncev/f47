@@ -46,23 +46,23 @@
 	}
 
 	&--blockquote {
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(185)}, #{get-rem(185)});
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(185)}, #{get-rem(185)});
 	}
 
 	&--media-center {
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(128)}, #{get-rem(128)});
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(128)}, #{get-rem(128)});
 	}
 
 	&--price-section {
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(192)}, #{get-rem(192)});
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(192)}, #{get-rem(192)});
 	}
 
 	&--faq {
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(192)}, #{get-rem(192)});
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(192)}, #{get-rem(192)});
 	}
 
 	&--step-form {
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(182)}, #{get-rem(182)});
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(182)}, #{get-rem(182)});
 	}
 
 	&--reviews-section {
@@ -86,6 +86,6 @@
 	}
 
 	&--seo {
-		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(222)}, #{get-rem(222)});
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(222)}, #{get-rem(222)});
 	}
 }

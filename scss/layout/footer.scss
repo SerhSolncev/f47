@@ -9,12 +9,37 @@
 		flex-direction: column;
 		justify-content: space-between;
 		gap: get-rem(24);
-		padding: clamp(#{get-rem(20)}, #{get-vw(57)}, #{get-rem(57)}) clamp(#{get-rem(20)}, #{get-vw(56)}, #{get-rem(56)});
+		padding: clamp(#{get-rem(32)}, #{get-vw(57)}, #{get-rem(57)}) clamp(#{get-rem(20)}, #{get-vw(56)}, #{get-rem(56)});
 		background-image: linear-gradient(225deg, #1ef4b4, #c4b4fd);
 		border-radius: clamp(#{get-rem(20)}, #{get-vw(40)}, #{get-rem(40)});
+		overflow: hidden;
+		position: relative;
 
 		@media(min-width: 768px) {
 		    flex-direction: row;
+		}
+
+		.bg-pic {
+			width: 100%;
+			max-width: #{get-rem(768)};
+			position: absolute;
+			top: 0;
+			right: -16.5%;
+			z-index: 1;
+
+			@media(min-width: 768px) {
+				top: -162%;
+			}
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+		}
+
+		> *:not(.bg-pic) {
+			position: relative;
+			z-index: 2;
 		}
 	}
 
@@ -41,7 +66,10 @@
 		}
 
 		&--spacer {
-			padding: get-rem(34) 0 0;
+
+			@media(min-width: 576px) {
+				padding: get-rem(34) 0 0;
+			}
 		}
 
 		> .simple-text {
@@ -61,7 +89,9 @@
 		}
 
 		&:nth-child(3) {
-			margin: 0 get-rem(10) 0 0;
+			@media(min-width: 1280px) {
+				margin: 0 get-rem(10) 0 0;
+			}
 		}
 	}
 
@@ -75,27 +105,46 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 		}
+
+		@media(max-width: 575px) {
+			grid-template-columns: 1fr;
+		}
 	}
 
 	&__bottom {
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: get-rem(16);
-		padding: get-rem(22) get-rem(80);
-		display: none;
+		gap: get-rem(20);
+		padding: get-rem(22) clamp(#{get-rem(1)}, #{get-vw(80)}, #{get-rem(80)});
+
+		@media(max-width: 1279px) {
+		    flex-direction: column;
+		}
 	}
 
 	&__links {
 		display: flex;
 		align-items: center;
-		gap: clamp(#{get-rem(12)}, #{get-vw(29)}, #{get-rem(29)});
+		gap: clamp(#{get-rem(16)}, #{get-vw(29)}, #{get-rem(29)});
+
+		@media(max-width: 1279px) {
+			flex-direction: column;
+		}
 	}
 
 	&__pics {
 		display: flex;
 		align-items: center;
 		gap: get-rem(14);
+
+		@media(max-width: 1279px) {
+			order: -1;
+		}
+
+		@media(max-width: 390px) {
+		    flex-direction: column;
+		}
 
 		img {
 			width: auto;
