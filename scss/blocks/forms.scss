@@ -311,17 +311,13 @@
 		width: 100%;
 		height: get-rem(44);
 		border: 1px solid transparent;
-		font: 400 #{get-rem(15)}/1 $mainFont;
+		font: 400 #{get-rem(16)}/1 $mainFont;
 		color: var(--color-dark);
 		padding: 0 get-rem(8) 0 get-rem(14);
 		border-radius: get-rem(100);
 		transition: border-color 0.2s linear;
 		-webkit-appearance: none;
 		appearance: none;
-
-		@media(min-width: 768px) {
-		    font-size: get-rem(16);
-		}
 
 		&.field-error {
 			border-color: var(--color-red) !important;
@@ -370,7 +366,7 @@
 	&__textarea {
 		width: 100%;
 		height: get-rem(164);
-		font: 400 #{get-rem(15)}/1 $mainFont;
+		font: 400 #{get-rem(16)}/1 $mainFont;
 		border-color: transparent;
 		color: var(--color-dark-main);
 		padding: get-rem(11) get-rem(13) get-rem(13) get-rem(41);
@@ -379,10 +375,6 @@
 		-webkit-appearance: none;
 		appearance: none;
 		resize: vertical;
-
-		@media(min-width: 768px) {
-			font-size: get-rem(16);
-		}
 
 		&.field-error {
 			border-color: var(--color-red);
