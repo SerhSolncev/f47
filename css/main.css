@@ -757,6 +757,21 @@ html.lenis, html.lenis body {
 .section--hero {
   margin: 0 0 clamp(2.5rem, 4.84375vw, 5.8125rem);
   padding: 0 0 clamp(2.5rem, 4.84375vw, 5.8125rem);
+  position: relative;
+}
+.section--hero .big-title {
+  width: 100%;
+  white-space: nowrap;
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  z-index: 1;
+  font: 500 clamp(2.5rem, 9.8958333333vw, 11.875rem)/1 "Manrope", Verdana, Arial, sans-serif;
+  color: var(--color-dark);
+}
+.section--hero .container {
+  position: relative;
+  z-index: 2;
 }
 .section--quality {
   margin: 0 0 clamp(0rem, 8.3333333333vw, 10rem);

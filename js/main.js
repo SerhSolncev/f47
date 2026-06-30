@@ -902,6 +902,39 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 	// анімація при скролі і лоаду сторінки
 
+	document.querySelectorAll('.js-big-title').forEach(el => {
+		if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
+
+		const trigger = el.dataset.trigger === 'topBody'
+			? document.body
+			: el.closest('.js-go-away-trigger') || el.parentElement;
+
+		const startTop = el.dataset.startTop || '50%';
+		const endTop = el.dataset.endTop || '100%';
+		const startX = parseFloat(el.dataset.startX) ?? -100;
+		const endX = parseFloat(el.dataset.endX) ?? 100;
+
+		gsap.fromTo(el,
+			{
+				xPercent: startX,
+				yPercent: -50,
+				top: startTop,
+			},
+			{
+				xPercent: endX,
+				yPercent: -50,
+				top: endTop,
+				ease: 'none',
+				scrollTrigger: {
+					trigger,
+					start: el.dataset.start || 'top top',
+					end: el.dataset.end || 'bottom bottom',
+					scrub: 0.5,
+				}
+			}
+		);
+	});
+
 	document.querySelectorAll('.js-show-on-scroll').forEach(el => {
 		if (el.hasAttribute('data-off-animate') && window.innerWidth <= parseFloat(el.dataset.offAnimate)) return;
 
