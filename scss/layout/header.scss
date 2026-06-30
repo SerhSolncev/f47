@@ -4,7 +4,7 @@
 .header {
 	width: 100%;
 	padding: clamp(#{get-rem(12)}, 3vw, #{get-rem(24)}) 0;
-	background-color: rgba(#f5f5f0, 0.99);
+	background-color: rgba(#f5f5f0, 0.95);
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -18,8 +18,8 @@
 		left: 0;
 		z-index: 1;
 		width: 100%;
-		height: get-rem(1);
-		background-color: var(--color-dark);
+		height: 0.5px;
+		background-color: rgba(#131313, 0.075);
 		transition: opacity 0.15s ease-in;
 
 		@media(min-width: 992px) {

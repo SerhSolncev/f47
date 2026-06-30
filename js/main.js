@@ -991,10 +991,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 			? document.body
 			: el.closest('.js-big-title-trigger') || el.parentElement;
 
-		const startTop = el.dataset.startTop || '50%';
-		const endTop = el.dataset.endTop || '100%';
-		const startX = parseFloat(el.dataset.startX) ?? -100;
-		const endX = parseFloat(el.dataset.endX) ?? 100;
+		const startTop = el.dataset.startTop || '20%';
+		const endTop = el.dataset.endTop || '80%';
+		const startX = parseFloat(el.dataset.startX) ?? 100;
+		const endX = parseFloat(el.dataset.endX) ?? -200;
 
 		gsap.fromTo(el,
 			{
@@ -1009,9 +1009,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				ease: 'none',
 				scrollTrigger: {
 					trigger,
-					start: el.dataset.start || 'top top',
-					end: el.dataset.end || 'bottom bottom',
-					scrub: 0.5,
+					start: el.dataset.start || 'center center',
+					end: () => 'bottom+=' + (trigger.offsetHeight * 0.2) + ' bottom',
+					scrub: 0.7,
 				}
 			}
 		);

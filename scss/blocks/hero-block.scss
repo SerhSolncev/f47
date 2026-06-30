@@ -4,12 +4,12 @@
 .hero-block {
 
 	&__top {
-		margin: clamp(#{get-rem(40)}, #{get-vw(139)}, #{get-rem(139)}) 0;
+		margin: clamp(#{get-rem(60)}, #{get-vw(139)}, #{get-rem(139)}) 0;
 
 
 		.title--type-1 {
 			max-width: get-rem(1080);
-			margin: 0 auto clamp(#{get-rem(20)}, #{get-vw(53)}, #{get-rem(53)});
+			margin: 0 auto clamp(#{get-rem(32)}, #{get-vw(53)}, #{get-rem(53)});
 
 			span {
 				display: block;
@@ -28,8 +28,12 @@
 		align-items: flex-start;
 		justify-content: center;
 		flex-wrap: wrap;
-		gap: get-rem(17.5);
+		gap: get-rem(24);
 		margin: get-rem(-18) 0 clamp(#{get-rem(60)}, #{get-vw(190)}, #{get-rem(190)});
+
+		@media(min-width: 768px) {
+			gap: get-rem(17.5);
+		}
 
 		> * {
 			width: 100%;
