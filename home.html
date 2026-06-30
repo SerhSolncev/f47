@@ -406,10 +406,10 @@
 				<div class="header__mid js-toggle-block" data-no-lock-focus data-id="mob-menu">
 					<nav class="main-menu" aria-label="Головне меню">
 						<div class="main-menu__list">
-							<a href="#!" class="link link--type-1 link--gray lt-14">Аудит</a>
-							<a href="#!" class="link link--type-1 link--gray lt-14">Портфоліо</a>
-							<a href="#!" class="link link--type-1 link--gray lt-14">Ціни</a>
-							<a href="#!" class="link link--type-1 link--gray lt-14">Медіа-центр</a>
+							<button class="link link--type-1 link--gray lt-14 js-call-static-popup" data-id="audit">Аудит</button>
+							<button class="link link--type-1 link--gray lt-14 js-anchor-btn" data-id="portfolio-section">Портфоліо</button>
+							<button class="link link--type-1 link--gray lt-14 js-anchor-btn" data-id="price-section">Ціни</button>
+							<button class="link link--type-1 link--gray lt-14 js-anchor-btn" data-id="media-section">Медіа-центр</button>
 						</div>
 					</nav>
 					<div class="soc-list">
@@ -717,7 +717,7 @@
 	>
 		<img src="images/empty.gif" data-src="images/pics/bg1.webp" alt="" width="793" height="843" class="lazy">
 	</div>
-	<div class="quality-block">
+	<div class="quality-block js-anchor-block" id="portfolio-section">
 		<div class="oh">
 			<div class="quality-block__top">
 				<h2 id="quality-title" class="title title--type-5 color-dark text-center">
@@ -1027,7 +1027,7 @@
 
 
 	<!-- media center -->
-	<section class="section section--media-center" aria-labelledby="media-title">
+	<section class="section section--media-center js-anchor-block" id="media-section" aria-labelledby="media-title">
 	<div class="container">
 		<div class="media-center" data-tabs>
 			<div class="media-center__top text-center js-show-on-scroll"
@@ -1324,7 +1324,7 @@
 
 
 	<!-- price section -->
-	<section class="section section--price-section" aria-labelledby="price-title">
+	<section class="section section--price-section js-anchor-block" id="price-section" aria-labelledby="price-title">
 	<div class="container">
 		<div class="price-section">
 			<div class="price-section__top text-center js-show-on-scroll"

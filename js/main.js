@@ -697,6 +697,89 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		subtree: true,
 	});
 
+	// якорся з меню
+	const buttons = document.querySelectorAll('.js-anchor-btn');
+	const mobMenus = document.querySelectorAll('[data-id="mob-menu"]');
+	const sections = [];
+
+	// Собираем секции, соответствующие кнопкам
+	buttons.forEach(btn => {
+		const id = btn.dataset.id;
+		const section = document.getElementById(id) || document.querySelector(`.js-anchor-block[id="${id}"]`);
+		if (section) {
+			sections.push({ btn, section });
+		}
+	});
+
+	function getHeaderHeight() {
+		return header ? header.offsetHeight : 0;
+	}
+
+	function getOffset(btn) {
+		const DEFAULT_OFFSET = 50;
+		const customOffset = parseInt(btn.dataset.offset, 10);
+		return isNaN(customOffset) ? DEFAULT_OFFSET : customOffset;
+	}
+
+	// Клик по кнопке — скролл к блоку
+	buttons.forEach(btn => {
+		btn.addEventListener('click', function () {
+			const id = btn.dataset.id;
+			const target = document.getElementById(id) || document.querySelector(`.js-anchor-block[id="${id}"]`);
+			if (!target) return;
+
+			const headerHeight = getHeaderHeight();
+			const offset = getOffset(btn);
+			const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - offset;
+
+			window.scrollTo({
+				top: targetPosition,
+				behavior: 'smooth'
+			});
+
+			setActiveButton(btn);
+
+			mobMenus.forEach(menu => menu.classList.remove('show'));
+		});
+	});
+
+	function setActiveButton(activeBtn) {
+		buttons.forEach(b => b.classList.remove('is-active'));
+		activeBtn.classList.add('is-active');
+	}
+
+	function onScroll() {
+		const headerHeight = getHeaderHeight();
+		const scrollPosition = window.scrollY + headerHeight + 1;
+
+		let currentSection = null;
+
+		sections.forEach(({ btn, section }) => {
+			const sectionTop = section.getBoundingClientRect().top + window.scrollY - headerHeight - getOffset(btn);
+			const sectionBottom = sectionTop + section.offsetHeight;
+
+			if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+				currentSection = btn;
+			}
+		});
+
+		if (currentSection) {
+			setActiveButton(currentSection);
+		} else {
+			buttons.forEach(btn => btn.classList.remove('is-active'));
+		}
+	}
+
+	let scrollTimeout;
+	window.addEventListener('scroll', function () {
+		if (scrollTimeout) {
+			window.cancelAnimationFrame(scrollTimeout);
+		}
+		scrollTimeout = window.requestAnimationFrame(onScroll);
+	});
+
+	onScroll();
+
 	// скрипт которйы обрезает текст
 
 	const seoBlocks = document.querySelectorAll(".js-seo-block");
