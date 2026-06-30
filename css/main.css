@@ -531,9 +531,22 @@ html.lenis, html.lenis body {
 .logo--header {
   max-width: 5.625rem;
 }
+.logo--footer {
+  max-width: 7rem;
+}
 .logo img {
   width: 100%;
   height: auto;
+}
+
+.footer__top {
+  padding: 3.4375rem 3.375rem;
+  background-image: linear-gradient(225deg, #1ef4b4, #c4b4fd);
+  border-radius: 2.5rem;
+  margin: 0 0 40px;
+}
+.footer__left .simple-text {
+  max-width: 8.5rem;
 }
 
 .section--hero {
@@ -607,7 +620,7 @@ html.lenis, html.lenis body {
   height: auto;
 }
 .section--seo {
-  margin: 0 0 clamp(5rem, 9.4791666667vw, 11.375rem);
+  margin: 0 0 clamp(5rem, 11.5625vw, 13.875rem);
 }
 
 .btn {
