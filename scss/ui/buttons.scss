@@ -159,6 +159,7 @@
 	}
 
 	&--light-bg {
+		color: var(--color-dark);
 		background-color: rgba(#242B3A, 0.05);
 		border-color: rgba(#242B3A, 0.4);
 		font-family: $mainFontBold;

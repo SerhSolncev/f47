@@ -1000,6 +1000,7 @@ html.lenis, html.lenis body {
   outline-color: var(--color-white);
 }
 .btn--light-bg {
+  color: var(--color-dark);
   background-color: rgba(36, 43, 58, 0.05);
   border-color: rgba(36, 43, 58, 0.4);
   font-family: "Manrope Semi", Verdana, Arial, sans-serif;
@@ -3748,7 +3749,6 @@ html.lenis, html.lenis body {
 .faq-item {
   border-radius: 1.25rem;
   background-color: var(--color-light);
-  color: var(--color-dark-th);
   -webkit-transition: background-color 0.15s ease-in;
   transition: background-color 0.15s ease-in;
 }
@@ -3782,6 +3782,7 @@ html.lenis, html.lenis body {
   }
 }
 .faq-item__btn .simple-text {
+  color: var(--color-dark-th);
   -webkit-transition: color 0.15s ease-in, -webkit-transform 0.15s ease-in;
   transition: color 0.15s ease-in, -webkit-transform 0.15s ease-in;
   transition: color 0.15s ease-in, transform 0.15s ease-in;
@@ -3819,6 +3820,7 @@ html.lenis, html.lenis body {
   height: 0.9375rem;
   -ms-flex-negative: 0;
       flex-shrink: 0;
+  color: var(--color-dark-th);
   -webkit-transition: color 0.15s ease-in, -webkit-transform 0.15s ease-in;
   transition: color 0.15s ease-in, -webkit-transform 0.15s ease-in;
   transition: color 0.15s ease-in, transform 0.15s ease-in;
@@ -3832,6 +3834,9 @@ html.lenis, html.lenis body {
   background-color: #242b3a;
 }
 .faq-item.active .simple-text {
+  color: var(--color-white);
+}
+.faq-item.active .faq-item__icon {
   color: var(--color-white);
 }
 .faq-item.active .faq-item__btn {

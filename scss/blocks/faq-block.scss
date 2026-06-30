@@ -54,7 +54,6 @@
 .faq-item {
 	border-radius: get-rem(20);
 	background-color: var(--color-light);
-	color: var(--color-dark-th);
 	transition: background-color 0.15s ease-in;
 
 	&__btn {
@@ -78,6 +77,7 @@
 		}
 
 		.simple-text {
+			color: var(--color-dark-th);
 			transition: color 0.15s ease-in, transform 0.15s ease-in;
 		}
 
@@ -108,6 +108,7 @@
 		width: get-rem(15);
 		height: get-rem(15);
 		flex-shrink: 0;
+		color: var(--color-dark-th);
 		transition: color 0.15s ease-in, transform 0.15s ease-in;
 
 		svg {
@@ -120,6 +121,10 @@
 		background-color: #242b3a;
 
 		.simple-text {
+			color: var(--color-white);
+		}
+
+		.faq-item__icon {
 			color: var(--color-white);
 		}
 
