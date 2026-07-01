@@ -90,6 +90,28 @@
 	}
 }
 
+.blog-inner {
+	display: grid;
+	grid-template-columns: get-rem(256) 1fr get-rem(256);
+	gap: clamp(#{get-rem(20)}, #{get-vw(80)}, #{get-rem(80)});
+}
+
+.tiny-block {
+
+	h2 {
+		font: 600 9vw/1.3 $mainFontGilroy;
+		color: var(--color-dark);
+
+		@media(min-width: 430px) {
+			font-size: get-rem(28);
+		}
+
+		@media(min-width: 1280px) {
+			font-size: get-rem(36);
+		}
+	}
+}
+
 .share-block {
 	display: flex;
 	flex-direction: column;

@@ -108,4 +108,14 @@
 			height: auto;
 		}
 	}
+
+	&--tiny {
+
+		.blockquote-block {
+
+			&__left {
+				width: 100%;
+			}
+		}
+	}
 }

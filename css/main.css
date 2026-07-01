@@ -1304,11 +1304,6 @@ html.lenis, html.lenis body {
     font-size: 2.25rem;
   }
 }
-@media (min-width: 992px) {
-  .title--type-9 {
-    font-size: 2.25rem;
-  }
-}
 @media (min-width: 1280px) {
   .title--type-9 {
     font-size: 2.5rem;
@@ -1381,6 +1376,19 @@ html.lenis, html.lenis body {
 @media (min-width: 1280px) {
   .simple-text--type-8 {
     font-size: 1.375rem;
+  }
+}
+.simple-text--type-9 {
+  font: 400 0.875rem/1.5 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 640px) {
+  .simple-text--type-9 {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 992px) {
+  .simple-text--type-9 {
+    font-size: 1.25rem;
   }
 }
 .simple-text a {
@@ -3352,6 +3360,9 @@ html.lenis, html.lenis body {
   width: 100%;
   height: auto;
 }
+.blockquote-block--tiny .blockquote-block__left {
+  width: 100%;
+}
 
 .media-center__body {
   margin: 0 0 clamp(1.5rem, 2.6041666667vw, 3.125rem);
@@ -4497,6 +4508,27 @@ html.lenis, html.lenis body {
 @media (min-width: 480px) {
   .blog-top__img img {
     border-radius: 2.5rem;
+  }
+}
+
+.blog-inner {
+  display: grid;
+  grid-template-columns: 16rem 1fr 16rem;
+  gap: clamp(1.25rem, 4.1666666667vw, 5rem);
+}
+
+.tiny-block h2 {
+  font: 600 9vw/1.3 "Gilroy", Verdana, Arial, sans-serif;
+  color: var(--color-dark);
+}
+@media (min-width: 430px) {
+  .tiny-block h2 {
+    font-size: 1.75rem;
+  }
+}
+@media (min-width: 1280px) {
+  .tiny-block h2 {
+    font-size: 2.25rem;
   }
 }
 

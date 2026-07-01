@@ -99,10 +99,6 @@
 			font-size: get-rem(36);
 		}
 
-		@media(min-width: 992px) {
-			font-size: get-rem(36);
-		}
-
 		@media(min-width: 1280px) {
 			font-size: get-rem(40);
 		}
@@ -173,6 +169,18 @@
 
 		@media(min-width: 1280px) {
 			font-size: get-rem(22);
+		}
+	}
+
+	&--type-9 {
+		font: 400 #{get-rem(14)}/1.5 $mainFont;
+
+		@media(min-width: 640px) {
+			font-size: get-rem(18);
+		}
+
+		@media(min-width: 992px) {
+			font-size: get-rem(20);
 		}
 	}
 
