@@ -16,3 +16,27 @@
 		}
 	}
 }
+
+.inf-item {
+
+	&__top {
+		font: 500 #{get-rem(12)}/1 $mainFontGilroy;
+		letter-spacing: -0.014em;
+	}
+}
+
+.icon-text {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+
+	img, svg {
+		width: get-rem(16);
+		height: get-rem(16);
+	}
+
+	span {
+		font: 500 #{get-rem(12)}/1 $mainFontGilroy;
+		letter-spacing: -0.014em;
+	}
+}

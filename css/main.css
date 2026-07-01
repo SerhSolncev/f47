@@ -13,6 +13,7 @@
   --color-gray-sec: #d4d4d4;
   --color-gray-th: rgba(37, 36, 50, 0.5);
   --color-gray-four: rgba(37, 36, 50, 0.8);
+  --color-gray-five: rgba(19, 19, 19, 0.5);
   --header-h: 0px;
 }
 
@@ -4397,6 +4398,29 @@ html.lenis, html.lenis body {
   }
 }
 
+.inf-item__top {
+  font: 500 0.75rem/1 "Gilroy", Verdana, Arial, sans-serif;
+  letter-spacing: -0.014em;
+}
+
+.icon-text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 6px;
+}
+.icon-text img, .icon-text svg {
+  width: 1rem;
+  height: 1rem;
+}
+.icon-text span {
+  font: 500 0.75rem/1 "Gilroy", Verdana, Arial, sans-serif;
+  letter-spacing: -0.014em;
+}
+
 .breadcrumbs {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -4531,6 +4555,10 @@ html.lenis, html.lenis body {
 
 .color-gray-th {
   color: var(--color-gray-th);
+}
+
+.color-gray-five {
+  color: var(--color-gray-five);
 }
 
 .color-white {
