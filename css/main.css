@@ -3108,7 +3108,7 @@ html.lenis, html.lenis body {
 
 .how-work {
   padding: 2.25rem 1.25rem;
-  background-color: #242b3a;
+  background-color: var(--color-dark);
   border-radius: 1.5rem;
 }
 @media (min-width: 768px) {
@@ -3899,7 +3899,7 @@ html.lenis, html.lenis body {
   height: 100%;
 }
 .faq-item.active {
-  background-color: #242b3a;
+  background-color: var(--color-dark);
 }
 .faq-item.active .simple-text {
   color: var(--color-white);
@@ -3922,7 +3922,7 @@ html.lenis, html.lenis body {
   opacity: 0;
 }
 .desktop-device .faq-item:hover {
-  background-color: #242b3a;
+  background-color: var(--color-dark);
 }
 .desktop-device .faq-item:hover .simple-text {
   color: var(--color-white);
@@ -4426,6 +4426,33 @@ html.lenis, html.lenis body {
 .icon-text span {
   font: 500 0.75rem/1 "Gilroy", Verdana, Arial, sans-serif;
   letter-spacing: -0.014em;
+}
+
+.soc-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 0.0625rem solid rgba(36, 43, 58, 0.4);
+  border-radius: 100%;
+  background-color: rgba(36, 43, 58, 0.05);
+  color: var(--color-dark);
+}
+.soc-item img, .soc-item svg {
+  width: 55.6%;
+  height: auto;
+}
+.desktop-device .soc-item:hover {
+  border-color: transparent;
+  background-color: var(--color-blue);
+  color: var(--color-white);
 }
 
 .breadcrumbs {

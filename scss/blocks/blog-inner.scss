@@ -28,7 +28,11 @@
 .icon-text {
 	display: flex;
 	align-items: center;
-	gap: 6px;
+	gap: get-rem(6);
+
+	&--sec {
+		gap: get-rem(4);
+	}
 
 	img, svg {
 		width: get-rem(16);
@@ -38,5 +42,30 @@
 	span {
 		font: 500 #{get-rem(12)}/1 $mainFontGilroy;
 		letter-spacing: -0.014em;
+	}
+}
+
+.soc-item {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: get-rem(36);
+	height: get-rem(36);
+	border: get-rem(1) solid rgba(#242b3a, 0.4);
+	border-radius: 100%;
+	background-color: rgba(#242b3a, 0.05);
+	color: var(--color-dark);
+
+	img, svg {
+		width: 55.6%;
+		height: auto;
+	}
+
+	.desktop-device & {
+	    &:hover {
+		    border-color: transparent;
+		    background-color: var(--color-blue);
+		    color: var(--color-white);
+	    }
 	}
 }

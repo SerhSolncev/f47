@@ -3,7 +3,7 @@
 
 .how-work {
 	padding: get-rem(36) get-rem(20);
-	background-color: #242b3a;
+	background-color: var(--color-dark);
 	border-radius: get-rem(24);
 
 	@media(min-width: 768px) {
