@@ -982,6 +982,37 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	});
 
 
+	// // copy-link
+
+	document.addEventListener('click', function (e) {
+		const btn = e.target.closest('.js-copy-link');
+		if (!btn) return;
+		navigator.clipboard.writeText(btn.dataset.url).then(function () {
+			showCopyToast();
+		});
+	});
+
+	function showCopyToast() {
+		const old = document.querySelector('.copy-toast');
+		if (old) old.remove();
+
+		const toast = document.createElement('div');
+		toast.className = 'copy-toast';
+		toast.textContent = 'Copied';
+		document.body.appendChild(toast);
+
+		requestAnimationFrame(function () {
+			toast.classList.add('is-visible');
+		});
+
+		setTimeout(function () {
+			toast.classList.remove('is-visible');
+			setTimeout(function () {
+				toast.remove();
+			}, 200);
+		}, 3000);
+	}
+
 	// анімація при скролі і лоаду сторінки
 
 	document.querySelectorAll('.js-big-title').forEach(el => {

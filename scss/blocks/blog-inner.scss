@@ -2,33 +2,94 @@
 @import "../abstracts/vars";
 
 .blog-top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: get-rem(20);
+	padding: get-rem(18) 0 0;
 
-	&__tags {
+	&__left {
+		width: 100%;
+		max-width: get-rem(700);
+	}
+
+	.title--type-9 {
+		margin: 0 0 get-rem(30);
+	}
+
+	&__info {
 		display: flex;
 		align-items: center;
 		flex-wrap: wrap;
-		gap: get-rem(6);
-		margin: 0 0 get-rem(-6);
+		gap: get-rem(40);
+		margin: 0 0 get-rem(64);
+	}
 
-		@media(min-width: 992px) {
-			gap: get-rem(8);
-			margin: 0 0 get-rem(-12);
+	&__bottom {
+		display: flex;
+		align-items: flex-start;
+		gap: get-rem(65);
+	}
+
+	.tags {
+		margin: 0 0 get-rem(22);
+	}
+
+	&__img {
+		width: 100%;
+		max-width: get-rem(688);
+
+		img {
+			width: 100%;
+			height: 100%;
+			border-radius: get-rem(40);
+			object-fit: cover;
 		}
 	}
 }
 
+.share-block {
+	display: flex;
+	flex-direction: column;
+	gap: get-rem(12);
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: get-rem(12);
+	}
+}
+
+.tags {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: get-rem(6);
+
+	@media(min-width: 992px) {
+		gap: get-rem(8);
+	}
+}
+
 .inf-item {
+	display: flex;
+	flex-direction: column;
+	gap: get-rem(3);
 
 	&__top {
 		font: 500 #{get-rem(12)}/1 $mainFontGilroy;
 		letter-spacing: -0.014em;
+	}
+
+	.name-block {
+		margin: get-rem(12) 0 0;
 	}
 }
 
 .icon-text {
 	display: flex;
 	align-items: center;
-	gap: get-rem(6);
+	gap: get-rem(5);
 
 	&--sec {
 		gap: get-rem(4);
@@ -39,7 +100,7 @@
 		height: get-rem(16);
 	}
 
-	span {
+	&__text {
 		font: 500 #{get-rem(12)}/1 $mainFontGilroy;
 		letter-spacing: -0.014em;
 	}
@@ -55,6 +116,7 @@
 	border-radius: 100%;
 	background-color: rgba(#242b3a, 0.05);
 	color: var(--color-dark);
+	position: relative;
 
 	img, svg {
 		width: 55.6%;
@@ -67,5 +129,25 @@
 		    background-color: var(--color-blue);
 		    color: var(--color-white);
 	    }
+	}
+}
+
+.copy-toast {
+	position: fixed;
+	bottom: get-rem(20);
+	right: get-rem(20);
+	background: #000;
+	color: #fff;
+	padding: get-rem(8) get-rem(16);
+	border-radius: get-rem(8);
+	font: 400 #{get-rem(13)}/1 $mainFont;
+	white-space: nowrap;
+	pointer-events: none;
+	opacity: 0;
+	transition: opacity 0.2s ease;
+	z-index: 999;
+
+	&.is-visible {
+		opacity: 1;
 	}
 }
