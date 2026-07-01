@@ -3,6 +3,10 @@
 
 .section {
 
+	&--breadcrumbs {
+		padding: clamp(#{get-rem(16)}, #{get-vw(43)}, #{get-rem(43)}) 0;
+	}
+
 	&--hero {
 		padding: 0 0 clamp(#{get-rem(80)}, #{get-vw(186)}, #{get-rem(186)});
 		position: relative;

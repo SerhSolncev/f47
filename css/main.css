@@ -758,6 +758,9 @@ html.lenis, html.lenis body {
   opacity: 0.2;
 }
 
+.section--breadcrumbs {
+  padding: clamp(1rem, 2.2395833333vw, 2.6875rem) 0;
+}
 .section--hero {
   padding: 0 0 clamp(5rem, 9.6875vw, 11.625rem);
   position: relative;
@@ -4375,6 +4378,79 @@ html.lenis, html.lenis body {
   opacity: 0;
 }
 
+.breadcrumbs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+  min-width: 0;
+}
+@media (min-width: 768px) {
+  .breadcrumbs {
+    padding: 0.25rem 0;
+  }
+}
+.breadcrumbs li:has(span.breadcrumbs__link) {
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+}
+.breadcrumbs__link {
+  display: block;
+  font: 400 0.75rem/1.2 "Gilroy", Verdana, Arial, sans-serif;
+  color: var(--color-dark-th);
+  letter-spacing: -0.014em;
+  white-space: nowrap;
+}
+.breadcrumbs__link:not([href]) {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+}
+.breadcrumbs__link[href] {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: var(--color-dark-sec);
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+}
+.breadcrumbs__link[href]::after {
+  content: "/";
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font: inherit;
+  width: 0.3125rem;
+  height: 0.3125rem;
+  color: var(--color-dark-th);
+  margin: 0 0.4375rem;
+  opacity: 0.2;
+}
+@media (min-width: 1200px) {
+  .breadcrumbs__link[href]::after {
+    margin: 0 0.8125rem;
+  }
+}
+.breadcrumbs__link[href]:hover {
+  color: var(--color-blue);
+}
+.breadcrumbs li {
+  list-style: none;
+}
+
 .container {
   width: 100%;
   max-width: 92rem;
@@ -4485,8 +4561,36 @@ html.lenis, html.lenis body {
 
 @font-face {
   font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Heavy.woff2") format("woff2"), url("../fonts/Gilroy-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
   src: url("../fonts/Gilroy-Medium.woff2") format("woff2"), url("../fonts/Gilroy-Medium.woff") format("woff");
   font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Regular.woff2") format("woff2"), url("../fonts/Gilroy-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Bold.woff2") format("woff2"), url("../fonts/Gilroy-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/Gilroy-Black.woff2") format("woff2"), url("../fonts/Gilroy-Black.woff") format("woff");
+  font-weight: 900;
   font-style: normal;
   font-display: swap;
 }

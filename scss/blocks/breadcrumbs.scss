@@ -1,0 +1,65 @@
+@import "../abstracts/functions";
+@import "../abstracts/vars";
+
+.breadcrumbs {
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	min-width: 0;
+
+	@media(min-width: 768px) {
+		padding: get-rem(4) 0;
+	}
+
+	li:has(span.breadcrumbs__link) {
+		width: 100%;
+		min-width: 0;
+		overflow: hidden;
+	}
+
+	&__link {
+		display: block;
+		font: 400 #{get-rem(12)}/1.2 $mainFontGilroy;
+		color: var(--color-dark-th);
+		letter-spacing: -0.014em;
+		white-space: nowrap;
+
+		&:not([href]) {
+			overflow: hidden;
+			text-overflow: ellipsis;
+			max-width: 100%;
+		}
+
+		&[href] {
+			display: flex;
+			align-items: center;
+			color: var(--color-dark-sec);
+			flex-shrink: 0;
+
+			&::after {
+				content: '/';
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				font: inherit;
+				width: get-rem(5);
+				height: get-rem(5);
+				color: var(--color-dark-th);
+				margin: 0 get-rem(7);
+				opacity: 0.2;
+
+				@media(min-width: 1200px) {
+					margin: 0 get-rem(13);
+				}
+			}
+
+			&:hover {
+				color: var(--color-blue);
+			}
+		}
+	}
+
+	li {
+		list-style: none;
+	}
+}
