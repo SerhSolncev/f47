@@ -4399,6 +4399,7 @@ html.lenis, html.lenis body {
           flex-direction: column;
   gap: 1.875rem;
   padding: 1.125rem 0 0;
+  margin: 0 0 80px;
 }
 @media (min-width: 992px) {
   .blog-top {

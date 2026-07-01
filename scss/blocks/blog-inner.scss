@@ -8,6 +8,7 @@
 	flex-direction: column;
 	gap: get-rem(30);
 	padding: get-rem(18) 0 0;
+	margin: 0 0 80px;
 
 	@media(min-width: 992px) {
 	    flex-direction: row;
