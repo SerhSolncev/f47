@@ -53,7 +53,7 @@
 	}
 
 	&--partners {
-		transform: rotate(-1deg);
+		transform: rotate(-2deg);
 		padding: get-rem(20) 0;
 
 		.running-string__group {
@@ -153,7 +153,7 @@
 	&__wrap {
 		background-color: var(--color-white);
 		padding: get-rem(4);
-		border-radius: get-rem(24);
+		border-radius: get-rem(31);
 		position: relative;
 
 		@media(min-width: 992px) {
