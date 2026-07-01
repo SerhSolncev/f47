@@ -154,4 +154,12 @@
 			height: 100%;
 		}
 	}
+
+	&--sec {
+
+		.name-block__pic {
+			width: get-rem(36);
+			height: get-rem(36);
+		}
+	}
 }
