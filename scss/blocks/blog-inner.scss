@@ -1,0 +1,18 @@
+@import "../abstracts/functions";
+@import "../abstracts/vars";
+
+.blog-top {
+
+	&__tags {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+		gap: get-rem(6);
+		margin: 0 0 get-rem(-6);
+
+		@media(min-width: 992px) {
+			gap: get-rem(8);
+			margin: 0 0 get-rem(-12);
+		}
+	}
+}

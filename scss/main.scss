@@ -21,6 +21,7 @@
 @import "blocks/step-form";
 @import "blocks/reviews-section";
 @import "blocks/seo-block";
+@import "blocks/blog-inner";
 @import "blocks/breadcrumbs";
 
 .container {
@@ -60,6 +61,10 @@
 
 .color-dark {
 	color: var(--color-dark);
+}
+
+.font-gilroy {
+	font-family: $mainFontGilroy;
 }
 
 .color-dark-sec {
