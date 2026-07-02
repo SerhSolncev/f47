@@ -162,4 +162,13 @@
 			height: get-rem(36);
 		}
 	}
+
+	&--th {
+
+		.name-block__pic {
+			border-radius: get-rem(8);
+			width: get-rem(64);
+			height: get-rem(64);
+		}
+	}
 }

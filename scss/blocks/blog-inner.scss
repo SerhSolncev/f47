@@ -174,6 +174,10 @@
 	padding: clamp(#{get-rem(24)}, #{get-vw(80)}, #{get-rem(80)}) 0 0;
 	margin: clamp(#{get-rem(24)}, #{get-vw(90)}, #{get-rem(90)}) 0 0;
 	position: relative;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: get-rem(20);
 
 	&::after {
 		content: '';
@@ -187,10 +191,15 @@
 		background-image: linear-gradient(to left, #1ef4b4, #c4b4fd);
 	}
 
+	&__left {
+		max-width: get-rem(636);
+	}
+
 	&__top {
 		display: flex;
 		align-items: center;
 		gap: get-rem(23);
+		margin: 0 0 get-rem(24);
 
 		img {
 			width: get-rem(24);
@@ -200,6 +209,41 @@
 			    width: get-rem(32);
 			    height: get-rem(32);
 			}
+		}
+	}
+
+	&__text {
+		position: relative;
+		margin: get-rem(24) 0 0;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			top: -0.5em;
+			left: -1.9em;
+			z-index: 1;
+			width: get-rem(44);
+			height: get-rem(38);
+			background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NiIgaGVpZ2h0PSI3NyIgdmlld0JveD0iMCAwIDg2IDc3IiBmaWxsPSJub25lIj4KICA8cGF0aCBvcGFjaXR5PSIwLjA1IiBkPSJNODYgMC43MzIxOTFMODMuNzgzNSAxNi4wOTk5Qzc5LjI1MiAxNS43MDU4IDc1LjY1NjQgMTYuNDkzOSA3Mi45OTY2IDE4LjQ2NDJDNzAuMzM2OCAyMC4zMzU5IDY4LjUxNDMgMjMuMDQ0OSA2Ny41MjkyIDI2LjU5MTNDNjYuNjQyNiAzMC4wMzkyIDY2LjQ5NDkgMzMuOTc5NiA2Ny4wODU5IDM4LjQxMjZIODZWNzYuMzg4NUg0OS41MDE3VjM2LjkzNDlDNDkuNTAxNyAyNC4wMyA1Mi41NTU2IDE0LjI3NzQgNTguNjYzMiA3LjY3NzIyQzY0Ljc3MDkgMC45Nzg0NjkgNzMuODgzMiAtMS4zMzY1NCA4NiAwLjczMjE5MVpNMzYuNDk4MyAwLjczMjE5MUwzNC4yODE4IDE2LjA5OTlDMjkuNzUwMyAxNS43MDU4IDI2LjE1NDYgMTYuNDkzOSAyMy40OTQ4IDE4LjQ2NDJDMjAuODM1MSAyMC4zMzU5IDE5LjAxMjYgMjMuMDQ0OSAxOC4wMjc1IDI2LjU5MTNDMTcuMTQwOSAzMC4wMzkyIDE2Ljk5MzEgMzMuOTc5NiAxNy41ODQyIDM4LjQxMjZIMzYuNDk4M1Y3Ni4zODg1SDBWMzYuOTM0OUMwIDI0LjAzIDMuMDUzODQgMTQuMjc3NCA5LjE2MTUxIDcuNjc3MjJDMTUuMjY5MiAwLjk3ODQ2OSAyNC4zODE0IC0xLjMzNjU0IDM2LjQ5ODMgMC43MzIxOTFaIiBmaWxsPSJibGFjayI+PC9wYXRoPgo8L3N2Zz4K);
+			background-size: 100% 100%;
+		}
+	}
+
+	blockquote {
+		font: 400 #{get-rem(16)}/1.5 $mainFontGilroy;
+		letter-spacing: -0.014em;
+		word-break: break-word;
+		color: var(--color-dark-th);
+		font-style: italic;
+		margin: 0;
+
+		@media(min-width: 768px) {
+			font-size: get-rem(18);
+		}
+
+		@media(min-width: 1200px) {
+			font-size: get-rem(20);
 		}
 	}
 }
