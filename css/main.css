@@ -4489,7 +4489,7 @@ html.lenis, html.lenis body {
 }
 
 .blog-sidebar {
-  margin: 8.375rem 0 0;
+  margin: clamp(1.5rem, 5.46875vw, 6.5625rem) 0 0;
   position: sticky;
   top: 6.5625rem;
 }
@@ -4514,6 +4514,11 @@ html.lenis, html.lenis body {
 }
 .blog-sidebar__list button.is-active, .blog-sidebar__list a.is-active {
   color: #7462cd;
+}
+@media (max-width: 1279px) {
+  .blog-sidebar {
+    display: none;
+  }
 }
 
 .simple-board {
@@ -4554,7 +4559,7 @@ html.lenis, html.lenis body {
           flex-direction: column;
   gap: 1.875rem;
   padding: 1.125rem 0 0;
-  margin: 0 0 6.6875rem;
+  margin: 0 0 clamp(2.25rem, 5.5729166667vw, 6.6875rem);
 }
 @media (min-width: 992px) {
   .blog-top {
@@ -4661,14 +4666,19 @@ html.lenis, html.lenis body {
   margin: 0 auto 80px;
   padding: 0 1rem;
   display: grid;
-  grid-template-columns: 16.875rem 1fr 16.875rem;
+  grid-template-columns: 1fr;
   -webkit-box-align: start;
       -ms-flex-align: start;
           align-items: flex-start;
   gap: clamp(1.25rem, 3.4375vw, 4.125rem);
 }
+@media (min-width: 1280px) {
+  .blog-inner {
+    grid-template-columns: 16.875rem 1fr 16.875rem;
+  }
+}
 .blog-inner .simple-board {
-  margin: 8.375rem 0 0;
+  margin: clamp(1.5rem, 6.9791666667vw, 8.375rem) 0 0;
   position: sticky;
   top: 6.5625rem;
 }
@@ -4677,7 +4687,7 @@ html.lenis, html.lenis body {
 }
 
 .blog-faq__list {
-  margin: 0.75rem 0 3.375rem;
+  margin: 0.75rem 0 clamp(1.25rem, 2.8125vw, 3.375rem);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4701,7 +4711,19 @@ html.lenis, html.lenis body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   gap: 1.25rem;
+}
+@media (min-width: 640px) {
+  .author-block {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
 }
 .author-block::after {
   content: "";
@@ -4725,8 +4747,14 @@ html.lenis, html.lenis body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 1.4375rem;
-  margin: 0 0 1.5rem;
+  gap: 0.875rem;
+  margin: 0 0 1rem;
+}
+@media (min-width: 768px) {
+  .author-block__top {
+    gap: 1.4375rem;
+    margin: 0 0 1.5rem;
+  }
 }
 .author-block__top img {
   width: 1.5rem;
@@ -4740,7 +4768,12 @@ html.lenis, html.lenis body {
 }
 .author-block__text {
   position: relative;
-  margin: 1.5rem 0 0;
+  margin: 1rem 0 0;
+}
+@media (min-width: 768px) {
+  .author-block__text {
+    margin: 1.5rem 0 0;
+  }
 }
 .author-block__text::before {
   content: "";
@@ -4789,13 +4822,14 @@ html.lenis, html.lenis body {
   width: 100%;
 }
 .tiny-block h2 {
-  font: 600 9vw/1.3 "Gilroy", Verdana, Arial, sans-serif;
+  font: 600 8vw/1.3 "Gilroy", Verdana, Arial, sans-serif;
   color: var(--color-dark);
-  margin: 0 0 1.6875rem;
+  margin: 0 0 1.125rem;
 }
 @media (min-width: 430px) {
   .tiny-block h2 {
     font-size: 1.75rem;
+    margin: 0 0 1.6875rem;
   }
 }
 @media (min-width: 1280px) {
@@ -4856,8 +4890,8 @@ html.lenis, html.lenis body {
   overflow: hidden;
   border-radius: 2.1875rem;
   background-color: var(--color-light);
-  padding: 3.9375rem 4.375rem;
-  margin: 2.5rem 0 4.25rem;
+  padding: clamp(1.5rem, 3.28125vw, 3.9375rem) clamp(1.5rem, 3.6458333333vw, 4.375rem);
+  margin: clamp(1.5rem, 2.0833333333vw, 2.5rem) 0 clamp(1.875rem, 3.5416666667vw, 4.25rem);
   margin-left: -0.5rem;
 }
 .tiny-block blockquote::before {
@@ -4872,7 +4906,7 @@ html.lenis, html.lenis body {
   background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NiIgaGVpZ2h0PSI3NyIgdmlld0JveD0iMCAwIDg2IDc3IiBmaWxsPSJub25lIj4KICA8cGF0aCBvcGFjaXR5PSIwLjA1IiBkPSJNODYgMC43MzIxOTFMODMuNzgzNSAxNi4wOTk5Qzc5LjI1MiAxNS43MDU4IDc1LjY1NjQgMTYuNDkzOSA3Mi45OTY2IDE4LjQ2NDJDNzAuMzM2OCAyMC4zMzU5IDY4LjUxNDMgMjMuMDQ0OSA2Ny41MjkyIDI2LjU5MTNDNjYuNjQyNiAzMC4wMzkyIDY2LjQ5NDkgMzMuOTc5NiA2Ny4wODU5IDM4LjQxMjZIODZWNzYuMzg4NUg0OS41MDE3VjM2LjkzNDlDNDkuNTAxNyAyNC4wMyA1Mi41NTU2IDE0LjI3NzQgNTguNjYzMiA3LjY3NzIyQzY0Ljc3MDkgMC45Nzg0NjkgNzMuODgzMiAtMS4zMzY1NCA4NiAwLjczMjE5MVpNMzYuNDk4MyAwLjczMjE5MUwzNC4yODE4IDE2LjA5OTlDMjkuNzUwMyAxNS43MDU4IDI2LjE1NDYgMTYuNDkzOSAyMy40OTQ4IDE4LjQ2NDJDMjAuODM1MSAyMC4zMzU5IDE5LjAxMjYgMjMuMDQ0OSAxOC4wMjc1IDI2LjU5MTNDMTcuMTQwOSAzMC4wMzkyIDE2Ljk5MzEgMzMuOTc5NiAxNy41ODQyIDM4LjQxMjZIMzYuNDk4M1Y3Ni4zODg1SDBWMzYuOTM0OUMwIDI0LjAzIDMuMDUzODQgMTQuMjc3NCA5LjE2MTUxIDcuNjc3MjJDMTUuMjY5MiAwLjk3ODQ2OSAyNC4zODE0IC0xLjMzNjU0IDM2LjQ5ODMgMC43MzIxOTFaIiBmaWxsPSJibGFjayI+PC9wYXRoPgo8L3N2Zz4K);
   background-size: 100% 100%;
 }
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .tiny-block blockquote::before {
     width: 5.375rem;
     height: 4.75rem;
@@ -4902,8 +4936,13 @@ html.lenis, html.lenis body {
 }
 .tiny-block blockquote p:nth-child(n+2) {
   text-align: right;
-  font: 400 1rem/1.2 "Manrope", Verdana, Arial, sans-serif;
+  font: 400 0.875rem/1.2 "Manrope", Verdana, Arial, sans-serif;
   margin-right: 3px;
+}
+@media (min-width: 1200px) {
+  .tiny-block blockquote p:nth-child(n+2) {
+    font-size: 1rem;
+  }
 }
 .tiny-block blockquote p:nth-child(2) {
   font-weight: 600;
@@ -4915,12 +4954,12 @@ html.lenis, html.lenis body {
   word-break: break-word;
   color: var(--color-dark-th);
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .tiny-block p {
     font-size: 1rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .tiny-block p {
     font-size: 1.25rem;
   }
@@ -4929,7 +4968,7 @@ html.lenis, html.lenis body {
   margin: 0.6875rem 0 0;
 }
 .tiny-block p + h3, .tiny-block p + h4, .tiny-block p + h5, .tiny-block p + h6 {
-  margin-top: 3rem;
+  margin-top: clamp(1.25rem, 2.5vw, 3rem);
 }
 .tiny-block a {
   font: inherit;
@@ -4954,7 +4993,7 @@ html.lenis, html.lenis body {
   margin: 0 0 2.8125rem;
 }
 .tiny-block ul + h3, .tiny-block ul + h4, .tiny-block ul + h5, .tiny-block ul + h6 {
-  margin-top: 3rem;
+  margin-top: clamp(1.25rem, 2.5vw, 3rem);
 }
 @media (min-width: 768px) {
   .tiny-block ul {
@@ -4972,12 +5011,12 @@ html.lenis, html.lenis body {
   word-break: break-word;
   color: var(--color-dark-th);
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .tiny-block ul li {
     font-size: 1rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .tiny-block ul li {
     font-size: 1.25rem;
   }
@@ -5027,7 +5066,7 @@ html.lenis, html.lenis body {
   counter-reset: ol-counter;
 }
 .tiny-block ol + h3, .tiny-block ol + h4, .tiny-block ol + h5, .tiny-block ol + h6 {
-  margin-top: 3rem;
+  margin-top: clamp(1.25rem, 2.5vw, 3rem);
 }
 @media (min-width: 768px) {
   .tiny-block ol {
@@ -5046,12 +5085,12 @@ html.lenis, html.lenis body {
   color: var(--color-dark-th);
   counter-increment: ol-counter;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .tiny-block ol li {
     font-size: 1rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .tiny-block ol li {
     font-size: 1.25rem;
   }
@@ -5079,6 +5118,7 @@ html.lenis, html.lenis body {
 }
 .tiny-block table {
   width: 100%;
+  table-layout: fixed;
   border-collapse: collapse;
   margin: 1.5rem 0 2.1875rem;
 }
@@ -5089,38 +5129,64 @@ html.lenis, html.lenis body {
   background-color: var(--color-light);
 }
 .tiny-block table th {
-  font: 600 0.875rem/1.45 "Gilroy", Verdana, Arial, sans-serif;
+  font: 600 0.75rem/1.45 "Gilroy", Verdana, Arial, sans-serif;
   letter-spacing: -0.014em;
   word-break: break-word;
   color: var(--color-gray-five);
   text-transform: uppercase;
   text-align: left;
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.5rem;
 }
 @media (min-width: 768px) {
   .tiny-block table th {
     font-size: 1rem;
+    padding: 0.75rem 1rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .tiny-block table th {
     font-size: 1.25rem;
     padding: 1rem;
   }
 }
+.tiny-block table th:nth-child(1) {
+  width: 25%;
+}
+@media (min-width: 640px) {
+  .tiny-block table th:nth-child(1) {
+    width: 24%;
+  }
+}
+.tiny-block table th:nth-child(2) {
+  width: 25%;
+}
+@media (min-width: 640px) {
+  .tiny-block table th:nth-child(2) {
+    width: 28%;
+  }
+}
+.tiny-block table th:nth-child(3) {
+  width: 33.3%;
+}
+@media (min-width: 640px) {
+  .tiny-block table th:nth-child(3) {
+    width: 48%;
+  }
+}
 .tiny-block table td {
-  font: 400 0.875rem/1.45 "Gilroy", Verdana, Arial, sans-serif;
+  font: 400 0.8125rem/1.45 "Gilroy", Verdana, Arial, sans-serif;
   letter-spacing: -0.014em;
   word-break: break-word;
   color: var(--color-dark-th);
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 0.5rem;
 }
 @media (min-width: 768px) {
   .tiny-block table td {
     font-size: 1rem;
+    padding: 0.75rem 1rem;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 1440px) {
   .tiny-block table td {
     font-size: 1.25rem;
     padding: 1rem 1rem;
@@ -5132,7 +5198,7 @@ html.lenis, html.lenis body {
   border-radius: 1.5rem;
   background-image: -webkit-gradient(linear, left top, right top, from(#ebeae1), color-stop(50%, rgba(235, 234, 225, 0)));
   background-image: linear-gradient(to right, #ebeae1, rgba(235, 234, 225, 0) 50%);
-  margin: 0 0 3.75rem;
+  margin: 0 0 clamp(1.25rem, 3.125vw, 3.75rem);
 }
 .tiny-block dl dt {
   font: 400 0.75rem/1.4 "Manrope", Verdana, Arial, sans-serif;
@@ -5141,9 +5207,19 @@ html.lenis, html.lenis body {
   margin: 0 0 0.5625rem;
 }
 .tiny-block dl dd {
-  font: 400 1.25rem/1.5 "Manrope", Verdana, Arial, sans-serif;
+  font: 400 1rem/1.5 "Manrope", Verdana, Arial, sans-serif;
   letter-spacing: -0.014em;
   color: var(--color-dark-th);
+}
+@media (min-width: 992px) {
+  .tiny-block dl dd {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 1440px) {
+  .tiny-block dl dd {
+    font-size: 1.25rem;
+  }
 }
 
 .share-block {
@@ -5163,6 +5239,8 @@ html.lenis, html.lenis body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   gap: 0.75rem;
 }
 
