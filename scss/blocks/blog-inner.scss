@@ -1000,3 +1000,51 @@
 		gap: get-rem(27);
 	}
 }
+
+.banner-block {
+	aspect-ratio: 1440/600;
+	position: relative;
+
+	> img {
+		width: 100%;
+		height: 100%;
+		border-radius: clamp(#{get-rem(18)}, #{get-vw(40)}, #{get-rem(40)});
+	}
+
+	&__board  {
+		width: 100%;
+		max-width: get-rem(722);
+		position: absolute;
+		bottom: -60px;
+		left: 60px;
+		z-index: 2;
+		background-color: var(--color-white);
+		padding: get-rem(7);
+		border-radius: get-rem(31);
+	}
+
+	&__board-body {
+		border-radius: get-rem(24);
+		background-color: var(--color-light);
+		padding: 24px;
+	}
+
+	&__link {
+		font: 600 #{get-rem(24)}/1.2 $mainFontGilroy;
+		color: var(--color-dark);
+
+		@media(min-width: 768px) {
+			font-size: get-rem(28);
+		}
+
+		@media(min-width: 1280px) {
+			font-size: get-rem(32);
+		}
+
+		.desktop-device & {
+		    &:hover {
+			    color: #7462cd;
+		    }
+		}
+	}
+}

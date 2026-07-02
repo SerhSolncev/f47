@@ -116,6 +116,10 @@
 	&--type-gap-1 {
 		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(195)}, #{get-rem(195)});
 	}
+
+	&--type-gap-2 {
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(116)}, #{get-rem(116)});
+	}
 }
 
 .section-bottom {
