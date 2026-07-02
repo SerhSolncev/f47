@@ -855,7 +855,13 @@ html.lenis, html.lenis body {
   margin: 0 0 clamp(3.75rem, 11.5625vw, 13.875rem);
 }
 .section--type-gap-1 {
-  margin: 0 0 clamp(3.75rem, 6.25vw, 7.5rem);
+  margin: 0 0 clamp(3.75rem, 10.15625vw, 12.1875rem);
+}
+
+.section-bottom {
+  background-color: var(--color-light);
+  border-radius: clamp(1.5rem, 6.6666666667vw, 8rem);
+  padding: clamp(2.5rem, 9.9479166667vw, 11.9375rem) 0 0;
 }
 
 .btn {

@@ -114,6 +114,12 @@
 	}
 
 	&--type-gap-1 {
-		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(120)}, #{get-rem(120)});
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(195)}, #{get-rem(195)});
 	}
+}
+
+.section-bottom {
+	background-color: var(--color-light);
+	border-radius: clamp(#{get-rem(24)}, #{get-vw(128)}, #{get-rem(128)});
+	padding: clamp(#{get-rem(40)}, #{get-vw(191)}, #{get-rem(191)}) 0 0;
 }
