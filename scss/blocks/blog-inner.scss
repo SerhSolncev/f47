@@ -837,6 +837,23 @@
 			min-width: get-rem(292);
 		}
 	}
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: get-rem(16);
+		overflow: auto;
+
+		@media(min-width: 640px) {
+			gap: get-rem(25);
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media(min-width: 1200px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+	}
 }
 
 .catalog-block {
@@ -847,7 +864,15 @@
 	}
 
 	&__top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		gap: get-rem(16);
 		margin: 0 0 clamp(#{get-rem(24)}, #{get-vw(65)}, #{get-rem(65)});
+
+		&--type-2 {
+			margin: 0 0 get-rem(25);
+		}
 	}
 
 	&__grid {

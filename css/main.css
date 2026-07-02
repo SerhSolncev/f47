@@ -5518,6 +5518,23 @@ html.lenis, html.lenis body {
 .default-section__triple .blog-item {
   min-width: 18.25rem;
 }
+.default-section__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  overflow: auto;
+}
+@media (min-width: 640px) {
+  .default-section__grid {
+    gap: 1.5625rem;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .default-section__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 
 .catalog-block {
   margin: 0 0 clamp(4.375rem, 14.1145833333vw, 16.9375rem);
@@ -5528,7 +5545,20 @@ html.lenis, html.lenis body {
   }
 }
 .catalog-block__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  gap: 1rem;
   margin: 0 0 clamp(1.5rem, 3.3854166667vw, 4.0625rem);
+}
+.catalog-block__top--type-2 {
+  margin: 0 0 1.5625rem;
 }
 .catalog-block__grid {
   display: grid;
