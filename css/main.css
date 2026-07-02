@@ -859,6 +859,12 @@ html.lenis, html.lenis body {
 .section--type-gap-2 {
   margin: 0 0 clamp(3.75rem, 6.0416666667vw, 7.25rem);
 }
+.section--type-gap-3 {
+  margin: 0 0 clamp(3.75rem, 5.2604166667vw, 6.3125rem);
+}
+.section--type-gap-4 {
+  margin: 0 0 4rem;
+}
 
 .section-bottom {
   background-color: var(--color-light);
@@ -3464,6 +3470,9 @@ html.lenis, html.lenis body {
     font-size: 1.8125rem;
   }
 }
+.blockquote-block__left p + p {
+  margin: 0.75rem 0 0;
+}
 .blockquote-block__left .name-block {
   text-align: right;
   margin: 1rem 0 0;
@@ -3491,6 +3500,40 @@ html.lenis, html.lenis body {
 .blockquote-block__pic img {
   width: 100%;
   height: auto;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .blockquote-block--type-2 .blockquote-block__left {
+    padding: 0;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .blockquote-block--type-2 .blockquote-block__left blockquote {
+    font-size: 1.125rem;
+  }
+}
+@media (min-width: 768px) {
+  .blockquote-block--type-2 .blockquote-block__pic {
+    right: 0;
+    max-width: 19.375rem;
+  }
+}
+@media (min-width: 992px) {
+  .blockquote-block--type-2 .blockquote-block__pic {
+    max-width: 21.25rem;
+  }
+}
+@media (min-width: 1200px) {
+  .blockquote-block--type-2 .blockquote-block__pic {
+    max-width: 22.5rem;
+  }
+}
+@media (min-width: 1440px) {
+  .blockquote-block--type-2 .blockquote-block__pic {
+    max-width: 26.125rem;
+  }
+}
+.blockquote-block--type-2 blockquote {
+  font-family: "Gilroy", Verdana, Arial, sans-serif;
 }
 .blockquote-block--tiny .blockquote-block__left {
   width: 100%;

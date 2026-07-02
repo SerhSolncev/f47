@@ -79,6 +79,10 @@
 			}
 		}
 
+		p + p {
+			margin: get-rem(12) 0 0;
+		}
+
 		.name-block {
 			text-align: right;
 			margin: get-rem(16) 0 0;
@@ -106,6 +110,47 @@
 		img {
 			width: 100%;
 			height: auto;
+		}
+	}
+
+
+	&--type-2 {
+
+		.blockquote-block__left {
+
+			@media(min-width: 768px) and (max-width: 991px) {
+				padding: 0;
+			}
+
+			blockquote {
+				@media(min-width: 768px) and (max-width: 991px) {
+				    font-size: get-rem(18);
+				}
+			}
+		}
+
+		.blockquote-block__pic {
+
+			@media(min-width: 768px) {
+				right: 0;
+				max-width: get-rem(310);
+			}
+
+			@media(min-width: 992px) {
+				max-width: get-rem(340);
+			}
+
+			@media(min-width: 1200px) {
+				max-width: get-rem(360);
+			}
+
+			@media(min-width: 1440px) {
+				max-width: get-rem(418);
+			}
+		}
+
+		blockquote {
+			font-family: $mainFontGilroy;
 		}
 	}
 

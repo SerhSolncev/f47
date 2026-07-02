@@ -120,6 +120,14 @@
 	&--type-gap-2 {
 		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(116)}, #{get-rem(116)});
 	}
+
+	&--type-gap-3 {
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(101)}, #{get-rem(101)});
+	}
+
+	&--type-gap-4 {
+		margin: 0 0 get-rem(64);
+	}
 }
 
 .section-bottom {
