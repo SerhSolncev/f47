@@ -949,3 +949,38 @@
 		}
 	}
 }
+
+
+.home-blog {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin: clamp(#{get-rem(24)}, #{get-vw(63)}, #{get-rem(63)}) 0 0;
+
+	&__left {
+		width: 100%;
+		max-width: get-rem(812);
+
+		.title--type-3 {
+			margin: 0 0 get-rem(21);
+		}
+
+		.title--type-11 {
+			margin: 0 0 clamp(#{get-rem(18)}, #{get-vw(51)}, #{get-rem(51)});
+		}
+	}
+
+	&__right {
+		max-width: get-rem(565);
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(16);
+		padding: get-rem(53) 0 0;
+	}
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(27);
+	}
+}

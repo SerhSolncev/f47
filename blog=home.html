@@ -1,74 +1,32 @@
 <!doctype html>
-<html lang="en">
+<html lang="uk">
 <head>
-    <meta charset="utf-8">
-    <title>F47</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- main -->
-    <link rel="stylesheet" href="css/main.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>F47 — GEO просування брендів | AI-видимість у пошукових системах</title>
+	<meta name="description" content="F47 — перше моно агентство з AI-видимості в Україні. Виводимо бренди у відповіді AI-платформ: ChatGPT, Perplexity, Gemini. Безкоштовний аудит.">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://f47.agency/">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:url" content="https://f47.agency/">
+	<meta property="og:title" content="F47 — GEO просування брендів | AI-видимість">
+	<meta property="og:description" content="Перше моно агентство з AI-видимості в Україні. Виводимо бренди у відповіді ChatGPT, Perplexity, Gemini. Результат 4-9 разів більше охоплення.">
+	<meta property="og:image" content="https://f47.agency/images/og-image.jpg">
+	<meta property="og:locale" content="uk_UA">
+	<meta property="og:site_name" content="F47">
+
+	<!-- Twitter Cards -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="F47 — GEO просування брендів | AI-видимість">
+	<meta name="twitter:description" content="Перше моно агентство з AI-видимості в Україні. Виводимо бренди у відповіді ChatGPT, Perplexity, Gemini.">
+	<meta name="twitter:image" content="https://f47.agency/images/og-image.jpg">
+
+	<!-- Schema.org JSON-LD -->
+	<link rel="stylesheet" href="css/main.css">
 </head>
-<style>
-    .preview-block {
-        width: 100%;
-        max-width: 1000px;
-        margin: 80px auto;
-
-    }
-
-    .preview-block__title {
-        font-size: 56px;
-        text-align: center;
-        margin: 0 0 30px;
-        color: var(--color-dark);
-    }
-
-    .preview-block__title span {
-        color: var(--color-blue);
-        text-transform: uppercase;
-    }
-
-    .preview-block__list {
-        display: grid;
-        grid-template-columns: repeat(5, 1fr);
-        grid-gap: 16px;
-    }
-
-    @media(max-width: 1200px) {
-        .preview-block__list {
-            grid-template-columns: repeat(3, 1fr);
-        }
-    }
-
-    @media(max-width: 768px) {
-        .preview-block__list {
-            grid-template-columns: repeat(2, 1fr);
-        }
-
-        .preview-block__title {
-	        font-size: 44px;
-        }
-    }
-
-    .preview-block a {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 50px;
-        line-height: 1.25;
-        width: 100%;
-        border: 1px solid var(--color-dark);
-        color: var(--color-dark);
-        text-align: center;
-        font-weight: 300;
-        transition: background-color 0.15s ease;
-    }
-
-    .preview-block a:hover {
-        background-color: var(--color-dark);
-        color: #ffffff;
-    }
-</style>
 <body>
 <!-- mixins list -->
 
@@ -160,31 +118,362 @@
 	<div class="mobile-menu js-toggle-block" data-id="menu" data-block-scroll></div>
 
 <main>
-    <div class="section section--default">
-        <div class="container">
-	        <div class="preview-block">
-		        <div class="preview-block__title">
-			        <span>F47</span> FRONTEND
-		        </div>
-		        <div class="preview-block__list">
-			        <a href="home.html">
-				        Home
-			        </a>
-			        <a href="blog-inner.html">
-				        blog-inner
-			        </a>
-			        <a href="blog-catalog.html">
-				        blog-catalog
-			        </a>
-			        <a href="blog-home.html">
-				        blog-home
-			        </a>
-		        </div>
-	        </div>
-        </div>
-    </div>
+
+	<div class="home-blog">
+		<div class="home-blog__left">
+			<div class="title title--type-3 color-dark font-gilroy"></div>
+		</div>
+	</div>
+
+	<!-- reviews section -->
+	<section class="section section--reviews-section oh" aria-labelledby="reviews-title">
+	<div class="bg-pic js-go-away-on-scroll"
+		data-direction="top"
+		data-position="150"
+		data-off-animate="1280"
+		data-start="bottom bottom 40%"
+		data-end="bottom top+=100"
+	>
+		<img src="images/empty.gif" data-src="images/pics/bg2.webp" alt="" width="793" height="843" class="lazy">
+	</div>
+	<div class="reviews-section" itemscope itemtype="https://schema.org/Service">
+		<div class="reviews-section__top text-center js-show-on-scroll"
+			data-direction="bottom"
+			data-y="50"
+			data-off-animate="1280"
+			data-duration="0.5"
+		>
+			<h3 id="reviews-title" class="title title--type-5 color-dark">Відгуки клієнтів</h3>
+		</div>
+		<!--
+				// TODO для прогера що зробить треба
+				// 1. PHP делает запрос к Google Places API на сервере
+				// 2. рендерит готовый HTML
+				// 3. aggregateRating в мета-блоке (reviewCount) — должен совпадать
+				//    с реальным количеством карточек на странице (иначе penalty от Google) -->
+
+		<meta itemprop="name" content="Візові послуги HOTVISA">
+		<meta itemprop="description" content="Оформлення віз до США, Шенгену, Японії, Кореї та інших країн">
+
+		<!-- AggregateRating: значення МАЮТЬ збігатися з видимим контентом -->
+		<div itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
+			<meta itemprop="ratingValue" content="5">
+			<meta itemprop="reviewCount" content="10">
+			<meta itemprop="bestRating" content="5">
+			<meta itemprop="worstRating" content="1">
+		</div>
+		<div class="reviews-section__list">
+			<div class="reviews-section__row reviews-section__row--3 js-show-on-scroll"
+				data-direction="bottom"
+				data-y="50"
+				data-off-animate="1280"
+				data-duration="0.5"
+			>
+				<!-- Картка 1 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#e53935;">О</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Олена Петренко</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-21">21 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Хочу подякувати агентству HOTVISA! Оформляла візу до Південної Кореї, і весь процес пройшов чудово. Менеджер Інна швидко відповідала на всі питання.</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+
+				<!-- Картка 2 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#8e24aa;">К</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Каріна Корольчук</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-19">19 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Дуже вдячна за допомогу — неймовірний сервіс, позитивний результат! @ekaterina.hotvisa зорієнтувала та допомогла з усіма питаннями.</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+
+				<!-- Картка 3 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#f57c00;">Ю</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Юлія Козубенко</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-19">19 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Хочу висловити вам нашу щиру вдячність за професійну допомогу та повний супровід у процесі отримання візи в США. Завдяки вашому високому рівню...</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+			</div>
+
+			<div class="reviews-section__row reviews-section__row--4 js-show-on-scroll"
+				data-direction="bottom"
+				data-y="50"
+				data-off-animate="1280"
+				data-duration="0.5"
+			>
+				<!-- Картка 4 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#00897b;">В</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Вадим Раєвський</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-19">19 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Користуюсь послугами hotvisa протягом 3 років, все чітко і в терміни. Точно можу радити!</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+
+				<!-- Картка 5 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#1565c0;">М</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Марина Савченко</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-15">15 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Оформляла шенгенську візу вперше — дуже хвилювалася, але команда HOTVISA зробила все максимально просто і зрозуміло. Рекомендую!</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+
+				<!-- Картка 6 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#558b2f;">А</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Андрій Ткаченко</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-12">12 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Звертався за робочою візою до Польщі. Все зробили швидко, документи подали без зайвих питань. Дуже задоволений співпрацею з агентством.</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+
+				<!-- Картка 7 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#c62828;">Н</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Наталія Бондар</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-10">10 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Відмінний сервіс! Підготували документи для канадської візи за рекордний час. Менеджер завжди на зв'язку — навіть у вихідні відповідала на питання.</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+			</div>
+
+			<div class="reviews-section__row reviews-section__row--3 js-show-on-scroll"
+				data-direction="bottom"
+				data-y="50"
+				data-off-animate="1280"
+				data-duration="0.5"
+			>
+				<!-- Картка 8 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#4527a0;">І</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Ірина Мельник</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-07">7 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Замовляла візу до Великобританії. Процес зайняв менше часу, ніж очікувала. Дякую команді за терпіння та уважність до деталей!</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+
+				<!-- Картка 9 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#00695c;">С</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Сергій Власенко</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-03">3 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Зверталися сім'єю, оформлювали туристичні візи до Австрії. Усі документи здали з першого разу. Менеджер Катерина — просто золото!</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+
+				<!-- Картка 10 -->
+				<div class="review-item" itemprop="review" itemscope itemtype="https://schema.org/Review">
+					<div class="review-item__header">
+						<div class="review-item__avatar" style="background:#6d4c41;">Д</div>
+						<div class="review-item__meta">
+							<div class="review-item__name" itemprop="author" itemscope itemtype="https://schema.org/Person">
+								<span itemprop="name">Дмитро Харченко</span>
+							</div>
+							<div class="review-item__date">
+								<time itemprop="datePublished" datetime="2026-06-01">1 June 2026</time>
+							</div>
+						</div>
+						<svg class="review-item__google-icon" viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" fill="#4285F4"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" fill="#34A853"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z" fill="#FBBC05"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" fill="#EA4335"/></svg>
+					</div>
+					<div class="review-item__stars" itemprop="reviewRating" itemscope itemtype="https://schema.org/Rating">
+						<meta itemprop="ratingValue" content="5">
+						<meta itemprop="bestRating" content="5">
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg viewBox="0 0 20 20"><path d="M10 1l2.39 4.85L18 6.73l-4 3.9.94 5.51L10 13.77l-4.94 2.37.94-5.51-4-3.9 5.61-.88z"/></svg>
+						<svg class="review-item__verified" viewBox="0 0 20 20"><path d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm-1 14.41L4.59 10 6 8.59l3 3 6-6L16.41 7 9 14.41z"/></svg>
+					</div>
+					<p class="review-item__text" itemprop="reviewBody">Чудова команда! Допомогли з японською візою — думав, це буде складно, але агентство зробило все за мене. Дуже задоволений результатом.</p>
+					<a href="#" class="review-item__more">Read more</a>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</section>
+
 </main>
 <script src="js/modules/lozad.min.js"></script>
+<script src="js/modules/micromodal.min.js"></script>
+<script src="js/modules/lenis.min.js"></script>
+<script src="js/modules/gsap.min.js"></script>
+<script src="js/modules/ScrollTrigger.min.js"></script>
 <script src="js/main.js"></script>
 <!-- попап1 -->
 <div id="callback" class="modal micromodal-slide" aria-hidden="true">

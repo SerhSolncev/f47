@@ -1977,6 +1977,26 @@ html.lenis, html.lenis body {
     gap: 1.5rem;
   }
 }
+.form-board--type-3 .form-board__body {
+  padding: 1.25rem;
+  border-radius: 1.5rem;
+}
+@media (min-width: 768px) {
+  .form-board--type-3 .form-board__body {
+    padding: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .form-board--type-3 .form-board__body {
+    padding: 2.625rem 2.25rem;
+  }
+}
+.form-board--type-3 .form-board__top {
+  margin: 0 0 1.5rem;
+}
+.form-board--type-3 .form-board__bottom {
+  margin: 0 0 0;
+}
 .form-board--orange-gradient .form-board__body {
   background-image: -webkit-gradient(linear, left top, left bottom, from(#ff7856), to(#ffe7b3));
   background-image: linear-gradient(to bottom, #ff7856, #ffe7b3);
@@ -1996,6 +2016,18 @@ html.lenis, html.lenis body {
 }
 .form-board--purple-2 .form-board__body {
   background-image: linear-gradient(215deg, #6dd5d7, #97c5e9);
+}
+.form-board--blue-1 {
+  background-image: linear-gradient(215deg, rgba(125, 208, 222, 0.5), rgba(196, 180, 253, 0.5) 50%);
+}
+.form-board--blue-1 .form-board__body {
+  background-image: linear-gradient(215deg, #6dd5d7, #b7b9f7);
+}
+.form-board--orange-2 {
+  background-image: linear-gradient(215deg, rgba(255, 207, 160, 0.5), rgba(255, 151, 113, 0.5) 50%);
+}
+.form-board--orange-2 .form-board__body {
+  background-image: linear-gradient(215deg, #ffcfa0, #ff9771);
 }
 .form-board--gray {
   background-color: var(--color-white);
@@ -5553,6 +5585,51 @@ html.lenis, html.lenis body {
   .services-block__list {
     gap: 1.5rem;
   }
+}
+
+.home-blog {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: clamp(1.5rem, 3.28125vw, 3.9375rem) 0 0;
+}
+.home-blog__left {
+  width: 100%;
+  max-width: 50.75rem;
+}
+.home-blog__left .title--type-3 {
+  margin: 0 0 1.3125rem;
+}
+.home-blog__left .title--type-11 {
+  margin: 0 0 clamp(1.125rem, 2.65625vw, 3.1875rem);
+}
+.home-blog__right {
+  max-width: 35.3125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+  padding: 3.3125rem 0 0;
+}
+.home-blog__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.6875rem;
 }
 
 .breadcrumbs {
