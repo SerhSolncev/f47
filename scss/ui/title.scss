@@ -103,6 +103,18 @@
 			font-size: get-rem(40);
 		}
 	}
+
+	&--type-10 {
+		font: 400 #{get-rem(24)}/1.3 $mainFont;
+
+		@media(min-width: 768px) {
+			font-size: get-rem(30);
+		}
+
+		@media(min-width: 1280px) {
+			font-size: get-rem(36);
+		}
+	}
 }
 
 .simple-text {

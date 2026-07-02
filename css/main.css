@@ -1385,6 +1385,19 @@ html.lenis, html.lenis body {
     font-size: 2.5rem;
   }
 }
+.title--type-10 {
+  font: 400 1.5rem/1.3 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  .title--type-10 {
+    font-size: 1.875rem;
+  }
+}
+@media (min-width: 1280px) {
+  .title--type-10 {
+    font-size: 2.25rem;
+  }
+}
 
 .simple-text {
   -webkit-transition: color 0.15s ease-in;
@@ -4653,6 +4666,70 @@ html.lenis, html.lenis body {
   margin: 8.375rem 0 0;
   position: sticky;
   top: 6.5625rem;
+}
+.blog-inner__bottom {
+  margin: 2.875rem 0 0;
+}
+
+.blog-faq__list {
+  margin: 0.75rem 0 3.375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.75rem;
+}
+
+.author-block {
+  padding: clamp(1.5rem, 4.1666666667vw, 5rem) 0 0;
+  margin: clamp(1.5rem, 4.6875vw, 5.625rem) 0 0;
+  position: relative;
+}
+.author-block::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 0.125rem;
+  background-image: -webkit-gradient(linear, right top, left top, from(#1ef4b4), to(#c4b4fd));
+  background-image: linear-gradient(to left, #1ef4b4, #c4b4fd);
+}
+.author-block__top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 1.4375rem;
+}
+.author-block__top img {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+@media (min-width: 767px) {
+  .author-block__top img {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.mini-faq {
+  padding: 0.8125rem 0.9375rem 1.125rem;
+  border-left: 0.0625rem solid #c3c2b9;
+  border-radius: 0.75rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ebeae1), color-stop(50%, rgba(235, 234, 225, 0)));
+  background-image: linear-gradient(to right, #ebeae1, rgba(235, 234, 225, 0) 50%);
+}
+.mini-faq strong {
+  display: block;
+  margin: 0 0 0.5625rem;
 }
 
 .tiny-block {
