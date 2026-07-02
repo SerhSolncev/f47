@@ -30,346 +30,83 @@
 			"@context": "https://schema.org",
 			"@graph": [
 				{
-					"@type": "MarketingAgency",
-					"name": "F47",
-					"description": "Перше моно агентство з AI-видимості в Україні. GEO просування брендів у відповідях ChatGPT, Perplexity, Gemini та інших AI-платформах.",
-					"url": "https://f47.agency",
-					"logo": {
-						"@type": "ImageObject",
-						"url": "https://f47.agency/images/icons/logo.svg"
-					},
-					"address": {
-						"@type": "PostalAddress",
-						"streetAddress": "Глушкова, 1",
-						"addressLocality": "Київ",
-						"addressCountry": "UA"
-					},
-					"telephone": "+380504106865",
-					"email": "office@f-47.io",
-					"areaServed": {
-						"@type": "Country",
-						"name": "Ukraine"
-					},
-					"knowsAbout": [
-						"Generative Engine Optimization",
-						"GEO просування",
-						"AEO просування",
-						"AI-видимість бренду",
-						"ChatGPT оптимізація",
-						"Perplexity оптимізація",
-						"entity-оптимізація",
-						"schema markup",
-						"AI Search Optimization"
-					],
-					"serviceType": [
-						"GEO просування",
-						"AI-видимість",
-						"SEO аудит",
-						"Контент-маркетинг"
-					],
-					"hasOfferCatalog": {
-						"@id": "https://f47.agency/#offer-catalog"
-					},
-					"contactPoint": {
-						"@type": "ContactPoint",
-						"contactType": "customer service",
-						"availableLanguage": ["Ukrainian", "Russian"]
-					},
-					"sameAs": [
-						"https://t.me/f47agency",
-						"https://linkedin.com/company/...",
-						"https://reddit.com/..."
-					]
-				},
-				{
-					"@type": "ItemList",
-					"name": "Статистика GEO просування",
-					"itemListElement": [
-						{
-							"@type": "ListItem",
-							"position": 1,
-							"name": "Конверсія AI-трафіку вища в 4–9 разів"
-						},
-						{
-							"@type": "ListItem",
-							"position": 2,
-							"name": "+200% зростання переходів із ChatGPT за рік"
-						},
-						{
-							"@type": "ListItem",
-							"position": 3,
-							"name": "-40% середній обвал органіки Google за рік"
-						},
-						{
-							"@type": "ListItem",
-							"position": 4,
-							"name": "Перші отримають перевагу на 6–12 місяців"
-						}
-					]
-				},
-				{
-					"@type": "ItemList",
-					"name": "Портфоліо F47 — кейси GEO просування",
-					"itemListElement": [
-						{
-							"@type": "ListItem",
-							"position": 1,
-							"url": "https://f47.agency/cases/binaryfuture",
-							"item": {
-								"@type": "Article",
-								"name": "B1nary Future: +240% згадок у ChatGPT і Perplexity",
-								"description": "Shopify-підрядник для B2B-ринку. Зростання AI-згадок на 240% як надійного підрядника у ChatGPT та Perplexity.",
-								"url": "https://f47.agency/cases/binaryfuture",
-								"author": { "@type": "MarketingAgency", "name": "F47" },
-								"about": { "@type": "Organization", "name": "B1nary Future", "url": "https://binaryfuture.io" },
-								"mentions": [
-									{ "@type": "Thing", "name": "ChatGPT" },
-									{ "@type": "Thing", "name": "Perplexity" }
-								],
-								"result": {
-									"@type": "QuantitativeValue",
-									"value": 240,
-									"unitText": "% зростання AI-згадок"
-								}
-							}
-						},
-						{
-							"@type": "ListItem",
-							"position": 2,
-							"url": "https://f47.agency/cases/holdyou",
-							"item": {
-								"@type": "Article",
-								"name": "Hold You: +310% переходів із Google AI та ChatGPT",
-								"description": "Сервіс онлайн-психологів. Став №1 у рекомендаціях нейромереж в Україні. Зростання переходів із AI-платформ на 310%.",
-								"url": "https://f47.agency/cases/holdyou",
-								"author": { "@type": "MarketingAgency", "name": "F47" },
-								"about": { "@type": "Organization", "name": "Hold You", "url": "https://holdyou.net" },
-								"mentions": [
-									{ "@type": "Thing", "name": "Google AI" },
-									{ "@type": "Thing", "name": "ChatGPT" }
-								],
-								"result": {
-									"@type": "QuantitativeValue",
-									"value": 310,
-									"unitText": "% зростання переходів із AI-платформ"
-								}
-							}
-						},
-						{
-							"@type": "ListItem",
-							"position": 3,
-							"url": "https://f47.agency/cases/logika",
-							"item": {
-								"@type": "Article",
-								"name": "Logika School: конверсія з AI-трафіку зросла в 4.5 рази",
-								"description": "Обхід конкурентів у Perplexity та Claude. Конверсія з AI-трафіку на безкоштовний пробний урок зросла в 4.5 рази.",
-								"url": "https://f47.agency/cases/logika",
-								"author": { "@type": "MarketingAgency", "name": "F47" },
-								"about": { "@type": "Organization", "name": "Logika School", "url": "https://logikaschool.com" },
-								"mentions": [
-									{ "@type": "Thing", "name": "Perplexity" },
-									{ "@type": "Thing", "name": "Claude" }
-								],
-								"result": {
-									"@type": "QuantitativeValue",
-									"value": 4.5,
-									"unitText": "x зростання конверсії з AI-трафіку"
-								}
-							}
-						},
-						{
-							"@type": "ListItem",
-							"position": 4,
-							"url": "https://f47.agency/cases/agricon",
-							"item": {
-								"@type": "Article",
-								"name": "Agricon: +180% B2B-звернень через AI-рекомендації",
-								"description": "Перехоплення комерційних AI-запитів щодо будівництва елеваторів. Зростання кваліфікованих B2B-звернень на 180% через Perplexity та Google AI.",
-								"url": "https://f47.agency/cases/agricon",
-								"author": { "@type": "MarketingAgency", "name": "F47" },
-								"about": { "@type": "Organization", "name": "Agricon", "url": "https://agricon.com.ua" },
-								"mentions": [
-									{ "@type": "Thing", "name": "Perplexity" },
-									{ "@type": "Thing", "name": "Google AI" }
-								],
-								"result": {
-									"@type": "QuantitativeValue",
-									"value": 180,
-									"unitText": "% зростання B2B-звернень"
-								}
-							}
-						}
-					]
-				},
-				{
-					"@type": "FAQPage",
-					"mainEntity": [
-						{
-							"@type": "Question",
-							"name": "Що таке GEO просування?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "GEO (Generative Engine Optimization) — це оптимізація присутності бренду у відповідях AI-систем: ChatGPT, Perplexity, Google AI, Gemini та інших. На відміну від SEO, мета — потрапити у рекомендації нейромереж, коли користувачі ставлять запитання у AI-чатах."
-							}
-						},
-						{
-							"@type": "Question",
-							"name": "Чим GEO відрізняється від SEO?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "SEO оптимізує сайт для потрапляння у пошукову видачу Google. GEO оптимізує контент і розмітку так, щоб AI-моделі згадували бренд у своїх відповідях. Конверсія з AI-трафіку в 4–9 разів вища, ніж із класичного пошуку."
-							}
-						},
-						{
-							"@type": "Question",
-							"name": "Скільки часу потрібно для результатів GEO просування?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "Перші результати у вигляді зростання AI-згадок зазвичай фіксуються через 6–10 тижнів. Стабільне позиціювання у відповідях ChatGPT, Perplexity та Google AI формується протягом 3–4 місяців."
-							}
-						},
-						{
-							"@type": "Question",
-							"name": "Яким бізнесам підходить GEO?",
-							"acceptedAnswer": {
-								"@type": "Answer",
-								"text": "GEO ефективне для B2B-компаній, сервісів та брендів, чию аудиторію шукає поради у AI-асистентів. Особливо актуально для ніш з високою конкуренцією у пошуку: IT-аутсорс, e-commerce, освіта, медицина, будівництво."
-							}
-						}
-					]
-				},
-				{
-					"@type": "HowTo",
-					"name": "Як працює GEO просування від F47",
-					"description": "Процес оптимізації AI-видимості бренду у відповідях ChatGPT, Perplexity, Gemini та Google AI",
-					"provider": { "@type": "MarketingAgency", "name": "F47", "url": "https://f47.agency" },
-					"step": [
-						{
-							"@type": "HowToStep",
-							"position": 1,
-							"name": "Оптимізація структури та контенту",
-							"text": "Перебудовуємо сторінки за принципом «відповідь спочатку»: додаємо чіткі формулювання, FAQ, порівняння, таблиці, визначення та блоки довіри."
-						},
-						{
-							"@type": "HowToStep",
-							"position": 2,
-							"name": "Структуровані дані та entity-оптимізація",
-							"text": "Налаштовуємо schema markup і допомагаємо AI правильно зрозуміти, хто ви, що пропонуєте, для кого працюєте і чим відрізняєтесь від конкурентів."
-						},
-						{
-							"@type": "HowToStep",
-							"position": 3,
-							"name": "Зовнішній авторитет і PR",
-							"text": "Працюємо зі згадками бренду в медіа, каталогах, рейтингах, партнерських матеріалах, профільних платформах і джерелах, яким AI може довіряти."
-						},
-						{
-							"@type": "HowToStep",
-							"position": 4,
-							"name": "Моніторинг AI-видимості та звітність",
-							"text": "Регулярно відстежуємо, як бренд з'являється у відповідях ChatGPT, Perplexity, Gemini, які джерела цитують нейромережі, кого вони рекомендують замість вас і як змінюється позиція бренду після оптимізації."
-						}
-					]
-				},
-				{
-					"@type": "OfferCatalog",
-					"name": "Тарифи GEO просування F47",
-					"provider": { "@type": "MarketingAgency", "name": "F47", "url": "https://f47.agency" },
-					"itemListElement": [
-						{
-							"@type": "Offer",
-							"name": "СТАРТ",
-							"description": "Базова перевірка AI-видимості та перші кроки для просування",
-							"price": "0",
-							"priceCurrency": "UAH",
-							"availability": "https://schema.org/InStock",
-							"validThrough": "2026-09-01",
-							"itemOffered": {
-								"@type": "Service",
-								"name": "GEO-аудит AI-видимості",
-								"provider": { "@type": "MarketingAgency", "name": "F47" }
-							}
-						},
-						{
-							"@type": "Offer",
-							"name": "ОПТИМУМ",
-							"description": "Системна GEO/AEO-оптимізація сайту, контенту та AI-присутності",
-							"price": "550",
-							"priceCurrency": "EUR",
-							"availability": "https://schema.org/InStock",
-							"itemOffered": {
-								"@type": "Service",
-								"name": "Системна GEO/AEO-оптимізація",
-								"provider": { "@type": "MarketingAgency", "name": "F47" }
-							}
-						},
-						{
-							"@type": "Offer",
-							"name": "ІНТЕНСИВ",
-							"description": "Повний супровід для активного росту бренду в AI-пошуку",
-							"price": "950",
-							"priceCurrency": "EUR",
-							"availability": "https://schema.org/InStock",
-							"itemOffered": {
-								"@type": "Service",
-								"name": "Повний GEO/AEO-супровід",
-								"provider": { "@type": "MarketingAgency", "name": "F47" }
-							}
-						}
-					]
-				},
-				{
-					"@type": "ItemList",
-					"name": "Медіа-центр F47 — статті про GEO просування",
+					"@type": "CollectionPage",
+					"@id": "https://f47.agency/blog#webpage",
 					"url": "https://f47.agency/blog",
+					"name": "Всі статті — Медіа-центр F47",
+					"description": "Статті про GEO/AEO просування, AI-видимість бренду та оптимізацію для ChatGPT, Perplexity, Gemini.",
+					"isPartOf": {
+						"@type": "WebSite",
+						"url": "https://f47.agency",
+						"name": "F47"
+					},
+					"about": {
+						"@type": "MarketingAgency",
+						"name": "F47",
+						"url": "https://f47.agency"
+					},
+					"inLanguage": "uk-UA",
+					"breadcrumb": { "@id": "https://f47.agency/blog#breadcrumb" }
+				},
+				{
+					"@type": "BreadcrumbList",
+					"@id": "https://f47.agency/blog#breadcrumb",
 					"itemListElement": [
 						{
 							"@type": "ListItem",
 							"position": 1,
-							"item": {
-								"@type": "Article",
-								"name": "Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini",
-								"url": "https://f47.agency/blog/geo-aeo-prosuvannya",
-								"datePublished": "2026-05-12",
-								"author": {
-									"@type": "Person",
-									"name": "Микита Мороз",
-									"jobTitle": "CEO F47"
-								},
-								"publisher": { "@type": "MarketingAgency", "name": "F47", "url": "https://f47.agency" },
-								"keywords": ["GEO", "SEO", "Google AI", "Тренди 2026"]
-							}
+							"name": "Головна",
+							"item": "https://f47.agency/"
+						},
+						{
+							"@type": "ListItem",
+							"position": 2,
+							"name": "Медіа-центр",
+							"item": "https://f47.agency/blog"
+						},
+						{
+							"@type": "ListItem",
+							"position": 3,
+							"name": "Всі статті",
+							"item": "https://f47.agency/blog"
 						}
 					]
 				},
 				{
-					"@type": "HowTo",
-					"name": "Як почати GEO просування з F47",
-					"description": "Чотири кроки для запуску AI-просування бренду",
-					"provider": { "@type": "MarketingAgency", "name": "F47", "url": "https://f47.agency" },
-					"step": [
+					"@type": "Blog",
+					"@id": "https://f47.agency/blog#blog",
+					"name": "Медіа-центр F47",
+					"description": "Блог про GEO/AEO просування та AI-видимість брендів",
+					"url": "https://f47.agency/blog",
+					"publisher": {
+						"@type": "MarketingAgency",
+						"name": "F47",
+						"url": "https://f47.agency",
+						"logo": {
+							"@type": "ImageObject",
+							"url": "https://f47.agency/images/icons/logo.svg"
+						}
+					},
+					"blogPost": [
 						{
-							"@type": "HowToStep",
-							"position": 1,
-							"name": "Забронюйте дзвінок або залиште заявку",
-							"text": "Розкажіть коротко про ваш бізнес, нішу та цілі — ми подивимось, як F47 може допомогти з просуванням у AI-платформах."
-						},
-						{
-							"@type": "HowToStep",
-							"position": 2,
-							"name": "Отримайте безкоштовний мініаудит",
-							"text": "Ми перевіримо, як ваш бренд зараз виглядає в ChatGPT, Perplexity, Gemini, Claude та Google AI, і покажемо перші точки росту."
-						},
-						{
-							"@type": "HowToStep",
-							"position": 3,
-							"name": "Обговоріть персональну GEO/AEO-стратегію",
-							"text": "Підготуємо попередній план дій: які сторінки, запити, джерела та зовнішні сигнали потрібно посилити в першу чергу."
-						},
-						{
-							"@type": "HowToStep",
-							"position": 4,
-							"name": "Запустіть програму просування",
-							"text": "Після погодження стратегії починаємо оптимізацію сайту, контенту, структури даних і зовнішньої присутності бренду."
+							"@type": "BlogPosting",
+							"headline": "Замовити GEO/AEO-просування: як бренд потрапляє у відповіді ChatGPT, Perplexity та Gemini",
+							"url": "https://f47.agency/blog/geo-aeo-prosuvannya",
+							"datePublished": "2026-05-12",
+							"dateModified": "2026-06-30",
+							"image": "https://f47.agency/images/pics/blog-pic.webp",
+							"keywords": ["GEO", "SEO", "Google AI", "Тренди 2026"],
+							"timeRequired": "PT1M30S",
+							"author": {
+								"@type": "Person",
+								"name": "Микита Мороз",
+								"jobTitle": "CEO F47"
+							},
+							"publisher": {
+								"@type": "MarketingAgency",
+								"name": "F47",
+								"url": "https://f47.agency"
+							}
 						}
 					]
 				}
