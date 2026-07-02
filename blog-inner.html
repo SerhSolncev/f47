@@ -115,10 +115,10 @@
 				<div class="header__mid js-toggle-block" data-no-lock-focus data-id="mob-menu">
 					<nav class="main-menu" aria-label="Головне меню">
 						<div class="main-menu__list">
-							<button class="link link--type-1 link--gray lt-14 js-call-popup-static" data-id="audit">Аудит</button>
-							<button class="link link--type-1 link--gray lt-14 js-anchor-btn" data-id="portfolio-section">Портфоліо</button>
-							<button class="link link--type-1 link--gray lt-14 js-anchor-btn" data-id="price-section">Ціни</button>
-							<button class="link link--type-1 link--gray lt-14 js-anchor-btn" data-id="media-section">Медіа-центр</button>
+							<a class="link link--type-1 link--gray lt-14 js-call-popup-static" href="home.html#audit">Аудит</a >
+							<a class="link link--type-1 link--gray lt-14 js-anchor-btn" href="home.html#portfolio-section">Портфоліо</a >
+							<a class="link link--type-1 link--gray lt-14 js-anchor-btn" href="home.html#price-section">Ціни</a >
+							<a class="link link--type-1 link--gray lt-14 js-anchor-btn" href="home.html#media-section">Медіа-центр</a >
 						</div>
 					</nav>
 					<div class="soc-list">
@@ -334,13 +334,13 @@
 		<div class="blog-sidebar">
 			<div class="simple-text simple-text--type-8 color-dark-th text-bolder font-gilroy">Зміст</div>
 			<div class="blog-sidebar__list">
-				<a href="">Чим GEO/AEO відрізняється від класичного SEO і чи це не те саме?</a>
-				<a href="">Кому варто замовити GEO-просування сайту?</a>
-				<a href="">Як AI-системи обирають бренди й джерела для відповідей?</a>
-				<a href="">Що входить у GEO/AEO-просування під ключ?</a>
-				<a href="">Скільки коштують послуги AEO-оптимізації та GEO-просування?</a>
-				<a href="">Як обрати агентство AI SEO і виміряти результат?</a>
-				<a href="">Часті запитання (FAQ)</a>
+				<button class="js-anchor-btn" data-text-anchor>Чим GEO/AEO відрізняється від класичного SEO і чи це не те саме?</button>
+				<button class="js-anchor-btn" data-text-anchor>Кому варто замовити GEO-просування сайту?</button>
+				<button class="js-anchor-btn" data-text-anchor>Як AI-системи обирають бренди й джерела для відповідей?</button>
+				<button class="js-anchor-btn" data-text-anchor>Що входить у GEO/AEO-просування під ключ?</button>
+				<button class="js-anchor-btn" data-text-anchor>Скільки коштують послуги AEO-оптимізації та GEO-просування?</button>
+				<button class="js-anchor-btn" data-text-anchor>Як обрати агентство AI SEO і виміряти результат?</button>
+				<a href="#faq" class="js-anchor-btn" >Часті запитання (FAQ)</a>
 			</div>
 		</div>
 
@@ -471,7 +471,7 @@
 			</div>
 
 			<div class="blog-inner__bottom">
-				<div class="blog-faq">
+				<div class="blog-faq" id="faq">
 					<div class="simple-text simple-text--type-8 color-dark-th text-bolder font-gilroy">Часті запитання (FAQ)</div>
 					<div class="blog-faq__list">
 						<div class="mini-faq">
@@ -506,6 +506,15 @@
 			</div>
 		</div>
 
+		<div class="simple-board">
+			<div class="simple-board__body">
+				<div class="title title--type-8 color-dark lh-13">Техничний аудит сайту</div>
+				<p class="simple-text simple-text--type-1 color-dark-sec font-gilroy lh-12">Перевіримо технічну готовність коду та структури сторінок до залучення супер-конверсійного GEO-трафіку.</p>
+				<button type="button" class="btn btn--type-3 btn--dark-bg-four js-call-popup-static" data-id="callback">
+					<span class="btn__text">Замовити безкоштовно</span>
+				</button>
+			</div>
+		</div>
 	</div>
 </main>
 <script src="js/modules/lozad.min.js"></script>

@@ -19,7 +19,9 @@
 
 
 	&__text {
-		transition: opacity 0.15s ease-in;
+		position: relative;
+		z-index: 2;
+		transition: opacity 0s 0.15s ease-in;
 	}
 
 	&__icon {
@@ -43,17 +45,28 @@
 		width: 100%;
 		height: 100%;
 		display: flex;
-		justify-content: space-between;
+		justify-content: flex-end;
 		align-items: center;
 		background-color: rgba(#fff, 0.1);
+		padding: 0 get-rem(6) 0 0;
 		opacity: 0;
-		transition: opacity 0.2s ease-in, padding 0.2s ease-in;
+		transition: opacity 0.15s 0.15s ease-in;
+
+		span:not(.btn__icon) {
+			width: max-content;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 1;
+			transform: translate(-50%, -50%);
+			transition: left 0.15s ease-in, transform 0.15s ease-in;
+		}
 
 		.btn__icon {
 			transform: translateY(1px);
 		}
 
-		span {
+		span:not(.btn__icon) {
 			padding: 0 0 get-rem(2);
 		}
 	}
@@ -102,6 +115,13 @@
 		}
 	}
 
+	&--type-3 {
+		font: 400 #{get-rem(14)}/1 $mainFont;
+		border-radius: get-rem(40);
+		padding: 0 get-rem(10) get-rem(2);
+		height: get-rem(36);
+	}
+
 	&--dark-bg {
 		color: var(--color-white);
 		background-color: var(--color-dark);
@@ -109,13 +129,20 @@
 
 		&:hover {
 
-			.btn__hover {
-				opacity: 1;
-				padding: 0 get-rem(6) 0 get-rem(21);
-			}
-
 			.btn__text {
 				opacity: 0;
+				transition: opacity 0.15s 0s ease-in;
+			}
+
+			.btn__hover {
+				opacity: 1;
+				transition: opacity 0.15s ease-in;
+
+				span:not(.btn__icon) {
+					left: get-rem(16);
+					transform: translateY(-50%);
+					transition: left 0.15s ease-in, transform 0.15s ease-in;
+				}
 			}
 		}
 	}
@@ -127,13 +154,20 @@
 
 		&:hover {
 
-			.btn__hover {
-				opacity: 1;
-				padding: 0 get-rem(6) 0 get-rem(21);
-			}
-
 			.btn__text {
 				opacity: 0;
+				transition: opacity 0.15s 0s ease-in;
+			}
+
+			.btn__hover {
+				opacity: 1;
+				transition: opacity 0.15s ease-in;
+
+				span:not(.btn__icon) {
+					left: get-rem(16);
+					transform: translateY(-50%);
+					transition: left 0.15s ease-in, transform 0.15s ease-in;
+				}
 			}
 		}
 	}
@@ -158,6 +192,25 @@
 		}
 	}
 
+	&--dark-bg-four {
+		color: var(--color-white);
+		background-color: var(--color-dark-th);
+
+		&:hover {
+			background-color: var(--color-dark);
+		}
+
+		&:active {
+			color: var(--color-white);
+			background-color: var(--color-dark);
+			transform: scale(0.95);
+		}
+
+		&:focus-visible {
+			outline-color: var(--color-white);
+		}
+	}
+
 	&--light-bg {
 		color: var(--color-dark);
 		background-color: rgba(#242B3A, 0.05);
@@ -167,13 +220,20 @@
 
 		&:hover {
 
-			.btn__hover {
-				opacity: 1;
-				padding: 0 get-rem(6) 0 get-rem(21);
-			}
-
 			.btn__text {
 				opacity: 0;
+				transition: opacity 0.15s 0s ease-in;
+			}
+
+			.btn__hover {
+				opacity: 1;
+				transition: opacity 0.15s ease-in;
+
+				span:not(.btn__icon) {
+					left: get-rem(16);
+					transform: translateY(-50%);
+					transition: left 0.15s ease-in, transform 0.15s ease-in;
+				}
 			}
 		}
 	}

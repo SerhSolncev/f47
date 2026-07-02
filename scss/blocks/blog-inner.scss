@@ -1,6 +1,54 @@
 @import "../abstracts/functions";
 @import "../abstracts/vars";
 
+.blog-sidebar {
+	margin: get-rem(134) 0 0;
+	position: sticky;
+	top: get-rem(105);
+
+	&__list {
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(8);
+		margin: get-rem(9) 0 0;
+
+		button, a {
+			font: 400 #{get-rem(16)}/1.5 $mainFontGilroy;
+			color: var(--color-dark-th);
+			text-align: left;
+
+			.desktop-device & {
+			    &:hover {
+				    color: #7462cd;
+			    }
+			}
+
+			&.is-active {
+				color: #7462cd;
+			}
+		}
+	}
+}
+
+.simple-board {
+	padding: get-rem(7);
+	border-radius: get-rem(31);
+	background-color: var(--color-white);
+
+	.simple-board__body {
+		display: flex;
+		flex-direction: column;
+		gap: get-rem(11);
+		padding: get-rem(25) get-rem(32);
+		border-radius: get-rem(24);
+		background-color: var(--color-light);
+	}
+
+	.btn {
+		margin: get-rem(13) 0 0;
+	}
+}
+
 .blog-top {
 	display: flex;
 	align-items: flex-start;
@@ -8,7 +56,7 @@
 	flex-direction: column;
 	gap: get-rem(30);
 	padding: get-rem(18) 0 0;
-	margin: 0 0 80px;
+	margin: 0 0 get-rem(107);
 
 	@media(min-width: 992px) {
 	    flex-direction: row;
@@ -93,11 +141,18 @@
 .blog-inner {
 	width: 100%;
 	max-width: get-rem(1632);
-	margin: 0 auto;
+	margin: 0 auto 80px;
 	padding: 0 get-rem(16);
 	display: grid;
-	grid-template-columns: get-rem(256) 1fr get-rem(256);
-	gap: clamp(#{get-rem(20)}, #{get-vw(80)}, #{get-rem(80)});
+	grid-template-columns: get-rem(270) 1fr get-rem(270);
+	align-items: flex-start;
+	gap: clamp(#{get-rem(20)}, #{get-vw(66)}, #{get-rem(66)});
+
+	.simple-board {
+		margin: get-rem(134) 0 0;
+		position: sticky;
+		top: get-rem(105);
+	}
 }
 
 .tiny-block {

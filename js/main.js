@@ -733,16 +733,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	// якорся з меню
 	const buttons = document.querySelectorAll('.js-anchor-btn');
 	const mobMenus = document.querySelectorAll('[data-id="mob-menu"]');
+	const tinyBlock = document.querySelector('.js-tiny-block');
 	const sections = [];
-
-	// Собираем секции, соответствующие кнопкам
-	buttons.forEach(btn => {
-		const id = btn.dataset.id;
-		const section = document.getElementById(id) || document.querySelector(`.js-anchor-block[id="${id}"]`);
-		if (section) {
-			sections.push({ btn, section });
-		}
-	});
 
 	function getHeaderHeight() {
 		return header ? header.offsetHeight : 0;
@@ -754,24 +746,85 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		return isNaN(customOffset) ? DEFAULT_OFFSET : customOffset;
 	}
 
-	// Клик по кнопке — скролл к блоку
+// Ищем только среди заголовков
+	function findTargetByText(text) {
+		if (!tinyBlock) return null;
+		const headings = tinyBlock.querySelectorAll('h2, h3, h4, h5, h6');
+		for (const el of headings) {
+			if (el.textContent.trim() === text.trim()) return el;
+		}
+		return null;
+	}
+
+// Получаем таргет по href или data-text-anchor
+	function getTarget(btn) {
+		if (btn.hasAttribute('data-text-anchor')) {
+			return findTargetByText(btn.textContent.trim());
+		}
+
+		const href = btn.getAttribute('href') || btn.dataset.href;
+		if (href) {
+			const id = href.replace('#', '');
+			return document.getElementById(id);
+		}
+
+		return null;
+	}
+
+// Собираем секции
 	buttons.forEach(btn => {
-		btn.addEventListener('click', function () {
-			const id = btn.dataset.id;
-			const target = document.getElementById(id) || document.querySelector(`.js-anchor-block[id="${id}"]`);
+		const section = getTarget(btn);
+		if (section) {
+			sections.push({ btn, section });
+		}
+	});
+
+// Обрабатываем якорь из URL при загрузке страницы
+	window.addEventListener('DOMContentLoaded', () => {
+		const hash = window.location.hash;
+		if (!hash) return;
+
+		const target = document.getElementById(hash.replace('#', ''));
+		if (!target) return;
+
+		setTimeout(() => {
+			const headerHeight = getHeaderHeight();
+			const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - 50;
+			window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+			const matchedBtn = [...buttons].find(btn => {
+				const href = btn.getAttribute('href') || btn.dataset.href;
+				return href && href === hash;
+			});
+			if (matchedBtn) setActiveButton(matchedBtn);
+		}, 300);
+	});
+
+// Клик
+	buttons.forEach(btn => {
+		btn.addEventListener('click', function (e) {
+			const href = btn.getAttribute('href') || btn.dataset.href;
+
+			// Если href ведёт на другую страницу — не перехватываем
+			if (href && !href.startsWith('#')) return;
+
+			e.preventDefault();
+
+			const target = getTarget(btn);
 			if (!target) return;
 
 			const headerHeight = getHeaderHeight();
 			const offset = getOffset(btn);
 			const targetPosition = target.getBoundingClientRect().top + window.scrollY - headerHeight - offset;
 
-			window.scrollTo({
-				top: targetPosition,
-				behavior: 'smooth'
-			});
+			window.scrollTo({ top: targetPosition, behavior: 'smooth' });
+
+			// Обновляем URL без перезагрузки
+			if (href && href.startsWith('#')) {
+				history.pushState(null, '', href);
+			}
 
 			setActiveButton(btn);
-
 			mobMenus.forEach(menu => menu.classList.remove('show'));
 		});
 	});
@@ -784,12 +837,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
 	function onScroll() {
 		const headerHeight = getHeaderHeight();
 		const scrollPosition = window.scrollY + headerHeight + 1;
-
 		let currentSection = null;
 
-		sections.forEach(({ btn, section }) => {
+		sections.forEach(({ btn, section }, index) => {
 			const sectionTop = section.getBoundingClientRect().top + window.scrollY - headerHeight - getOffset(btn);
-			const sectionBottom = sectionTop + section.offsetHeight;
+			const nextSection = sections[index + 1]?.section;
+			const sectionBottom = nextSection
+				? nextSection.getBoundingClientRect().top + window.scrollY - headerHeight - getOffset(sections[index + 1].btn)
+				: sectionTop + section.offsetHeight;
 
 			if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
 				currentSection = btn;
@@ -805,13 +860,12 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 	let scrollTimeout;
 	window.addEventListener('scroll', function () {
-		if (scrollTimeout) {
-			window.cancelAnimationFrame(scrollTimeout);
-		}
+		if (scrollTimeout) window.cancelAnimationFrame(scrollTimeout);
 		scrollTimeout = window.requestAnimationFrame(onScroll);
 	});
 
 	onScroll();
+
 
 	// скрипт которйы обрезает текст
 
