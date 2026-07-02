@@ -4512,14 +4512,22 @@ html.lenis, html.lenis body {
 }
 
 .blog-inner {
+  width: 100%;
+  max-width: 102rem;
+  margin: 0 auto;
+  padding: 0 1rem;
   display: grid;
   grid-template-columns: 16rem 1fr 16rem;
   gap: clamp(1.25rem, 4.1666666667vw, 5rem);
 }
 
+.tiny-block {
+  width: 100%;
+}
 .tiny-block h2 {
   font: 600 9vw/1.3 "Gilroy", Verdana, Arial, sans-serif;
   color: var(--color-dark);
+  margin: 0 0 1.6875rem;
 }
 @media (min-width: 430px) {
   .tiny-block h2 {
@@ -4530,6 +4538,146 @@ html.lenis, html.lenis body {
   .tiny-block h2 {
     font-size: 2.25rem;
   }
+}
+.tiny-block h3 {
+  font: 600 1.25rem/1.3 "Gilroy", Verdana, Arial, sans-serif;
+  color: var(--color-dark);
+  margin: 0 0 0.875rem;
+}
+@media (min-width: 430px) {
+  .tiny-block h3 {
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .tiny-block h3 {
+    font-size: 2rem;
+  }
+}
+.tiny-block h4 {
+  font: 600 1.125rem/1.3 "Gilroy", Verdana, Arial, sans-serif;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.875rem;
+}
+@media (min-width: 430px) {
+  .tiny-block h4 {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .tiny-block h4 {
+    font-size: 1.375rem;
+  }
+}
+.tiny-block h5 {
+  font: 400 1.125rem/1.3 "Gilroy", Verdana, Arial, sans-serif;
+  color: var(--color-dark);
+  letter-spacing: -0.02em;
+  margin: 0 0 0.875rem;
+}
+@media (min-width: 430px) {
+  .tiny-block h5 {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .tiny-block h5 {
+    font-size: 1.375rem;
+  }
+}
+.tiny-block p {
+  font: 400 0.875rem/1.45 "Gilroy", Verdana, Arial, sans-serif;
+  letter-spacing: -0.014em;
+  word-break: break-word;
+  color: var(--color-dark-th);
+}
+@media (min-width: 768px) {
+  .tiny-block p {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .tiny-block p {
+    font-size: 1.25rem;
+  }
+}
+.tiny-block p + ul {
+  margin: 0.6875rem 0 0;
+}
+.tiny-block ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 0.5rem;
+  padding: 0 0 0 0.75rem;
+  margin: 0 0 2.8125rem;
+}
+@media (min-width: 768px) {
+  .tiny-block ul {
+    gap: 0.5625rem;
+  }
+}
+.tiny-block ul + p {
+  margin: 0.6875rem 0 0;
+}
+.tiny-block ul li {
+  position: relative;
+  font: 400 0.875rem/1.45 "Gilroy", Verdana, Arial, sans-serif;
+  letter-spacing: -0.014em;
+  padding: 0 0 0 1.0625rem;
+  word-break: break-word;
+  color: var(--color-dark-th);
+}
+@media (min-width: 768px) {
+  .tiny-block ul li {
+    font-size: 1rem;
+  }
+}
+@media (min-width: 1200px) {
+  .tiny-block ul li {
+    font-size: 1.25rem;
+  }
+}
+.tiny-block ul li::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0.625rem;
+  left: 0;
+  z-index: 1;
+  width: 0.25rem;
+  height: 0.25rem;
+  background-color: var(--color-dark-th);
+  border-radius: 100%;
+}
+@media (min-width: 1200px) {
+  .tiny-block ul li::after {
+    top: 0.75rem;
+  }
+}
+.tiny-block dl {
+  padding: 1.5rem 1.4375rem;
+  border-left: 0.0625rem solid #c3c2b9;
+  border-radius: 1.5rem;
+  background-image: -webkit-gradient(linear, left top, right top, from(#ebeae1), color-stop(50%, rgba(235, 234, 225, 0)));
+  background-image: linear-gradient(to right, #ebeae1, rgba(235, 234, 225, 0) 50%);
+  margin: 0 0 3.75rem;
+}
+.tiny-block dl dt {
+  font: 400 0.75rem/1.4 "Manrope", Verdana, Arial, sans-serif;
+  letter-spacing: -0.02em;
+  color: var(--color-gray-five);
+  margin: 0 0 0.5625rem;
+}
+.tiny-block dl dd {
+  font: 400 1.25rem/1.5 "Manrope", Verdana, Arial, sans-serif;
+  letter-spacing: -0.014em;
+  color: var(--color-dark-th);
 }
 
 .share-block {
