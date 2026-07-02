@@ -145,7 +145,7 @@
 .blog-inner {
 	width: 100%;
 	max-width: get-rem(1632);
-	margin: 0 auto 80px;
+	margin: 0 auto clamp(#{get-rem(80)}, #{get-vw(141)}, #{get-rem(141)});
 	padding: 0 get-rem(16);
 	display: grid;
 	grid-template-columns: 1fr;
@@ -243,13 +243,21 @@
 			display: block;
 			position: absolute;
 			top: -0.5em;
-			left: -1.9em;
+			left: 0;
 			z-index: 1;
 			width: get-rem(44);
 			height: get-rem(38);
 			background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4NiIgaGVpZ2h0PSI3NyIgdmlld0JveD0iMCAwIDg2IDc3IiBmaWxsPSJub25lIj4KICA8cGF0aCBvcGFjaXR5PSIwLjA1IiBkPSJNODYgMC43MzIxOTFMODMuNzgzNSAxNi4wOTk5Qzc5LjI1MiAxNS43MDU4IDc1LjY1NjQgMTYuNDkzOSA3Mi45OTY2IDE4LjQ2NDJDNzAuMzM2OCAyMC4zMzU5IDY4LjUxNDMgMjMuMDQ0OSA2Ny41MjkyIDI2LjU5MTNDNjYuNjQyNiAzMC4wMzkyIDY2LjQ5NDkgMzMuOTc5NiA2Ny4wODU5IDM4LjQxMjZIODZWNzYuMzg4NUg0OS41MDE3VjM2LjkzNDlDNDkuNTAxNyAyNC4wMyA1Mi41NTU2IDE0LjI3NzQgNTguNjYzMiA3LjY3NzIyQzY0Ljc3MDkgMC45Nzg0NjkgNzMuODgzMiAtMS4zMzY1NCA4NiAwLjczMjE5MVpNMzYuNDk4MyAwLjczMjE5MUwzNC4yODE4IDE2LjA5OTlDMjkuNzUwMyAxNS43MDU4IDI2LjE1NDYgMTYuNDkzOSAyMy40OTQ4IDE4LjQ2NDJDMjAuODM1MSAyMC4zMzU5IDE5LjAxMjYgMjMuMDQ0OSAxOC4wMjc1IDI2LjU5MTNDMTcuMTQwOSAzMC4wMzkyIDE2Ljk5MzEgMzMuOTc5NiAxNy41ODQyIDM4LjQxMjZIMzYuNDk4M1Y3Ni4zODg1SDBWMzYuOTM0OUMwIDI0LjAzIDMuMDUzODQgMTQuMjc3NCA5LjE2MTUxIDcuNjc3MjJDMTUuMjY5MiAwLjk3ODQ2OSAyNC4zODE0IC0xLjMzNjU0IDM2LjQ5ODMgMC43MzIxOTFaIiBmaWxsPSJibGFjayI+PC9wYXRoPgo8L3N2Zz4K);
 			background-size: 100% 100%;
+
+			@media(min-width: 1280px) {
+				left: -1.9em;
+			}
 		}
+	}
+
+	.share-block {
+		flex-shrink: 0;
 	}
 
 	blockquote {
@@ -797,5 +805,36 @@
 
 	&.is-visible {
 		opacity: 1;
+	}
+}
+
+.default-section {
+
+	&__top {
+		display: flex;
+		align-items: flex-start;
+		justify-content: space-between;
+		margin: 0 0 get-rem(25);
+	}
+
+	&__triple {
+		width: calc(100% + #{get-rem(32)});
+		margin: 0 0 0 get-rem(-16);
+		padding: 0 get-rem(16) get-rem(8) get-rem(16);
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: get-rem(16);
+		overflow: auto;
+
+		@media(min-width: 992px) {
+			width: 100%;
+			margin: 0;
+			padding: 0;
+			gap: get-rem(25);
+		}
+
+		.blog-item {
+			min-width: get-rem(292);
+		}
 	}
 }
