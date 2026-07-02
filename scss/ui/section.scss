@@ -20,6 +20,7 @@
 			z-index: 1;
 			font: 500 clamp(#{get-rem(40)}, #{get-vw(190)}, #{get-rem(190)})/1 $mainFont;
 			color: var(--color-dark);
+			pointer-events: none;
 
 			@media(max-width: 1279px) {
 				display: none;
@@ -29,6 +30,29 @@
 		.container {
 			position: relative;
 			z-index: 2;
+		}
+	}
+
+	&--services {
+		position: relative;
+
+		.bg-pic {
+			width: 100%;
+			max-width: clamp(#{get-rem(310)}, #{get-vw(560)}, #{get-rem(560)});
+			position: absolute;
+			top: -10%;
+			right: 14.5%;
+			z-index: 1;
+			pointer-events: none;
+
+			img {
+				width: 100%;
+				height: auto;
+			}
+
+			@media(max-width: 1024px) {
+				top: -2%;
+			}
 		}
 	}
 
@@ -43,6 +67,7 @@
 			top: 74%;
 			right: 3.5%;
 			z-index: 1;
+			pointer-events: none;
 
 			img {
 				width: 100%;
@@ -127,6 +152,23 @@
 
 	&--type-gap-4 {
 		margin: 0 0 get-rem(64);
+	}
+
+	&--type-gap-5 {
+		margin: 0 0 clamp(#{get-rem(60)}, #{get-vw(170)}, #{get-rem(170)});
+	}
+
+	&--type-gap-6 {
+		margin: 0 0 clamp(#{get-rem(70)}, #{get-vw(271)}, #{get-rem(271)});
+
+		@media(min-width: 1280px) {
+			margin: get-rem(-26) 0 clamp(#{get-rem(70)}, #{get-vw(271)}, #{get-rem(271)});
+		}
+	}
+
+	&--type-gap-7 {
+		margin: 0 0 clamp(#{get-rem(80)}, #{get-vw(158)}, #{get-rem(158)});
+
 	}
 }
 

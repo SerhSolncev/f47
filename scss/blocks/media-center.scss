@@ -141,6 +141,13 @@
 		@media(min-width: 992px) {
 			padding: 0 get-rem(9) 0 0;
 		}
+
+		@media(max-width: 1199px) {
+		    flex-direction: row;
+			flex-wrap: wrap;
+			gap: get-rem(10);
+		}
+
 	}
 
 	&__bottom {
@@ -161,6 +168,14 @@
 	}
 
 	&--type-2 {
+		.blog-item__title {
+			margin: 0 0 get-rem(-5);
+		}
+	}
+
+	&--type-3 {
+		padding-top: clamp(#{get-rem(16)}, #{get-vw(32)}, #{get-rem(32)});
+
 		.blog-item__title {
 			margin: 0 0 get-rem(-5);
 		}
