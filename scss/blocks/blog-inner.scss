@@ -838,3 +838,24 @@
 		}
 	}
 }
+
+.catalog-block {
+	margin: 0 0 80px;
+
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: get-rem(16);
+		overflow: auto;
+
+		@media(min-width: 640px) {
+			gap: get-rem(25);
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+		@media(min-width: 1200px) {
+			grid-template-columns: repeat(3, 1fr);
+		}
+
+	}
+}

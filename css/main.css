@@ -38,7 +38,6 @@ body {
   right: 0;
   bottom: 0;
   min-height: 100vh;
-  min-height: 2800px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -5440,6 +5439,27 @@ html.lenis, html.lenis body {
 }
 .default-section__triple .blog-item {
   min-width: 18.25rem;
+}
+
+.catalog-block {
+  margin: 0 0 80px;
+}
+.catalog-block__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  overflow: auto;
+}
+@media (min-width: 640px) {
+  .catalog-block__grid {
+    gap: 1.5625rem;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@media (min-width: 1200px) {
+  .catalog-block__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }
 
 .breadcrumbs {
