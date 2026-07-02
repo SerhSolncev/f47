@@ -9,7 +9,7 @@
 	position: relative;
 	border: get-rem(1) solid transparent;
 	gap: get-rem(12);
-	transition: 0.2s linear;
+	transition: 0.2s ease;
 	transition-property: background-color, color, border-color, transform;
 
 	&.disabled {
@@ -21,7 +21,7 @@
 	&__text {
 		position: relative;
 		z-index: 2;
-		transition: opacity 0s 0.15s ease-in;
+		transition: transform 0.15s ease-in;
 	}
 
 	&__icon {
@@ -59,7 +59,7 @@
 			left: 50%;
 			z-index: 1;
 			transform: translate(-50%, -50%);
-			transition: left 0.15s ease-in, transform 0.15s ease-in;
+			transition: left 0.15s ease, transform 0.15s ease;
 		}
 
 		.btn__icon {
@@ -130,19 +130,12 @@
 		&:hover {
 
 			.btn__text {
-				opacity: 0;
-				transition: opacity 0.15s 0s ease-in;
+				transform: translateX(var(--text-shift, 0px));
 			}
 
 			.btn__hover {
 				opacity: 1;
 				transition: opacity 0.15s ease-in;
-
-				span:not(.btn__icon) {
-					left: get-rem(16);
-					transform: translateY(-50%);
-					transition: left 0.15s ease-in, transform 0.15s ease-in;
-				}
 			}
 		}
 	}
@@ -155,19 +148,12 @@
 		&:hover {
 
 			.btn__text {
-				opacity: 0;
-				transition: opacity 0.15s 0s ease-in;
+				transform: translateX(var(--text-shift, 0px));
 			}
 
 			.btn__hover {
 				opacity: 1;
 				transition: opacity 0.15s ease-in;
-
-				span:not(.btn__icon) {
-					left: get-rem(16);
-					transform: translateY(-50%);
-					transition: left 0.15s ease-in, transform 0.15s ease-in;
-				}
 			}
 		}
 	}
@@ -221,19 +207,12 @@
 		&:hover {
 
 			.btn__text {
-				opacity: 0;
-				transition: opacity 0.15s 0s ease-in;
+				transform: translateX(var(--text-shift, 0px));
 			}
 
 			.btn__hover {
 				opacity: 1;
 				transition: opacity 0.15s ease-in;
-
-				span:not(.btn__icon) {
-					left: get-rem(16);
-					transform: translateY(-50%);
-					transition: left 0.15s ease-in, transform 0.15s ease-in;
-				}
 			}
 		}
 	}

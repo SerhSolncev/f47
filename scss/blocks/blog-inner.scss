@@ -840,7 +840,15 @@
 }
 
 .catalog-block {
-	margin: 0 0 80px;
+	margin: 0 0 clamp(#{get-rem(70)}, #{get-vw(271)}, #{get-rem(271)});
+
+	@media(min-width: 1280px) {
+		margin: get-rem(-26) 0 clamp(#{get-rem(70)}, #{get-vw(271)}, #{get-rem(271)});
+	}
+
+	&__top {
+		margin: 0 0 clamp(#{get-rem(24)}, #{get-vw(65)}, #{get-rem(65)});
+	}
 
 	&__grid {
 		display: grid;
@@ -850,12 +858,94 @@
 
 		@media(min-width: 640px) {
 			gap: get-rem(25);
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(2, 1fr);
 		}
 
 		@media(min-width: 1200px) {
 			grid-template-columns: repeat(3, 1fr);
 		}
 
+	}
+}
+
+.pagination {
+	margin: get-rem(20) 0 0;
+
+	@media(min-width: 992px) {
+		margin: get-rem(40) 0 0;
+	}
+
+	&__list {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		gap: get-rem(10);
+	}
+
+	&__link {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: get-rem(36);
+		height: get-rem(36);
+		position: relative;
+		color: var(--color-dark);
+		background-color: rgba(#242B3A, 0.05);
+		border: get-rem(1) solid rgba(#242B3A, 0.4);
+		font: bold #{get-rem(14)}/1 $mainFontGilroy;
+		letter-spacing: -0.014em;
+		border-radius: 100%;
+		transition: background-color 0.15s ease-in, color 0.15s ease-in;
+
+		.desktop-device & {
+		    &:hover {
+			    background-color: rgba(#242B3A, 0.12);
+		    }
+		}
+
+		&.is-active {
+			background-color: var(--color-dark);
+			color: var(--color-white);
+		}
+
+		svg {
+			width: 56%;
+			height: auto;
+		}
+
+		&--dots {
+			background-color: transparent;
+			border-color: transparent;
+		}
+
+		&[aria-disabled="true"] {
+			opacity: 0.4;
+			pointer-events: none;
+		}
+	}
+}
+
+.services-block {
+
+	&__top {
+		margin: 0 0 get-rem(24);
+
+		@media(min-width: 992px) {
+			margin: 0 0 get-rem(32);
+		}
+	}
+
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: get-rem(16);
+
+		@media(min-width: 768px) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@media(min-width: 992px) {
+			gap: get-rem(24);
+		}
 	}
 }

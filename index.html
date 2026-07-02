@@ -96,10 +96,10 @@
 				<div class="header__mid js-toggle-block" data-no-lock-focus data-id="mob-menu">
 					<nav class="main-menu" aria-label="Головне меню">
 						<div class="main-menu__list">
-							<a class="link link--type-1 link--gray lt-14 js-call-popup-static" href="home.html#audit">Аудит</a >
-							<a class="link link--type-1 link--gray lt-14 js-anchor-btn" href="home.html#portfolio-section">Портфоліо</a >
-							<a class="link link--type-1 link--gray lt-14 js-anchor-btn" href="home.html#price-section">Ціни</a >
-							<a class="link link--type-1 link--gray lt-14 js-anchor-btn" href="home.html#media-section">Медіа-центр</a >
+							<button class="link link--type-1 link--gray lt-14 js-call-popup-static" data-id="audit">Аудит</button >
+							<a class="link link--type-1 link--gray lt-14 js-anchor-btn" href="#portfolio-section">Портфоліо</a >
+							<a class="link link--type-1 link--gray lt-14 js-anchor-btn" href="#price-section">Ціни</a >
+							<a class="link link--type-1 link--gray lt-14 js-anchor-btn" href="#media-section">Медіа-центр</a >
 						</div>
 					</nav>
 					<div class="soc-list">
@@ -136,10 +136,9 @@
 						</a>
 					</div>
 				</div>
-				<button type="button" class="btn btn--type-2 btn--dark-bg js-call-popup-static" data-id="callback" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-menu">
+				<button type="button" class="btn btn--type-2 btn--dark-bg js-call-popup-static js-hover-btn" data-id="callback" aria-label="Відкрити меню" aria-expanded="false" aria-controls="main-menu">
 					<span class="btn__text">Замовити дзвінок</span>
 					<span class="btn__hover">
-						<span>Замовити дзвінок</span>
 						<span class="btn__icon">
 							<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 								<path d="M16.875 9.375C17.2202 9.375 17.5 9.65482 17.5 10C17.5 10.3452 17.2202 10.625 16.875 10.625H3.125C2.77982 10.625 2.5 10.3452 2.5 10C2.5 9.65482 2.77982 9.375 3.125 9.375H16.875Z" fill="white"/>
@@ -310,16 +309,15 @@
 						</div>
 					</fieldset>
 					<div class="form-board__bottom form-board__bottom--end">
-						<button type="button" class="btn btn--type-1 btn--dark-bg js-send-form">
-									<span class="btn__hover">
-										<span>Зв'яжіться з нами</span>
-										<span class="btn__icon">
-											<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-												<path d="M16.875 9.375C17.2202 9.375 17.5 9.65482 17.5 10C17.5 10.3452 17.2202 10.625 16.875 10.625H3.125C2.77982 10.625 2.5 10.3452 2.5 10C2.5 9.65482 2.77982 9.375 3.125 9.375H16.875Z" fill="white"/>
-												<path d="M10.8081 3.93306C11.0521 3.68898 11.4487 3.68898 11.6928 3.93306L17.3178 9.55806C17.5619 9.80214 17.5619 10.1987 17.3178 10.4428L11.6928 16.0678C11.4487 16.3119 11.0521 16.3119 10.8081 16.0678C10.564 15.8237 10.564 15.4271 10.8081 15.1831L15.9907 10.0004L10.8081 4.81782C10.564 4.57375 10.564 4.17714 10.8081 3.93306Z" fill="white"/>
-											</svg>
-										</span>
-									</span>
+						<button type="button" class="btn btn--type-1 btn--dark-bg js-send-form js-hover-btn">
+							<span class="btn__hover">
+								<span class="btn__icon">
+									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+										<path d="M16.875 9.375C17.2202 9.375 17.5 9.65482 17.5 10C17.5 10.3452 17.2202 10.625 16.875 10.625H3.125C2.77982 10.625 2.5 10.3452 2.5 10C2.5 9.65482 2.77982 9.375 3.125 9.375H16.875Z" fill="white"/>
+										<path d="M10.8081 3.93306C11.0521 3.68898 11.4487 3.68898 11.6928 3.93306L17.3178 9.55806C17.5619 9.80214 17.5619 10.1987 17.3178 10.4428L11.6928 16.0678C11.4487 16.3119 11.0521 16.3119 10.8081 16.0678C10.564 15.8237 10.564 15.4271 10.8081 15.1831L15.9907 10.0004L10.8081 4.81782C10.564 4.57375 10.564 4.17714 10.8081 3.93306Z" fill="white"/>
+									</svg>
+								</span>
+							</span>
 							<span class="btn__text">Зв'яжіться з нами</span>
 						</button>
 					</div>
@@ -373,9 +371,8 @@
 						</div>
 					</fieldset>
 					<div class="form-board__bottom form-board__bottom--end">
-						<button type="button" class="btn btn--type-1 btn--dark-bg-th js-send-form">
+						<button type="button" class="btn btn--type-1 btn--dark-bg-th js-send-form js-hover-btn">
 							<span class="btn__hover">
-								<span>Отримати аудит</span>
 								<span class="btn__icon">
 									<svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
 										<path d="M16.875 9.375C17.2202 9.375 17.5 9.65482 17.5 10C17.5 10.3452 17.2202 10.625 16.875 10.625H3.125C2.77982 10.625 2.5 10.3452 2.5 10C2.5 9.65482 2.77982 9.375 3.125 9.375H16.875Z" fill="white"/>

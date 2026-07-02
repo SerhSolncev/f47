@@ -866,6 +866,48 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 	onScroll();
 
+	// hover btn
+
+	const SHIFT_FROM_LEFT = 16; // px, куда должен встать текст при ховере
+
+	function calcShift(btn, text) {
+		// сбрасываем текущий transform, чтобы замер был чистым
+		text.style.transform = 'none';
+
+		const btnRect = btn.getBoundingClientRect();
+		const textRect = text.getBoundingClientRect();
+
+		// текущее расстояние текста от левого края кнопки
+		const currentOffset = textRect.left - btnRect.left;
+
+		// на сколько нужно сдвинуть текст влево/вправо,
+		// чтобы он оказался ровно в SHIFT_FROM_LEFT px от левого края
+		const delta = SHIFT_FROM_LEFT - currentOffset;
+
+		btn.style.setProperty('--text-shift', `${delta}px`);
+
+		// возвращаем прежнее состояние (transform управляется через CSS hover)
+		text.style.transform = '';
+	}
+
+	function initHoverButtons(container = document) {
+		const buttons = container.querySelectorAll('.js-hover-btn');
+		buttons.forEach((btn) => {
+			const text = btn.querySelector('.btn__text');
+			if (!text) return;
+			calcShift(btn, text);
+		});
+	}
+
+	// первичный расчёт после загрузки DOM
+	initHoverButtons()
+
+	// пересчёт при ресайзе окна (debounce, чтобы не дёргать лишний раз)
+	let resizeTimeout;
+	window.addEventListener('resize', () => {
+		clearTimeout(resizeTimeout);
+		resizeTimeout = setTimeout(initHoverButtons, 150);
+	});
 
 	// скрипт которйы обрезает текст
 
@@ -1013,6 +1055,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
 				disableScroll: true,
 				onShow: function (modal) {
 					let isAnyModalOpen = document.querySelector('.micromodal-slide.is-open');
+
+					requestAnimationFrame(() => {
+						initHoverButtons(modal);
+					});
 				},
 				onClose: function (modal) {
 					setTimeout(() => {

@@ -115,6 +115,22 @@
 			font-size: get-rem(36);
 		}
 	}
+
+	&--type-11 {
+		font: 400 #{get-rem(28)}/1.3 $mainFont;
+
+		@media(min-width: 768px) {
+			font-size: get-rem(32);
+		}
+
+		@media(min-width: 992px) {
+			font-size: get-rem(48);
+		}
+
+		@media(min-width: 1280px) {
+			font-size: get-rem(56);
+		}
+	}
 }
 
 .simple-text {

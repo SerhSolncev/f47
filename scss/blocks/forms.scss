@@ -6,6 +6,10 @@
 	padding: get-rem(7);
 	border-radius: get-rem(31);
 
+	&--nb {
+		padding: 0;
+	}
+
 	&__top {
 		display: flex;
 		flex-direction: column;
@@ -148,8 +152,23 @@
 	}
 
 	&--green-gradient {
+
 		.form-board__body {
 			background-image: linear-gradient(215deg, #95ff5c, #e5c764);
+		}
+	}
+
+	&--purple-1 {
+
+		.form-board__body {
+			background-image: linear-gradient(215deg, #87cce2, #b7b9f7);
+		}
+	}
+
+	&--purple-2 {
+
+		.form-board__body {
+			background-image: linear-gradient(215deg, #6dd5d7, #97c5e9);
 		}
 	}
 

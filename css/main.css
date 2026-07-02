@@ -877,8 +877,8 @@ html.lenis, html.lenis body {
   position: relative;
   border: 0.0625rem solid transparent;
   gap: 0.75rem;
-  -webkit-transition: 0.2s linear;
-  transition: 0.2s linear;
+  -webkit-transition: 0.2s ease;
+  transition: 0.2s ease;
   -webkit-transition-property: background-color, color, border-color, -webkit-transform;
   transition-property: background-color, color, border-color, -webkit-transform;
   transition-property: background-color, color, border-color, transform;
@@ -891,8 +891,10 @@ html.lenis, html.lenis body {
 .btn__text {
   position: relative;
   z-index: 2;
-  -webkit-transition: opacity 0s 0.15s ease-in;
-  transition: opacity 0s 0.15s ease-in;
+  -webkit-transition: -webkit-transform 0.15s ease-in;
+  transition: -webkit-transform 0.15s ease-in;
+  transition: transform 0.15s ease-in;
+  transition: transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
 }
 .btn__icon {
   display: -webkit-box;
@@ -943,10 +945,10 @@ html.lenis, html.lenis body {
   z-index: 1;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  -webkit-transition: left 0.15s ease-in, -webkit-transform 0.15s ease-in;
-  transition: left 0.15s ease-in, -webkit-transform 0.15s ease-in;
-  transition: left 0.15s ease-in, transform 0.15s ease-in;
-  transition: left 0.15s ease-in, transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
+  -webkit-transition: left 0.15s ease, -webkit-transform 0.15s ease;
+  transition: left 0.15s ease, -webkit-transform 0.15s ease;
+  transition: left 0.15s ease, transform 0.15s ease;
+  transition: left 0.15s ease, transform 0.15s ease, -webkit-transform 0.15s ease;
 }
 .btn__hover .btn__icon {
   -webkit-transform: translateY(1px);
@@ -1008,23 +1010,13 @@ html.lenis, html.lenis body {
   overflow: hidden;
 }
 .btn--dark-bg:hover .btn__text {
-  opacity: 0;
-  -webkit-transition: opacity 0.15s 0s ease-in;
-  transition: opacity 0.15s 0s ease-in;
+  -webkit-transform: translateX(var(--text-shift, 0px));
+          transform: translateX(var(--text-shift, 0px));
 }
 .btn--dark-bg:hover .btn__hover {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in;
   transition: opacity 0.15s ease-in;
-}
-.btn--dark-bg:hover .btn__hover span:not(.btn__icon) {
-  left: 1rem;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -webkit-transition: left 0.15s ease-in, -webkit-transform 0.15s ease-in;
-  transition: left 0.15s ease-in, -webkit-transform 0.15s ease-in;
-  transition: left 0.15s ease-in, transform 0.15s ease-in;
-  transition: left 0.15s ease-in, transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
 }
 .btn--dark-bg-th {
   color: var(--color-white);
@@ -1032,23 +1024,13 @@ html.lenis, html.lenis body {
   overflow: hidden;
 }
 .btn--dark-bg-th:hover .btn__text {
-  opacity: 0;
-  -webkit-transition: opacity 0.15s 0s ease-in;
-  transition: opacity 0.15s 0s ease-in;
+  -webkit-transform: translateX(var(--text-shift, 0px));
+          transform: translateX(var(--text-shift, 0px));
 }
 .btn--dark-bg-th:hover .btn__hover {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in;
   transition: opacity 0.15s ease-in;
-}
-.btn--dark-bg-th:hover .btn__hover span:not(.btn__icon) {
-  left: 1rem;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -webkit-transition: left 0.15s ease-in, -webkit-transform 0.15s ease-in;
-  transition: left 0.15s ease-in, -webkit-transform 0.15s ease-in;
-  transition: left 0.15s ease-in, transform 0.15s ease-in;
-  transition: left 0.15s ease-in, transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
 }
 .btn--dark-bg-sec {
   color: var(--color-white);
@@ -1091,23 +1073,13 @@ html.lenis, html.lenis body {
   letter-spacing: -0.014em;
 }
 .btn--light-bg:hover .btn__text {
-  opacity: 0;
-  -webkit-transition: opacity 0.15s 0s ease-in;
-  transition: opacity 0.15s 0s ease-in;
+  -webkit-transform: translateX(var(--text-shift, 0px));
+          transform: translateX(var(--text-shift, 0px));
 }
 .btn--light-bg:hover .btn__hover {
   opacity: 1;
   -webkit-transition: opacity 0.15s ease-in;
   transition: opacity 0.15s ease-in;
-}
-.btn--light-bg:hover .btn__hover span:not(.btn__icon) {
-  left: 1rem;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-  -webkit-transition: left 0.15s ease-in, -webkit-transform 0.15s ease-in;
-  transition: left 0.15s ease-in, -webkit-transform 0.15s ease-in;
-  transition: left 0.15s ease-in, transform 0.15s ease-in;
-  transition: left 0.15s ease-in, transform 0.15s ease-in, -webkit-transform 0.15s ease-in;
 }
 
 .icon-btn {
@@ -1404,6 +1376,24 @@ html.lenis, html.lenis body {
 @media (min-width: 1280px) {
   .title--type-10 {
     font-size: 2.25rem;
+  }
+}
+.title--type-11 {
+  font: 400 1.75rem/1.3 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 768px) {
+  .title--type-11 {
+    font-size: 2rem;
+  }
+}
+@media (min-width: 992px) {
+  .title--type-11 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .title--type-11 {
+    font-size: 3.5rem;
   }
 }
 
@@ -1855,6 +1845,9 @@ html.lenis, html.lenis body {
   padding: 0.4375rem;
   border-radius: 1.9375rem;
 }
+.form-board--nb {
+  padding: 0;
+}
 .form-board__top {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1997,6 +1990,12 @@ html.lenis, html.lenis body {
 }
 .form-board--green-gradient .form-board__body {
   background-image: linear-gradient(215deg, #95ff5c, #e5c764);
+}
+.form-board--purple-1 .form-board__body {
+  background-image: linear-gradient(215deg, #87cce2, #b7b9f7);
+}
+.form-board--purple-2 .form-board__body {
+  background-image: linear-gradient(215deg, #6dd5d7, #97c5e9);
 }
 .form-board--gray {
   background-color: var(--color-white);
@@ -5442,7 +5441,15 @@ html.lenis, html.lenis body {
 }
 
 .catalog-block {
-  margin: 0 0 80px;
+  margin: 0 0 clamp(4.375rem, 14.1145833333vw, 16.9375rem);
+}
+@media (min-width: 1280px) {
+  .catalog-block {
+    margin: -1.625rem 0 clamp(4.375rem, 14.1145833333vw, 16.9375rem);
+  }
+}
+.catalog-block__top {
+  margin: 0 0 clamp(1.5rem, 3.3854166667vw, 4.0625rem);
 }
 .catalog-block__grid {
   display: grid;
@@ -5453,12 +5460,98 @@ html.lenis, html.lenis body {
 @media (min-width: 640px) {
   .catalog-block__grid {
     gap: 1.5625rem;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 }
 @media (min-width: 1200px) {
   .catalog-block__grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.pagination {
+  margin: 1.25rem 0 0;
+}
+@media (min-width: 992px) {
+  .pagination {
+    margin: 2.5rem 0 0;
+  }
+}
+.pagination__list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 0.625rem;
+}
+.pagination__link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  position: relative;
+  color: var(--color-dark);
+  background-color: rgba(36, 43, 58, 0.05);
+  border: 0.0625rem solid rgba(36, 43, 58, 0.4);
+  font: bold 0.875rem/1 "Gilroy", Verdana, Arial, sans-serif;
+  letter-spacing: -0.014em;
+  border-radius: 100%;
+  -webkit-transition: background-color 0.15s ease-in, color 0.15s ease-in;
+  transition: background-color 0.15s ease-in, color 0.15s ease-in;
+}
+.desktop-device .pagination__link:hover {
+  background-color: rgba(36, 43, 58, 0.12);
+}
+.pagination__link.is-active {
+  background-color: var(--color-dark);
+  color: var(--color-white);
+}
+.pagination__link svg {
+  width: 56%;
+  height: auto;
+}
+.pagination__link--dots {
+  background-color: transparent;
+  border-color: transparent;
+}
+.pagination__link[aria-disabled=true] {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.services-block__top {
+  margin: 0 0 1.5rem;
+}
+@media (min-width: 992px) {
+  .services-block__top {
+    margin: 0 0 2rem;
+  }
+}
+.services-block__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 768px) {
+  .services-block__list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 992px) {
+  .services-block__list {
+    gap: 1.5rem;
   }
 }
 
@@ -5540,6 +5633,18 @@ html.lenis, html.lenis body {
   max-width: 92rem;
   margin: 0 auto;
   padding: 0 1rem;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .oh {
