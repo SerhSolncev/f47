@@ -5666,23 +5666,34 @@ html.lenis, html.lenis body {
 }
 
 .banner-block {
-  aspect-ratio: 1440/600;
   position: relative;
 }
-.banner-block > img {
+.banner-block__img {
+  width: 100%;
+  aspect-ratio: 1440/600;
+  min-height: 17.5rem;
+}
+.banner-block__img img {
   width: 100%;
   height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
   border-radius: clamp(1.125rem, 2.0833333333vw, 2.5rem);
 }
 .banner-block__board {
-  width: 100%;
+  width: calc(100% - 1.5rem);
   max-width: 45.125rem;
   background-color: var(--color-white);
   padding: 0.4375rem;
   border-radius: 1.9375rem;
-  margin: -17% 0 0 5%;
+  margin: -22% auto 0;
   position: relative;
   z-index: 2;
+}
+@media (min-width: 992px) {
+  .banner-block__board {
+    margin: -17% 0 0 5%;
+  }
 }
 .banner-block .tags {
   margin: 0 0 0.9375rem;
@@ -5690,18 +5701,29 @@ html.lenis, html.lenis body {
 .banner-block__board-body {
   border-radius: 1.5rem;
   background-color: var(--color-light);
-  padding: 2.5625rem 2.4375rem;
+  padding: 1.25rem;
+}
+@media (min-width: 992px) {
+  .banner-block__board-body {
+    padding: 2.5625rem 2.4375rem;
+  }
 }
 .banner-block__link {
   display: block;
-  margin: 0 0 1.6875rem;
-  font: 600 1.5rem/1.4 "Gilroy", Verdana, Arial, sans-serif;
+  margin: 0 0 1.125rem;
+  font: 600 6vw/1.4 "Gilroy", Verdana, Arial, sans-serif;
   color: var(--color-dark);
   letter-spacing: -0.02em;
+}
+@media (min-width: 430px) {
+  .banner-block__link {
+    font-size: 1.5rem;
+  }
 }
 @media (min-width: 768px) {
   .banner-block__link {
     font-size: 1.75rem;
+    margin: 0 0 1.6875rem;
   }
 }
 @media (min-width: 1280px) {
@@ -5728,6 +5750,7 @@ html.lenis, html.lenis body {
   .info-list {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.5rem;
   }
 }
 
