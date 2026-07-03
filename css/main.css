@@ -1442,6 +1442,9 @@ html.lenis, html.lenis body {
     font-size: 3.5rem;
   }
 }
+.title--type-12 {
+  font: 400 9.1346153846rem "Manrope", Verdana, Arial, sans-serif;
+}
 
 .simple-text {
   -webkit-transition: color 0.15s ease-in;
@@ -5898,6 +5901,30 @@ html.lenis, html.lenis body {
     grid-template-columns: repeat(2, 1fr);
     gap: 1rem 0.5rem;
   }
+}
+
+.error-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  gap: 2rem;
+  height: 75vh;
+  margin: auto;
+  padding: 0 1rem;
+}
+.error-page .btn {
+  min-width: 15.3125rem;
 }
 
 .breadcrumbs {

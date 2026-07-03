@@ -1130,3 +1130,19 @@
 		gap: get-rem(16) get-rem(8);
 	}
 }
+
+.error-page {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: get-rem(32);
+	height: 75vh;
+	margin: auto;
+	padding: 0 get-rem(16);
+
+	.btn {
+		min-width: get-rem(245);
+	}
+}
