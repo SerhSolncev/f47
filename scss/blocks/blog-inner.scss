@@ -291,6 +291,9 @@
 }
 
 .text-top {
+	display: flex;
+	flex-direction: column;
+	gap: clamp(#{get-rem(16)}, #{get-vw(30)}, #{get-rem(30)});
 	margin: 0 0 clamp(#{get-rem(32)}, #{get-vw(80)}, #{get-rem(80)});
 }
 

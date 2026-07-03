@@ -5011,6 +5011,14 @@ html.lenis, html.lenis body {
 }
 
 .text-top {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: clamp(1rem, 1.5625vw, 1.875rem);
   margin: 0 0 clamp(2rem, 4.1666666667vw, 5rem);
 }
 
