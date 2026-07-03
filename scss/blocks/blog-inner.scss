@@ -290,10 +290,14 @@
 	}
 }
 
+.text-top {
+	margin: 0 0 clamp(#{get-rem(32)}, #{get-vw(80)}, #{get-rem(80)});
+}
+
 .tiny-block {
 	width: 100%;
 
-	h2 {
+	h2, h1 {
 		font: 600 8vw/1.3 $mainFontGilroy;
 		color: var(--color-dark);
 		margin: 0 0 get-rem(18);
@@ -438,11 +442,19 @@
 			font-size: get-rem(20);
 		}
 
+		+ p {
+			margin: get-rem(12) 0 0;
+
+			@media(min-width: 992px) {
+				margin: get-rem(17) 0 0;
+			}
+		}
+
 		+ ul, + ol {
 			margin: get-rem(11) 0 0;
 		}
 
-		+ h3, + h4, + h5, + h6 {
+		+ h1, + h2, + h3, + h4, + h5, + h6 {
 			margin-top: clamp(#{get-rem(20)}, #{get-vw(48)}, #{get-rem(48)});
 		}
 	}
@@ -699,6 +711,13 @@
 			@media(min-width: 1440px) {
 			    font-size: get-rem(20);
 			}
+		}
+	}
+
+	&--manrope {
+
+		* {
+			font-family: $mainFont !important;
 		}
 	}
 }

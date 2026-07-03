@@ -5010,22 +5010,26 @@ html.lenis, html.lenis body {
   margin: 0 0 0.5625rem;
 }
 
+.text-top {
+  margin: 0 0 clamp(2rem, 4.1666666667vw, 5rem);
+}
+
 .tiny-block {
   width: 100%;
 }
-.tiny-block h2 {
+.tiny-block h2, .tiny-block h1 {
   font: 600 8vw/1.3 "Gilroy", Verdana, Arial, sans-serif;
   color: var(--color-dark);
   margin: 0 0 1.125rem;
 }
 @media (min-width: 430px) {
-  .tiny-block h2 {
+  .tiny-block h2, .tiny-block h1 {
     font-size: 1.75rem;
     margin: 0 0 1.6875rem;
   }
 }
 @media (min-width: 1280px) {
-  .tiny-block h2 {
+  .tiny-block h2, .tiny-block h1 {
     font-size: 2.25rem;
   }
 }
@@ -5156,10 +5160,18 @@ html.lenis, html.lenis body {
     font-size: 1.25rem;
   }
 }
+.tiny-block p + p {
+  margin: 0.75rem 0 0;
+}
+@media (min-width: 992px) {
+  .tiny-block p + p {
+    margin: 1.0625rem 0 0;
+  }
+}
 .tiny-block p + ul, .tiny-block p + ol {
   margin: 0.6875rem 0 0;
 }
-.tiny-block p + h3, .tiny-block p + h4, .tiny-block p + h5, .tiny-block p + h6 {
+.tiny-block p + h1, .tiny-block p + h2, .tiny-block p + h3, .tiny-block p + h4, .tiny-block p + h5, .tiny-block p + h6 {
   margin-top: clamp(1.25rem, 2.5vw, 3rem);
 }
 .tiny-block a {
@@ -5412,6 +5424,9 @@ html.lenis, html.lenis body {
   .tiny-block dl dd {
     font-size: 1.25rem;
   }
+}
+.tiny-block--manrope * {
+  font-family: "Manrope", Verdana, Arial, sans-serif !important;
 }
 
 .share-block {
