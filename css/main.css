@@ -1147,7 +1147,7 @@ html.lenis, html.lenis body {
   transition: background-color 0.15s ease-in, border-color 0.15s ease-in;
 }
 .icon-btn svg, .icon-btn img {
-  max-width: 64%;
+  max-width: 75%;
   width: auto;
   height: auto;
 }
@@ -1444,6 +1444,19 @@ html.lenis, html.lenis body {
 }
 .title--type-12 {
   font: 400 9.1346153846rem "Manrope", Verdana, Arial, sans-serif;
+}
+.title--type-13 {
+  font: 600 2rem/1.3 "Manrope", Verdana, Arial, sans-serif;
+}
+@media (min-width: 992px) {
+  .title--type-13 {
+    font-size: 3rem;
+  }
+}
+@media (min-width: 1280px) {
+  .title--type-13 {
+    font-size: 4rem;
+  }
 }
 
 .simple-text {
@@ -5919,12 +5932,43 @@ html.lenis, html.lenis body {
           align-items: center;
   text-align: center;
   gap: 2rem;
-  height: 75vh;
+  min-height: 59vh;
   margin: auto;
-  padding: 0 1rem;
+  padding: 1.5rem 1rem;
+}
+@media (min-width: 768px) {
+  .error-page {
+    min-height: 75vh;
+  }
 }
 .error-page .btn {
   min-width: 15.3125rem;
+}
+
+.thanks-page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-align: center;
+  min-height: 65vh;
+  gap: 2rem;
+  margin: auto;
+  padding: 1.5rem 1rem;
+}
+@media (min-width: 768px) {
+  .thanks-page {
+    min-height: 75vh;
+  }
 }
 
 .breadcrumbs {

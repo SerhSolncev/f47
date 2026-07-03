@@ -1138,11 +1138,31 @@
 	align-items: center;
 	text-align: center;
 	gap: get-rem(32);
-	height: 75vh;
+	min-height: 59vh;
 	margin: auto;
-	padding: 0 get-rem(16);
+	padding: get-rem(24) get-rem(16);
+
+	@media(min-width: 768px) {
+		min-height: 75vh;
+	}
 
 	.btn {
 		min-width: get-rem(245);
+	}
+}
+
+.thanks-page {
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	min-height: 65vh;
+	gap: get-rem(32);
+	margin: auto;
+	padding: get-rem(24) get-rem(16);
+
+	@media(min-width: 768px) {
+		min-height: 75vh;
 	}
 }
